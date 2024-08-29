@@ -54,6 +54,12 @@
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\AgregarMascotas\FrmAgregarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\AgregarMascotas\FrmAgregarMascota.Designer.cs">
+      <DependentUpon>FrmAgregarMascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\AgregarUsuarios\frmAgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\AgregarMascotas\FrmAgregarMascota.resx">
+      <DependentUpon>FrmAgregarMascota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmAgregarUsuario.resx">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>

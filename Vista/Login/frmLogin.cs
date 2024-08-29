@@ -26,5 +26,10 @@ namespace Proyecto.Vista.Login
         {
 
         }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
