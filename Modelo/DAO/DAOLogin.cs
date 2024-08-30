@@ -24,7 +24,7 @@ namespace Proyecto.Modelo.DAO
                 cmd.Parameters.AddWithValue("@Usuario", Usuario1);
                 cmd.Parameters.AddWithValue("@Contraseña", Contraseña1);
 
-                //MessageBox.Show(Usuario1 +  " " + Contraseña1);
+                MessageBox.Show(Usuario1 +  " " + Contraseña1);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -32,7 +32,7 @@ namespace Proyecto.Modelo.DAO
                     Acceso.Contraseña = rd.GetString(rd.GetOrdinal("Contraseña"));
                     Acceso.Nombre = rd.GetString(rd.GetOrdinal("Nombre"));
                 }
-                //MessageBox.Show(1+ rd.HasRows.ToString());
+                MessageBox.Show(1+ rd.HasRows.ToString());
                 return rd.HasRows;
             }
             catch (SqlException sqlex)
