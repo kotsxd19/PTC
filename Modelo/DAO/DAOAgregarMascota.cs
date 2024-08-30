@@ -19,7 +19,10 @@ namespace Proyecto.Modelo.DAO
                 Command.Connection = getConnection();
                 int query = "SELECT IdMascota, IdCliente, IdRaza FROM Mascota WHERE IdMascota = @IdMascota AND IdCliente = @IdCliente AND IdRaza = @IdRaza";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@IdMascota", IdMascota1")
+                cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
+                cmd.Parameters.AddWithValue("@IdCliente", IdCliente1);
+                cmd.Parameters.AddWithValue("@IdRaza", IdRaza1);
+
             }
         }
     }
