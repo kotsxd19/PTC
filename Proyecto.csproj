@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\Citas\ControllerCitas.cs" />
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
+    <Compile Include="Modelo\DAO\DAOCitas.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\dbConexion.cs" />
+    <Compile Include="Modelo\DTO\DTOCitas.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +68,12 @@
     </Compile>
     <Compile Include="Vista\AgregarUsuarios\frmReistoUsuario.Designer.cs">
       <DependentUpon>frmReistoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\InterfazCitas\frmCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\InterfazCitas\frmCitas.Designer.cs">
+      <DependentUpon>frmCitas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -86,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmReistoUsuario.resx">
       <DependentUpon>frmReistoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\InterfazCitas\frmCitas.resx">
+      <DependentUpon>frmCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
