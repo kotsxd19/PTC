@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnHistorialMascota = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
+            this.btnUsuario = new System.Windows.Forms.Button();
+            this.btnIngresoNevoEmpleado = new System.Windows.Forms.Button();
+            this.btnIngresoMascota = new System.Windows.Forms.Button();
+            this.btnRegistroEmpleados = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -64,13 +64,13 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
             this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.btnUsuario);
+            this.flowLayoutPanel1.Controls.Add(this.btnCitas);
+            this.flowLayoutPanel1.Controls.Add(this.btnProducto);
+            this.flowLayoutPanel1.Controls.Add(this.btnHistorialMascota);
+            this.flowLayoutPanel1.Controls.Add(this.btnRegistroEmpleados);
+            this.flowLayoutPanel1.Controls.Add(this.btnIngresoMascota);
+            this.flowLayoutPanel1.Controls.Add(this.btnIngresoNevoEmpleado);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 94);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -78,83 +78,83 @@
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // button1
+            // btnHistorialMascota
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.button1.Location = new System.Drawing.Point(3, 289);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Historial de la Mascota";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnHistorialMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnHistorialMascota.Location = new System.Drawing.Point(3, 289);
+            this.btnHistorialMascota.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnHistorialMascota.Name = "btnHistorialMascota";
+            this.btnHistorialMascota.Size = new System.Drawing.Size(154, 48);
+            this.btnHistorialMascota.TabIndex = 0;
+            this.btnHistorialMascota.Text = "Historial de la Mascota";
+            this.btnHistorialMascota.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnProducto
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.button2.Location = new System.Drawing.Point(3, 228);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 48);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Producto";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnProducto.Location = new System.Drawing.Point(3, 228);
+            this.btnProducto.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(154, 48);
+            this.btnProducto.TabIndex = 0;
+            this.btnProducto.Text = "Producto";
+            this.btnProducto.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCitas
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.button3.Location = new System.Drawing.Point(3, 167);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 48);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Citas";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnCitas.Location = new System.Drawing.Point(3, 167);
+            this.btnCitas.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(154, 48);
+            this.btnCitas.TabIndex = 0;
+            this.btnCitas.Text = "Citas";
+            this.btnCitas.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnUsuario
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.button4.Location = new System.Drawing.Point(3, 106);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 48);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Usuario";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnUsuario.Location = new System.Drawing.Point(3, 106);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(154, 48);
+            this.btnUsuario.TabIndex = 0;
+            this.btnUsuario.Text = "Usuario";
+            this.btnUsuario.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnIngresoNevoEmpleado
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.button5.Location = new System.Drawing.Point(3, 472);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 48);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Ingreso de nuevo empleado";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnIngresoNevoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnIngresoNevoEmpleado.Location = new System.Drawing.Point(3, 472);
+            this.btnIngresoNevoEmpleado.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnIngresoNevoEmpleado.Name = "btnIngresoNevoEmpleado";
+            this.btnIngresoNevoEmpleado.Size = new System.Drawing.Size(154, 48);
+            this.btnIngresoNevoEmpleado.TabIndex = 0;
+            this.btnIngresoNevoEmpleado.Text = "Ingreso de nuevo empleado";
+            this.btnIngresoNevoEmpleado.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnIngresoMascota
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.button6.Location = new System.Drawing.Point(3, 411);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(154, 48);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Ingreso de Mascotas";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnIngresoMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnIngresoMascota.Location = new System.Drawing.Point(3, 411);
+            this.btnIngresoMascota.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnIngresoMascota.Name = "btnIngresoMascota";
+            this.btnIngresoMascota.Size = new System.Drawing.Size(154, 48);
+            this.btnIngresoMascota.TabIndex = 0;
+            this.btnIngresoMascota.Text = "Ingreso de Mascotas";
+            this.btnIngresoMascota.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnRegistroEmpleados
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.button7.Location = new System.Drawing.Point(3, 350);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(154, 48);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Registro de Empleados";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnRegistroEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnRegistroEmpleados.Location = new System.Drawing.Point(3, 350);
+            this.btnRegistroEmpleados.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnRegistroEmpleados.Name = "btnRegistroEmpleados";
+            this.btnRegistroEmpleados.Size = new System.Drawing.Size(154, 48);
+            this.btnRegistroEmpleados.TabIndex = 0;
+            this.btnRegistroEmpleados.Text = "Registro de Empleados";
+            this.btnRegistroEmpleados.UseVisualStyleBackColor = false;
+            this.btnRegistroEmpleados.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox1
             // 
@@ -231,13 +231,13 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnHistorialMascota;
+        private System.Windows.Forms.Button btnProducto;
+        private System.Windows.Forms.Button btnCitas;
+        private System.Windows.Forms.Button btnUsuario;
+        private System.Windows.Forms.Button btnIngresoNevoEmpleado;
+        private System.Windows.Forms.Button btnIngresoMascota;
+        private System.Windows.Forms.Button btnRegistroEmpleados;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
