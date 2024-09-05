@@ -1,28 +1,62 @@
 ﻿using Proyecto.Modelo.DTO;
+
 using System;
+
 using System.Collections.Generic;
+
 using System.Data.SqlClient;
+
 using System.Linq;
+
+using System.Net;
+
 using System.Text;
+
 using System.Threading.Tasks;
+
+using System.Windows.Input;
+
+using System.Data.SqlClient;
 
 namespace Proyecto.Modelo.DAO
 {
-    internal class DAOAgregarMascota:DTOAgregarMascota
+    public class MascotaDAO
     {
-        SqlCommand Command = new SqlCommand();
+        private readonly SqlConnection _connection; 
 
-        public bool AgregarMascota()
+        public MascotaDAO(string connectionString)
+        {
+            _connection = new SqlConnection(connectionString);
+        }
+
+        public int InsertarMascota(ControladorMascota mascota) 
         {
             try
             {
-                Command.Connection = getConnection();
-                int query = "SELECT IdMascota, IdCliente, IdRaza FROM Mascota WHERE IdMascota = @IdMascota AND IdCliente = @IdCliente AND IdRaza = @IdRaza";
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
-                cmd.Parameters.AddWithValue("@IdCliente", IdCliente1);
-                cmd.Parameters.AddWithValue("@IdRaza", IdRaza1);
+                _connection.Open();
 
+                string query = "INSERT INTO Mascotas (Nombre, Raza, Dueño, Peso, Genero, FechaNacimiento) VALUES (@Nombre, @Raza, @Dueño, @Peso, @Genero, @FechaNacimiento)";
+
+                using (SqlCommand command = new SqlCommand(query, _connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre", mascota.Nombre);
+                    command.Parameters.AddWithValue("@Raza", mascota.Raza);
+                    command.Parameters.AddWithValue("@Dueño", mascota.Dueño);
+                    command.Parameters.AddWithValue("@Peso", mascota.Peso);
+                    command.Parameters.AddWithValue("@Genero", mascota.Genero);
+                    command.Parameters.AddWithValue("@FechaNacimiento", mascota.FechaNacimiento);
+
+                    return command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al insertar la mascota: " + ex.Message);
+                return -1; 
+            }
+            finally
+            {
+                _connection.Close(); 
             }
         }
     }

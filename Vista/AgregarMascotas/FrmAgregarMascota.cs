@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Proyecto.Modelo.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto.Modelo.DAO;
 
 namespace Proyecto.Vista.AgregarMascotas
 {
     public partial class FrmAgregarMascota : Form
     {
+        public string Nombre { get; private set; }
+        public string Raza { get; private set; }
+        public string Dueño { get; private set; }
+        public string Peso { get; private set; }
+
         public FrmAgregarMascota()
         {
             InitializeComponent();
@@ -36,5 +44,11 @@ namespace Proyecto.Vista.AgregarMascotas
         {
 
         }
+
+        private void FrmAgregarMascota_Load(object sender, EventArgs e)
+        {
+
+        }
+       
     }
 }
