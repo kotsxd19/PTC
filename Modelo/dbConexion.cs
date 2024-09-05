@@ -13,7 +13,7 @@ namespace Proyecto.Modelo
         {
             try
             {
-                string server = "DESKTOP-70UOOD5\\SQLEXPRESS01";
+                string server = "SQL8020.site4now.net";
                 string database = "dbVetManager";
                 SqlConnection conexion = new SqlConnection("Server =" + server +
                                                                  "; DataBase = " + database +
