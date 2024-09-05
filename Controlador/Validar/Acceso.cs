@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Proyecto.Modelo.DAO;
+using Proyecto.Vista.AgregarUsuarios;
+using Proyecto.Vista.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto.Controlador.Validar
 {
@@ -15,6 +19,6 @@ namespace Proyecto.Controlador.Validar
 
         public static string Usuario { get => usuario; set => usuario = value; }
         public static string Contraseña { get => contraseña; set => contraseña = value; }
-        public static string Nombre { get => nombre; set => nombre = value; }
+        public static string Nombre {get => nombre; set => nombre = value;}
     }
 }

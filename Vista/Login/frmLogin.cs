@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Proyecto.Controlador.Login.controlerLogim;
 
 namespace Proyecto.Vista.Login
 {
@@ -15,6 +16,7 @@ namespace Proyecto.Vista.Login
         public frmLogin()
         {
             InitializeComponent();
+            ControladorLogin control = new ControladorLogin(this);
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -23,6 +25,11 @@ namespace Proyecto.Vista.Login
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }

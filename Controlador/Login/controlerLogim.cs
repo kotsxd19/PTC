@@ -25,6 +25,7 @@ namespace Proyecto.Controlador.Login
             public ControladorLogin(frmLogin Vista)
             {
                 ObjLogin = Vista;
+
                 ObjLogin.btnIngresar.Click += new EventHandler(acceso);
                 ObjLogin.btnCancelar.Click += new EventHandler(QuitarVentana);
 
@@ -50,7 +51,7 @@ namespace Proyecto.Controlador.Login
 
                     DAODATA.Usuario1 = ObjLogin.txtUsuario.Text;
                     string cadenaencriptada = incriptar.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
-                    DAODATA.Contraseña1 = ObjLogin.txtContraseña.Text;
+                    DAODATA.Contraseña1 = cadenaencriptada;
 
                     bool respuesta = DAODATA.Login();
 
