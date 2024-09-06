@@ -63,12 +63,15 @@
     <Compile Include="Vista\AgregarUsuarios\frmAgregarUsuario.Designer.cs">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.Designer.cs">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 1cd14137bb96ac9ee0bdc3af081a3d87592a9d7d
     <Compile Include="Vista\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,9 +90,12 @@
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmAgregarUsuario.resx">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmRegistroUsuario.resx">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 1cd14137bb96ac9ee0bdc3af081a3d87592a9d7d
     <EmbeddedResource Include="Vista\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
