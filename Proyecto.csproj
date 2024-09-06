@@ -69,12 +69,41 @@
     <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.Designer.cs">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Vista\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperacionContraCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperacionContraCorreo.Designer.cs">
+      <DependentUpon>frmRecuperacionContraCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperacioneDeContra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperacioneDeContra.Designer.cs">
+      <DependentUpon>frmRecuperacioneDeContra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperarContraseñaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperarContraseñaAdmin.Designer.cs">
+      <DependentUpon>frmRecuperarContraseñaAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperarContraseñaPreguntas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperarContraseñaPreguntas.Designer.cs">
+      <DependentUpon>frmRecuperarContraseñaPreguntas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperarContraseñaReinicioDirectoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\frmRecuperarContraseñaReinicioDirectoAdmin.Designer.cs">
+      <DependentUpon>frmRecuperarContraseñaReinicioDirectoAdmin.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,7 +120,6 @@
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmRegistroUsuario.resx">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Vista\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

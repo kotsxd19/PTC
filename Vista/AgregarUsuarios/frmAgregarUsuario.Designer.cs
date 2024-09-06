@@ -38,7 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtRoles = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtRoles = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -146,12 +146,31 @@
             this.panel3.Size = new System.Drawing.Size(415, 154);
             this.panel3.TabIndex = 2;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(17, 127);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(16, 72);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(359, 20);
             this.txtContraseña.TabIndex = 3;
+            // 
+            // txtRoles
+            // 
+            this.txtRoles.AutoSize = true;
+            this.txtRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoles.Location = new System.Drawing.Point(17, 104);
+            this.txtRoles.Name = "txtRoles";
+            this.txtRoles.Size = new System.Drawing.Size(50, 20);
+            this.txtRoles.TabIndex = 5;
+            this.txtRoles.Text = "Roles";
+            this.txtRoles.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtNombre
             // 
@@ -188,7 +207,7 @@
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 331);
+            this.panel4.Location = new System.Drawing.Point(0, 330);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(415, 122);
             this.panel4.TabIndex = 3;
@@ -230,35 +249,19 @@
             this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // txtRoles
-            // 
-            this.txtRoles.AutoSize = true;
-            this.txtRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoles.Location = new System.Drawing.Point(17, 104);
-            this.txtRoles.Name = "txtRoles";
-            this.txtRoles.Size = new System.Drawing.Size(50, 20);
-            this.txtRoles.TabIndex = 5;
-            this.txtRoles.Text = "Roles";
-            this.txtRoles.Click += new System.EventHandler(this.label6_Click);
-            // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 453);
+            this.ClientSize = new System.Drawing.Size(415, 452);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAgregarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "frmAgregarUsuario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
