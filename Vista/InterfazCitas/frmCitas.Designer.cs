@@ -45,6 +45,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.MenuCitas = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsEliminarCita = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnActualizarCita = new System.Windows.Forms.Button();
+            this.btnIngresarCita = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,6 +59,8 @@
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.btnIngresarCita);
+            this.panel1.Controls.Add(this.btnActualizarCita);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -68,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 38);
+            this.label1.Location = new System.Drawing.Point(203, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 25);
             this.label1.TabIndex = 0;
@@ -222,6 +226,26 @@
             this.cmsEliminarCita.Size = new System.Drawing.Size(138, 22);
             this.cmsEliminarCita.Text = "EliminarCita";
             // 
+            // btnActualizarCita
+            // 
+            this.btnActualizarCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnActualizarCita.Location = new System.Drawing.Point(702, 38);
+            this.btnActualizarCita.Name = "btnActualizarCita";
+            this.btnActualizarCita.Size = new System.Drawing.Size(83, 34);
+            this.btnActualizarCita.TabIndex = 1;
+            this.btnActualizarCita.Text = "Actualizar";
+            this.btnActualizarCita.UseVisualStyleBackColor = false;
+            // 
+            // btnIngresarCita
+            // 
+            this.btnIngresarCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
+            this.btnIngresarCita.Location = new System.Drawing.Point(808, 38);
+            this.btnIngresarCita.Name = "btnIngresarCita";
+            this.btnIngresarCita.Size = new System.Drawing.Size(83, 34);
+            this.btnIngresarCita.TabIndex = 1;
+            this.btnIngresarCita.Text = "ingresar";
+            this.btnIngresarCita.UseVisualStyleBackColor = false;
+            // 
             // frmCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,19 +274,21 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnHistorialMascota;
-        private System.Windows.Forms.Button btnProducto;
-        private System.Windows.Forms.Button btnCitas;
-        private System.Windows.Forms.Button btnUsuario;
-        private System.Windows.Forms.Button btnIngresoNevoEmpleado;
-        private System.Windows.Forms.Button btnIngresoMascota;
-        private System.Windows.Forms.Button btnRegistroEmpleados;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ContextMenuStrip MenuCitas;
-        private System.Windows.Forms.ToolStripMenuItem cmsEliminarCita;
+        public System.Windows.Forms.DataGridView dgvCitas;
+        public System.Windows.Forms.ContextMenuStrip MenuCitas;
+        public System.Windows.Forms.ToolStripMenuItem cmsEliminarCita;
+        public System.Windows.Forms.Button btnActualizarCita;
+        public System.Windows.Forms.Button btnUsuario;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button btnIngresarCita;
+        public System.Windows.Forms.Button btnHistorialMascota;
+        public System.Windows.Forms.Button btnProducto;
+        public System.Windows.Forms.Button btnCitas;
+        public System.Windows.Forms.Button btnIngresoNevoEmpleado;
+        public System.Windows.Forms.Button btnIngresoMascota;
+        public System.Windows.Forms.Button btnRegistroEmpleados;
     }
 }

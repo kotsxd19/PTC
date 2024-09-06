@@ -20,24 +20,24 @@ namespace Proyecto.Controlador.Citas
             Vista.btnActualizarCita.Click += new EventHandler(ActualizarCita);
             Vista.btnIngresarCita.Click += new EventHandler(IngresarCita);
 
+
             void LlenarDataGridCitas()
             {
                 DAOCitas daoCitas = new DAOCitas();
-                DataSet ds = daoCitas.ObtenerLibros();
-                objVista.dgvCitas.DataSource = ds.Tables["ViewStorageBook"];
+                DataSet ds = daoCitas.ObtenerCitas();
+                objVista.dgvCitas.DataSource = ds.Tables["Citas"];
             }
 
             void EliminarCita(object sender, EventArgs e)
             {
                 int pos = objVista.dgvCitas.CurrentRow.Index;
                 DAOCitas daoDelete = new DAOCitas();
-                daoDelete.IdCitas1 = int.Parse(objVista.dgvCitas[0, pos].Value.ToString());
+                daoDelete.IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString());
                 int retorno = daoDelete.EliminarCita();
                 if (retorno == 1)
                 {
                     MessageBox.Show("La cita seleccionada fue eliminada", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LlenarDataGridCitas()
-                    LimpiarCampos();
+                    LlenarDataGridCitas();
                 }
                 else
                 {
