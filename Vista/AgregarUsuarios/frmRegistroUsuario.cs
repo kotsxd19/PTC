@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto.Vista.AgregarUsuarios
 {
-    public partial class frmReistoUsuario : Form
+    public partial class frmRegistroUsuario : Form
     {
-        public frmReistoUsuario()
+        public frmRegistroUsuario()
         {
             InitializeComponent();
         }

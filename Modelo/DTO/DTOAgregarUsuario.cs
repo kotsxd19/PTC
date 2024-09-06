@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto.Modelo.DTO
 {
-    internal class DTOAgregarUsuario
+    internal class DTOAgregarUsuario : dbConexion
     {
         private int IdEmpleado;
         private string Nombre;

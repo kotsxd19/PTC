@@ -46,11 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\IngresarUsuario\ControllerIngresarUsuario.cs" />
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
+    <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\dbConexion.cs" />
+    <Compile Include="Modelo\DTO\DTOAgregarUsuario.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,11 +63,11 @@
     <Compile Include="Vista\AgregarUsuarios\frmAgregarUsuario.Designer.cs">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\AgregarUsuarios\frmReistoUsuario.cs">
+    <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\AgregarUsuarios\frmReistoUsuario.Designer.cs">
-      <DependentUpon>frmReistoUsuario.cs</DependentUpon>
+    <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.Designer.cs">
+      <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -84,8 +87,8 @@
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmAgregarUsuario.resx">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\AgregarUsuarios\frmReistoUsuario.resx">
-      <DependentUpon>frmReistoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\AgregarUsuarios\frmRegistroUsuario.resx">
+      <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
