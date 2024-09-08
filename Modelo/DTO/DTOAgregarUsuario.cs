@@ -13,7 +13,9 @@ namespace Proyecto.Modelo.DTO
         private string Apellido;
         private DateTime FechaNacimiento;
         private string Usuario;
+        private string CorreoElectronico;
         private string Contraseña;
+        private string Role;
 
         public int IdEmpleado1 { get => IdEmpleado; set => IdEmpleado = value; }
         public string Nombre1 { get => Nombre; set => Nombre = value; }
@@ -21,5 +23,7 @@ namespace Proyecto.Modelo.DTO
         public DateTime FechaNacimiento1 { get => FechaNacimiento; set => FechaNacimiento = value; }
         public string Usuario1 { get => Usuario; set => Usuario = value; }
         public string Contraseña1 { get => Contraseña; set => Contraseña = value; }
+        public string CorreoElectronico1 { get => CorreoElectronico; set => CorreoElectronico = value; }
+        public string Role1 { get => Role; set => Role = value; }
     }
 }

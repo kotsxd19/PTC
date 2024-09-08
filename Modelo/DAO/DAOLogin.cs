@@ -20,7 +20,7 @@ namespace Proyecto.Modelo.DAO
             {
                 using (SqlConnection connection = getConnection())
                 {
-                    string query = "SELECT Usuario, Contraseña, Nombre FROM Empleado WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+                    string query = "SELECT Usuario, Contraseña FROM Empleado WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@Usuario", Usuario1);
@@ -31,7 +31,6 @@ namespace Proyecto.Modelo.DAO
                         {
                             Acceso.Usuario = rd.GetString(rd.GetOrdinal("Usuario"));
                             Acceso.Contraseña = rd.GetString(rd.GetOrdinal("Contraseña"));
-                            Acceso.Nombre = rd.GetString(rd.GetOrdinal("Nombre"));
                         }
                         return rd.HasRows;
                     }
@@ -46,6 +45,32 @@ namespace Proyecto.Modelo.DAO
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+        }
+
+        public int PrimerUso()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT COUNT(*) FROM frmLogin";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                int UsuariosTotal = (int)cmd.ExecuteScalar();
+                return UsuariosTotal;
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show(sqlex.Message);
+                return -1; ;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                getConnection().Close();
             }
         }
     }

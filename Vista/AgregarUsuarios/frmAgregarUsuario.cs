@@ -21,5 +21,10 @@ namespace Proyecto.Vista.AgregarUsuarios
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

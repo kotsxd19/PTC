@@ -14,7 +14,7 @@ namespace Proyecto.Controlador.Login
     internal class controlerLogim
     {
         public class ControladorLogin
-        {
+         {
             frmLogin ObjLogin;
 
             /// <summary>
