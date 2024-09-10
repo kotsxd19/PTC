@@ -12,7 +12,7 @@ namespace Proyecto.Modelo.DAO
 {
     internal class DAOAgregarUsuario : DTOAgregarUsuario
     {
-       readonly SqlCommand command = new SqlCommand();
+        readonly SqlCommand command = new SqlCommand();
 
         public DataSet LlenarComboBox()
         {
@@ -24,7 +24,7 @@ namespace Proyecto.Modelo.DAO
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "dbRoles");
+                adapter.Fill(ds, "Roles");
                 return ds;
             }
             catch (Exception)
@@ -102,7 +102,7 @@ namespace Proyecto.Modelo.DAO
                 //Accedemos a la conexión que ya se tiene
                 command.Connection = getConnection();
                 //Instrucción que se hará hacia la base de datos
-                string query = "SELECT * FROM viewPerson WHERE userStatus = @valor";
+                string query = "SELECT * FROM Empleado WHERE Usuario = @valor";
                 //Comando sql en el cual se pasa la instrucción y la conexión
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 //Asignando valor al parametro
@@ -115,7 +115,7 @@ namespace Proyecto.Modelo.DAO
                 //Se crea un objeto Dataset que es donde se devolverán los resultados
                 DataSet ds = new DataSet();
                 //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
-                adp.Fill(ds, "viewPerson");
+                adp.Fill(ds, "Emplado");
                 //Devolvemos el Dataset
                 return ds;
             }
@@ -220,6 +220,40 @@ namespace Proyecto.Modelo.DAO
             {
                 //Se retorna -1 en caso que en el segmento del try haya ocurrido algún error.
                 return -1;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
+            }
+        }
+
+        public DataSet BuscarPersonas(string valor)
+        {
+            try
+            {
+                //Accedemos a la conexión que ya se tiene
+                command.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = $"SELECT * FROM Empleados WHERE Nombres LIKE '%{valor}%' OR Usuario LIKE '%{valor}%' OR [Rol de acceso] LIKE '%{valor}%'";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "Empelado");
+                //Devolvemos el Dataset
+                return ds;
+            }
+            catch (Exception)
+            {
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
             }
             finally
             {

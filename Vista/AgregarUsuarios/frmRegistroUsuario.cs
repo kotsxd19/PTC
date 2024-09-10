@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.IngresarUsuario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Proyecto.Vista.AgregarUsuarios
         public frmRegistroUsuario()
         {
             InitializeComponent();
+            ControllerVistaAgregarEmpleado ctrl = new ControllerVistaAgregarEmpleado(this);
+        }
+
+        private void frmRegistroUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

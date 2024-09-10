@@ -28,31 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtBuscador = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnRecargar = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnRecargar);
+            this.panel1.Controls.Add(this.btnNuevoEmpleado);
+            this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(877, 94);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnNuevoEmpleado
+            // 
+            this.btnNuevoEmpleado.Location = new System.Drawing.Point(746, 34);
+            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
+            this.btnNuevoEmpleado.Size = new System.Drawing.Size(119, 34);
+            this.btnNuevoEmpleado.TabIndex = 8;
+            this.btnNuevoEmpleado.Text = "Ingresar";
+            this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(610, 34);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(119, 34);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "Acualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -65,20 +95,54 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.btnBuscar);
+            this.panel4.Controls.Add(this.txtBuscador);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(194, 94);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(683, 60);
             this.panel4.TabIndex = 4;
             // 
+            // txtBuscador
+            // 
+            this.txtBuscador.Location = new System.Drawing.Point(6, 20);
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(572, 20);
+            this.txtBuscador.TabIndex = 0;
+            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.dgvEmpleados);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(194, 154);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(683, 409);
             this.panel3.TabIndex = 6;
+            // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Location = new System.Drawing.Point(6, 6);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.Size = new System.Drawing.Size(674, 400);
+            this.dgvEmpleados.TabIndex = 0;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Location = new System.Drawing.Point(534, 34);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(58, 34);
+            this.btnRecargar.TabIndex = 9;
+            this.btnRecargar.Text = "recargar";
+            this.btnRecargar.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsEliminar,
+            this.cmsFicha});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 48);
             // 
             // pictureBox1
             // 
@@ -90,32 +154,30 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // cmsEliminar
             // 
-            this.button1.Location = new System.Drawing.Point(610, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 34);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Acualizar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmsEliminar.Image = global::Proyecto.Properties.Resources.x;
+            this.cmsEliminar.Name = "cmsEliminar";
+            this.cmsEliminar.Size = new System.Drawing.Size(173, 22);
+            this.cmsEliminar.Text = "Eliminar Empleado";
             // 
-            // button2
+            // cmsFicha
             // 
-            this.button2.Location = new System.Drawing.Point(746, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 34);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Ingresar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmsFicha.Image = global::Proyecto.Properties.Resources.ficha;
+            this.cmsFicha.Name = "cmsFicha";
+            this.cmsFicha.Size = new System.Drawing.Size(173, 22);
+            this.cmsFicha.Text = "Ver ficha";
             // 
-            // textBox1
+            // btnBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(665, 20);
-            this.textBox1.TabIndex = 0;
+            this.btnBuscar.Location = new System.Drawing.Point(584, 18);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(87, 23);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // frmReistoUsuario
+            // frmRegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -124,11 +186,15 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Name = "frmReistoUsuario";
+            this.Name = "frmRegistroUsuario";
             this.Text = "frmReistoUsuario";
+            this.Load += new System.EventHandler(this.frmRegistroUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -141,8 +207,14 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button btnNuevoEmpleado;
+        public System.Windows.Forms.Button btnActualizar;
+        public System.Windows.Forms.DataGridView dgvEmpleados;
+        public System.Windows.Forms.Button btnRecargar;
+        public System.Windows.Forms.TextBox txtBuscador;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem cmsEliminar;
+        public System.Windows.Forms.ToolStripMenuItem cmsFicha;
+        public System.Windows.Forms.Button btnBuscar;
     }
 }

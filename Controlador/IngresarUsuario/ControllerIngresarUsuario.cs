@@ -1,4 +1,6 @@
-﻿using Proyecto.Vista.AgregarUsuarios;
+﻿using Proyecto.Controlador.Validar;
+using Proyecto.Modelo.DAO;
+using Proyecto.Vista.AgregarUsuarios;
 using Proyecto.Vista.Login;
 using System;
 using System.Collections.Generic;
@@ -13,57 +15,51 @@ namespace Proyecto.Controlador.IngresarUsuario
     internal class ControllerIngresarUsuario
     {
         frmAgregarUsuario ObjAgregarUsuario;
-        private RowNotInTableException accion;
-        public ControllerIngresarUsuario(frmLogin Vista, int accion)
+        private int accion;
+        private string role;
+
+        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int accion)
         {
             //Acciones iniciales
             ObjAgregarUsuario = Vista;
             this.accion = accion;
             //Métodos iniciales: estos metodos se ejecutan cuando el formulario está cargando
             verificarAccion();
-            ObjAddUser.Load += new EventHandler(InitialCharge);
+            ObjAgregarUsuario.Load += new EventHandler(CargaInicial);
 
             //Métodos que se ejecutan al ocurrir eventos
-            ObjAddUser.btnAdd.Click += new EventHandler(NewRegister);
-            ObjAddUser.btnReporteFicha.Visible = false;
+            ObjAgregarUsuario.btnIngresar.Click += new EventHandler(NuevoRegistro);
         }
 
-        public ControllerAdduser(ViewAddUser Vista, int p_accion, int id, string firstName, string lastName, DateTime birthday, string dni, string address, string email, string phone, string username, string role)
+        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int p_accion, int id, string firstName, string lastName, DateTime birthday, string email,string username, string role)
         {
             //Acciones iniciales
-            ObjAddUser = Vista;
+            ObjAgregarUsuario = Vista;
             //Se guarda en la variable acción en vaor
             this.accion = p_accion;
             this.role = role;
             //Métodos iniciales: estos metodos se ejecutan cuando el formulario está cargando
-            ObjAddUser.Load += new EventHandler(InitialCharge);
+            ObjAgregarUsuario.Load += new EventHandler(CargaInicial);
             verificarAccion();
-            ChargeValues(id, firstName, lastName, birthday, dni, address, email, phone, username);
+            CambiarValores(id, firstName, lastName, birthday, email, username);
             //Métodos que se ejecutan al ocurrir eventos
-            ObjAddUser.btnUpdate.Click += new EventHandler(UpdateRegister);
-            ObjAddUser.btnReporteFicha.Click += new EventHandler(AbriFormularioReporte);
+            ObjAgregarUsuario.btnActualizar.Click += new EventHandler(ActualizarDatos);
         }
 
-        void AbriFormularioReporte(object sender, EventArgs e)
-        {
-            ViewReportSiglePerson openForm = new ViewReportSiglePerson(int.Parse(ObjAddUser.txtId.Text.Trim()));
-            openForm.ShowDialog();
-        }
-
-        public void InitialCharge(object sender, EventArgs e)
+        public void CargaInicial(object sender, EventArgs e)
         {
             //Objeto de la clase DAOAdminUsuarios
-            DAOAdminUsers objAdmin = new DAOAdminUsers();
+            DAOAgregarUsuario objAdmin = new DAOAgregarUsuario();
             //Declarando nuevo DataSet para que obtenga los datos del metodo LlenarCombo
-            DataSet ds = objAdmin.LlenarCombo();
+            DataSet ds = objAdmin.LlenarComboBox();
             //Llenar combobox tbRole
-            ObjAddUser.comboRole.DataSource = ds.Tables["tbRole"];
-            ObjAddUser.comboRole.ValueMember = "roleId";
-            ObjAddUser.comboRole.DisplayMember = "roleName";
+            ObjAgregarUsuario.cmbRoles.DataSource = ds.Tables["Roles"];
+            ObjAgregarUsuario.cmbRoles.ValueMember = "IdRoles";
+            ObjAgregarUsuario.cmbRoles.DisplayMember = "Roles";
             //La condición sirve para que al actualizar un registro, el valor del registro aparezca seleccionado.
             if (accion == 2)
             {
-                ObjAddUser.comboRole.Text = role;
+                ObjAgregarUsuario.cmbRoles.Text = role;
             }
         }
 
@@ -76,77 +72,61 @@ namespace Proyecto.Controlador.IngresarUsuario
 
             if (accion == 1)
             {
-                ObjAddUser.btnAdd.Enabled = true;
-                ObjAddUser.btnUpdate.Enabled = false;
-                ObjAddUser.btnRestablecer.Enabled = false;
-                ObjAddUser.btnReporteFicha.Visible = false;
+                ObjAgregarUsuario.btnIngresar.Enabled = true;
+                ObjAgregarUsuario.btnActualizar.Enabled = false;
+                ObjAgregarUsuario.btnCancelar.Enabled = false;
             }
             else if (accion == 2)
             {
-                ObjAddUser.btnAdd.Enabled = false;
-                ObjAddUser.btnUpdate.Enabled = true;
-                ObjAddUser.txtUsername.Enabled = false;
-                ObjAddUser.btnReporteFicha.Visible = false;
+                ObjAgregarUsuario.btnIngresar.Enabled = false;
+                ObjAgregarUsuario.btnActualizar.Enabled = true;
+                ObjAgregarUsuario.txtUsuario.Enabled = false;
             }
             else if (accion == 3)
             {
-                ObjAddUser.btnReporteFicha.Visible = true;
-                ObjAddUser.btnAdd.Enabled = false;
-                ObjAddUser.btnUpdate.Enabled = false;
-                ObjAddUser.txtFirstName.Enabled = false;
-                ObjAddUser.txtLastName.Enabled = false;
-                ObjAddUser.txtEmail.Enabled = false;
-                ObjAddUser.dtBirth.Enabled = false;
-                ObjAddUser.mskDocument.Enabled = false;
-                ObjAddUser.txtAddress.Enabled = false;
-                ObjAddUser.txtPhone.Enabled = false;
-                ObjAddUser.txtUsername.Enabled = false;
-                ObjAddUser.comboRole.Enabled = false;
-                ObjAddUser.btnRestablecer.Enabled = false;
+                ObjAgregarUsuario.btnIngresar.Enabled = false;
+                ObjAgregarUsuario.btnActualizar.Enabled = false;
+                ObjAgregarUsuario.txtNombre.Enabled = false;
+                ObjAgregarUsuario.txtApellido.Enabled = false;
+                ObjAgregarUsuario.txtCorreo.Enabled = false;
+                ObjAgregarUsuario.dtpNacimiento.Enabled = false;
+                ObjAgregarUsuario.txtUsuario.Enabled = false;
+                ObjAgregarUsuario.cmbRoles.Enabled = false;
             }
         }
 
-        public void NewRegister(object sender, EventArgs e)
+        public void NuevoRegistro(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(ObjAddUser.txtFirstName.Text.Trim()) ||
-                string.IsNullOrEmpty(ObjAddUser.txtLastName.Text.Trim()) ||
-                string.IsNullOrEmpty(ObjAddUser.mskDocument.Text) ||
-                string.IsNullOrEmpty(ObjAddUser.txtAddress.Text.Trim()) ||
-                string.IsNullOrEmpty(ObjAddUser.txtEmail.Text.Trim()) ||
-                string.IsNullOrEmpty(ObjAddUser.txtPhone.Text.Trim()) ||
-                string.IsNullOrEmpty(ObjAddUser.txtUsername.Text.Trim())))
+            if (!(string.IsNullOrEmpty(ObjAgregarUsuario.txtNombre.Text.Trim()) ||
+                string.IsNullOrEmpty(ObjAgregarUsuario.txtApellido.Text.Trim()) ||
+                string.IsNullOrEmpty(ObjAgregarUsuario.txtCorreo.Text.Trim()) ||
+                string.IsNullOrEmpty(ObjAgregarUsuario.txtUsuario.Text.Trim())))
             {
                 //Se crea una instancia de la clase DAOAdminUsers llamada DAOInsert
-                DAOAdminUsers DAOInsert = new DAOAdminUsers();
-                CommonClasses commonClasses = new CommonClasses();
+                DAOAgregarUsuario DAOInsert = new DAOAgregarUsuario();
+                Incriptar commonClasses = new Incriptar();
                 //Datos para creación de persona
-                DAOInsert.FirstName = ObjAddUser.txtFirstName.Text.Trim();
-                DAOInsert.LastName = ObjAddUser.txtLastName.Text.Trim();
-                DAOInsert.Birthday = ObjAddUser.dtBirth.Value.Date;
-                DAOInsert.Dni = ObjAddUser.mskDocument.Text;
-                DAOInsert.PersonAddress = ObjAddUser.txtAddress.Text.Trim();
-                DAOInsert.PersonEmail = ObjAddUser.txtEmail.Text.Trim();
-                DAOInsert.PersonPhone = ObjAddUser.txtPhone.Text.Trim();
+                DAOInsert.Nombre1 = ObjAgregarUsuario.txtNombre.Text.Trim();
+                DAOInsert.Apellido1 = ObjAgregarUsuario.txtApellido.Text.Trim();
+                DAOInsert.FechaNacimiento1 = ObjAgregarUsuario.dtpNacimiento.Value.Date;
                 //Datos para creación de usuario
-                DAOInsert.User = ObjAddUser.txtUsername.Text.Trim();
-                DAOInsert.Password = commonClasses.ComputeSha256Hash(ObjAddUser.txtUsername.Text.Trim() + "PU123");
-                DAOInsert.UserStatus = true;
-                DAOInsert.UserAttempts = 0;
-                DAOInsert.Role = int.Parse(ObjAddUser.comboRole.SelectedValue.ToString());
+                DAOInsert.Usuario1 = ObjAgregarUsuario.txtUsuario.Text.Trim();
+                DAOInsert.Contraseña1 = commonClasses.ComputeSha256Hash(ObjAgregarUsuario.txtUsuario.Text.Trim() + "PU123");
+                DAOInsert.Role1 = (ObjAgregarUsuario.cmbRoles.SelectedValue.ToString());
                 //Se invoca al método RegistrarUsuario mediante el objeto DAOInsert
-                int valorRetornado = DAOInsert.RegistrarUsuario();
+                int valorRetornado = DAOInsert.RegistarEmpleados();
                 //Se verifica el valor que retornó el metodo anterior y que fue almacenado en la variable valorRetornado
                 if (valorRetornado == 1)
                 {
                     //SavePhoto();       
-                    MessageBox.Show("Los datos han sido registrados exitosamente",
+                    MessageBox.Show("Los datos ingresados han sido registrados exitosamente",
                                     "Proceso completado",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no pudieron ser registrados",
+                    MessageBox.Show("Los datos que ingreso no pudieron ser registrados correctamente",
                                     "Proceso interrumpido",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
@@ -161,20 +141,17 @@ namespace Proyecto.Controlador.IngresarUsuario
             }
         }
 
-        public void UpdateRegister(object sender, EventArgs e)
+        public void ActualizarDatos(object sender, EventArgs e)
         {
-            DAOAdminUsers daoUpdate = new DAOAdminUsers();
-            daoUpdate.PersonId = int.Parse(ObjAddUser.txtId.Text.Trim());
-            daoUpdate.FirstName = ObjAddUser.txtFirstName.Text.Trim();
-            daoUpdate.LastName = ObjAddUser.txtLastName.Text.Trim();
-            daoUpdate.Birthday = ObjAddUser.dtBirth.Value;
-            daoUpdate.Dni = ObjAddUser.mskDocument.Text.Trim();
-            daoUpdate.PersonAddress = ObjAddUser.txtAddress.Text.Trim();
-            daoUpdate.PersonEmail = ObjAddUser.txtEmail.Text.Trim();
-            daoUpdate.PersonPhone = ObjAddUser.txtPhone.Text.Trim();
-            daoUpdate.Role = (int)ObjAddUser.comboRole.SelectedValue;
-            daoUpdate.User = ObjAddUser.txtUsername.Text.Trim();
-            int valorRetornado = daoUpdate.ActualizarUsuario();
+            DAOAgregarUsuario daoUpdate = new DAOAgregarUsuario();
+            daoUpdate.IdEmpleado1 = int.Parse(ObjAgregarUsuario.txtId.Text.Trim());
+            daoUpdate.Nombre1 = ObjAgregarUsuario.txtNombre.Text.Trim();
+            daoUpdate.Apellido1 = ObjAgregarUsuario.txtApellido.Text.Trim();
+            daoUpdate.FechaNacimiento1 = ObjAgregarUsuario.dtpNacimiento.Value;
+            daoUpdate.CorreoElectronico1 = ObjAgregarUsuario.txtCorreo.Text.Trim();
+            daoUpdate.Role1 = (string)ObjAgregarUsuario.cmbRoles.SelectedValue;
+            daoUpdate.Usuario1 = ObjAgregarUsuario.txtUsuario.Text.Trim();
+            int valorRetornado = daoUpdate.ActualizarEmpleados();
             if (valorRetornado == 2)
             {
                 MessageBox.Show("Los datos han sido actualizado exitosamente",
@@ -198,24 +175,21 @@ namespace Proyecto.Controlador.IngresarUsuario
             }
         }
 
-        public void ChargeValues(int id, string firstName, string lastName, DateTime birthday, string dni, string address, string email, string phone, string username)
+        public void CambiarValores(int id, string firstName, string lastName, DateTime birthday, string dni, string address, string email, string phone, string username)
         {
             try
             {
-                ObjAddUser.txtId.Text = id.ToString();
-                ObjAddUser.txtFirstName.Text = firstName;
-                ObjAddUser.txtLastName.Text = lastName;
-                ObjAddUser.dtBirth.Value = birthday;
-                ObjAddUser.mskDocument.Text = dni;
-                ObjAddUser.txtAddress.Text = address;
-                ObjAddUser.txtEmail.Text = email;
-                ObjAddUser.txtPhone.Text = phone;
-                ObjAddUser.txtUsername.Text = username;
+                ObjAgregarUsuario.txtId.Text = id.ToString();
+                ObjAgregarUsuario.txtNombre.Text = firstName;
+                ObjAgregarUsuario.txtApellido.Text = lastName;
+                ObjAgregarUsuario.dtpNacimiento.Value = birthday;
+                ObjAgregarUsuario.txtCorreo.Text = email;
+                ObjAgregarUsuario.txtUsuario.Text = username;
 
                 //Carga sobre Label
-                ObjAddUser.LblNombre.Text = firstName;
-                ObjAddUser.LblApellidos.Text = lastName;
-                ObjAddUser.LblUsuario.Text = username;
+                ObjAgregarUsuario.LblNombre.Text = firstName;
+                ObjAgregarUsuario.LblApellido.Text = lastName;
+                ObjAgregarUsuario.LblUsuario.Text = username;
             }
             catch (Exception ex)
             {
