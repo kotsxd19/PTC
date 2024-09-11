@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto.Vista.Login;
+using Proyecto.Vista.Propietario;
 
 namespace Proyecto
 {
@@ -17,7 +18,7 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new Propietario());
         }
     }
 }
