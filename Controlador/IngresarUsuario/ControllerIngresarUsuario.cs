@@ -18,7 +18,7 @@ namespace Proyecto.Controlador.IngresarUsuario
         private int accion;
         private string role;
 
-        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int accion)
+        public ControllerIngresarUsuario(frmAgregarUsuario Vista)
         {
             //Acciones iniciales
             ObjAgregarUsuario = Vista;
@@ -31,7 +31,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             ObjAgregarUsuario.btnIngresar.Click += new EventHandler(NuevoRegistro);
         }
 
-        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int p_accion, int id, string firstName, string lastName, DateTime birthday, string email,string username, string role)
+        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int p_accion, int id, int IdRole, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario, string role)
         {
             //Acciones iniciales
             ObjAgregarUsuario = Vista;
@@ -41,7 +41,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             //Métodos iniciales: estos metodos se ejecutan cuando el formulario está cargando
             ObjAgregarUsuario.Load += new EventHandler(CargaInicial);
             verificarAccion();
-            CambiarValores(id, firstName, lastName, birthday, email, username);
+            CambiarValores(id,IdRole, Nombre, Apellido, FechaNacimient, CorreoEmpleado, Usuario);
             //Métodos que se ejecutan al ocurrir eventos
             ObjAgregarUsuario.btnActualizar.Click += new EventHandler(ActualizarDatos);
         }
@@ -52,11 +52,10 @@ namespace Proyecto.Controlador.IngresarUsuario
             DAOAgregarUsuario objAdmin = new DAOAgregarUsuario();
             //Declarando nuevo DataSet para que obtenga los datos del metodo LlenarCombo
             DataSet ds = objAdmin.LlenarComboBox();
-            //Llenar combobox tbRole
-            ObjAgregarUsuario.cmbRoles.DataSource = ds.Tables["Roles"];
+            DataTable dataTable = ds.Tables["Roles"];
+            ObjAgregarUsuario.cmbRoles.DataSource = dataTable;
             ObjAgregarUsuario.cmbRoles.ValueMember = "IdRoles";
             ObjAgregarUsuario.cmbRoles.DisplayMember = "Roles";
-            //La condición sirve para que al actualizar un registro, el valor del registro aparezca seleccionado.
             if (accion == 2)
             {
                 ObjAgregarUsuario.cmbRoles.Text = role;
@@ -65,10 +64,6 @@ namespace Proyecto.Controlador.IngresarUsuario
 
         public void verificarAccion()
         {
-            ///Se verifica la acción a realizar
-            ///1. Inserción de datos
-            ///2. Actualización de datos
-            ///3. Visualizar ficha del empleado
 
             if (accion == 1)
             {
@@ -175,21 +170,22 @@ namespace Proyecto.Controlador.IngresarUsuario
             }
         }
 
-        public void CambiarValores(int id, string firstName, string lastName, DateTime birthday, string dni, string address, string email, string phone, string username)
+        public void CambiarValores(int id,int IdRole, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado,string Usuario)
         {
             try
             {
                 ObjAgregarUsuario.txtId.Text = id.ToString();
-                ObjAgregarUsuario.txtNombre.Text = firstName;
-                ObjAgregarUsuario.txtApellido.Text = lastName;
-                ObjAgregarUsuario.dtpNacimiento.Value = birthday;
-                ObjAgregarUsuario.txtCorreo.Text = email;
-                ObjAgregarUsuario.txtUsuario.Text = username;
+                ObjAgregarUsuario.cmbRoles.Text = IdRole.ToString();
+                ObjAgregarUsuario.txtNombre.Text = Nombre;
+                ObjAgregarUsuario.txtApellido.Text = Apellido;
+                ObjAgregarUsuario.dtpNacimiento.Value = FechaNacimient;
+                ObjAgregarUsuario.txtCorreo.Text = CorreoEmpleado;
+                ObjAgregarUsuario.txtUsuario.Text = Usuario;
 
                 //Carga sobre Label
-                ObjAgregarUsuario.LblNombre.Text = firstName;
-                ObjAgregarUsuario.LblApellido.Text = lastName;
-                ObjAgregarUsuario.LblUsuario.Text = username;
+                ObjAgregarUsuario.LblNombre.Text = Nombre;
+                ObjAgregarUsuario.LblApellido.Text = Apellido;
+                ObjAgregarUsuario.LblUsuario.Text = Usuario;
             }
             catch (Exception ex)
             {
