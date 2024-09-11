@@ -52,8 +52,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             DAOAgregarUsuario objAdmin = new DAOAgregarUsuario();
             //Declarando nuevo DataSet para que obtenga los datos del metodo LlenarCombo
             DataSet ds = objAdmin.LlenarComboBox();
-            DataTable dataTable = ds.Tables["Roles"];
-            ObjAgregarUsuario.cmbRoles.DataSource = dataTable;
+            ObjAgregarUsuario.cmbRoles.DataSource = ds.Tables["Roles"];
             ObjAgregarUsuario.cmbRoles.ValueMember = "IdRoles";
             ObjAgregarUsuario.cmbRoles.DisplayMember = "Roles";
             if (accion == 2)
