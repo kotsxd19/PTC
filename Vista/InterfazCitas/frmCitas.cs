@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Citas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,15 +12,20 @@ using System.Windows.Forms;
 namespace Proyecto.Vista.InterfazCitas
 {
     public partial class frmCitas : Form
+
     {
         public frmCitas()
         {
             InitializeComponent();
+            // Crear una instancia del controlador y pasar la vista actual
+            ControllerCitas controller = new ControllerCitas(this);
         }
 
         private void frmCitas_Load(object sender, EventArgs e)
         {
-
+            // También puedes llenar el DataGrid aquí si no lo hiciste en el constructor
+            ControllerCitas controller = new ControllerCitas(this);
+            controller.LlenarDataGridInfoCitas();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -48,6 +54,21 @@ namespace Proyecto.Vista.InterfazCitas
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuCitas_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btnIngresarCita_Click(object sender, EventArgs e)
         {
 
         }

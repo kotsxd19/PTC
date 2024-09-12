@@ -50,5 +50,10 @@ namespace Proyecto.Modelo.DAO
                 Command.Connection.Close();
             }
         }
+
+        private SqlConnection getConnection()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

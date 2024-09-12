@@ -13,14 +13,14 @@ namespace Proyecto.Modelo
         {
             try
             {
-                string server = "DESKTOP-70UOOD5\\SQLEXPRESS01";
+                //DESKTOP-70UOOD5
+                string server = "DESKTOP-AS08M5R\\SQLEXPRESS01";
                 string database = "dbVetManager";
                 SqlConnection conexion = new SqlConnection("Server =" + server +
                                                                  "; DataBase = " + database +
                                                                  "; Integrated Security = true");
                 conexion.Open();
                 return conexion;
-
 
             }
             catch (Exception)

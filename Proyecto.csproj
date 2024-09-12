@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -50,9 +50,12 @@
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
+    <Compile Include="Modelo\DAO\Cita.cs" />
     <Compile Include="Modelo\DAO\DAOCitas.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
-    <Compile Include="Modelo\dbConexion.cs" />
+    <DesignData Include="Modelo\dbConexion.cs" />
+    <Compile Include="Modelo\DAO\fCita.cs" />
+    <Compile Include="Modelo\DTO\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOCitas.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Program.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmAgregarUsuario.resx">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
@@ -115,6 +119,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
