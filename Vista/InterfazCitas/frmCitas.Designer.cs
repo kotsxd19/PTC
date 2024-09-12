@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarCita = new System.Windows.Forms.Button();
             this.btnIngresarCita = new System.Windows.Forms.Button();
             this.btnEditarCita = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.btnEliminarCita = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +80,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1413, 116);
             this.panel1.TabIndex = 0;
+            // 
+            // btnEliminarCita
+            // 
+            this.btnEliminarCita.BackColor = System.Drawing.Color.White;
+            this.btnEliminarCita.Location = new System.Drawing.Point(1233, 46);
+            this.btnEliminarCita.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarCita.Name = "btnEliminarCita";
+            this.btnEliminarCita.Size = new System.Drawing.Size(131, 42);
+            this.btnEliminarCita.TabIndex = 2;
+            this.btnEliminarCita.Text = "Eliminar Cita";
+            this.btnEliminarCita.UseVisualStyleBackColor = false;
             // 
             // btnIngresarCita
             // 
@@ -314,7 +325,7 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(991, 208);
+            this.dtpFecha.Location = new System.Drawing.Point(1019, 209);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 22);
             this.dtpFecha.TabIndex = 15;
@@ -340,7 +351,7 @@
             // 
             // dtpHora
             // 
-            this.dtpHora.Location = new System.Drawing.Point(983, 269);
+            this.dtpHora.Location = new System.Drawing.Point(1019, 269);
             this.dtpHora.Name = "dtpHora";
             this.dtpHora.Size = new System.Drawing.Size(200, 22);
             this.dtpHora.TabIndex = 19;
@@ -357,17 +368,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(1201, 654);
             this.dgvCitas.TabIndex = 2;
             this.dgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnEliminarCita
-            // 
-            this.btnEliminarCita.BackColor = System.Drawing.Color.White;
-            this.btnEliminarCita.Location = new System.Drawing.Point(1233, 46);
-            this.btnEliminarCita.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminarCita.Name = "btnEliminarCita";
-            this.btnEliminarCita.Size = new System.Drawing.Size(131, 42);
-            this.btnEliminarCita.TabIndex = 2;
-            this.btnEliminarCita.Text = "Eliminar Cita";
-            this.btnEliminarCita.UseVisualStyleBackColor = false;
             // 
             // frmCitas
             // 
