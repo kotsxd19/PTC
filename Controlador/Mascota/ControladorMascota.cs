@@ -1,68 +1,43 @@
-﻿using Proyecto.Modelo.DAO;
-using Proyecto.Modelo.DTO;
-using Proyecto.Vista.AgregarMascotas;
+﻿using Proyecto.Vista.AgregarMascotas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 using Proyecto.Modelo.DAO;
-
-public class ControladorMascota
+using Proyecto.Modelo.DTO;
+namespace Proyecto.Controlador.Mascota
 {
-    
-    private readonly Proyecto.Modelo.DAO.MascotaDAO mascotaDAO;
-    private object _mascotaDAO;
-
-    public string Nombre { get; private set; }
-    public string Raza { get; private set; }
-    public string Dueño { get; private set; }
-    public double Peso { get; private set; }
-    public string Genero { get; private set; }
-    public DateTime FechaNacimiento { get; private set; }
-
-    public ControladorMascota()
+    internal class AgregarMascotaController
     {
-      
-    }
-
-    public void AgregarMascota(FrmAgregarMascota form)
-    {
-        ControladorMascota mascota = new ControladorMascota();
+        FrmAgregarMascota ObjMascota;
+        //Eventos
+        public AgregarMascotaController(FrmAgregarMascota vista)
         {
-            Nombre = form.txtNombre.Text;
-            Raza = form.txtRaza.Text;
-            Dueño = form.txtDueño.Text;
-            Peso = Convert.ToDouble(form.txtPeso.Text);
-            Genero = form.cmbGenero.SelectedItem.ToString();
-            FechaNacimiento = form.dtpFechaNacimiento.Value;
-        };
-
-        int filasAfectadas = _mascotaDAO.GuardarMascota(mascota);
-
-        if (filasAfectadas > 0)
-        {
-            MessageBox.Show("Mascota agregada correctamente");
-            
-            form.txtNombre.Text = "";
-           
+            ObjMascota = vista;
+            vista.txtDueño.KeyPress += new KeyPressEventHandler(SoloLetras);
+            vista.txtNombre.KeyPress += new KeyPressEventHandler(SoloLetras);
+            vista.txtRaza.KeyPress += new KeyPressEventHandler(SoloLetras);
+            vista.txtPeso.KeyPress += new KeyPressEventHandler(SoloNumeros);
         }
-        else
+        //solo letras
+        private void SoloLetras(object sender, KeyPressEventArgs e)
         {
-            MessageBox.Show("Error al agregar la mascota");
+            // Permitir solo letras y un único espacio
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+        //solo numeros
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y la tecla de retroceso
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
-
-    public void ModificarMascota(FrmAgregarMascota form)
-    {
-       
-    }
-
-    public void EliminarMascota(int idMascota)
-    {
-       
-    }
-
-    
 }

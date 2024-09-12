@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto.Vista.AgregarMascotas;
 using Proyecto.Vista.Login;
+using Proyecto.Vista.Raza;
 
 namespace Proyecto
 {
@@ -18,7 +19,7 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAgregarMascota());
+            Application.Run(new FrmRaza());
         }
     }
 }

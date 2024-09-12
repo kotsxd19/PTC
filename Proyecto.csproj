@@ -87,6 +87,24 @@
     <Compile Include="Vista\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Raza\FrmRaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Raza\FrmRaza.Designer.cs">
+      <DependentUpon>FrmRaza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Raza\Gatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Raza\Gatos.Designer.cs">
+      <DependentUpon>Gatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Raza\Perros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Raza\Perros.Designer.cs">
+      <DependentUpon>Perros.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -110,6 +128,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Raza\FrmRaza.resx">
+      <DependentUpon>FrmRaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Raza\Gatos.resx">
+      <DependentUpon>Gatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Raza\Perros.resx">
+      <DependentUpon>Perros.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
