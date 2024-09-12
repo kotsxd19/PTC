@@ -56,14 +56,13 @@ namespace Proyecto.Modelo.DAO
 
                 if (repuesta == 1)
                 {
-                    string query = "INSERT INTO Empleado(Nombre, Apellido, FechaNacimient, CorreoEmpleado) VALUES (@param1, @param2, @param3, @param4)";
+                    string query = "INSERT INTO Empleado (Nombre, Apellido, FechaNacimient, CorreoEmpleado, Usuario) VALUES (@param1, @param2, @param3, @param4, @param5)";
                     SqlCommand cmd = new SqlCommand(query, command.Connection);
                     cmd.Parameters.AddWithValue("param1", Nombre1);
                     cmd.Parameters.AddWithValue("param2", Apellido1);
                     cmd.Parameters.AddWithValue("param3", FechaNacimiento1);
                     cmd.Parameters.AddWithValue("param4", CorreoElectronico1);
                     cmd.Parameters.AddWithValue("param5", Usuario1);
-                    cmd.Parameters.AddWithValue("param6", Contraseña1);
 
                     repuesta = cmd.ExecuteNonQuery();
 
@@ -71,6 +70,7 @@ namespace Proyecto.Modelo.DAO
                 }
                 else
                 {
+                    RollBack();
                     return 0;
                 }
             }
@@ -99,34 +99,23 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
-                //Accedemos a la conexión que ya se tiene
                 command.Connection = getConnection();
-                //Instrucción que se hará hacia la base de datos
                 string query = "SELECT * FROM Empleado WHERE Usuario = @valor";
-                //Comando sql en el cual se pasa la instrucción y la conexión
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                //Asignando valor al parametro
                 cmd.Parameters.AddWithValue("valor", true);
-                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
-                //ExecuteNonQuery devuelve un valor entero.
                 cmd.ExecuteNonQuery();
-                //Se utiliza un adaptador sql para rellenar el dataset
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                //Se crea un objeto Dataset que es donde se devolverán los resultados
                 DataSet ds = new DataSet();
-                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
-                adp.Fill(ds, "Emplado");
-                //Devolvemos el Dataset
+                adp.Fill(ds, "Empleado");
                 return ds;
             }
             catch (Exception)
             {
-                //Retornamos null si existiera algún error durante la ejecución
                 return null;
             }
             finally
             {
-                //Independientemente se haga o no el proceso cerramos la conexión
+
                 getConnection().Close();
             }
         }

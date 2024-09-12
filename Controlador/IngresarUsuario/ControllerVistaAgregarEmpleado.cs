@@ -33,21 +33,18 @@ namespace Proyecto.Controlador.IngresarUsuario
             RefrescarData();
         }
 
-        //DataGridView
         public void RefrescarData()
         {
-            //Objeto de la clase DAOAdminUsuarios
             DAOAgregarUsuario objAdmin = new DAOAgregarUsuario();
             DataSet ds = new DataSet();
 
             if (ObjAdminUser.btnRecargar.Focused)
             {
-                //Declarando nuevo DataSet para que obtenga los datos del metodo ObtenerPersonas
                 ds = objAdmin.ObtenerPersonas();
 
 
             }
-            ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["Empleados"];
+            ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["Empleado"];
             ObjAdminUser.dgvEmpleados.Columns[0].Visible = false;
             ObjAdminUser.dgvEmpleados.Columns[3].Visible = false;
             ObjAdminUser.dgvEmpleados.Columns[10].Visible = false;
@@ -56,7 +53,6 @@ namespace Proyecto.Controlador.IngresarUsuario
 
         private void nuevoUsuario(object sender, EventArgs e)
         {
-            /*Se invoca al formulario ViewAddUser y se le envía un numero, este numero servirá para indicarle que tipo de acción se quiere realizar, donde 1 significa Inserción y 2 significa Actualización*/
             frmAgregarUsuario openForm = new frmAgregarUsuario();
             //Se muestra el formulario
             openForm.ShowDialog();
