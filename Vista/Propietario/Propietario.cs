@@ -48,7 +48,7 @@ namespace Proyecto.Vista.Propietario
 
         }
 
-        string conexion = "Data Source=DESKTOP-71AOCJ0\\SQLEXPRESS;Initial Catalog=dbVetManager2;Integrated Security=True;Encrypt=False";
+        string conexion = "Data Source=SQL8020.site4now.net;Persist Security Info=True;User ID=db_aad183_vetmanager_admin;Encrypt=False";
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {

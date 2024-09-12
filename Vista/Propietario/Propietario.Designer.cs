@@ -137,7 +137,7 @@ namespace Proyecto.Vista.Propietario
             // btnTelefono
             // 
             this.btnTelefono.AutoSize = true;
-            this.btnTelefono.Location = new System.Drawing.Point(422, 176);
+            this.btnTelefono.Location = new System.Drawing.Point(387, 176);
             this.btnTelefono.Name = "btnTelefono";
             this.btnTelefono.Size = new System.Drawing.Size(106, 13);
             this.btnTelefono.TabIndex = 41;
@@ -146,7 +146,7 @@ namespace Proyecto.Vista.Propietario
             // btnDui
             // 
             this.btnDui.AutoSize = true;
-            this.btnDui.Location = new System.Drawing.Point(212, 176);
+            this.btnDui.Location = new System.Drawing.Point(177, 176);
             this.btnDui.Name = "btnDui";
             this.btnDui.Size = new System.Drawing.Size(26, 13);
             this.btnDui.TabIndex = 40;
@@ -155,7 +155,7 @@ namespace Proyecto.Vista.Propietario
             // BTNApellido
             // 
             this.BTNApellido.AutoSize = true;
-            this.BTNApellido.Location = new System.Drawing.Point(212, 116);
+            this.BTNApellido.Location = new System.Drawing.Point(177, 116);
             this.BTNApellido.Name = "BTNApellido";
             this.BTNApellido.Size = new System.Drawing.Size(44, 13);
             this.BTNApellido.TabIndex = 39;
@@ -164,7 +164,7 @@ namespace Proyecto.Vista.Propietario
             // BTNNombre
             // 
             this.BTNNombre.AutoSize = true;
-            this.BTNNombre.Location = new System.Drawing.Point(212, 70);
+            this.BTNNombre.Location = new System.Drawing.Point(177, 70);
             this.BTNNombre.Name = "BTNNombre";
             this.BTNNombre.Size = new System.Drawing.Size(44, 13);
             this.BTNNombre.TabIndex = 38;
@@ -173,7 +173,7 @@ namespace Proyecto.Vista.Propietario
             // txtbTelefono
             // 
             this.txtbTelefono.ForeColor = System.Drawing.Color.Black;
-            this.txtbTelefono.Location = new System.Drawing.Point(425, 192);
+            this.txtbTelefono.Location = new System.Drawing.Point(390, 192);
             this.txtbTelefono.Name = "txtbTelefono";
             this.txtbTelefono.Size = new System.Drawing.Size(282, 20);
             this.txtbTelefono.TabIndex = 37;
@@ -182,7 +182,7 @@ namespace Proyecto.Vista.Propietario
             // txtbApellido
             // 
             this.txtbApellido.ForeColor = System.Drawing.Color.Black;
-            this.txtbApellido.Location = new System.Drawing.Point(215, 132);
+            this.txtbApellido.Location = new System.Drawing.Point(180, 132);
             this.txtbApellido.Name = "txtbApellido";
             this.txtbApellido.Size = new System.Drawing.Size(492, 20);
             this.txtbApellido.TabIndex = 36;
@@ -191,7 +191,7 @@ namespace Proyecto.Vista.Propietario
             // txtbDUI
             // 
             this.txtbDUI.ForeColor = System.Drawing.Color.Black;
-            this.txtbDUI.Location = new System.Drawing.Point(213, 192);
+            this.txtbDUI.Location = new System.Drawing.Point(180, 192);
             this.txtbDUI.Name = "txtbDUI";
             this.txtbDUI.Size = new System.Drawing.Size(151, 20);
             this.txtbDUI.TabIndex = 35;
@@ -200,7 +200,7 @@ namespace Proyecto.Vista.Propietario
             // txtbNombre
             // 
             this.txtbNombre.ForeColor = System.Drawing.Color.Black;
-            this.txtbNombre.Location = new System.Drawing.Point(215, 86);
+            this.txtbNombre.Location = new System.Drawing.Point(180, 86);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(492, 20);
             this.txtbNombre.TabIndex = 34;
@@ -215,7 +215,6 @@ namespace Proyecto.Vista.Propietario
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 32;
             this.pictureBox3.TabStop = false;
-
             // 
             // button1
             // 
