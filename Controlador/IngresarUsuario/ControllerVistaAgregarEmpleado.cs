@@ -47,7 +47,7 @@ namespace Proyecto.Controlador.IngresarUsuario
 
 
             }
-            ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["Empleados"];
+            ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["Empleado"];
             ObjAdminUser.dgvEmpleados.Columns[0].Visible = false;
             ObjAdminUser.dgvEmpleados.Columns[3].Visible = false;
             ObjAdminUser.dgvEmpleados.Columns[10].Visible = false;
@@ -120,23 +120,23 @@ namespace Proyecto.Controlador.IngresarUsuario
             //Declarando nuevo DataSet para que obtenga los datos del metodo ObtenerPersonas
             DataSet ds = objAdmin.BuscarPersonas(ObjAdminUser.txtBuscador.Text.Trim());
             //Llenar DataGridView
-            ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["viewPerson"];
+            ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegistroEmpleado"];
         }
 
         private void VerFicha(object sender, EventArgs e)
         {
             int pos = ObjAdminUser.dgvEmpleados.CurrentRow.Index;
             int id;
-            string firstName, lastName, dni, address, email, phone, username, role;
-            DateTime birthday;
+            string Nombre, Apellido, CorreoEmpleado, Usuario, Role;
+            DateTime FechaNacimient;
 
             id = int.Parse(ObjAdminUser.dgvEmpleados[0, pos].Value.ToString());
-            firstName = ObjAdminUser.dgvEmpleados[1, pos].Value.ToString();
-            lastName = ObjAdminUser.dgvEmpleados[2, pos].Value.ToString();
-            birthday = DateTime.Parse(ObjAdminUser.dgvEmpleados[3, pos].Value.ToString());
-            email = ObjAdminUser.dgvEmpleados[4, pos].Value.ToString();
-            username = ObjAdminUser.dgvEmpleados[5, pos].Value.ToString();
-            role = ObjAdminUser.dgvEmpleados[6, pos].Value.ToString();
+            Nombre = ObjAdminUser.dgvEmpleados[1, pos].Value.ToString();
+            Apellido = ObjAdminUser.dgvEmpleados[2, pos].Value.ToString();
+            FechaNacimient = DateTime.Parse(ObjAdminUser.dgvEmpleados[3, pos].Value.ToString());
+            CorreoEmpleado = ObjAdminUser.dgvEmpleados[4, pos].Value.ToString();
+            Usuario = ObjAdminUser.dgvEmpleados[5, pos].Value.ToString();
+            Role = ObjAdminUser.dgvEmpleados[6, pos].Value.ToString();
 
             frmAgregarUsuario openForm = new frmAgregarUsuario();
             openForm.ShowDialog();
