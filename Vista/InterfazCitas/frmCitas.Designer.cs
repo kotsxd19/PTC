@@ -58,6 +58,7 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -351,10 +352,16 @@
             // 
             // dtpHora
             // 
+            this.dtpHora.CustomFormat = "HH:mm:ss";
+            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHora.Location = new System.Drawing.Point(1019, 269);
+            this.dtpHora.MaxDate = new System.DateTime(2024, 9, 15, 20, 0, 0, 0);
+            this.dtpHora.MinDate = new System.DateTime(2024, 9, 15, 8, 0, 0, 0);
             this.dtpHora.Name = "dtpHora";
+            this.dtpHora.ShowUpDown = true;
             this.dtpHora.Size = new System.Drawing.Size(200, 22);
             this.dtpHora.TabIndex = 19;
+            this.dtpHora.Value = new System.DateTime(2024, 9, 15, 8, 0, 0, 0);
             // 
             // dgvCitas
             // 
@@ -436,5 +443,6 @@
         public System.Windows.Forms.DataGridView dgvCitas;
         public System.Windows.Forms.Button btnEliminarCita;
         public System.Windows.Forms.DataGridView dgvInfoCitas;
+        private System.Windows.Forms.Timer timer1;
     }
 }

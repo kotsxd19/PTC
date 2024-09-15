@@ -17,15 +17,13 @@ namespace Proyecto.Vista.InterfazCitas
         public frmCitas()
         {
             InitializeComponent();
-            // Crear una instancia del controlador y pasar la vista actual
+            // Instancia del controlador para a la vista actual
             ControllerCitas controller = new ControllerCitas(this);
         }
 
         private void frmCitas_Load(object sender, EventArgs e)
         {
-            // También puedes llenar el DataGrid aquí si no lo hiciste en el constructor
-            ControllerCitas controller = new ControllerCitas(this);
-            controller.LlenarDataGridInfoCitas();
+
         }
 
         private void button7_Click(object sender, EventArgs e)

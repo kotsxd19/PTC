@@ -17,7 +17,7 @@ namespace Proyecto.Controlador.Citas
             Vista.btnEditarCita.Click += new EventHandler(EditarCita);
             Vista.btnIngresarCita.Click += new EventHandler(IngresarCita);
 
-            // Llenar el DataGridView en la inicialización
+            // Se llena el DataGridView en la inicialización
             LlenarDataGridInfoCitas();
         }
 
@@ -25,7 +25,7 @@ namespace Proyecto.Controlador.Citas
         {
             DAOCitas daoCitas = new DAOCitas();
             DataSet ds = daoCitas.ObtenerCitas();
-            objVista.dgvCitas.DataSource = ds.Tables["Citas"];
+            objVista.dgvInfoCitas.DataSource = ds.Tables["Citas"];
         }
 
         private void EliminarCita(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace Proyecto.Controlador.Citas
             int pos = objVista.dgvCitas.CurrentRow.Index;
             DAOCitas daoDelete = new DAOCitas
             {
-                IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString())
+                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString())
             };
             int retorno = daoDelete.EliminarCita();
             if (retorno == 1)
@@ -53,7 +53,7 @@ namespace Proyecto.Controlador.Citas
             {
                 DAOCitas daoInsert = new DAOCitas
                 {
-                    IdEmpleados = int.Parse(objVista.txtIdEmpleados.Text),
+                    IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text),
                     IdMascota = int.Parse(objVista.txtIdMascota.Text),
                     Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")),
                     Hora = TimeSpan.Parse(objVista.dtpHora.Text),
@@ -83,8 +83,8 @@ namespace Proyecto.Controlador.Citas
             int pos = objVista.dgvCitas.CurrentRow.Index;
             DAOCitas daoUpdate = new DAOCitas
             {
-                IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()),
-                IdEmpleados = int.Parse(objVista.txtIdEmpleados.Text),
+                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()),
+                IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text),
                 IdMascota = int.Parse(objVista.txtIdMascota.Text),
                 Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")),
                 Hora = TimeSpan.Parse(objVista.dtpHora.Text),
