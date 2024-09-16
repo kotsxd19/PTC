@@ -46,16 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\Conexion\ControladorConexion.cs" />
     <Compile Include="Controlador\IngresarUsuario\ControllerIngresarUsuario.cs" />
     <Compile Include="Controlador\IngresarUsuario\ControllerVistaAgregarEmpleado.cs" />
+    <Compile Include="Controlador\Initt\ControllerInnit.cs" />
     <Compile Include="Controlador\Login\controlerLogim.cs" />
+    <Compile Include="Controlador\Login\ModosDeRecuperarContraseña.cs" />
+    <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
+    <Compile Include="db_aad183_vetmanagerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_aad183_vetmanagerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_aad183_vetmanagerDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_aad183_vetmanagerDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_aad183_vetmanagerDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_aad183_vetmanagerDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
+    <Compile Include="Modelo\DAO\DAOPrimerUso.cs" />
     <Compile Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOAgregarUsuario.cs" />
+    <Compile Include="Modelo\DTO\DTOdbContext.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
+    <Compile Include="Modelo\DTO\DTOPrimerUso.cs" />
+    <Compile Include="Modelo\DTO\RecuperacionContraPorCorreo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\AgregarUsuarios\frmAgregarUsuario.cs">
@@ -70,11 +93,29 @@
     <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.Designer.cs">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Inicio\frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login\frmCorreoPin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\frmCorreoPin.Designer.cs">
+      <DependentUpon>frmCorreoPin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Login\frmNuevaContraPorCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\frmNuevaContraPorCorreo.Designer.cs">
+      <DependentUpon>frmNuevaContraPorCorreo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Login\frmRecuperacionContraCorreo.cs">
       <SubType>Form</SubType>
@@ -106,6 +147,12 @@
     <Compile Include="Vista\Login\frmRecuperarContraseñaReinicioDirectoAdmin.Designer.cs">
       <DependentUpon>frmRecuperarContraseñaReinicioDirectoAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\PrimerUso\frmConexionAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\PrimerUso\frmConexionAdministrador.Designer.cs">
+      <DependentUpon>frmConexionAdministrador.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -122,8 +169,17 @@
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmRegistroUsuario.resx">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio\frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Login\frmCorreoPin.resx">
+      <DependentUpon>frmCorreoPin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Login\frmNuevaContraPorCorreo.resx">
+      <DependentUpon>frmNuevaContraPorCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmRecuperacionContraCorreo.resx">
       <DependentUpon>frmRecuperacionContraCorreo.cs</DependentUpon>
@@ -131,6 +187,42 @@
     <EmbeddedResource Include="Vista\Login\frmRecuperacioneDeContra.resx">
       <DependentUpon>frmRecuperacioneDeContra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Login\frmRecuperarContraseñaPreguntas.resx">
+      <DependentUpon>frmRecuperarContraseñaPreguntas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="db_aad183_vetmanagerDataSet.xsc">
+      <DependentUpon>db_aad183_vetmanagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_aad183_vetmanagerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet.xss">
+      <DependentUpon>db_aad183_vetmanagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet1.xsc">
+      <DependentUpon>db_aad183_vetmanagerDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_aad183_vetmanagerDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet1.xss">
+      <DependentUpon>db_aad183_vetmanagerDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet2.xsc">
+      <DependentUpon>db_aad183_vetmanagerDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_aad183_vetmanagerDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_aad183_vetmanagerDataSet2.xss">
+      <DependentUpon>db_aad183_vetmanagerDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -149,6 +241,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ficha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\95df0636-8035-4614-b004-46151800e183.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7a9497c5-eb7a-47a8-b745-59aa4f76131e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1557261b-efad-499e-b4ae-a8026b43b8a1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1c42864b-ce2c-4870-ab31-c4aac24220a3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d3d904a0-7365-4601-8265-20b2f8fc492b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f184fdab-6d2e-49ad-a700-db16070f7664.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

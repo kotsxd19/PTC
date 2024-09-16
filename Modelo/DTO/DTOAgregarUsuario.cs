@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto.Modelo.DTO
 {
-    internal class DTOAgregarUsuario : dbConexion
+    internal class DTOAgregarUsuario : dbConexion 
     {
         private int IdEmpleado;
         private string Nombre;
@@ -15,7 +15,8 @@ namespace Proyecto.Modelo.DTO
         private string Usuario;
         private string CorreoElectronico;
         private string Contraseña;
-        private string Role;
+        private int Role;
+        private int intentos;
 
         public int IdEmpleado1 { get => IdEmpleado; set => IdEmpleado = value; }
         public string Nombre1 { get => Nombre; set => Nombre = value; }
@@ -24,6 +25,7 @@ namespace Proyecto.Modelo.DTO
         public string Usuario1 { get => Usuario; set => Usuario = value; }
         public string Contraseña1 { get => Contraseña; set => Contraseña = value; }
         public string CorreoElectronico1 { get => CorreoElectronico; set => CorreoElectronico = value; }
-        public string Role1 { get => Role; set => Role = value; }
+        public int Role1 { get => Role; set => Role = value; }
+        public int Intentos { get => intentos; set => intentos = value; }
     }
 }

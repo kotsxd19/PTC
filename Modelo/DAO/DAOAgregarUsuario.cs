@@ -18,22 +18,32 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
+                // Establece la conexión a la base de datos
                 command.Connection = getConnection();
+
+                // Consulta SQL para obtener todos los roles
                 string query = "SELECT * FROM Roles";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
+
+                // Ejecuta la consulta sin obtener resultados
                 cmd.ExecuteNonQuery();
+
+                // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "Roles");
+
+                // Retorna el DataSet con los roles
                 return ds;
             }
             catch (Exception)
             {
-
+                // Retorna null si ocurre una excepción
                 return null;
             }
             finally
             {
+                // Cierra la conexión a la base de datos independientemente de si ocurre una excepción o no
                 getConnection().Close();
             }
         }
@@ -42,45 +52,56 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
+                // Establece la conexión a la base de datos
                 command.Connection = getConnection();
-                string query2 = "INSERT INTO Empleado VALUES (@Usuario, @Contraseña, @Nombre, @Apellido, @CorreoEmpleado, @FechaNacimient )";
+
+                // Consulta SQL para insertar un nuevo empleado
+                string query2 = "INSERT INTO Empleado VALUES (@Usuario, @Contraseña, @intentos, @IdRole)";
                 SqlCommand cmd2 = new SqlCommand(query2, command.Connection);
 
+                // Agrega los parámetros para la consulta de inserción
                 cmd2.Parameters.AddWithValue("Usuario", Usuario1);
                 cmd2.Parameters.AddWithValue("Contraseña", Contraseña1);
-                cmd2.Parameters.AddWithValue("Nombre", Nombre1);
-                cmd2.Parameters.AddWithValue("Apellido", Apellido1);
-                cmd2.Parameters.AddWithValue("CorreoEmpleado", CorreoElectronico1);
-                cmd2.Parameters.AddWithValue("FechaNacimient", FechaNacimiento1);
+                cmd2.Parameters.AddWithValue("intentos", Intentos);
+                cmd2.Parameters.AddWithValue("Roles", Role1);
+
+                // Ejecuta la consulta de inserción y obtiene el número de filas afectadas
                 int repuesta = cmd2.ExecuteNonQuery();
 
+                // Si la inserción fue exitosa, realiza otra inserción adicional
                 if (repuesta == 1)
                 {
-                    string query = "INSERT INTO Empleado (Nombre, Apellido, FechaNacimient, CorreoEmpleado, Usuario) VALUES (@param1, @param2, @param3, @param4, @param5)";
+                    // Consulta SQL para insertar más detalles del empleado
+                    string query = "INSERT INTO Empleado (Usuario, Nombre, Apellido, CorreoEmpleado, FechaNacimient) VALUES (@param1, @param2, @param3, @param4, @param5)";
                     SqlCommand cmd = new SqlCommand(query, command.Connection);
-                    cmd.Parameters.AddWithValue("param1", Nombre1);
-                    cmd.Parameters.AddWithValue("param2", Apellido1);
-                    cmd.Parameters.AddWithValue("param3", FechaNacimiento1);
+                    cmd.Parameters.AddWithValue("param1", Usuario1);
+                    cmd.Parameters.AddWithValue("param2", Nombre1);
+                    cmd.Parameters.AddWithValue("param3", Apellido1);
                     cmd.Parameters.AddWithValue("param4", CorreoElectronico1);
-                    cmd.Parameters.AddWithValue("param5", Usuario1);
+                    cmd.Parameters.AddWithValue("param5", FechaNacimiento1);
 
+                    // Ejecuta la consulta de inserción de detalles y obtiene el número de filas afectadas
                     repuesta = cmd.ExecuteNonQuery();
 
+                    // Retorna el resultado de la inserción de detalles
                     return repuesta;
                 }
                 else
                 {
+                    // Realiza una reversión si la primera inserción falla
                     RollBack();
                     return 0;
                 }
             }
             catch (Exception)
             {
+                // Realiza una reversión en caso de error y retorna -1
                 RollBack();
                 return -1;
             }
             finally
             {
+                // Realiza una reversión y cierra la conexión a la base de datos
                 RollBack();
                 command.Connection.Close();
             }
@@ -88,34 +109,46 @@ namespace Proyecto.Modelo.DAO
 
         public void RollBack()
         {
-            //Eliminar el usuario ingresado
+            // Consulta SQL para eliminar el usuario en caso de un fallo
             string query = "DELETE FROM Empleado WHERE Usuario = @Usuario";
             SqlCommand cmddel = new SqlCommand(query, command.Connection);
             cmddel.Parameters.AddWithValue("Usuario", Usuario1);
-            int retorno = cmddel.ExecuteNonQuery();
+
+            // Ejecuta la consulta de eliminación
+            cmddel.ExecuteNonQuery();
         }
 
         public DataSet ObtenerPersonas()
         {
             try
             {
+                // Establece la conexión a la base de datos
                 command.Connection = getConnection();
-                string query = "SELECT * FROM Empleado WHERE Usuario = @valor";
+
+                // Consulta SQL para obtener los empleados activos
+                string query = "SELECT * FROM RegistroEmpleado WHERE userStatus = @valor";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("valor", true);
+
+                // Ejecuta la consulta sin obtener resultados
                 cmd.ExecuteNonQuery();
+
+                // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                adp.Fill(ds, "Empleado");
+                adp.Fill(ds, "RegistroEmpleado");
+
+                // Retorna el DataSet con los empleados activos
                 return ds;
             }
             catch (Exception)
             {
+                // Retorna null si ocurre una excepción
                 return null;
             }
             finally
             {
-
+                // Cierra la conexión a la base de datos independientemente de si ocurre una excepción o no
                 getConnection().Close();
             }
         }
@@ -124,56 +157,51 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
-                //Se crea una conexión para garantizar que efectivamente haya conexión a la base.
+                // Establece la conexión a la base de datos
                 command.Connection = getConnection();
-                //**
-                //Se crea el query que indica la acción que el sistema desea realizar con la base de datos
-                //el query posee parametros para evitar algún tipo de ataque como SQL Injection
+
+                // Consulta SQL para actualizar los detalles del empleado
                 string query = "UPDATE Empleado SET " +
                                 "Nombre = @param1, " +
                                 "Apellido = @param2, " +
                                 "FechaNacimient = @param3, " +
-                                "CorreoEmpleado = @param4,";
-                //Se crea un comando de tipo sql al cual se le pasa el query y la conexión, esto para que el sistema sepa que hacer y donde hacerlo.
+                                "CorreoEmpleado = @param4";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                //Se le da un valor a los parametros contenidos en el query, es importante mencionar que lo que esta entre comillas es el nombre del parametro y lo que esta después de la coma es el valor que se le asignará al parametro, estos valores vienen del DTO respectivo.
-                cmd.Parameters.AddWithValue("param1", Usuario1);
+                cmd.Parameters.AddWithValue("param1", Nombre1);
                 cmd.Parameters.AddWithValue("param2", Apellido1);
                 cmd.Parameters.AddWithValue("param3", FechaNacimiento1);
                 cmd.Parameters.AddWithValue("param4", CorreoElectronico1);
-                //Se ejecuta el comando ya con todos los valores de sus parametros.
-                //ExecuteNonQuery indicará cuantos filas fueron afectadas, es decir, cuantas filas de datos se ingresaron, por lo general devolvera 1 porque se hace una actualización a la vez.
+
+                // Ejecuta la consulta de actualización y obtiene el número de filas afectadas
                 int respuesta = cmd.ExecuteNonQuery();
-                //Se evalúa el valor de la variable respuesta que contiene el numero de filas afectadas
+
+                // Si la actualización de detalles fue exitosa, actualiza el rol del empleado
                 if (respuesta == 1)
                 {
-                    //Si el valor de respuesta es 1 se procede a realizar la actualización del usuario
-                    //**
-                    //Se crea el query que indica la acción que el sistema desea realizar con la base de datos
-                    //el query posee parametros para evitar algún tipo de ataque como SQL Injection
+                    // Consulta SQL para actualizar el rol del empleado
                     string query2 = "UPDATE Empleado SET " +
                                     "Role = @param9 " +
                                     "WHERE Usuario = @param10";
-                    //Se crea un comando de tipo sql al cual se le pasa el query y la conexión, esto para que el sistema sepa que hacer y donde hacerlo.
                     SqlCommand cmd2 = new SqlCommand(query2, getConnection());
-                    //Se le da un valor a los parametros contenidos en el query, es importante mencionar que lo que esta entre comillas es el nombre del parametro y lo que esta después de la coma es el valor que se le asignará al parametro, estos valores vienen del DTO respectivo.
                     cmd2.Parameters.AddWithValue("param9", Role1);
                     cmd2.Parameters.AddWithValue("param10", Usuario1);
-                    //Se ejecuta el comando ya con todos los valores de sus parametros.
-                    //ExecuteNonQuery indicará cuantos filas fueron afectadas, es decir, cuantas filas de datos se ingresaron, por lo general devolvera 1 porque se hace una inserción a la vez.
+
+                    // Ejecuta la consulta de actualización de rol
                     respuesta = cmd2.ExecuteNonQuery();
-                    respuesta = 2;
+                    respuesta = 2; // Marca como actualizado correctamente
                 }
+
+                // Retorna el resultado de la actualización
                 return respuesta;
             }
             catch (Exception)
             {
-                //Se retorna -1 en caso que en el segmento del try haya ocurrido algún error.
+                // Retorna -1 en caso de error
                 return -1;
             }
             finally
             {
-                //Independientemente se haga o no el proceso cerramos la conexión
+                // Cierra la conexión a la base de datos
                 getConnection().Close();
             }
         }
@@ -182,20 +210,18 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
-                //Se crea una conexión para garantizar que efectivamente haya conexión a la base.
+                // Establece la conexión a la base de datos
                 command.Connection = getConnection();
-                //**
-                //Se crea el query que indica la acción que el sistema desea realizar con la base de datos
-                //el query posee parametros para evitar algún tipo de ataque como SQL Injection
+
+                // Consulta SQL para eliminar al empleado
                 string query = "DELETE tbPerson WHERE IdEmpleado = @param1";
-                //Se crea un comando de tipo sql al cual se le pasa el query y la conexión, esto para que el sistema sepa que hacer y donde hacerlo.
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                //Se le da un valor a los parametros contenidos en el query, es importante mencionar que lo que esta entre comillas es el nombre del parametro y lo que esta después de la coma es el valor que se le asignará al parametro, estos valores vienen del DTO respectivo.
                 cmd.Parameters.AddWithValue("param1", IdEmpleado1);
-                //Se ejecuta el comando ya con todos los valores de sus parametros.
-                //ExecuteNonQuery indicará cuantos filas fueron afectadas, es decir, cuantas filas de datos se ingresaron, por lo general devolvera 1 porque se hace una eliminación a la vez.
+
+                // Ejecuta la consulta de eliminación y obtiene el número de filas afectadas
                 int respuesta = cmd.ExecuteNonQuery();
-                //Si la ejecución del comando no ha generado errores se procederá a retornar el valor de la variable respuesta que por lo general almacenará un 1 ya que solo se hace una acción a la vez.
+
+                // Si la eliminación fue exitosa, actualiza el estado del usuario
                 if (respuesta == 1)
                 {
                     string queryupdate = "UPDATE Empleado SET WHERE Usuario = @Usuario";
@@ -203,19 +229,22 @@ namespace Proyecto.Modelo.DAO
                     cmdupdate.Parameters.AddWithValue("username", Usuario1);
                     respuesta += cmdupdate.ExecuteNonQuery();
                 }
+
+                // Retorna el resultado de la eliminación
                 return respuesta;
             }
             catch (Exception)
             {
-                //Se retorna -1 en caso que en el segmento del try haya ocurrido algún error.
+                // Retorna -1 en caso de error
                 return -1;
             }
             finally
             {
-                //Independientemente se haga o no el proceso cerramos la conexión
+                // Cierra la conexión a la base de datos
                 getConnection().Close();
             }
         }
+
 
         public DataSet BuscarPersonas(string valor)
         {

@@ -63,9 +63,79 @@ namespace Proyecto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1557261b_efad_499e_b4ae_a8026b43b8a1 {
+            get {
+                object obj = ResourceManager.GetObject("1557261b-efad-499e-b4ae-a8026b43b8a1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1c42864b_ce2c_4870_ab31_c4aac24220a3 {
+            get {
+                object obj = ResourceManager.GetObject("1c42864b-ce2c-4870-ab31-c4aac24220a3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7a9497c5_eb7a_47a8_b745_59aa4f76131e {
+            get {
+                object obj = ResourceManager.GetObject("7a9497c5-eb7a-47a8-b745-59aa4f76131e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _95df0636_8035_4614_b004_46151800e183 {
+            get {
+                object obj = ResourceManager.GetObject("95df0636-8035-4614-b004-46151800e183", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d3d904a0_7365_4601_8265_20b2f8fc492b {
+            get {
+                object obj = ResourceManager.GetObject("d3d904a0-7365-4601-8265-20b2f8fc492b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f184fdab_6d2e_49ad_a700_db16070f7664 {
+            get {
+                object obj = ResourceManager.GetObject("f184fdab-6d2e-49ad-a700-db16070f7664", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ficha {
             get {
                 object obj = ResourceManager.GetObject("ficha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gmail {
+            get {
+                object obj = ResourceManager.GetObject("gmail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

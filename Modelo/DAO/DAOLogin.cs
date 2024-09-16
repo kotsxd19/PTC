@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Proyecto.Modelo.DAO
 {
@@ -18,42 +19,60 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
-                using (SqlConnection connection = getConnection())
-                {
-                    string query = "SELECT Usuario, Contraseña FROM Empleado WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@Usuario", Usuario1);
-                        cmd.Parameters.AddWithValue("@Contraseña", Contraseña1);
+                // Establece la conexión a la base de datos utilizando el método getConnection
+                Command.Connection = getConnection();
 
-                        SqlDataReader rd = cmd.ExecuteReader();
-                        if (rd.Read())
-                        {
-                            Acceso.Usuario = rd.GetString(rd.GetOrdinal("Usuario"));
-                            Acceso.Contraseña = rd.GetString(rd.GetOrdinal("Contraseña"));
-                        }
-                        return rd.HasRows;
-                    }
+                // Define la consulta SQL para buscar un usuario con las credenciales proporcionadas
+                string query = "SELECT * FROM Empleado WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+
+                // Agrega los parámetros a la consulta SQL para evitar inyecciones de SQL
+                cmd.Parameters.AddWithValue("Usuario", Usuario1);
+                cmd.Parameters.AddWithValue("Contraseña", Contraseña1);
+
+                // Ejecuta la consulta y obtiene un SqlDataReader para leer los resultados
+                SqlDataReader rd = cmd.ExecuteReader();
+
+                // Lee los resultados de la consulta
+                while (rd.Read())
+                {
+                    // Asigna los valores leídos a la clase de acceso
+                    Acceso.Usuario = rd.GetString(0); // Suponiendo que el primer campo es el Usuario
+                    Acceso.Contraseña = rd.GetString(1); // Suponiendo que el segundo campo es la Contraseña
+                    Acceso.RoleId = rd.GetInt32(3); // Suponiendo que el cuarto campo es el RoleId
+                    Acceso.Access = rd.GetString(4); // Suponiendo que el quinto campo es el Access
+                    Acceso.Nombre = rd.GetString(5); // Suponiendo que el sexto campo es el Nombre
                 }
+
+                // Retorna true si se encontraron filas que coinciden con la consulta
+                return rd.HasRows;
             }
             catch (SqlException sqlex)
             {
+                // Muestra un mensaje de error si ocurre una excepción SQL
                 MessageBox.Show(sqlex.Message);
                 return false;
             }
             catch (Exception ex)
             {
+                // Muestra un mensaje de error para cualquier otra excepción
                 MessageBox.Show(ex.Message);
                 return false;
             }
+            finally
+            {
+                // Cierra la conexión a la base de datos en el bloque finally para asegurar que siempre se cierre
+                getConnection().Close();
+            }
         }
+
 
         public int PrimerUso()
         {
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT COUNT(*) FROM frmLogin";
+                string query = "SELECT COUNT(*) FROM Empleado";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 int UsuariosTotal = (int)cmd.ExecuteScalar();
                 return UsuariosTotal;

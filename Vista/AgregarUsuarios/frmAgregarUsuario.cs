@@ -14,10 +14,16 @@ namespace Proyecto.Vista.AgregarUsuarios
     public partial class frmAgregarUsuario : Form
     {
 
-        public frmAgregarUsuario()
+        public frmAgregarUsuario(int accion)
         {
             InitializeComponent();
-            ControllerIngresarUsuario cntrol = new ControllerIngresarUsuario(this);
+            ControllerIngresarUsuario cntrol = new ControllerIngresarUsuario(this, accion);
+        }
+
+        public frmAgregarUsuario(int accion, int id, int IdRole, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario, string role)
+        {
+            InitializeComponent();
+ 
         }
 
         private void label6_Click(object sender, EventArgs e)

@@ -28,5 +28,10 @@ namespace Proyecto.Vista.AgregarUsuarios
         {
 
         }
+
+        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

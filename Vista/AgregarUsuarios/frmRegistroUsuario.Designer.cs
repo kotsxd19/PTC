@@ -31,19 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRecargar = new System.Windows.Forms.Button();
             this.btnNuevoEmpleado = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnRecargar = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.registroEmpleadoTableAdapter = new Proyecto.db_aad183_vetmanagerDataSet2TableAdapters.RegistroEmpleadoTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.acualizarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,6 +67,15 @@
             this.panel1.Size = new System.Drawing.Size(877, 94);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Location = new System.Drawing.Point(534, 34);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(58, 34);
+            this.btnRecargar.TabIndex = 9;
+            this.btnRecargar.Text = "recargar";
+            this.btnRecargar.UseVisualStyleBackColor = true;
             // 
             // btnNuevoEmpleado
             // 
@@ -103,6 +114,15 @@
             this.panel4.Size = new System.Drawing.Size(683, 60);
             this.panel4.TabIndex = 4;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(584, 18);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(87, 23);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // txtBuscador
             // 
             this.txtBuscador.Location = new System.Drawing.Point(6, 20);
@@ -124,25 +144,22 @@
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Location = new System.Drawing.Point(6, 6);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(674, 400);
+            this.dgvEmpleados.Size = new System.Drawing.Size(665, 400);
             this.dgvEmpleados.TabIndex = 0;
-            // 
-            // btnRecargar
-            // 
-            this.btnRecargar.Location = new System.Drawing.Point(534, 34);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(58, 34);
-            this.btnRecargar.TabIndex = 9;
-            this.btnRecargar.Text = "recargar";
-            this.btnRecargar.UseVisualStyleBackColor = true;
+            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsEliminar,
-            this.cmsFicha});
+            this.cmsFicha,
+            this.acualizarContraseñaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 92);
+            // 
+            // registroEmpleadoTableAdapter
+            // 
+            this.registroEmpleadoTableAdapter.ClearBeforeFill = true;
             // 
             // pictureBox1
             // 
@@ -158,24 +175,22 @@
             // 
             this.cmsEliminar.Image = global::Proyecto.Properties.Resources.x;
             this.cmsEliminar.Name = "cmsEliminar";
-            this.cmsEliminar.Size = new System.Drawing.Size(173, 22);
+            this.cmsEliminar.Size = new System.Drawing.Size(180, 22);
             this.cmsEliminar.Text = "Eliminar Empleado";
             // 
             // cmsFicha
             // 
             this.cmsFicha.Image = global::Proyecto.Properties.Resources.ficha;
             this.cmsFicha.Name = "cmsFicha";
-            this.cmsFicha.Size = new System.Drawing.Size(173, 22);
+            this.cmsFicha.Size = new System.Drawing.Size(180, 22);
             this.cmsFicha.Text = "Ver ficha";
             // 
-            // btnBuscar
+            // acualizarContraseñaToolStripMenuItem
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(584, 18);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(87, 23);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.acualizarContraseñaToolStripMenuItem.Image = global::Proyecto.Properties.Resources.d3d904a0_7365_4601_8265_20b2f8fc492b;
+            this.acualizarContraseñaToolStripMenuItem.Name = "acualizarContraseñaToolStripMenuItem";
+            this.acualizarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.acualizarContraseñaToolStripMenuItem.Text = "Acualizar Contraseña";
             // 
             // frmRegistroUsuario
             // 
@@ -216,5 +231,7 @@
         public System.Windows.Forms.ToolStripMenuItem cmsEliminar;
         public System.Windows.Forms.ToolStripMenuItem cmsFicha;
         public System.Windows.Forms.Button btnBuscar;
+        private db_aad183_vetmanagerDataSet2TableAdapters.RegistroEmpleadoTableAdapter registroEmpleadoTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem acualizarContraseñaToolStripMenuItem;
     }
 }
