@@ -16,22 +16,26 @@ namespace Proyecto.Controlador.Validar
         /// <returns>Hash SHA-256 en formato hexadecimal.</returns>
         public string ComputeSha256Hash(string rawData)
         {
-            // Crear una instancia de SHA256
+            // Crear una instancia de SHA256 para calcular el hash
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // Computar el hash - devuelve un arreglo de bytes
+                // Convertir la cadena de entrada en un arreglo de bytes utilizando codificación UTF-8
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
-                // Convertir byte array a string
+                // Usar un StringBuilder para construir la representación en cadena del hash
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++)
                 {
+                    // Convertir cada byte en una representación hexadecimal de 2 dígitos y agregarlo al StringBuilder
                     builder.Append(bytes[i].ToString("x2"));
                 }
+
+                // Devolver el hash como una cadena hexadecimal
                 return builder.ToString();
             }
         }
-       
+
+
 
         public string desifrarCadena(string cadenaCode)
         {

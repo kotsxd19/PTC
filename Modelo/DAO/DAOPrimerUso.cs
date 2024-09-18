@@ -1,6 +1,7 @@
 ﻿using Proyecto.Modelo.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,29 +17,45 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
+                // Establecer la conexión a la base de datos
                 command.Connection = getConnection();
-                string query = "INSERT INTO Empleado VALUES (@param1, @param2, @param3)";
+
+                // Consulta SQL para insertar un nuevo registro en la tabla Empleado
+                string query = "INSERT INTO Empleado (Nombre, CorreoEmpleado) VALUES (@Nombre, @CorreoEmpleado)";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("param1", Nombre);
-                cmd.Parameters.AddWithValue("param2", CorreoEmpleado1);
+
+                // Asignar los valores a los parámetros de la consulta
+                cmd.Parameters.AddWithValue("@Nombre", Nombre);
+                cmd.Parameters.AddWithValue("@CorreoEmpleado", CorreoEmpleado1);
+
+                // Ejecutar la consulta
                 int retorno = cmd.ExecuteNonQuery();
+
+                // Verificar si se ha realizado la inserción
                 return retorno > 0;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Excepcion SQL: {ex.Message}", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Mostrar mensaje de error para excepciones SQL
+                MessageBox.Show($"Excepción SQL: {ex.Message}", "Error al procesar la información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Excepcion SQL: {ex.Message}", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Mostrar mensaje de error para excepciones generales
+                MessageBox.Show($"Excepción: {ex.Message}", "Error al procesar la información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
             {
-                command.Connection.Close();
+                // Cerrar la conexión independientemente del resultado
+                if (command.Connection != null && command.Connection.State == ConnectionState.Open)
+                {
+                    command.Connection.Close();
+                }
             }
         }
+
 
         /// <summary>
         /// El metodo se ejecuta al iniciar el programa
@@ -48,26 +65,40 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
+                // Establecer la conexión a la base de datos
                 command.Connection = getConnection();
+
+                // Consulta SQL para contar el número de registros en la tabla Empleado
                 string query = "SELECT COUNT(*) FROM Empleado";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
+
+                // Ejecutar la consulta y obtener el resultado
                 int totalEmpresa = (int)cmd.ExecuteScalar();
+
+                // Devolver el total de registros
                 return totalEmpresa;
             }
-            catch (SqlException sqlex)
+            catch (SqlException ex)
             {
-                MessageBox.Show(sqlex.Message);
+                // Mostrar mensaje de error para excepciones SQL
+                MessageBox.Show($"Excepción SQL: {ex.Message}", "Error al procesar la información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                // Mostrar mensaje de error para excepciones generales
+                MessageBox.Show($"Excepción: {ex.Message}", "Error al procesar la información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
             {
-                command.Connection.Close();
+                // Cerrar la conexión si está abierta
+                if (command.Connection != null && command.Connection.State == ConnectionState.Open)
+                {
+                    command.Connection.Close();
+                }
             }
         }
+
     }
 }
