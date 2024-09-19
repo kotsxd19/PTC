@@ -30,7 +30,6 @@ namespace Proyecto.Controlador.Login
                 ObjLogin = Vista;
 
                 ObjLogin.btnIngresar.Click += new EventHandler(AccesoAlosDatos);
-                ObjLogin.btnCancelar.Click += new EventHandler(QuitarVentana);
 
                 ObjLogin.txtUsuario.Enter += new EventHandler(IngresarUsuario);
                 ObjLogin.txtUsuario.Leave += new EventHandler(dejarUsuario);

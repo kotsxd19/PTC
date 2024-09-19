@@ -216,5 +216,44 @@
   <ItemGroup>
     <None Include="Resources\f184fdab-6d2e-49ad-a700-db16070f7664.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-nombre-tag-woman-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gestión-de-clientes-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tarjeta-de-empleado-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendario-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-agenda-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mover-por-carretilla-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-veterinario-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-enlazar-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2024-09-19 094439.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2024-09-19 0944391.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consulta-veterinaria-1-1024x538.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consulta-veterinaria-1-1024x5381.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-añadir-35.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

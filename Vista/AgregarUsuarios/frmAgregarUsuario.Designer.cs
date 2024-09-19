@@ -28,49 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.txtId = new System.Windows.Forms.ToolStripTextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.LblUsuario = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtContra = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbRoles = new System.Windows.Forms.ComboBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtRoles = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.LblApellido = new System.Windows.Forms.Label();
             this.LblNombre = new System.Windows.Forms.Label();
+            this.txtRoles = new System.Windows.Forms.Label();
+            this.cmbRoles = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtContra);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Controls.Add(this.txtUsuario);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.LblUsuario);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(15, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(439, 83);
+            this.panel1.Size = new System.Drawing.Size(514, 131);
             this.panel1.TabIndex = 0;
             // 
             // menuStrip1
@@ -93,16 +92,17 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(16, 41);
+            this.txtUsuario.Location = new System.Drawing.Point(13, 41);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(360, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(483, 20);
             this.txtUsuario.TabIndex = 1;
             // 
             // LblUsuario
             // 
             this.LblUsuario.AutoSize = true;
             this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Location = new System.Drawing.Point(12, 18);
+            this.LblUsuario.ForeColor = System.Drawing.Color.Black;
+            this.LblUsuario.Location = new System.Drawing.Point(9, 18);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(55, 20);
             this.LblUsuario.TabIndex = 0;
@@ -110,125 +110,73 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.dtpNacimiento);
-            this.panel2.Controls.Add(this.txtContra);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.LblNombre);
+            this.panel2.Controls.Add(this.LblApellido);
+            this.panel2.Controls.Add(this.txtNombre);
+            this.panel2.Controls.Add(this.txtApellido);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 83);
+            this.panel2.Location = new System.Drawing.Point(15, 146);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(439, 94);
+            this.panel2.Size = new System.Drawing.Size(514, 135);
             this.panel2.TabIndex = 1;
-            // 
-            // dtpNacimiento
-            // 
-            this.dtpNacimiento.Location = new System.Drawing.Point(229, 40);
-            this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(174, 20);
-            this.dtpNacimiento.TabIndex = 3;
             // 
             // txtContra
             // 
-            this.txtContra.Location = new System.Drawing.Point(16, 41);
+            this.txtContra.Location = new System.Drawing.Point(13, 91);
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(193, 20);
+            this.txtContra.Size = new System.Drawing.Size(484, 20);
             this.txtContra.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(225, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Fecha de Nacimiento";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 18);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(9, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Contraseña";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(192)))));
-            this.panel3.Controls.Add(this.txtCorreo);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.cmbRoles);
-            this.panel3.Controls.Add(this.txtApellido);
-            this.panel3.Controls.Add(this.txtRoles);
-            this.panel3.Controls.Add(this.txtNombre);
-            this.panel3.Controls.Add(this.LblApellido);
-            this.panel3.Controls.Add(this.LblNombre);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 177);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(439, 252);
-            this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(16, 118);
+            this.txtCorreo.Location = new System.Drawing.Point(13, 34);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(358, 20);
-            this.txtCorreo.TabIndex = 7;
+            this.txtCorreo.Size = new System.Drawing.Size(483, 20);
+            this.txtCorreo.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 95);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(9, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Correo ";
             // 
-            // cmbRoles
-            // 
-            this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(17, 164);
-            this.cmbRoles.Name = "cmbRoles";
-            this.cmbRoles.Size = new System.Drawing.Size(121, 21);
-            this.cmbRoles.TabIndex = 4;
-            this.cmbRoles.SelectedIndexChanged += new System.EventHandler(this.cmbRoles_SelectedIndexChanged);
-            // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(16, 72);
+            this.txtApellido.Location = new System.Drawing.Point(13, 97);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(359, 20);
-            this.txtApellido.TabIndex = 3;
-            // 
-            // txtRoles
-            // 
-            this.txtRoles.AutoSize = true;
-            this.txtRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoles.Location = new System.Drawing.Point(17, 141);
-            this.txtRoles.Name = "txtRoles";
-            this.txtRoles.Size = new System.Drawing.Size(50, 20);
-            this.txtRoles.TabIndex = 5;
-            this.txtRoles.Text = "Roles";
-            this.txtRoles.Click += new System.EventHandler(this.label6_Click);
+            this.txtApellido.Size = new System.Drawing.Size(483, 20);
+            this.txtApellido.TabIndex = 4;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(17, 26);
+            this.txtNombre.Location = new System.Drawing.Point(13, 37);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(360, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.Size = new System.Drawing.Size(483, 20);
+            this.txtNombre.TabIndex = 3;
             // 
             // LblApellido
             // 
             this.LblApellido.AutoSize = true;
             this.LblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblApellido.Location = new System.Drawing.Point(13, 49);
+            this.LblApellido.ForeColor = System.Drawing.Color.Black;
+            this.LblApellido.Location = new System.Drawing.Point(9, 74);
             this.LblApellido.Name = "LblApellido";
             this.LblApellido.Size = new System.Drawing.Size(65, 20);
             this.LblApellido.TabIndex = 1;
@@ -238,74 +186,138 @@
             // 
             this.LblNombre.AutoSize = true;
             this.LblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNombre.Location = new System.Drawing.Point(13, 3);
+            this.LblNombre.ForeColor = System.Drawing.Color.Black;
+            this.LblNombre.Location = new System.Drawing.Point(9, 14);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(65, 20);
             this.LblNombre.TabIndex = 0;
             this.LblNombre.Text = "Nombre";
             // 
+            // txtRoles
+            // 
+            this.txtRoles.AutoSize = true;
+            this.txtRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoles.ForeColor = System.Drawing.Color.Black;
+            this.txtRoles.Location = new System.Drawing.Point(9, 71);
+            this.txtRoles.Name = "txtRoles";
+            this.txtRoles.Size = new System.Drawing.Size(50, 20);
+            this.txtRoles.TabIndex = 5;
+            this.txtRoles.Text = "Roles";
+            this.txtRoles.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // cmbRoles
+            // 
+            this.cmbRoles.FormattingEnabled = true;
+            this.cmbRoles.Location = new System.Drawing.Point(13, 94);
+            this.cmbRoles.Name = "cmbRoles";
+            this.cmbRoles.Size = new System.Drawing.Size(155, 21);
+            this.cmbRoles.TabIndex = 6;
+            this.cmbRoles.SelectedIndexChanged += new System.EventHandler(this.cmbRoles_SelectedIndexChanged);
+            // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(192)))));
-            this.panel4.Controls.Add(this.pictureBox5);
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.btnCancelar);
             this.panel4.Controls.Add(this.btnActualizar);
             this.panel4.Controls.Add(this.btnIngresar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 374);
+            this.panel4.Location = new System.Drawing.Point(15, 420);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(439, 122);
+            this.panel4.Size = new System.Drawing.Size(514, 64);
             this.panel4.TabIndex = 3;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(140, 14);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(118, 96);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 35;
-            this.pictureBox5.TabStop = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(13, 70);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(109, 40);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(287, 70);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(114, 40);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(287, 6);
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnIngresar.Location = new System.Drawing.Point(383, 10);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(114, 38);
-            this.btnIngresar.TabIndex = 0;
+            this.btnIngresar.TabIndex = 8;
             this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnActualizar.Location = new System.Drawing.Point(263, 10);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(114, 40);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(13, 10);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(109, 40);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(244, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Fecha de Nacimiento";
+            // 
+            // dtpNacimiento
+            // 
+            this.dtpNacimiento.Location = new System.Drawing.Point(248, 95);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(174, 20);
+            this.dtpNacimiento.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtCorreo);
+            this.panel3.Controls.Add(this.cmbRoles);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txtRoles);
+            this.panel3.Controls.Add(this.dtpNacimiento);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(15, 281);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(514, 139);
+            this.panel3.TabIndex = 4;
             // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 496);
-            this.Controls.Add(this.panel4);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.ClientSize = new System.Drawing.Size(544, 499);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAgregarUsuario";
+            this.Padding = new System.Windows.Forms.Padding(15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregarUsuario";
             this.Load += new System.EventHandler(this.frmAgregarUsuario_Load);
@@ -315,10 +327,9 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,21 +337,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox5;
         public System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.TextBox txtContra;
         public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.TextBox txtNombre;
-        public System.Windows.Forms.Button btnCancelar;
-        public System.Windows.Forms.Button btnActualizar;
-        public System.Windows.Forms.Button btnIngresar;
-        public System.Windows.Forms.DateTimePicker dtpNacimiento;
-        private System.Windows.Forms.Label txtRoles;
-        public System.Windows.Forms.ComboBox cmbRoles;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.TextBox txtCorreo;
@@ -349,5 +350,14 @@
         public System.Windows.Forms.Label LblUsuario;
         public System.Windows.Forms.Label LblNombre;
         public System.Windows.Forms.Label LblApellido;
+        public System.Windows.Forms.ComboBox cmbRoles;
+        private System.Windows.Forms.Label txtRoles;
+        private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Button btnActualizar;
+        public System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Panel panel3;
     }
 }
