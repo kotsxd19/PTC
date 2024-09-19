@@ -60,7 +60,7 @@ namespace Proyecto.Controlador.Login
             void ModosDeRecuperarContraseñas(object sender, EventArgs e)
             {
                 frmRecuperacioneDeContra AbrirFromularios = new frmRecuperacioneDeContra();
-                AbrirFromularios.ShowDialog();
+                AbrirFromularios.Show();
 
             }
 
@@ -71,18 +71,16 @@ namespace Proyecto.Controlador.Login
 
                 // Asignar valores a DAOData
                 DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
-                DAOData.Contraseña1 = ObjLogin.txtContraseña.Text;
+                DAOData.Contraseña1 = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
 
-                if (ObjLogin.txtContraseña.Text.Length < 100 || ObjLogin.txtUsuario.Text.Length < 100)
+                if (ObjLogin.txtContraseña.Text.Length < 100 && ObjLogin.txtUsuario.Text.Length < 100)
                 {
                     // Verificar autenticación
-
                     bool isAuthenticated = DAOData.Login();
-
                     if (isAuthenticated)
                     {
                         // Verificar condición adicional para recuperación de contraseña
-                        if (ObjLogin.txtContraseña.Text.Trim() == DAOData.Usuario1)
+                        if (ObjLogin.txtContraseña.Text.Trim() == ObjLogin.txtUsuario.Text.Trim() + "PU123")
                         {
                             frmRecuperacioneDeContra openForm = new frmRecuperacioneDeContra();
                             openForm.Show();
@@ -91,7 +89,7 @@ namespace Proyecto.Controlador.Login
                         {
                             // Autenticación exitosa, mostrar la ventana principal
                             ObjLogin.Hide();
-                            frmInicio viewDashboard = new frmInicio(ObjLogin.txtUsuario.Text);
+                            frmInicio viewDashboard = new frmInicio();
                             viewDashboard.Show();
                         }
                     }

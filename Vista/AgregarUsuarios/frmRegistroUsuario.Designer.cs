@@ -41,7 +41,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.registroEmpleadoTableAdapter = new Proyecto.db_aad183_vetmanagerDataSet2TableAdapters.RegistroEmpleadoTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
@@ -157,10 +156,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(186, 92);
             // 
-            // registroEmpleadoTableAdapter
-            // 
-            this.registroEmpleadoTableAdapter.ClearBeforeFill = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -231,7 +226,6 @@
         public System.Windows.Forms.ToolStripMenuItem cmsEliminar;
         public System.Windows.Forms.ToolStripMenuItem cmsFicha;
         public System.Windows.Forms.Button btnBuscar;
-        private db_aad183_vetmanagerDataSet2TableAdapters.RegistroEmpleadoTableAdapter registroEmpleadoTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem acualizarContraseñaToolStripMenuItem;
     }
 }

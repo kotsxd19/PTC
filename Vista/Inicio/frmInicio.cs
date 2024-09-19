@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Inicio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,10 @@ namespace Proyecto.Vista.Inicio
 {
     public partial class frmInicio : Form
     {
-        public frmInicio(string text)
+        public frmInicio()
         {
             InitializeComponent();
+            ControllerInicio control = new ControllerInicio(this);
         }
     }
 }

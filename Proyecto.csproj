@@ -49,27 +49,13 @@
     <Compile Include="Controlador\Conexion\ControladorConexion.cs" />
     <Compile Include="Controlador\IngresarUsuario\ControllerIngresarUsuario.cs" />
     <Compile Include="Controlador\IngresarUsuario\ControllerVistaAgregarEmpleado.cs" />
+    <Compile Include="Controlador\Inicio\ControllerInicio.cs" />
     <Compile Include="Controlador\Initt\ControllerInnit.cs" />
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Login\ModosDeRecuperarContraseña.cs" />
     <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
-    <Compile Include="db_aad183_vetmanagerDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_aad183_vetmanagerDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="db_aad183_vetmanagerDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_aad183_vetmanagerDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="db_aad183_vetmanagerDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_aad183_vetmanagerDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\DAO\DAOPrimerUso.cs" />
@@ -190,39 +176,6 @@
     <EmbeddedResource Include="Vista\Login\frmRecuperarContraseñaPreguntas.resx">
       <DependentUpon>frmRecuperarContraseñaPreguntas.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="db_aad183_vetmanagerDataSet.xsc">
-      <DependentUpon>db_aad183_vetmanagerDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_aad183_vetmanagerDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet.xss">
-      <DependentUpon>db_aad183_vetmanagerDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet1.xsc">
-      <DependentUpon>db_aad183_vetmanagerDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_aad183_vetmanagerDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet1.xss">
-      <DependentUpon>db_aad183_vetmanagerDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet2.xsc">
-      <DependentUpon>db_aad183_vetmanagerDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_aad183_vetmanagerDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_aad183_vetmanagerDataSet2.xss">
-      <DependentUpon>db_aad183_vetmanagerDataSet2.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

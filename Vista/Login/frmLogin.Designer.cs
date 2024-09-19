@@ -36,13 +36,13 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.linkComprobarConexion = new System.Windows.Forms.Panel();
+            this.btnModosRecuperarContraseña = new System.Windows.Forms.Button();
             this.btnComrpobarConexion = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnModosRecuperarContraseña = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -109,6 +109,7 @@
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(24, 107);
+            this.txtContraseña.MaxLength = 100;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(425, 20);
             this.txtContraseña.TabIndex = 2;
@@ -116,6 +117,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(24, 38);
+            this.txtUsuario.MaxLength = 100;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(425, 20);
             this.txtUsuario.TabIndex = 1;
@@ -132,6 +134,15 @@
             this.linkComprobarConexion.Name = "linkComprobarConexion";
             this.linkComprobarConexion.Size = new System.Drawing.Size(461, 94);
             this.linkComprobarConexion.TabIndex = 11;
+            // 
+            // btnModosRecuperarContraseña
+            // 
+            this.btnModosRecuperarContraseña.Location = new System.Drawing.Point(4, 39);
+            this.btnModosRecuperarContraseña.Name = "btnModosRecuperarContraseña";
+            this.btnModosRecuperarContraseña.Size = new System.Drawing.Size(123, 23);
+            this.btnModosRecuperarContraseña.TabIndex = 3;
+            this.btnModosRecuperarContraseña.Text = "Recuperar Contraseña";
+            this.btnModosRecuperarContraseña.UseVisualStyleBackColor = true;
             // 
             // btnComrpobarConexion
             // 
@@ -194,15 +205,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 344);
             this.panel2.TabIndex = 10;
-            // 
-            // btnModosRecuperarContraseña
-            // 
-            this.btnModosRecuperarContraseña.Location = new System.Drawing.Point(4, 39);
-            this.btnModosRecuperarContraseña.Name = "btnModosRecuperarContraseña";
-            this.btnModosRecuperarContraseña.Size = new System.Drawing.Size(123, 23);
-            this.btnModosRecuperarContraseña.TabIndex = 3;
-            this.btnModosRecuperarContraseña.Text = "Recuperar Contraseña";
-            this.btnModosRecuperarContraseña.UseVisualStyleBackColor = true;
             // 
             // pictureBox5
             // 
