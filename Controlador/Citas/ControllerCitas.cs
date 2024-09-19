@@ -8,38 +8,49 @@ namespace Proyecto.Controlador.Citas
 {
     internal class ControllerCitas
     {
+        // Referencia a la vista del formulario
         frmCitas objVista;
 
+        // Constructor que inicializa el controlador y sus eventos
         public ControllerCitas(frmCitas Vista)
         {
             objVista = Vista;
+
+            // Asignar eventos a los botones de la vista
             Vista.btnEliminarCita.Click += new EventHandler(EliminarCita);
             Vista.btnEditarCita.Click += new EventHandler(EditarCita);
             Vista.btnIngresarCita.Click += new EventHandler(IngresarCita);
 
-            // Se llena el DataGridView en la inicialización
+            // Llenar el DataGridView al inicializar
             LlenarDataGridInfoCitas();
         }
 
+        // Método para llenar el DataGridView con información de citas
         public void LlenarDataGridInfoCitas()
         {
             DAOCitas daoCitas = new DAOCitas();
             DataSet ds = daoCitas.ObtenerCitas();
-            objVista.dgvInfoCitas.DataSource = ds.Tables["Citas"];
+            objVista.dgvInfoCitas.DataSource = ds.Tables["Citas"]; // Asignar la fuente de datos al DataGridView
         }
 
+        // Método para eliminar una cita
         private void EliminarCita(object sender, EventArgs e)
         {
+            // Obtener la posición de la fila seleccionada
             int pos = objVista.dgvCitas.CurrentRow.Index;
+
+            // Crear instancia de DAOCitas para eliminar
             DAOCitas daoDelete = new DAOCitas
             {
-                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString())
+                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()) // Obtener el ID de la cita
             };
+
+            // Llamar al método de eliminación y verificar el resultado
             int retorno = daoDelete.EliminarCita();
             if (retorno == 1)
             {
                 MessageBox.Show("La cita seleccionada fue eliminada", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LlenarDataGridInfoCitas();
+                LlenarDataGridInfoCitas(); // Actualizar el DataGridView
             }
             else
             {
@@ -47,25 +58,27 @@ namespace Proyecto.Controlador.Citas
             }
         }
 
+        // Método para ingresar una nueva cita
         private void IngresarCita(object sender, EventArgs e)
         {
             try
             {
+                // Crear una nueva instancia de DAOCitas para insertar
                 DAOCitas daoInsert = new DAOCitas
                 {
-                    IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text),
-                    IdMascota = int.Parse(objVista.txtIdMascota.Text),
-                    Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")),
-                    Hora = TimeSpan.Parse(objVista.dtpHora.Text),
-                    Descripcion = objVista.txtDescripcion.Text
+                    IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text), // ID del empleado
+                    IdMascota = int.Parse(objVista.txtIdMascota.Text), // ID de la mascota
+                    Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")), // Fecha de la cita
+                    Hora = TimeSpan.Parse(objVista.dtpHora.Text), // Hora de la cita
+                    Descripcion = objVista.txtDescripcion.Text // Descripción de la cita
                 };
 
+                // Llamar al método de inserción y verificar el resultado
                 int retorno = daoInsert.IngresarCita();
-
                 if (retorno == 1)
                 {
-                    MessageBox.Show("La cita se agrego exitosamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LlenarDataGridInfoCitas();
+                    MessageBox.Show("La cita se agregó exitosamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LlenarDataGridInfoCitas(); // Actualizar el DataGridView
                 }
                 else
                 {
@@ -74,28 +87,34 @@ namespace Proyecto.Controlador.Citas
             }
             catch (Exception ex)
             {
+                // Manejo de errores al agregar la cita
                 MessageBox.Show("Error al agregar la cita: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // Método para editar una cita existente
         private void EditarCita(object sender, EventArgs e)
         {
+            // Obtener la posición de la fila seleccionada
             int pos = objVista.dgvCitas.CurrentRow.Index;
+
+            // Crear instancia de DAOCitas para editar
             DAOCitas daoUpdate = new DAOCitas
             {
-                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()),
-                IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text),
-                IdMascota = int.Parse(objVista.txtIdMascota.Text),
-                Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")),
-                Hora = TimeSpan.Parse(objVista.dtpHora.Text),
-                Descripcion = objVista.txtDescripcion.Text
+                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()), // Obtener el ID de la cita
+                IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text), // ID del empleado
+                IdMascota = int.Parse(objVista.txtIdMascota.Text), // ID de la mascota
+                Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")), // Fecha de la cita
+                Hora = TimeSpan.Parse(objVista.dtpHora.Text), // Hora de la cita
+                Descripcion = objVista.txtDescripcion.Text // Descripción de la cita
             };
 
+            // Llamar al método de actualización y verificar el resultado
             int retorno = daoUpdate.EditarCita();
             if (retorno == 1)
             {
                 MessageBox.Show("La cita fue actualizada exitosamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LlenarDataGridInfoCitas();
+                LlenarDataGridInfoCitas(); // Actualizar el DataGridView
             }
             else
             {
