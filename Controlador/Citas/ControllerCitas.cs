@@ -42,7 +42,7 @@ namespace Proyecto.Controlador.Citas
             // Crear instancia de DAOCitas para eliminar
             DAOCitas daoDelete = new DAOCitas
             {
-                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()) // Obtener el ID de la cita
+                IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()) // Obtener el ID de la cita
             };
 
             // Llamar al método de eliminación y verificar el resultado
@@ -64,14 +64,14 @@ namespace Proyecto.Controlador.Citas
             try
             {
                 // Crear una nueva instancia de DAOCitas para insertar
-                DAOCitas daoInsert = new DAOCitas
-                {
-                    IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text), // ID del empleado
-                    IdMascota = int.Parse(objVista.txtIdMascota.Text), // ID de la mascota
-                    Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")), // Fecha de la cita
-                    Hora = TimeSpan.Parse(objVista.dtpHora.Text), // Hora de la cita
-                    Descripcion = objVista.txtDescripcion.Text // Descripción de la cita
-                };
+                DAOCitas daoInsert = new DAOCitas();
+
+                int IdEmpleados = int.Parse(objVista.txtIdEmpleados.Text); // ID del empleado
+                int IdMascota = int.Parse(objVista.txtIdMascota.Text); // ID de la mascota
+                DateTime Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
+                TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH-mm-ss")); // Hora de la cita
+                string Descripcion = objVista.txtDescripcion.Text; // Descripción de la cita
+
 
                 // Llamar al método de inserción y verificar el resultado
                 int retorno = daoInsert.IngresarCita();
@@ -99,15 +99,15 @@ namespace Proyecto.Controlador.Citas
             int pos = objVista.dgvCitas.CurrentRow.Index;
 
             // Crear instancia de DAOCitas para editar
-            DAOCitas daoUpdate = new DAOCitas
-            {
-                IdCita = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()), // Obtener el ID de la cita
-                IdEmpleado = int.Parse(objVista.txtIdEmpleados.Text), // ID del empleado
-                IdMascota = int.Parse(objVista.txtIdMascota.Text), // ID de la mascota
-                Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")), // Fecha de la cita
-                Hora = TimeSpan.Parse(objVista.dtpHora.Text), // Hora de la cita
-                Descripcion = objVista.txtDescripcion.Text // Descripción de la cita
-            };
+            DAOCitas daoUpdate = new DAOCitas();
+
+            int IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()); // Obtener el ID de la cita
+            int IdEmpleados = int.Parse(objVista.txtIdEmpleados.Text); // ID del empleado
+            int IdMascota = int.Parse(objVista.txtIdMascota.Text); // ID de la mascota
+            DateTime Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
+            TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
+            string Descripcion = objVista.txtDescripcion.Text; // Descripción de la cita
+            
 
             // Llamar al método de actualización y verificar el resultado
             int retorno = daoUpdate.EditarCita();

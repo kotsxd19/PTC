@@ -53,10 +53,9 @@
     <Compile Include="Modelo\DAO\Cita.cs" />
     <Compile Include="Modelo\DAO\DAOCitas.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
-    <DesignData Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DAO\fCita.cs" />
     <Compile Include="Modelo\DAO\RequiredAttribute.cs" />
-    <Compile Include="Modelo\DTO\dbConexion.cs" />
+    <Compile Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOCitas.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Program.cs" />
