@@ -3,6 +3,7 @@ using Proyecto.Vista.AgregarUsuarios;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,16 +37,24 @@ namespace Proyecto.Controlador.IngresarUsuario
         // Método que refresca los datos en el DataGridView.
         public void RefrescarData()
         {
-            DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para obtener datos
-            DataSet ds = new DataSet();
+            try
+            {
+                DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para obtener datos
+                DataSet ds = new DataSet();
+                ds = objAdmin.ObtenerPersonas(); // Obtiene la lista de personas desde la base de datos
 
-            //if (ObjAdminUser.btnRecargar.Focused)
-            //{
-            //    ds = objAdmin.ObtenerPersonas(); // Obtiene la lista de personas desde la base de datos
-            //}
-            //ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegistroEmpleado"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+                ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegistroEmpleado"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error al cargar los datos.", "Error de proceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
+  
+
         }
-
         // Método que abre el formulario para agregar un nuevo usuario.
         private void nuevoUsuario(object sender, EventArgs e)
         {

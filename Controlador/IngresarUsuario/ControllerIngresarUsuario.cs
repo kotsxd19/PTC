@@ -23,6 +23,8 @@ namespace Proyecto.Controlador.IngresarUsuario
         {
             ObjAgregarUsuario = Vista;
             this.accion = accion;
+            this.role = role;
+
             verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
             ObjAgregarUsuario.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
             ObjAgregarUsuario.btnIngresar.Click += new EventHandler(NuevoRegistro); // Asocia el evento Click del botón Ingresar al método NuevoRegistro
@@ -92,22 +94,15 @@ namespace Proyecto.Controlador.IngresarUsuario
             {
                 DAOAgregarUsuario DAOInsert = new DAOAgregarUsuario();
                 Incriptar commonClasses = new Incriptar();
-                if (ObjAgregarUsuario.txtNombre.Text.Length < 100 || ObjAgregarUsuario.txtApellido.Text.Length < 100 || ObjAgregarUsuario.txtCorreo.Text.Length < 100 || ObjAgregarUsuario.txtUsuario.Text.Length < 100 ||
-                    ObjAgregarUsuario.txtCorreo.Text.Length < 100)
-                {
                     DAOInsert.Nombre1 = ObjAgregarUsuario.txtNombre.Text.Trim();
                     DAOInsert.Apellido1 = ObjAgregarUsuario.txtApellido.Text.Trim();
                     DAOInsert.FechaNacimiento1 = ObjAgregarUsuario.dtpNacimiento.Value.Date;
                     DAOInsert.CorreoElectronico1 = ObjAgregarUsuario.txtCorreo.Text.Trim();
+
                     DAOInsert.Usuario1 = ObjAgregarUsuario.txtUsuario.Text.Trim();
                     DAOInsert.Contraseña1 = commonClasses.ComputeSha256Hash(ObjAgregarUsuario.txtUsuario.Text.Trim());
                     DAOInsert.Role1 = int.Parse(ObjAgregarUsuario.cmbRoles.SelectedValue.ToString());
                     DAOInsert.Intentos = 0;
-                }
-                else
-                {
-                    MessageBox.Show("Pasastes el maximo de caracteristicas", "Error de capacidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
                 int valorRetornado = DAOInsert.RegistarEmpleados(); // Registra el nuevo usuario
                 if (valorRetornado == 1)
                 {

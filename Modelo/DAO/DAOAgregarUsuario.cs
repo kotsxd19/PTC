@@ -126,9 +126,9 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para obtener los empleados activos
-                string query = "SELECT * FROM RegistroEmpleado WHERE userStatus = @valor";
+                string query = "SELECT * FROM RegistroEmpleado WHERE Usuario = @Usuario";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("valor", true);
+                cmd.Parameters.AddWithValue("Usuario", true);
 
                 // Ejecuta la consulta sin obtener resultados
                 cmd.ExecuteNonQuery();
