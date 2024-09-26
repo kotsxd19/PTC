@@ -56,14 +56,14 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para insertar un nuevo empleado
-                string query2 = "INSERT INTO Empleado VALUES (@Usuario, @Contraseña, @intentos, @IdRole)";
+                string query2 = "INSERT INTO Empleado VALUES (@Usuario, @Contraseña, @intentos, @IdRoles)";
                 SqlCommand cmd2 = new SqlCommand(query2, command.Connection);
 
                 // Agrega los parámetros para la consulta de inserción
                 cmd2.Parameters.AddWithValue("Usuario", Usuario1);
                 cmd2.Parameters.AddWithValue("Contraseña", Contraseña1);
                 cmd2.Parameters.AddWithValue("intentos", Intentos);
-                cmd2.Parameters.AddWithValue("Roles", Role1);
+                cmd2.Parameters.AddWithValue("IdRoles", Role1);
 
                 // Ejecuta la consulta de inserción y obtiene el número de filas afectadas
                 int repuesta = cmd2.ExecuteNonQuery();
@@ -72,13 +72,15 @@ namespace Proyecto.Modelo.DAO
                 if (repuesta == 1)
                 {
                     // Consulta SQL para insertar más detalles del empleado
-                    string query = "INSERT INTO Empleado (Usuario, Nombre, Apellido, CorreoEmpleado, FechaNacimient) VALUES (@param1, @param2, @param3, @param4, @param5)";
+                    string query = "INSERT INTO Empleado (Usuario, Contraseña, Nombre, Apellido, CorreoEmpleado, Roles, FechaNacimient) VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7 )";
                     SqlCommand cmd = new SqlCommand(query, command.Connection);
                     cmd.Parameters.AddWithValue("param1", Usuario1);
-                    cmd.Parameters.AddWithValue("param2", Nombre1);
-                    cmd.Parameters.AddWithValue("param3", Apellido1);
-                    cmd.Parameters.AddWithValue("param4", CorreoElectronico1);
-                    cmd.Parameters.AddWithValue("param5", FechaNacimiento1);
+                    cmd.Parameters.AddWithValue("param2", Contraseña1);
+                    cmd.Parameters.AddWithValue("param3", Nombre1);
+                    cmd.Parameters.AddWithValue("param4", Apellido1);
+                    cmd.Parameters.AddWithValue("param5", CorreoElectronico1);
+                    cmd.Parameters.AddWithValue("param6", Role1);
+                    cmd.Parameters.AddWithValue("param7", FechaNacimiento1);
 
                     // Ejecuta la consulta de inserción de detalles y obtiene el número de filas afectadas
                     repuesta = cmd.ExecuteNonQuery();
@@ -126,9 +128,8 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para obtener los empleados activos
-                string query = "SELECT * FROM RegistroEmpleado WHERE Usuario = @Usuario";
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("Usuario", true);
+                string query = "SELECT * FROM RegistroEmpleado" ;
+                SqlCommand cmd = new SqlCommand(query, command.Connection); 
 
                 // Ejecuta la consulta sin obtener resultados
                 cmd.ExecuteNonQuery();

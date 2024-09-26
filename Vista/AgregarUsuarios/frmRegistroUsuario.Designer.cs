@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
             this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
             this.acualizarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -58,6 +58,32 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(877, 56);
             this.panel4.TabIndex = 4;
+            // 
+            // btnNuevoEmpleado
+            // 
+            this.btnNuevoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevoEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnNuevoEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoEmpleado.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
+            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoEmpleado.Location = new System.Drawing.Point(759, 8);
+            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
+            this.btnNuevoEmpleado.Size = new System.Drawing.Size(108, 39);
+            this.btnNuevoEmpleado.TabIndex = 8;
+            this.btnNuevoEmpleado.Text = "Nuevo";
+            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Buscar empleado:";
             // 
             // btnBuscar
             // 
@@ -92,6 +118,7 @@
             this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmpleados.Location = new System.Drawing.Point(10, 10);
             this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.RowHeadersWidth = 51;
             this.dgvEmpleados.Size = new System.Drawing.Size(857, 487);
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
@@ -104,23 +131,6 @@
             this.acualizarContraseñaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
-            // 
-            // btnNuevoEmpleado
-            // 
-            this.btnNuevoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnNuevoEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoEmpleado.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
-            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoEmpleado.Location = new System.Drawing.Point(759, 8);
-            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
-            this.btnNuevoEmpleado.Size = new System.Drawing.Size(108, 39);
-            this.btnNuevoEmpleado.TabIndex = 8;
-            this.btnNuevoEmpleado.Text = "Nuevo";
-            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
             // 
             // cmsEliminar
             // 
@@ -142,15 +152,6 @@
             this.acualizarContraseñaToolStripMenuItem.Name = "acualizarContraseñaToolStripMenuItem";
             this.acualizarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.acualizarContraseñaToolStripMenuItem.Text = "Acualizar Contraseña";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar empleado:";
             // 
             // frmRegistroUsuario
             // 
