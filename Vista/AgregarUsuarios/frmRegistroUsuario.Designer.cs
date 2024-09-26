@@ -40,6 +40,7 @@
             this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
             this.acualizarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnElminarEmpleado = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -49,6 +50,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.panel4.Controls.Add(this.btnElminarEmpleado);
             this.panel4.Controls.Add(this.btnNuevoEmpleado);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscar);
@@ -114,6 +116,7 @@
             // 
             // dgvEmpleados
             // 
+            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmpleados.Location = new System.Drawing.Point(10, 10);
@@ -153,6 +156,23 @@
             this.acualizarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.acualizarContraseñaToolStripMenuItem.Text = "Acualizar Contraseña";
             // 
+            // btnElminarEmpleado
+            // 
+            this.btnElminarEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnElminarEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnElminarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnElminarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElminarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElminarEmpleado.Image = global::Proyecto.Properties.Resources.icons8_basura_llena_40;
+            this.btnElminarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElminarEmpleado.Location = new System.Drawing.Point(645, 8);
+            this.btnElminarEmpleado.Name = "btnElminarEmpleado";
+            this.btnElminarEmpleado.Size = new System.Drawing.Size(108, 39);
+            this.btnElminarEmpleado.TabIndex = 8;
+            this.btnElminarEmpleado.Text = "eliminar";
+            this.btnElminarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnElminarEmpleado.UseVisualStyleBackColor = true;
+            // 
             // frmRegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +204,6 @@
         public System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ToolStripMenuItem acualizarContraseñaToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnElminarEmpleado;
     }
 }

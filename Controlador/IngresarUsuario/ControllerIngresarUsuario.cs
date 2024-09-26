@@ -86,7 +86,7 @@ namespace Proyecto.Controlador.IngresarUsuario
 
         // Método para registrar un nuevo usuario en la base de datos.
         public void NuevoRegistro(object sender, EventArgs e)
-        {
+            {
             if (!(string.IsNullOrEmpty(ObjAgregarUsuario.txtNombre.Text.Trim()) ||
                 string.IsNullOrEmpty(ObjAgregarUsuario.txtApellido.Text.Trim()) ||
                 string.IsNullOrEmpty(ObjAgregarUsuario.txtCorreo.Text.Trim()) ||
@@ -102,7 +102,7 @@ namespace Proyecto.Controlador.IngresarUsuario
                     DAOInsert.Usuario1 = ObjAgregarUsuario.txtUsuario.Text.Trim();
                     DAOInsert.Contraseña1 = commonClasses.ComputeSha256Hash(ObjAgregarUsuario.txtUsuario.Text.Trim());
                     DAOInsert.Role1 = int.Parse(ObjAgregarUsuario.cmbRoles.SelectedValue.ToString());
-                    DAOInsert.Intentos = 0;
+                    
                 int valorRetornado = DAOInsert.RegistarEmpleados(); // Registra el nuevo usuario
                 if (valorRetornado == 1)
                 {
