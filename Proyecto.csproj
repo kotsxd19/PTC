@@ -258,5 +258,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-basura-llena-40.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-actualizar-45.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

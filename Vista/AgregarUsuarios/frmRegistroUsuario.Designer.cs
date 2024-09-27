@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
@@ -40,7 +39,8 @@
             this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
             this.acualizarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnElminarEmpleado = new System.Windows.Forms.Button();
+            this.cmsActualizarEmpleado = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -50,7 +50,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel4.Controls.Add(this.btnElminarEmpleado);
             this.panel4.Controls.Add(this.btnNuevoEmpleado);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscar);
@@ -60,23 +59,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(877, 56);
             this.panel4.TabIndex = 4;
-            // 
-            // btnNuevoEmpleado
-            // 
-            this.btnNuevoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnNuevoEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoEmpleado.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
-            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoEmpleado.Location = new System.Drawing.Point(759, 8);
-            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
-            this.btnNuevoEmpleado.Size = new System.Drawing.Size(108, 39);
-            this.btnNuevoEmpleado.TabIndex = 8;
-            this.btnNuevoEmpleado.Text = "Nuevo";
-            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -118,6 +100,7 @@
             // 
             this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmpleados.Location = new System.Drawing.Point(10, 10);
             this.dgvEmpleados.Name = "dgvEmpleados";
@@ -131,9 +114,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsEliminar,
             this.cmsFicha,
-            this.acualizarContraseñaToolStripMenuItem});
+            this.acualizarContraseñaToolStripMenuItem,
+            this.cmsActualizarEmpleado});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 114);
             // 
             // cmsEliminar
             // 
@@ -156,22 +140,29 @@
             this.acualizarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.acualizarContraseñaToolStripMenuItem.Text = "Acualizar Contraseña";
             // 
-            // btnElminarEmpleado
+            // cmsActualizarEmpleado
             // 
-            this.btnElminarEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnElminarEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnElminarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnElminarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElminarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElminarEmpleado.Image = global::Proyecto.Properties.Resources.icons8_basura_llena_40;
-            this.btnElminarEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElminarEmpleado.Location = new System.Drawing.Point(645, 8);
-            this.btnElminarEmpleado.Name = "btnElminarEmpleado";
-            this.btnElminarEmpleado.Size = new System.Drawing.Size(108, 39);
-            this.btnElminarEmpleado.TabIndex = 8;
-            this.btnElminarEmpleado.Text = "eliminar";
-            this.btnElminarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnElminarEmpleado.UseVisualStyleBackColor = true;
+            this.cmsActualizarEmpleado.Image = global::Proyecto.Properties.Resources.icons8_actualizar_45;
+            this.cmsActualizarEmpleado.Name = "cmsActualizarEmpleado";
+            this.cmsActualizarEmpleado.Size = new System.Drawing.Size(185, 22);
+            this.cmsActualizarEmpleado.Text = "Actualizar Empleado";
+            // 
+            // btnNuevoEmpleado
+            // 
+            this.btnNuevoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevoEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnNuevoEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoEmpleado.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
+            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoEmpleado.Location = new System.Drawing.Point(759, 8);
+            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
+            this.btnNuevoEmpleado.Size = new System.Drawing.Size(108, 39);
+            this.btnNuevoEmpleado.TabIndex = 8;
+            this.btnNuevoEmpleado.Text = "Nuevo";
+            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
             // 
             // frmRegistroUsuario
             // 
@@ -202,8 +193,8 @@
         public System.Windows.Forms.ToolStripMenuItem cmsEliminar;
         public System.Windows.Forms.ToolStripMenuItem cmsFicha;
         public System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.ToolStripMenuItem acualizarContraseñaToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button btnElminarEmpleado;
+        public System.Windows.Forms.ToolStripMenuItem acualizarContraseñaToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem cmsActualizarEmpleado;
     }
 }

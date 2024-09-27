@@ -23,8 +23,9 @@ namespace Proyecto.Controlador.IngresarUsuario
             ObjAdminUser.Load += new EventHandler(CargarDatos); // Asocia el evento Load del formulario al método CargarDatos
             ObjAdminUser.btnNuevoEmpleado.Click += new EventHandler(nuevoUsuario); // Asocia el evento Click del botón Nuevo Empleado al método nuevoUsuario
             //ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado); // Asocia el evento Click del botón Actualizar al método ActualizarEmpleado
-            ObjAdminUser.btnElminarEmpleado.Click += new EventHandler(DeleteUser); // Asocia el evento Click del menú contextual Eliminar al método DeleteUser
+            ObjAdminUser.cmsEliminar.Click += new EventHandler(DeleteUser); // Asocia el evento Click del menú contextual Eliminar al método DeleteUser
             ObjAdminUser.cmsFicha.Click += new EventHandler(VerFicha); // Asocia el evento Click del menú contextual Ficha al método VerFicha
+            ObjAdminUser.cmsActualizarEmpleado.Click -= new EventHandler(AcualizarEmpleado);
             ObjAdminUser.btnBuscar.Click += new EventHandler(BuscarPeronasControllerEvent); // Asocia el evento Click del botón Buscar al método BuscarPeronasControllerEvent
         }
 
@@ -43,7 +44,7 @@ namespace Proyecto.Controlador.IngresarUsuario
                 DataSet ds = new DataSet();
                 ds = objAdmin.ObtenerPersonas(); // Obtiene la lista de personas desde la base de datos
 
-                ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegistroEmpleado"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+                ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegsitrosDeEmpleados"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             }
             catch (Exception)
             {
@@ -74,8 +75,9 @@ namespace Proyecto.Controlador.IngresarUsuario
             // Enviar los datos de la fila seleccionada al formulario de edición
             ObjAdminUser.dgvEmpleados[1, pos].Value.ToString();
             ObjAdminUser.dgvEmpleados[2, pos].Value.ToString();
-            DateTime.Parse(ObjAdminUser.dgvEmpleados[3, pos].Value.ToString());
-            ObjAdminUser.dgvEmpleados[4, pos].Value.ToString();
+            ObjAdminUser.dgvEmpleados[3, pos].Value.ToString();
+            DateTime.Parse(ObjAdminUser.dgvEmpleados[4, pos].Value.ToString());
+            ObjAdminUser.dgvEmpleados[7, pos].Value.ToString();
 
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
@@ -85,19 +87,16 @@ namespace Proyecto.Controlador.IngresarUsuario
         private void DeleteUser(object sender, EventArgs e)
         {
             int pos = ObjAdminUser.dgvEmpleados.CurrentRow.Index; // Obtiene la posición de la fila seleccionada
-            string userSelected = ObjAdminUser.dgvEmpleados[0, pos].Value.ToString(); // Obtiene el nombre de usuario seleccionado
 
             // Muestra un mensaje de confirmación antes de eliminar
-            if (!(userSelected.Equals(Acceso.Usuario) || userSelected.Equals("Usuario")))
-            {
-                if (MessageBox.Show($"• Se eliminará la información de la persona, sin embargo, el usuario asociado quedará inactivo.\n\n• ¿Esta seguro que desea elimar a: {ObjAdminUser.dgvEmpleados[0, pos].Value.ToString()} , considere que dicha acción no se podrá revertir. \n\n• Si desea mantener la información utilice la opción de deshabilitar usuario.", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($" ¿Esta seguro que desea elimar a: {ObjAdminUser.dgvEmpleados[1, pos].Value.ToString()} , considere que dicha acción no se podrá revertir.", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    DAOAgregarUsuario daoDel = new DAOAgregarUsuario(); // Crea una instancia del DAO para eliminar datos
+                    DAOAgregarUsuario DAOEliminar = new DAOAgregarUsuario(); // Crea una instancia del DAO para eliminar datos
                     
-                    daoDel.Usuario1 = ObjAdminUser.dgvEmpleados[1, pos].Value.ToString(); // Establece el nombre de usuario a eliminar
+                    DAOEliminar.Usuario1 = ObjAdminUser.dgvEmpleados[1, pos].Value.ToString(); // Establece el nombre de usuario a eliminar
 
-                    int valorRetornado = daoDel.EliminarEmplado(); // Llama al método para eliminar el usuario
-                    if (valorRetornado == 2)
+                    int valorRetornado = DAOEliminar.EliminarEmplado(); // Llama al método para eliminar el usuario
+                    if (valorRetornado == 1)
                     {
                         MessageBox.Show("Registro eliminado", "Acción completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         RefrescarData(); // Refresca los datos en el DataGridView después de eliminar el usuario
@@ -108,11 +107,7 @@ namespace Proyecto.Controlador.IngresarUsuario
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("No puede eliminar al usuario ya que la sesión está activa, cierre sesión en todos los dispositivos y vuelva a intentarlo.", "Error de proceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         // Método para buscar personas usando el texto ingresado en el campo de búsqueda.
         public void BuscarPeronasControllerEvent(object sender, EventArgs e)

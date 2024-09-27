@@ -183,6 +183,16 @@ namespace Proyecto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_actualizar_45 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-actualizar-45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_agenda_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-agenda-30", resourceCulture);

@@ -104,7 +104,7 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para obtener los empleados activos
-                string query = "SELECT * FROM RegistroEmpleado" ;
+                string query = "SELECT * FROM RegsitrosDeEmpleados";
                 SqlCommand cmd = new SqlCommand(query, command.Connection); 
 
                 // Ejecuta la consulta sin obtener resultados
@@ -113,7 +113,7 @@ namespace Proyecto.Modelo.DAO
                 // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                adp.Fill(ds, "RegistroEmpleado");
+                adp.Fill(ds, "RegsitrosDeEmpleados");
 
                 // Retorna el DataSet con los empleados activos
                 return ds;
@@ -187,25 +187,16 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
-                // Establece la conexión a la base de datos
+                // Establece la conexión a la base de datos 
                 command.Connection = getConnection();
 
                 // Consulta SQL para eliminar al empleado
-                string query = "DELETE Empleado WHERE Usuario = @param5";
+                string query = "DELETE Empleado WHERE IdEmpleados = @param0";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("param5", Usuario1);
+                cmd.Parameters.AddWithValue("param0", IdEmpleado1);
 
                 // Ejecuta la consulta de eliminación y obtiene el número de filas afectadas
                 int respuesta = cmd.ExecuteNonQuery();
-
-                // Si la eliminación fue exitosa, actualiza el estado del usuario
-                if (respuesta == 1)
-                {
-                    string queryupdate = "UPDATE Empleado SET WHERE Usuario = @Usuario";
-                    SqlCommand cmdupdate = new SqlCommand(queryupdate, command.Connection);
-                    cmdupdate.Parameters.AddWithValue("Usuario", Usuario1);
-                    respuesta += cmdupdate.ExecuteNonQuery();
-                }
 
                 // Retorna el resultado de la eliminación
                 return respuesta;
