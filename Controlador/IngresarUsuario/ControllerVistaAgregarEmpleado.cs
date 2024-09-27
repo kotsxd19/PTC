@@ -93,7 +93,7 @@ namespace Proyecto.Controlador.IngresarUsuario
                 {
                     DAOAgregarUsuario DAOEliminar = new DAOAgregarUsuario(); // Crea una instancia del DAO para eliminar datos
                     
-                    DAOEliminar.Usuario1 = ObjAdminUser.dgvEmpleados[1, pos].Value.ToString(); // Establece el nombre de usuario a eliminar
+                    DAOEliminar.Usuario1 = ObjAdminUser.dgvEmpleados[0, pos].Value.ToString(); // Establece el nombre de usuario a eliminar
 
                     int valorRetornado = DAOEliminar.EliminarEmplado(); // Llama al método para eliminar el usuario
                     if (valorRetornado == 1)

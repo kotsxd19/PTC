@@ -191,9 +191,9 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para eliminar al empleado
-                string query = "DELETE Empleado WHERE IdEmpleados = @param0";
+                string query = "DELETE Empleado WHERE IdEmpleados = @param9";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("param0", IdEmpleado1);
+                cmd.Parameters.AddWithValue("param9", IdEmpleado1);
 
                 // Ejecuta la consulta de eliminación y obtiene el número de filas afectadas
                 int respuesta = cmd.ExecuteNonQuery();
