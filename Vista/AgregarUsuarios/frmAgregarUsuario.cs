@@ -23,7 +23,10 @@ namespace Proyecto.Vista.AgregarUsuarios
         public frmAgregarUsuario(int accion, int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario, string role)
         {
             InitializeComponent();
-           
+            ControllerIngresarUsuario objAgregarUser = new ControllerIngresarUsuario(this, accion, id, Nombre,
+                Apellido, FechaNacimient, CorreoEmpleado, Usuario, role);
+
+
         }
 
         private void label6_Click(object sender, EventArgs e)

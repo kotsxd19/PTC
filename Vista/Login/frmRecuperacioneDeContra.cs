@@ -33,5 +33,10 @@ namespace Proyecto.Vista.Login
         {
 
         }
+
+        private void btnNuevoEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

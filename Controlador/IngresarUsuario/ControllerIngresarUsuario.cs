@@ -31,14 +31,14 @@ namespace Proyecto.Controlador.IngresarUsuario
         }
 
         // Constructor sobrecargado para inicializar el controlador con datos adicionales para la edición de usuario.
-        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int p_accion, int id, int IdRole, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario, string role)
+        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int p_accion, int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario, string role)
         {
             ObjAgregarUsuario = Vista;
             this.accion = p_accion;
             this.role = role;
             ObjAgregarUsuario.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
             verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
-            CambiarValores(id, IdRole, Nombre, Apellido, FechaNacimient, CorreoEmpleado, Usuario); // Carga los datos del usuario en el formulario
+            CambiarValores(id, Nombre, Apellido, FechaNacimient, CorreoEmpleado, Usuario); // Carga los datos del usuario en el formulario
             ObjAgregarUsuario.btnActualizar.Click += new EventHandler(ActualizarDatos); // Asocia el evento Click del botón Actualizar al método ActualizarDatos
         }
 
@@ -175,12 +175,11 @@ namespace Proyecto.Controlador.IngresarUsuario
         }
 
         // Método para llenar los campos del formulario con los datos del usuario que se está editando.
-        public void CambiarValores(int id, int IdRole, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario)
+        public void CambiarValores(int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario)
         {
             try
             {
                 ObjAgregarUsuario.txtId.Text = id.ToString();
-                ObjAgregarUsuario.cmbRoles.Text = IdRole.ToString();
                 ObjAgregarUsuario.txtNombre.Text = Nombre;
                 ObjAgregarUsuario.txtApellido.Text = Apellido;
                 ObjAgregarUsuario.dtpNacimiento.Value = FechaNacimient;

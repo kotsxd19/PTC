@@ -25,7 +25,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             //ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado); // Asocia el evento Click del botón Actualizar al método ActualizarEmpleado
             ObjAdminUser.cmsEliminar.Click += new EventHandler(DeleteUser); // Asocia el evento Click del menú contextual Eliminar al método DeleteUser
             ObjAdminUser.cmsFicha.Click += new EventHandler(VerFicha); // Asocia el evento Click del menú contextual Ficha al método VerFicha
-            ObjAdminUser.cmsActualizarEmpleado.Click -= new EventHandler(AcualizarEmpleado);
+            ObjAdminUser.btnActualizar.Click -= new EventHandler(AcualizarEmpleado);
             ObjAdminUser.btnBuscar.Click += new EventHandler(BuscarPeronasControllerEvent); // Asocia el evento Click del botón Buscar al método BuscarPeronasControllerEvent
         }
 

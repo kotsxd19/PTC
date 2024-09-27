@@ -15,11 +15,9 @@ namespace Proyecto.Controlador.Login
         public ModosDeRecuperarContraseña(frmRecuperacioneDeContra vista)
         {
             this.vista = vista;
-            vista.ptcCorreo.Click += new EventHandler(RecuperacionPorCorreo);
-            vista.pctPreguntasSeguridad.Click += new EventHandler(RecuperacionPorPreguntasSeguridad);
-            vista.ptcReinicioDirecto.Click += new EventHandler(RecuperacionPorReinicioDirecto);
-            vista.ptcIntervesionAdmin.Click += new EventHandler(RecuperacionPorAdmin);
-           
+            vista.btnCorreoElectronico.Click += new EventHandler(RecuperacionPorCorreo);
+            vista.btnPreguntasSeguridad.Click += new EventHandler(RecuperacionPorPreguntasSeguridad);
+            vista.btnRegresar.Click += new EventHandler(Atras);
         }
 
         void RecuperacionPorCorreo(object sender, EventArgs e)
@@ -46,6 +44,11 @@ namespace Proyecto.Controlador.Login
             AbrirFormulario.ShowDialog();
         }
 
-
+        void Atras(object sender, EventArgs e)
+        {
+           frmLogin ArbirLogin = new frmLogin();
+            ArbirLogin.ShowDialog();
+            vista.Close();
+        }
     }
 }

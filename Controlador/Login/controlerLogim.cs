@@ -60,7 +60,7 @@ namespace Proyecto.Controlador.Login
             {
                 frmRecuperacioneDeContra AbrirFromularios = new frmRecuperacioneDeContra();
                 AbrirFromularios.Show();
-
+                ObjLogin.Hide();
             }
 
             private void AccesoAlosDatos(object sender, EventArgs e)

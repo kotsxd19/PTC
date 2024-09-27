@@ -261,5 +261,14 @@
   <ItemGroup>
     <None Include="Resources\icons8-actualizar-45.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-correo-electrónico-65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-preguntas-65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-flecha-izquierda-25.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
