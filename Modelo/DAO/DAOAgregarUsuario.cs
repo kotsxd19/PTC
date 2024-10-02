@@ -48,52 +48,40 @@ namespace Proyecto.Modelo.DAO
             }
         }
 
-        public int RegistarEmpleados()
+        public DataSet ObtenerPersonasActivas()
         {
             try
             {
-                // Establece la conexión a la base de datos
+                //Accedemos a la conexión que ya se tiene
                 command.Connection = getConnection();
-
-                    // Consulta SQL para insertar más detalles del empleado
-                string query = "INSERT INTO Empleado VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8)";
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM RegsitrosDeEmpleados WHERE EstadoEmpleado = @True";
+                //Comando sql en el cual se pasa la instrucción y la conexión
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("param1", Role1);
-                cmd.Parameters.AddWithValue("param2", Nombre1);
-                cmd.Parameters.AddWithValue("param3", Apellido1);
-                cmd.Parameters.AddWithValue("param4", FechaNacimiento1);
-                cmd.Parameters.AddWithValue("param5", Usuario1);
-                cmd.Parameters.AddWithValue("param6", Contraseña1);
-                cmd.Parameters.AddWithValue("param7", CorreoElectronico1);
-                cmd.Parameters.AddWithValue("param8", 0);
-                int respuesta = cmd.ExecuteNonQuery();
-
-                return respuesta;
-                //}
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("valor", true);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "RegsitrosDeEmpleados");
+                //Devolvemos el Dataset
+                return ds;
             }
             catch (Exception)
             {
-                // Realiza una reversión en caso de error y retorna -1
-                RollBack();
-                return -1;
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
             }
             finally
             {
-                // Realiza una reversión y cierra la conexión a la base de datos
-               
-                command.Connection.Close();
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
             }
-        }
-
-        public void RollBack()
-        {
-            // Consulta SQL para eliminar el usuario en caso de un fallo
-            string query = "DELETE FROM Empleado WHERE Usuario = @Usuario";
-            SqlCommand cmddel = new SqlCommand(query, command.Connection);
-            cmddel.Parameters.AddWithValue("Usuario", Usuario1);
-
-            // Ejecuta la consulta de eliminación
-            cmddel.ExecuteNonQuery();
         }
 
         public DataSet ObtenerPersonas()
@@ -105,7 +93,7 @@ namespace Proyecto.Modelo.DAO
 
                 // Consulta SQL para obtener los empleados activos
                 string query = "SELECT * FROM RegsitrosDeEmpleados";
-                SqlCommand cmd = new SqlCommand(query, command.Connection); 
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
 
                 // Ejecuta la consulta sin obtener resultados
                 cmd.ExecuteNonQuery();
@@ -128,6 +116,97 @@ namespace Proyecto.Modelo.DAO
                 // Cierra la conexión a la base de datos independientemente de si ocurre una excepción o no
                 getConnection().Close();
             }
+        }
+
+        public DataSet ObtenerPersonasInactivas()
+        {
+            try
+            {
+                //Accedemos a la conexión que ya se tiene
+                command.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM RegsitrosDeEmpleados WHERE EstadoEmpleado = @false";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("valor", false);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "RegsitrosDeEmpleados");
+                //Devolvemos el Dataset
+                return ds;
+            }
+            catch (Exception)
+            {
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
+            }
+        }
+
+
+
+
+
+
+        public int RegistarEmpleados()
+        {
+            try
+            {
+                // Establece la conexión a la base de datos
+                command.Connection = getConnection();
+
+                // Consulta SQL para insertar más detalles del empleado
+                string query = "INSERT INTO Empleado VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9)";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("param1", Role1);
+                cmd.Parameters.AddWithValue("param2", Nombre1);
+                cmd.Parameters.AddWithValue("param3", Apellido1);
+                cmd.Parameters.AddWithValue("param4", FechaNacimiento1);
+                cmd.Parameters.AddWithValue("param5", Usuario1);
+                cmd.Parameters.AddWithValue("param6", Contraseña1);
+                cmd.Parameters.AddWithValue("param7", CorreoElectronico1);
+                cmd.Parameters.AddWithValue("param8", 0);
+                cmd.Parameters.AddWithValue("param9", Estado1);
+                int respuesta = cmd.ExecuteNonQuery();
+
+                return respuesta;
+                //}
+            }
+            catch (Exception ex)
+            {
+                // Realiza una reverdsión en caso de error y retorna -1
+                RollBack();
+                return -1;
+            }
+            finally
+            {
+                // Realiza una reversión y cierra la conexión a la base de datos
+
+                command.Connection.Close();
+            }
+        }
+
+
+        public void RollBack()
+        {
+            // Consulta SQL para eliminar el usuario en caso de un fallo
+            string query = "DELETE FROM Empleado WHERE Usuario = @Usuario";
+            SqlCommand cmddel = new SqlCommand(query, command.Connection);
+            cmddel.Parameters.AddWithValue("Usuario", Usuario1);
+
+            // Ejecuta la consulta de eliminación
+            cmddel.ExecuteNonQuery();
         }
 
         public int ActualizarEmpleados()

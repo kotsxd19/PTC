@@ -139,6 +139,12 @@
     <Compile Include="Vista\PrimerUso\frmConexionAdministrador.Designer.cs">
       <DependentUpon>frmConexionAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Proveedor\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmRecuperarContraseñaPreguntas.resx">
       <DependentUpon>frmRecuperarContraseñaPreguntas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Proveedor\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -269,6 +278,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-flecha-izquierda-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hombres-categoría-de-edad-5-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buscar-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,6 +17,7 @@ namespace Proyecto.Modelo.DTO
         private string Contraseña;
         private int Role;
         private int intentos;
+        private bool Estado;
 
         public int IdEmpleado1 { get => IdEmpleado; set => IdEmpleado = value; }
         public string Nombre1 { get => Nombre; set => Nombre = value; }
@@ -27,5 +28,6 @@ namespace Proyecto.Modelo.DTO
         public string CorreoElectronico1 { get => CorreoElectronico; set => CorreoElectronico = value; }
         public int Role1 { get => Role; set => Role = value; }
         public int Intentos { get => intentos; set => intentos = value; }
+        public bool Estado1 { get => Estado; set => Estado = value; }
     }
 }

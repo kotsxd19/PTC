@@ -39,6 +39,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             ObjAgregarUsuario.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
             verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
             CambiarValores(id, Nombre, Apellido, FechaNacimient, CorreoEmpleado, Usuario); // Carga los datos del usuario en el formulario
+            
             ObjAgregarUsuario.btnActualizar.Click += new EventHandler(ActualizarDatos); // Asocia el evento Click del botón Actualizar al método ActualizarDatos
         }
 
@@ -50,10 +51,43 @@ namespace Proyecto.Controlador.IngresarUsuario
             ObjAgregarUsuario.cmbRoles.DataSource = ds.Tables["Roles"]; // Asocia el DataSource del ComboBox
             ObjAgregarUsuario.cmbRoles.ValueMember = "IdRoles"; // Establece el valor que se utilizará
             ObjAgregarUsuario.cmbRoles.DisplayMember = "Roles"; // Establece el texto que se mostrará en el ComboBox
+
             if (accion == 2)
             {
                 ObjAgregarUsuario.cmbRoles.Text = role; // Establece el texto del ComboBox para la acción de edición
             }
+
+            ObjAgregarUsuario.cmbEstado.Enabled = true;
+
+            ObjAgregarUsuario.cmbEstado.Items.Clear();
+
+            ObjAgregarUsuario.cmbEstado.Items.Add(new KeyValuePair<string, int>("Activo", 1));
+            ObjAgregarUsuario.cmbEstado.Items.Add(new KeyValuePair<string, int>("Inactivo", 2));
+
+            ObjAgregarUsuario.cmbEstado.DisplayMember = "Key";
+
+            ObjAgregarUsuario.cmbEstado.ValueMember = "Value";
+
+            ObjAgregarUsuario.cmbEstado.SelectedIndex = 0; // Esto selecciona "Activo" por defecto
+
+            // Evita acceder al SelectedItem inmediatamente después de la carga
+            ObjAgregarUsuario.cmbEstado.SelectedIndexChanged += (s, ev) =>
+            {
+                if (ObjAgregarUsuario.cmbEstado.SelectedItem != null)
+                {
+                    int estadoSeleccionado = ((KeyValuePair<String, int>)ObjAgregarUsuario.cmbEstado.SelectedItem).Value;
+                }
+            };
+        }
+
+        public void Estado(object sneder, EventArgs e)
+        {
+            //DAOAgregarUsuario objEstado = new DAOAgregarUsuario();
+            // DataSet ds = objEstado.LlenarComboBox()
+
+            
+
+
         }
 
         // Método para configurar la visibilidad y habilitación de los controles según la acción especificada.
@@ -69,7 +103,8 @@ namespace Proyecto.Controlador.IngresarUsuario
             {
                 ObjAgregarUsuario.btnIngresar.Enabled = false;
                 ObjAgregarUsuario.btnActualizar.Enabled = true;
-                ObjAgregarUsuario.txtUsuario.Enabled = false; // Deshabilita el campo de usuario para evitar cambios
+                ObjAgregarUsuario.txtUsuario.Enabled = false;
+                ObjAgregarUsuario.txtContra.Enabled = false;    // Deshabilita el campo de usuario para evitar cambios
             }
             else if (accion == 3) // Acción de solo lectura
             {
@@ -84,16 +119,20 @@ namespace Proyecto.Controlador.IngresarUsuario
             }
         }
 
+   
+
         // Método para registrar un nuevo usuario en la base de datos.
         public void NuevoRegistro(object sender, EventArgs e)
             {
-            if (!(string.IsNullOrEmpty(ObjAgregarUsuario.txtNombre.Text.Trim()) ||
+            try
+            {
+                if (!(string.IsNullOrEmpty(ObjAgregarUsuario.txtNombre.Text.Trim()) ||
                 string.IsNullOrEmpty(ObjAgregarUsuario.txtApellido.Text.Trim()) ||
                 string.IsNullOrEmpty(ObjAgregarUsuario.txtCorreo.Text.Trim()) ||
                 string.IsNullOrEmpty(ObjAgregarUsuario.txtUsuario.Text.Trim())))
-            {
-                DAOAgregarUsuario DAOInsert = new DAOAgregarUsuario();
-                Incriptar commonClasses = new Incriptar();
+                {
+                    DAOAgregarUsuario DAOInsert = new DAOAgregarUsuario();
+                    Incriptar commonClasses = new Incriptar();
                     DAOInsert.Nombre1 = ObjAgregarUsuario.txtNombre.Text.Trim();
                     DAOInsert.Apellido1 = ObjAgregarUsuario.txtApellido.Text.Trim();
                     DAOInsert.FechaNacimiento1 = ObjAgregarUsuario.dtpNacimiento.Value.Date;
@@ -102,29 +141,37 @@ namespace Proyecto.Controlador.IngresarUsuario
                     DAOInsert.Usuario1 = ObjAgregarUsuario.txtUsuario.Text.Trim();
                     DAOInsert.Contraseña1 = commonClasses.ComputeSha256Hash(ObjAgregarUsuario.txtUsuario.Text.Trim());
                     DAOInsert.Role1 = int.Parse(ObjAgregarUsuario.cmbRoles.SelectedValue.ToString());
-                    
-                int valorRetornado = DAOInsert.RegistarEmpleados(); // Registra el nuevo usuario
-                if (valorRetornado == 1)
-                {
-                    MessageBox.Show("Los datos ingresados han sido registrados exitosamente",
-                                    "Proceso completado",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+
+                    int estadoSeleccionado = ((KeyValuePair<string, int>)ObjAgregarUsuario.cmbEstado.SelectedItem).Value;
+                    DAOInsert.Estado1 = estadoSeleccionado == 1;
+
+
+                    int valorRetornado = DAOInsert.RegistarEmpleados(); // Registra el nuevo usuario
+                    if (valorRetornado == 1)
+                    {
+                        MessageBox.Show("Los datos ingresados han sido registrados exitosamente",
+                                        "Proceso completado",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos que ingreso no pudieron ser registrados correctamente",
+                                        "Proceso interrumpido",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Los datos que ingreso no pudieron ser registrados correctamente",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    MessageBox.Show("Existen campos vacíos, complete cada uno de los apartados y verifique que la fecha seleccionada corresponde a una persona mayor de edad.",
+                                        "Proceso interrumpido",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
                 }
-            }
-            else
+            }catch (Exception ex)
             {
-                MessageBox.Show("Existen campos vacíos, complete cada uno de los apartados y verifique que la fecha seleccionada corresponde a una persona mayor de edad.",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -132,9 +179,6 @@ namespace Proyecto.Controlador.IngresarUsuario
         public void ActualizarDatos(object sender, EventArgs e)
         {
             DAOAgregarUsuario daoUpdate = new DAOAgregarUsuario();
-            if (ObjAgregarUsuario.txtNombre.Text.Length < 100 || ObjAgregarUsuario.txtApellido.Text.Length < 100 || ObjAgregarUsuario.txtCorreo.Text.Length < 100 || ObjAgregarUsuario.txtUsuario.Text.Length < 100 ||
-                    ObjAgregarUsuario.txtCorreo.Text.Length < 100)
-            {
                 daoUpdate.IdEmpleado1 = int.Parse(ObjAgregarUsuario.txtId.Text.Trim());
                 daoUpdate.Nombre1 = ObjAgregarUsuario.txtNombre.Text.Trim();
                 daoUpdate.Apellido1 = ObjAgregarUsuario.txtApellido.Text.Trim();
@@ -165,14 +209,8 @@ namespace Proyecto.Controlador.IngresarUsuario
                                     MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Existen campos vacíos, complete cada uno de los apartados y verifique que la fecha seleccionada corresponde a una persona mayor de edad.",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-            }
-        }
+
+        
 
         // Método para llenar los campos del formulario con los datos del usuario que se está editando.
         public void CambiarValores(int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario)

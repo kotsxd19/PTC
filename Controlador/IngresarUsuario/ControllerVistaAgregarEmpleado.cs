@@ -25,7 +25,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             //ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado); // Asocia el evento Click del botón Actualizar al método ActualizarEmpleado
             ObjAdminUser.cmsEliminar.Click += new EventHandler(DeleteUser); // Asocia el evento Click del menú contextual Eliminar al método DeleteUser
             ObjAdminUser.cmsFicha.Click += new EventHandler(VerFicha); // Asocia el evento Click del menú contextual Ficha al método VerFicha
-            ObjAdminUser.btnActualizar.Click -= new EventHandler(AcualizarEmpleado);
+            ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado);
             ObjAdminUser.btnBuscar.Click += new EventHandler(BuscarPeronasControllerEvent); // Asocia el evento Click del botón Buscar al método BuscarPeronasControllerEvent
         }
 
@@ -38,24 +38,22 @@ namespace Proyecto.Controlador.IngresarUsuario
         // Método que refresca los datos en el DataGridView.
         public void RefrescarData()
         {
-            try
+            DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para obtener datos
+            DataSet ds = new DataSet();
+            if (ObjAdminUser.cbEstadoEmpelado.Checked != true)
             {
-                DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para obtener datos
-                DataSet ds = new DataSet();
-                ds = objAdmin.ObtenerPersonas(); // Obtiene la lista de personas desde la base de datos
+                ds = objAdmin.ObtenerPersonasActivas(); // Obtiene la lista de personas desde la base de datos
+            }
+            else
+            {
+                ds = objAdmin.ObtenerPersonasInactivas();
+
 
                 ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegsitrosDeEmpleados"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Error al cargar los datos.", "Error de proceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-
-  
-
         }
+
+
         // Método que abre el formulario para agregar un nuevo usuario.
         private void nuevoUsuario(object sender, EventArgs e)
         {
@@ -73,11 +71,13 @@ namespace Proyecto.Controlador.IngresarUsuario
             frmAgregarUsuario openForm = new frmAgregarUsuario(2);
 
             // Enviar los datos de la fila seleccionada al formulario de edición
+            int.Parse(ObjAdminUser.dgvEmpleados[0, pos].Value.ToString());
             ObjAdminUser.dgvEmpleados[1, pos].Value.ToString();
             ObjAdminUser.dgvEmpleados[2, pos].Value.ToString();
-            ObjAdminUser.dgvEmpleados[3, pos].Value.ToString();
-            DateTime.Parse(ObjAdminUser.dgvEmpleados[4, pos].Value.ToString());
-            ObjAdminUser.dgvEmpleados[7, pos].Value.ToString();
+            DateTime.Parse(ObjAdminUser.dgvEmpleados[3, pos].Value.ToString());
+            ObjAdminUser.dgvEmpleados[4, pos].Value.ToString();
+            ObjAdminUser.dgvEmpleados[5, pos].Value.ToString();
+            ObjAdminUser.dgvEmpleados[6, pos].Value.ToString();
 
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario

@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cbEstadoEmpelado = new System.Windows.Forms.CheckBox();
             this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
             this.acualizarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsActualizarEmpleado = new System.Windows.Forms.ToolStripMenuItem();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -51,6 +52,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.panel4.Controls.Add(this.cbEstadoEmpelado);
             this.panel4.Controls.Add(this.btnActualizar);
             this.panel4.Controls.Add(this.btnNuevoEmpleado);
             this.panel4.Controls.Add(this.label1);
@@ -62,23 +64,6 @@
             this.panel4.Size = new System.Drawing.Size(877, 56);
             this.panel4.TabIndex = 4;
             // 
-            // btnNuevoEmpleado
-            // 
-            this.btnNuevoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnNuevoEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoEmpleado.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
-            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoEmpleado.Location = new System.Drawing.Point(759, 8);
-            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
-            this.btnNuevoEmpleado.Size = new System.Drawing.Size(108, 39);
-            this.btnNuevoEmpleado.TabIndex = 8;
-            this.btnNuevoEmpleado.Text = "Nuevo";
-            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -88,20 +73,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar empleado:";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(448, 18);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(87, 23);
-            this.btnBuscar.TabIndex = 1;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // txtBuscador
             // 
             this.txtBuscador.Location = new System.Drawing.Point(108, 20);
             this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(334, 20);
+            this.txtBuscador.Size = new System.Drawing.Size(292, 20);
             this.txtBuscador.TabIndex = 0;
             // 
             // panel3
@@ -137,6 +113,21 @@
             this.cmsActualizarEmpleado});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(186, 92);
+            // 
+            // cbEstadoEmpelado
+            // 
+            this.cbEstadoEmpelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEstadoEmpelado.AutoSize = true;
+            this.cbEstadoEmpelado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbEstadoEmpelado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbEstadoEmpelado.Location = new System.Drawing.Point(509, 22);
+            this.cbEstadoEmpelado.Name = "cbEstadoEmpelado";
+            this.cbEstadoEmpelado.Size = new System.Drawing.Size(124, 17);
+            this.cbEstadoEmpelado.TabIndex = 9;
+            this.cbEstadoEmpelado.Text = "Empleados Inactivos";
+            this.cbEstadoEmpelado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbEstadoEmpelado.UseVisualStyleBackColor = true;
+            this.cbEstadoEmpelado.CheckedChanged += new System.EventHandler(this.cbEstadoEmpelado_CheckedChanged);
             // 
             // cmsEliminar
             // 
@@ -183,6 +174,34 @@
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
+            // btnNuevoEmpleado
+            // 
+            this.btnNuevoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevoEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnNuevoEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoEmpleado.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
+            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoEmpleado.Location = new System.Drawing.Point(759, 8);
+            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
+            this.btnNuevoEmpleado.Size = new System.Drawing.Size(108, 39);
+            this.btnNuevoEmpleado.TabIndex = 8;
+            this.btnNuevoEmpleado.Text = "Nuevo";
+            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
+            this.btnBuscar.Location = new System.Drawing.Point(406, 15);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(35, 29);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // frmRegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,5 +235,6 @@
         public System.Windows.Forms.ToolStripMenuItem acualizarContraseñaToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem cmsActualizarEmpleado;
         public System.Windows.Forms.Button btnActualizar;
+        public System.Windows.Forms.CheckBox cbEstadoEmpelado;
     }
 }

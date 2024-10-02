@@ -33,5 +33,10 @@ namespace Proyecto.Vista.AgregarUsuarios
         {
 
         }
+
+        private void cbEstadoEmpelado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
