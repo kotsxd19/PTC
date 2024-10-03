@@ -83,6 +83,18 @@
     <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.Designer.cs">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\citas\frmAgregarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\citas\frmAgregarCitas.Designer.cs">
+      <DependentUpon>frmAgregarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\citas\frmcitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\citas\frmcitas.Designer.cs">
+      <DependentUpon>frmcitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Inicio\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +155,18 @@
     <Compile Include="Vista\PrimerUso\frmConexionAdministrador.Designer.cs">
       <DependentUpon>frmConexionAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Producto\frmAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Producto\frmAgregarProducto.Designer.cs">
+      <DependentUpon>frmAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Producto\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Producto\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Proveedor\frmAgregarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +195,12 @@
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmRegistroUsuario.resx">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\citas\frmAgregarCitas.resx">
+      <DependentUpon>frmAgregarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\citas\frmcitas.resx">
+      <DependentUpon>frmcitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmRecuperarContraseñaPreguntas.resx">
       <DependentUpon>frmRecuperarContraseñaPreguntas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Producto\frmAgregarProducto.resx">
+      <DependentUpon>frmAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Producto\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Proveedor\frmAgregarProveedor.resx">
       <DependentUpon>frmAgregarProveedor.cs</DependentUpon>
@@ -300,6 +336,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-proveedor-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vista\Mascota\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

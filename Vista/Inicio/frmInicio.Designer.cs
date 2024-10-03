@@ -46,14 +46,14 @@
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -220,26 +220,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 509);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 132);
-            this.panel4.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proyecto.Properties.Resources.e2e7f046_aa97_4bfd_9785_340d113360b4;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnEmpleados
             // 
             this.btnEmpleados.FlatAppearance.BorderSize = 0;
@@ -335,6 +315,26 @@
             this.btnProveedor.Text = "Proveedor";
             this.btnProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProveedor.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 132);
+            this.panel4.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto.Properties.Resources.e2e7f046_aa97_4bfd_9785_340d113360b4;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmInicio
             // 
