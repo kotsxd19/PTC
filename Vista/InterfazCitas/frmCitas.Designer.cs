@@ -47,7 +47,6 @@
             this.MenuCitas = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsEliminarCita = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvInfoCitas = new System.Windows.Forms.DataGridView();
-            this.txtIdEmpleados = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdMascota = new System.Windows.Forms.TextBox();
@@ -59,6 +58,7 @@
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
+            this.cmbIdEmpleados = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -261,15 +261,6 @@
             this.dgvInfoCitas.Size = new System.Drawing.Size(713, 200);
             this.dgvInfoCitas.TabIndex = 6;
             // 
-            // txtIdEmpleados
-            // 
-            this.txtIdEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdEmpleados.Location = new System.Drawing.Point(435, 169);
-            this.txtIdEmpleados.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdEmpleados.Name = "txtIdEmpleados";
-            this.txtIdEmpleados.Size = new System.Drawing.Size(160, 23);
-            this.txtIdEmpleados.TabIndex = 7;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -375,11 +366,20 @@
             this.dtpHora.Size = new System.Drawing.Size(151, 20);
             this.dtpHora.TabIndex = 15;
             // 
+            // cmbIdEmpleados
+            // 
+            this.cmbIdEmpleados.FormattingEnabled = true;
+            this.cmbIdEmpleados.Location = new System.Drawing.Point(435, 167);
+            this.cmbIdEmpleados.Name = "cmbIdEmpleados";
+            this.cmbIdEmpleados.Size = new System.Drawing.Size(144, 21);
+            this.cmbIdEmpleados.TabIndex = 19;
+            // 
             // frmCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 626);
+            this.Controls.Add(this.cmbIdEmpleados);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.dtpHora);
@@ -389,7 +389,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdMascota);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtIdEmpleados);
             this.Controls.Add(this.dgvInfoCitas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvCitas);
@@ -433,7 +432,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox txtIdEmpleados;
         public System.Windows.Forms.TextBox txtIdMascota;
         public System.Windows.Forms.DateTimePicker dtpFecha;
         public System.Windows.Forms.TextBox txtDescripcion;
@@ -442,5 +440,6 @@
         public System.Windows.Forms.DataGridView dgvInfoCitas;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.DateTimePicker dtpHora;
+        public System.Windows.Forms.ComboBox cmbIdEmpleados;
     }
 }

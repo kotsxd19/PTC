@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Proyecto.Modelo.DAO
 {
@@ -10,14 +11,38 @@ namespace Proyecto.Modelo.DAO
         // Propiedades que representan los campos de una cita
         readonly SqlCommand Conexion = new SqlCommand();
 
+        public DataSet LLenarcomboEmpleados()
+        {
+            try
+            {
+                Conexion.Connection = getConexion();
+                string query = "SELECT * FROM Empleado";
+                SqlCommand cmdSelect = new SqlCommand(query, Conexion.Connection);
+                cmdSelect.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdSelect);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "Empleado");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Error al obtener los empleados, verifique su conexión a internet o que el acceso al servidor o base de datos esten activos", "Error de ejecución", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                Conexion.Connection.Close();
+            }
+        }
+
         // Método para obtener todas las citas desde la base de datos
         public DataSet ObtenerCitas()
         {
             Conexion.Connection = getConexion();
 
-            // Establecer la conexión a la base de datos
-            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
-           // Crear un adaptador para ejecutar la consulta y llenar el DataSet
+           // // Establecer la conexión a la base de datos
+           // var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
+           //// Crear un adaptador para ejecutar la consulta y llenar el DataSet
 
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Citas", Conexion.Connection);
             DataSet ds = new DataSet();

@@ -25,6 +25,16 @@ namespace Proyecto.Controlador.Citas
             LlenarDataGridInfoCitas();
         }
 
+        void LLenarcomboEmpleados()
+        {
+
+            DAOCitas daoCitas = new DAOCitas();
+            DataSet ds = daoCitas.LLenarcomboEmpleados();
+            objVista.cmbIdEmpleados.DataSource = ds.Tables["Empleado"];
+            objVista.cmbIdEmpleados.DisplayMember = "Nombre";
+            objVista.cmbIdEmpleados.ValueMember = "IdEmpleado";
+        }
+
         // Método para llenar el DataGridView con información de citas
         public void LlenarDataGridInfoCitas()
         {
@@ -37,7 +47,7 @@ namespace Proyecto.Controlador.Citas
         private void EliminarCita(object sender, EventArgs e)
         {
             // Obtener la posición de la fila seleccionada
-            int pos = objVista.dgvCitas.CurrentRow.Index; 
+            int pos = objVista.dgvCitas.CurrentRow.Index;
 
             // Crear instancia de DAOCitas para eliminar
             DAOCitas daoDelete = new DAOCitas
@@ -66,7 +76,7 @@ namespace Proyecto.Controlador.Citas
                 // Crear una nueva instancia de DAOCitas para insertar
                 DAOCitas daoInsert = new DAOCitas();
 
-                int IdEmpleados = int.Parse(objVista.txtIdEmpleados.Text); // ID del empleado
+                int IdEmpleados = int.Parse(objVista.cmbIdEmpleados.Text); // ID del empleado
                 int IdMascota = int.Parse(objVista.txtIdMascota.Text); // ID de la mascota
                 DateTime Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
                 TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
@@ -102,7 +112,7 @@ namespace Proyecto.Controlador.Citas
             DAOCitas daoUpdate = new DAOCitas();
 
             int IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()); // Obtener el ID de la cita
-            int IdEmpleados = int.Parse(objVista.txtIdEmpleados.Text); // ID del empleado
+            int IdEmpleados = int.Parse(objVista.cmbIdEmpleados.Text); // ID del empleado
             int IdMascota = int.Parse(objVista.txtIdMascota.Text); // ID de la mascota
             DateTime Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
             TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
