@@ -29,7 +29,7 @@ namespace Proyecto.Controlador.Citas
         public void LlenarDataGridInfoCitas()
         {
             DAOCitas daoCitas = new DAOCitas();
-            DataSet ds = daoCitas.ObtenerCitas();
+            DataSet ds = new DataSet();
             objVista.dgvInfoCitas.DataSource = ds.Tables["Citas"]; // Asignar la fuente de datos al DataGridView
         }
 
@@ -37,7 +37,7 @@ namespace Proyecto.Controlador.Citas
         private void EliminarCita(object sender, EventArgs e)
         {
             // Obtener la posición de la fila seleccionada
-            int pos = objVista.dgvCitas.CurrentRow.Index;
+            int pos = objVista.dgvCitas.CurrentRow.Index; 
 
             // Crear instancia de DAOCitas para eliminar
             DAOCitas daoDelete = new DAOCitas
@@ -69,7 +69,7 @@ namespace Proyecto.Controlador.Citas
                 int IdEmpleados = int.Parse(objVista.txtIdEmpleados.Text); // ID del empleado
                 int IdMascota = int.Parse(objVista.txtIdMascota.Text); // ID de la mascota
                 DateTime Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
-                TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH-mm-ss")); // Hora de la cita
+                TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
                 string Descripcion = objVista.txtDescripcion.Text; // Descripción de la cita
 
 

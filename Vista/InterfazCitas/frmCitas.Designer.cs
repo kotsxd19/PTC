@@ -56,9 +56,9 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -254,7 +254,7 @@
             // 
             this.dgvInfoCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInfoCitas.Location = new System.Drawing.Point(250, 384);
-            this.dgvInfoCitas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvInfoCitas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInfoCitas.Name = "dgvInfoCitas";
             this.dgvInfoCitas.RowHeadersWidth = 51;
             this.dgvInfoCitas.RowTemplate.Height = 24;
@@ -265,7 +265,7 @@
             // 
             this.txtIdEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdEmpleados.Location = new System.Drawing.Point(435, 169);
-            this.txtIdEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdEmpleados.Name = "txtIdEmpleados";
             this.txtIdEmpleados.Size = new System.Drawing.Size(160, 23);
             this.txtIdEmpleados.TabIndex = 7;
@@ -297,7 +297,7 @@
             // 
             this.txtIdMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdMascota.Location = new System.Drawing.Point(435, 213);
-            this.txtIdMascota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdMascota.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdMascota.Name = "txtIdMascota";
             this.txtIdMascota.Size = new System.Drawing.Size(160, 23);
             this.txtIdMascota.TabIndex = 9;
@@ -326,8 +326,9 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(764, 170);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(151, 20);
             this.dtpFecha.TabIndex = 15;
@@ -347,25 +348,11 @@
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(404, 259);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(493, 81);
             this.txtDescripcion.TabIndex = 17;
-            // 
-            // dtpHora
-            // 
-            this.dtpHora.CustomFormat = "HH:mm:ss";
-            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(764, 219);
-            this.dtpHora.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dtpHora.MaxDate = new System.DateTime(2024, 9, 15, 20, 0, 0, 0);
-            this.dtpHora.MinDate = new System.DateTime(2024, 9, 15, 8, 0, 0, 0);
-            this.dtpHora.Name = "dtpHora";
-            this.dtpHora.ShowUpDown = true;
-            this.dtpHora.Size = new System.Drawing.Size(151, 20);
-            this.dtpHora.TabIndex = 19;
-            this.dtpHora.Value = new System.DateTime(2024, 9, 15, 8, 0, 0, 0);
             // 
             // dgvCitas
             // 
@@ -379,14 +366,23 @@
             this.dgvCitas.TabIndex = 2;
             this.dgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // dtpHora
+            // 
+            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHora.Location = new System.Drawing.Point(764, 219);
+            this.dtpHora.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpHora.Name = "dtpHora";
+            this.dtpHora.Size = new System.Drawing.Size(151, 20);
+            this.dtpHora.TabIndex = 15;
+            // 
             // frmCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 626);
-            this.Controls.Add(this.dtpHora);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.dtpHora);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -441,10 +437,10 @@
         public System.Windows.Forms.TextBox txtIdMascota;
         public System.Windows.Forms.DateTimePicker dtpFecha;
         public System.Windows.Forms.TextBox txtDescripcion;
-        public System.Windows.Forms.DateTimePicker dtpHora;
         public System.Windows.Forms.DataGridView dgvCitas;
         public System.Windows.Forms.Button btnEliminarCita;
         public System.Windows.Forms.DataGridView dgvInfoCitas;
         private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.DateTimePicker dtpHora;
     }
 }

@@ -15,9 +15,9 @@ namespace Proyecto.Modelo.DAO
         {
             Conexion.Connection = getConexion();
 
-            //// Establecer la conexión a la base de datos
-            //var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;Integrated Security=True;");
-            // Crear un adaptador para ejecutar la consulta y llenar el DataSet
+            // Establecer la conexión a la base de datos
+            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
+           // Crear un adaptador para ejecutar la consulta y llenar el DataSet
 
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Citas", Conexion.Connection);
             DataSet ds = new DataSet();
