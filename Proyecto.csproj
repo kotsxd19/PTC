@@ -149,6 +149,42 @@
     <Compile Include="Vista\Login\frmRecuperarContraseñaReinicioDirectoAdmin.Designer.cs">
       <DependentUpon>frmRecuperarContraseñaReinicioDirectoAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Mascota\frmAgregarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmAgregarMascota.Designer.cs">
+      <DependentUpon>frmAgregarMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmMascota.Designer.cs">
+      <DependentUpon>frmMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmOtrasRazas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmOtrasRazas.Designer.cs">
+      <DependentUpon>frmOtrasRazas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmRazaGatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmRazaGatos.Designer.cs">
+      <DependentUpon>frmRazaGatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmRazaPerros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmRazaPerros.Designer.cs">
+      <DependentUpon>frmRazaPerros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmRazas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Mascota\frmRazas.Designer.cs">
+      <DependentUpon>frmRazas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\PrimerUso\frmConexionAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +214,18 @@
     </Compile>
     <Compile Include="Vista\Proveedor\frmProveedor.Designer.cs">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventas\frmDetalleDeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventas\frmDetalleDeVentas.Designer.cs">
+      <DependentUpon>frmDetalleDeVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventas\frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventas\frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,6 +270,24 @@
     <EmbeddedResource Include="Vista\Login\frmRecuperarContraseñaPreguntas.resx">
       <DependentUpon>frmRecuperarContraseñaPreguntas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Mascota\frmAgregarMascota.resx">
+      <DependentUpon>frmAgregarMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Mascota\frmMascota.resx">
+      <DependentUpon>frmMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Mascota\frmOtrasRazas.resx">
+      <DependentUpon>frmOtrasRazas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Mascota\frmRazaGatos.resx">
+      <DependentUpon>frmRazaGatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Mascota\frmRazaPerros.resx">
+      <DependentUpon>frmRazaPerros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Mascota\frmRazas.resx">
+      <DependentUpon>frmRazas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Producto\frmAgregarProducto.resx">
       <DependentUpon>frmAgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Proveedor\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventas\frmDetalleDeVentas.resx">
+      <DependentUpon>frmDetalleDeVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventas\frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -337,8 +409,6 @@
   <ItemGroup>
     <None Include="Resources\icons8-proveedor-35.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vista\Mascota\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
