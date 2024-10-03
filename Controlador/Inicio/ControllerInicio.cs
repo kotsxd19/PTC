@@ -2,6 +2,7 @@
 using Proyecto.Vista.AgregarUsuarios;
 using Proyecto.Vista.Inicio;
 using Proyecto.Vista.Login;
+using Proyecto.Vista.Proveedor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,13 @@ namespace Proyecto.Controlador.Inicio
     {
         frmInicio objVista;
         Form currentForm = null;
+
         public ControllerInicio(frmInicio Vista)
         {
             objVista = Vista;
             Vista.Load += new EventHandler(CargarDatos);
             Vista.btnEmpleados.Click += new EventHandler(openFormEmpleados);
+            Vista.btnProveedor.Click += new EventHandler(openFromProveedor);
         }
 
         void CargarDatos(object sender, EventArgs e)
@@ -32,6 +35,11 @@ namespace Proyecto.Controlador.Inicio
         void openFormEmpleados(object sender, EventArgs e)
         {
             AbrirFormulario<frmRegistroUsuario>();
+        }
+
+        void openFromProveedor(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmProveedor>();
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()

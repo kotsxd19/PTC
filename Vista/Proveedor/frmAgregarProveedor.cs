@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace Proyecto.Vista.Proveedor
 {
-    public partial class frmProveedor : Form
+    public partial class frmAgregarProveedor : Form
     {
-        public frmProveedor()
+        public frmAgregarProveedor(int accion)
         {
             InitializeComponent();
-            ControllerProveedor uso = new ControllerProveedor(this);
+            ControllerAgregarProveedor ObjAgregar = new ControllerAgregarProveedor(this, accion);
         }
 
-        private void frmProveedor_Load(object sender, EventArgs e)
+        private void frmAgregarProveedor_Load(object sender, EventArgs e)
         {
 
         }

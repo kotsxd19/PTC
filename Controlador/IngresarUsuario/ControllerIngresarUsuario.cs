@@ -80,15 +80,15 @@ namespace Proyecto.Controlador.IngresarUsuario
             };
         }
 
-        public void Estado(object sneder, EventArgs e)
-        {
-            //DAOAgregarUsuario objEstado = new DAOAgregarUsuario();
-            // DataSet ds = objEstado.LlenarComboBox()
+        //public void Estado(object sneder, EventArgs e)
+        //{
+        //    //DAOAgregarUsuario objEstado = new DAOAgregarUsuario();
+        //    // DataSet ds = objEstado.LlenarComboBox()
 
             
 
 
-        }
+        //}
 
         // Método para configurar la visibilidad y habilitación de los controles según la acción especificada.
         public void verificarAccion()

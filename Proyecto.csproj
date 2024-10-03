@@ -54,16 +54,20 @@
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Login\ModosDeRecuperarContraseña.cs" />
     <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
+    <Compile Include="Controlador\Proveedor\ControllerAgregarProveedor.cs" />
+    <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
     <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\DAO\DAOPrimerUso.cs" />
+    <Compile Include="Modelo\DAO\DAOProveedor.cs" />
     <Compile Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOAgregarUsuario.cs" />
     <Compile Include="Modelo\DTO\DTOdbContext.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
     <Compile Include="Modelo\DTO\DTOPrimerUso.cs" />
+    <Compile Include="Modelo\DTO\DTOProveedor.cs" />
     <Compile Include="Modelo\DTO\RecuperacionContraPorCorreo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +143,12 @@
     <Compile Include="Vista\PrimerUso\frmConexionAdministrador.Designer.cs">
       <DependentUpon>frmConexionAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Proveedor\frmAgregarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Proveedor\frmAgregarProveedor.Designer.cs">
+      <DependentUpon>frmAgregarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Proveedor\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\frmRecuperarContraseñaPreguntas.resx">
       <DependentUpon>frmRecuperarContraseñaPreguntas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Proveedor\frmAgregarProveedor.resx">
+      <DependentUpon>frmAgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Proveedor\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
@@ -284,6 +297,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-buscar-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-proveedor-35.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

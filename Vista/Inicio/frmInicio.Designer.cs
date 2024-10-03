@@ -34,6 +34,7 @@
             this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mascotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeEmpleadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarFormularioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -46,13 +47,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cerrarFormularioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -114,6 +115,15 @@
             this.gestiónDeEmpleadToolStripMenuItem.Name = "gestiónDeEmpleadToolStripMenuItem";
             this.gestiónDeEmpleadToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
             this.gestiónDeEmpleadToolStripMenuItem.Text = "Gestión de empleados";
+            // 
+            // cerrarFormularioToolStripMenuItem
+            // 
+            this.cerrarFormularioToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cerrarFormularioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.cerrarFormularioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.cerrarFormularioToolStripMenuItem.Name = "cerrarFormularioToolStripMenuItem";
+            this.cerrarFormularioToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.cerrarFormularioToolStripMenuItem.Text = "Cerrar formulario";
             // 
             // panel1
             // 
@@ -203,6 +213,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.btnProveedor);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 132);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -218,6 +229,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 132);
             this.panel4.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Proyecto.Properties.Resources.e2e7f046_aa97_4bfd_9785_340d113360b4;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnEmpleados
             // 
@@ -299,22 +320,21 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // btnProveedor
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(58, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 74);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // cerrarFormularioToolStripMenuItem
-            // 
-            this.cerrarFormularioToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cerrarFormularioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.cerrarFormularioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.cerrarFormularioToolStripMenuItem.Name = "cerrarFormularioToolStripMenuItem";
-            this.cerrarFormularioToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            this.cerrarFormularioToolStripMenuItem.Text = "Cerrar formulario";
+            this.btnProveedor.FlatAppearance.BorderSize = 0;
+            this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnProveedor.Image = global::Proyecto.Properties.Resources.icons8_proveedor_35;
+            this.btnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedor.Location = new System.Drawing.Point(3, 208);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(195, 35);
+            this.btnProveedor.TabIndex = 5;
+            this.btnProveedor.Text = "Proveedor";
+            this.btnProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProveedor.UseVisualStyleBackColor = true;
             // 
             // frmInicio
             // 
@@ -372,5 +392,6 @@
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button button5;
         private System.Windows.Forms.ToolStripMenuItem cerrarFormularioToolStripMenuItem;
+        public System.Windows.Forms.Button btnProveedor;
     }
 }
