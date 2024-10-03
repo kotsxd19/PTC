@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto.Vista.Mascota
 {
-    public partial class frmRazaGatos : Form
+    public partial class prueba : Form
     {
-        public frmRazaGatos()
+        public prueba()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
