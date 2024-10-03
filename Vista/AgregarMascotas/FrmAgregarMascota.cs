@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto.Modelo.DAO;
+using Proyecto.Controlador.Mascota;
+using Proyecto.Modelo.DTO;
 
 namespace Proyecto.Vista.AgregarMascotas
 {
@@ -49,6 +51,8 @@ namespace Proyecto.Vista.AgregarMascotas
         {
 
         }
+
        
+
     }
 }

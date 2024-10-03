@@ -8,5 +8,7 @@ namespace Proyecto.Modelo.DTO
 {
     internal class DTORaza
     {
+        private int idRaza;
+        private string IngresarRaza ;
     }
 }

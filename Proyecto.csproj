@@ -55,6 +55,7 @@
     <Compile Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOAgregarMascota.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
+    <Compile Include="Modelo\DTO\DTORaza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\AgregarMascotas\FrmAgregarMascota.cs">
@@ -62,12 +63,6 @@
     </Compile>
     <Compile Include="Vista\AgregarMascotas\FrmAgregarMascota.Designer.cs">
       <DependentUpon>FrmAgregarMascota.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\AgregarMascotas\FrmVistaAgregarMascota.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\AgregarMascotas\FrmVistaAgregarMascota.Designer.cs">
-      <DependentUpon>FrmVistaAgregarMascota.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\AgregarUsuarios\frmAgregarUsuario.cs">
       <SubType>Form</SubType>
@@ -116,9 +111,6 @@
     </Compile>
     <EmbeddedResource Include="Vista\AgregarMascotas\FrmAgregarMascota.resx">
       <DependentUpon>FrmAgregarMascota.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\AgregarMascotas\FrmVistaAgregarMascota.resx">
-      <DependentUpon>FrmVistaAgregarMascota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmAgregarUsuario.resx">
       <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
