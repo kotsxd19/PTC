@@ -21,12 +21,13 @@ namespace Proyecto.Controlador.IngresarUsuario
         {
             ObjAdminUser = Vista; // Asocia el formulario actual con el controlador
             ObjAdminUser.Load += new EventHandler(CargarDatos); // Asocia el evento Load del formulario al método CargarDatos
+            ObjAdminUser.cbEstadoEmpelado.CheckedChanged += new EventHandler(CambiarConsulta); 
             ObjAdminUser.btnNuevoEmpleado.Click += new EventHandler(nuevoUsuario); // Asocia el evento Click del botón Nuevo Empleado al método nuevoUsuario
             //ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado); // Asocia el evento Click del botón Actualizar al método ActualizarEmpleado
-            ObjAdminUser.cmsEliminar.Click += new EventHandler(DeleteUser); // Asocia el evento Click del menú contextual Eliminar al método DeleteUser
             ObjAdminUser.cmsFicha.Click += new EventHandler(VerFicha); // Asocia el evento Click del menú contextual Ficha al método VerFicha
             ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado);
             ObjAdminUser.btnBuscar.Click += new EventHandler(BuscarPeronasControllerEvent); // Asocia el evento Click del botón Buscar al método BuscarPeronasControllerEvent
+            ObjAdminUser.acualizarContraseñaToolStripMenuItem.Click += new EventHandler(ActualizarAdmin);
         }
 
         // Método que se llama cuando se carga el formulario; refresca los datos mostrados.
@@ -34,6 +35,12 @@ namespace Proyecto.Controlador.IngresarUsuario
         {
             RefrescarData(); // Llama al método para actualizar los datos en el DataGridView
         }
+
+        private void CambiarConsulta(object sender, EventArgs e) 
+        {
+            RefrescarData();
+        }
+
 
         // Método que refresca los datos en el DataGridView.
         public void RefrescarData()
@@ -43,12 +50,11 @@ namespace Proyecto.Controlador.IngresarUsuario
             if (ObjAdminUser.cbEstadoEmpelado.Checked != true)
             {
                 ds = objAdmin.ObtenerPersonasActivas(); // Obtiene la lista de personas desde la base de datos
+                ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegsitrosDeEmpleados"];
             }
             else
             {
                 ds = objAdmin.ObtenerPersonasInactivas();
-
-
                 ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegsitrosDeEmpleados"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             }
         }
@@ -80,33 +86,11 @@ namespace Proyecto.Controlador.IngresarUsuario
             ObjAdminUser.dgvEmpleados[6, pos].Value.ToString();
 
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
+
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
         }
 
-        // Método que elimina al usuario seleccionado.
-        private void DeleteUser(object sender, EventArgs e)
-        {
-            int pos = ObjAdminUser.dgvEmpleados.CurrentRow.Index; // Obtiene la posición de la fila seleccionada
 
-            // Muestra un mensaje de confirmación antes de eliminar
-                if (MessageBox.Show($" ¿Esta seguro que desea elimar a: {ObjAdminUser.dgvEmpleados[1, pos].Value.ToString()} , considere que dicha acción no se podrá revertir.", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    DAOAgregarUsuario DAOEliminar = new DAOAgregarUsuario(); // Crea una instancia del DAO para eliminar datos
-                    
-                    DAOEliminar.Usuario1 = ObjAdminUser.dgvEmpleados[0, pos].Value.ToString(); // Establece el nombre de usuario a eliminar
-
-                    int valorRetornado = DAOEliminar.EliminarEmplado(); // Llama al método para eliminar el usuario
-                    if (valorRetornado == 1)
-                    {
-                        MessageBox.Show("Registro eliminado", "Acción completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        RefrescarData(); // Refresca los datos en el DataGridView después de eliminar el usuario
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro no pudo ser eliminado, verifique que el registro no tenga datos asociados.", "Acción interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
         
 
         // Método para buscar personas usando el texto ingresado en el campo de búsqueda.
@@ -143,6 +127,16 @@ namespace Proyecto.Controlador.IngresarUsuario
             frmAgregarUsuario openForm = new frmAgregarUsuario(3); // Crea una nueva instancia del formulario para ver ficha
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
+        }
+
+        private void ActualizarAdmin(object sender, EventArgs e)
+        {
+            int pos = ObjAdminUser.dgvEmpleados.CurrentRow.Index;
+
+            frmAgregarUsuario ActuAdmin = new frmAgregarUsuario(3);
+
+
+
         }
 
     }

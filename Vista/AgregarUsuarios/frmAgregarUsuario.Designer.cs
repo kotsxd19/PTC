@@ -124,9 +124,10 @@
             this.LblUsuario.ForeColor = System.Drawing.Color.Black;
             this.LblUsuario.Location = new System.Drawing.Point(9, 18);
             this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(55, 20);
+            this.LblUsuario.Size = new System.Drawing.Size(64, 20);
             this.LblUsuario.TabIndex = 0;
-            this.LblUsuario.Text = "Usario";
+            this.LblUsuario.Text = "Usuario";
+            this.LblUsuario.Click += new System.EventHandler(this.LblUsuario_Click);
             // 
             // panel2
             // 

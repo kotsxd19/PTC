@@ -16,5 +16,10 @@ namespace Proyecto.Vista.Mascota
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

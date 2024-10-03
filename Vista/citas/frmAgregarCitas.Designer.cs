@@ -52,8 +52,8 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(800, 56);
-            this.panel4.TabIndex = 7;
+            this.panel4.Size = new System.Drawing.Size(986, 56);
+            this.panel4.TabIndex = 6;
             // 
             // btnActualizarProveedor
             // 
@@ -64,7 +64,7 @@
             this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
             this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(562, 10);
+            this.btnActualizarProveedor.Location = new System.Drawing.Point(748, 10);
             this.btnActualizarProveedor.Name = "btnActualizarProveedor";
             this.btnActualizarProveedor.Size = new System.Drawing.Size(114, 39);
             this.btnActualizarProveedor.TabIndex = 8;
@@ -81,7 +81,7 @@
             this.btnNuevoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoProveedor.Image = global::Proyecto.Properties.Resources.icons8_calendario_30__1_;
             this.btnNuevoProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoProveedor.Location = new System.Drawing.Point(682, 8);
+            this.btnNuevoProveedor.Location = new System.Drawing.Point(868, 8);
             this.btnNuevoProveedor.Name = "btnNuevoProveedor";
             this.btnNuevoProveedor.Size = new System.Drawing.Size(108, 39);
             this.btnNuevoProveedor.TabIndex = 8;
@@ -124,8 +124,8 @@
             this.panel3.Location = new System.Drawing.Point(0, 56);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(800, 394);
-            this.panel3.TabIndex = 9;
+            this.panel3.Size = new System.Drawing.Size(986, 474);
+            this.panel3.TabIndex = 8;
             // 
             // dgvProveedor
             // 
@@ -135,14 +135,14 @@
             this.dgvProveedor.Location = new System.Drawing.Point(10, 10);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.RowHeadersWidth = 51;
-            this.dgvProveedor.Size = new System.Drawing.Size(780, 374);
+            this.dgvProveedor.Size = new System.Drawing.Size(966, 454);
             this.dgvProveedor.TabIndex = 0;
             // 
             // frmAgregarCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(986, 530);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Name = "frmAgregarCitas";

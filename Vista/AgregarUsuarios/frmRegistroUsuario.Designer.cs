@@ -30,19 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbEstadoEmpelado = new System.Windows.Forms.CheckBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscador = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cbEstadoEmpelado = new System.Windows.Forms.CheckBox();
-            this.cmsEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsFicha = new System.Windows.Forms.ToolStripMenuItem();
             this.acualizarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsActualizarEmpleado = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnNuevoEmpleado = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -64,56 +62,6 @@
             this.panel4.Size = new System.Drawing.Size(877, 56);
             this.panel4.TabIndex = 4;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar empleado:";
-            // 
-            // txtBuscador
-            // 
-            this.txtBuscador.Location = new System.Drawing.Point(108, 20);
-            this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(292, 20);
-            this.txtBuscador.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel3.Controls.Add(this.dgvEmpleados);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 56);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(877, 507);
-            this.panel3.TabIndex = 6;
-            // 
-            // dgvEmpleados
-            // 
-            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmpleados.Location = new System.Drawing.Point(10, 10);
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.RowHeadersWidth = 51;
-            this.dgvEmpleados.Size = new System.Drawing.Size(857, 487);
-            this.dgvEmpleados.TabIndex = 0;
-            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmsEliminar,
-            this.cmsFicha,
-            this.acualizarContraseñaToolStripMenuItem,
-            this.cmsActualizarEmpleado});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 92);
-            // 
             // cbEstadoEmpelado
             // 
             this.cbEstadoEmpelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -128,34 +76,6 @@
             this.cbEstadoEmpelado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbEstadoEmpelado.UseVisualStyleBackColor = true;
             this.cbEstadoEmpelado.CheckedChanged += new System.EventHandler(this.cbEstadoEmpelado_CheckedChanged);
-            // 
-            // cmsEliminar
-            // 
-            this.cmsEliminar.Image = global::Proyecto.Properties.Resources.x;
-            this.cmsEliminar.Name = "cmsEliminar";
-            this.cmsEliminar.Size = new System.Drawing.Size(185, 22);
-            this.cmsEliminar.Text = "Eliminar Empleado";
-            // 
-            // cmsFicha
-            // 
-            this.cmsFicha.Image = global::Proyecto.Properties.Resources.ficha;
-            this.cmsFicha.Name = "cmsFicha";
-            this.cmsFicha.Size = new System.Drawing.Size(185, 22);
-            this.cmsFicha.Text = "Ver ficha";
-            // 
-            // acualizarContraseñaToolStripMenuItem
-            // 
-            this.acualizarContraseñaToolStripMenuItem.Image = global::Proyecto.Properties.Resources.d3d904a0_7365_4601_8265_20b2f8fc492b;
-            this.acualizarContraseñaToolStripMenuItem.Name = "acualizarContraseñaToolStripMenuItem";
-            this.acualizarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.acualizarContraseñaToolStripMenuItem.Text = "Acualizar Contraseña";
-            // 
-            // cmsActualizarEmpleado
-            // 
-            this.cmsActualizarEmpleado.Image = global::Proyecto.Properties.Resources.icons8_actualizar_45;
-            this.cmsActualizarEmpleado.Name = "cmsActualizarEmpleado";
-            this.cmsActualizarEmpleado.Size = new System.Drawing.Size(185, 22);
-            this.cmsActualizarEmpleado.Text = "Actualizar Empleado";
             // 
             // btnActualizar
             // 
@@ -191,6 +111,15 @@
             this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevoEmpleado.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Buscar empleado:";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatAppearance.BorderSize = 0;
@@ -201,6 +130,59 @@
             this.btnBuscar.Size = new System.Drawing.Size(35, 29);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscador
+            // 
+            this.txtBuscador.Location = new System.Drawing.Point(108, 20);
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(292, 20);
+            this.txtBuscador.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.panel3.Controls.Add(this.dgvEmpleados);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 56);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10);
+            this.panel3.Size = new System.Drawing.Size(877, 507);
+            this.panel3.TabIndex = 6;
+            // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEmpleados.Location = new System.Drawing.Point(10, 10);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.RowHeadersWidth = 51;
+            this.dgvEmpleados.Size = new System.Drawing.Size(857, 487);
+            this.dgvEmpleados.TabIndex = 0;
+            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsFicha,
+            this.acualizarContraseñaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
+            // 
+            // cmsFicha
+            // 
+            this.cmsFicha.Image = global::Proyecto.Properties.Resources.ficha;
+            this.cmsFicha.Name = "cmsFicha";
+            this.cmsFicha.Size = new System.Drawing.Size(185, 22);
+            this.cmsFicha.Text = "Ver ficha";
+            // 
+            // acualizarContraseñaToolStripMenuItem
+            // 
+            this.acualizarContraseñaToolStripMenuItem.Image = global::Proyecto.Properties.Resources.d3d904a0_7365_4601_8265_20b2f8fc492b;
+            this.acualizarContraseñaToolStripMenuItem.Name = "acualizarContraseñaToolStripMenuItem";
+            this.acualizarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.acualizarContraseñaToolStripMenuItem.Text = "Acualizar Contraseña";
             // 
             // frmRegistroUsuario
             // 
@@ -228,12 +210,10 @@
         public System.Windows.Forms.DataGridView dgvEmpleados;
         public System.Windows.Forms.TextBox txtBuscador;
         public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        public System.Windows.Forms.ToolStripMenuItem cmsEliminar;
         public System.Windows.Forms.ToolStripMenuItem cmsFicha;
         public System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ToolStripMenuItem acualizarContraseñaToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem cmsActualizarEmpleado;
         public System.Windows.Forms.Button btnActualizar;
         public System.Windows.Forms.CheckBox cbEstadoEmpelado;
     }

@@ -409,6 +409,20 @@
   <ItemGroup>
     <None Include="Resources\icons8-proveedor-35.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-perro-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendario-30 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gato-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-zoo-80.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

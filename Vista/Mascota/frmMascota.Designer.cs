@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.btnActualizarProveedor = new System.Windows.Forms.Button();
             this.btnNuevoProveedor = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
+            this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
@@ -53,23 +53,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(800, 56);
-            this.panel4.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Buscar empleado:";
-            // 
-            // txtBuscadorProveedor
-            // 
-            this.txtBuscadorProveedor.Location = new System.Drawing.Point(108, 20);
-            this.txtBuscadorProveedor.Name = "txtBuscadorProveedor";
-            this.txtBuscadorProveedor.Size = new System.Drawing.Size(292, 20);
-            this.txtBuscadorProveedor.TabIndex = 0;
+            this.panel4.TabIndex = 8;
             // 
             // btnActualizarProveedor
             // 
@@ -105,6 +89,15 @@
             this.btnNuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevoProveedor.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Buscar empleado:";
+            // 
             // btnBuscarProveedor
             // 
             this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
@@ -116,6 +109,13 @@
             this.btnBuscarProveedor.TabIndex = 1;
             this.btnBuscarProveedor.UseVisualStyleBackColor = true;
             // 
+            // txtBuscadorProveedor
+            // 
+            this.txtBuscadorProveedor.Location = new System.Drawing.Point(108, 20);
+            this.txtBuscadorProveedor.Name = "txtBuscadorProveedor";
+            this.txtBuscadorProveedor.Size = new System.Drawing.Size(292, 20);
+            this.txtBuscadorProveedor.TabIndex = 0;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
@@ -125,7 +125,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
             this.panel3.Size = new System.Drawing.Size(800, 394);
-            this.panel3.TabIndex = 11;
+            this.panel3.TabIndex = 10;
             // 
             // dgvProveedor
             // 

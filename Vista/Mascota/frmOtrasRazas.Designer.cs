@@ -51,7 +51,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 494);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 1;
             // 
             // button1
             // 
@@ -112,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(504, 519);
+            this.ClientSize = new System.Drawing.Size(505, 522);
             this.Controls.Add(this.panel1);
             this.Name = "frmOtrasRazas";
             this.Text = "frmOtrasRazas";

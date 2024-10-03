@@ -25,8 +25,6 @@ namespace Proyecto.Vista.AgregarUsuarios
             InitializeComponent();
             ControllerIngresarUsuario objAgregarUser = new ControllerIngresarUsuario(this, accion, id, Nombre,
                 Apellido, FechaNacimient, CorreoEmpleado, Usuario, role);
-
-
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -45,6 +43,11 @@ namespace Proyecto.Vista.AgregarUsuarios
         }
 
         private void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblUsuario_Click(object sender, EventArgs e)
         {
 
         }

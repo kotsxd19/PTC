@@ -343,6 +343,16 @@ namespace Proyecto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_grupo_de_animales_35 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-grupo-de-animales-35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hombres_categoría_de_edad_5_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hombres-categoría-de-edad-5-40", resourceCulture);

@@ -55,11 +55,11 @@ namespace Proyecto.Modelo.DAO
                 //Accedemos a la conexión que ya se tiene
                 command.Connection = getConnection();
                 //Instrucción que se hará hacia la base de datos
-                string query = "SELECT * FROM RegsitrosDeEmpleados WHERE EstadoEmpleado = @True";
+                string query = "SELECT * FROM RegsitrosDeEmpleados WHERE EstadoEmpleado = @param1";
                 //Comando sql en el cual se pasa la instrucción y la conexión
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 //Asignando valor al parametro
-                cmd.Parameters.AddWithValue("valor", true);
+                cmd.Parameters.AddWithValue("param1", 1);
                 //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
                 //ExecuteNonQuery devuelve un valor entero.
                 cmd.ExecuteNonQuery();
@@ -126,11 +126,11 @@ namespace Proyecto.Modelo.DAO
                 //Accedemos a la conexión que ya se tiene
                 command.Connection = getConnection();
                 //Instrucción que se hará hacia la base de datos
-                string query = "SELECT * FROM RegsitrosDeEmpleados WHERE EstadoEmpleado = @false";
+                string query = "SELECT * FROM RegsitrosDeEmpleados WHERE EstadoEmpleado = @param1";
                 //Comando sql en el cual se pasa la instrucción y la conexión
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 //Asignando valor al parametro
-                cmd.Parameters.AddWithValue("valor", false);
+                cmd.Parameters.AddWithValue("param1", 0);
                 //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
                 //ExecuteNonQuery devuelve un valor entero.
                 cmd.ExecuteNonQuery();
@@ -210,6 +210,8 @@ namespace Proyecto.Modelo.DAO
             cmddel.ExecuteNonQuery();
         }
 
+
+
         public int ActualizarEmpleados()
         {
             try
@@ -263,36 +265,6 @@ namespace Proyecto.Modelo.DAO
             }
         }
 
-        public int EliminarEmplado()
-        {
-            try
-            {
-                // Establece la conexión a la base de datos 
-                command.Connection = getConnection();
-
-                // Consulta SQL para eliminar al empleado
-                string query = "DELETE Empleado WHERE IdEmpleados = @param0";
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("param0", IdEmpleado1);
-
-                // Ejecuta la consulta de eliminación y obtiene el número de filas afectadas
-                int respuesta = cmd.ExecuteNonQuery();
-
-                // Retorna el resultado de la eliminación
-                return respuesta;
-            }
-            catch (Exception)
-            {
-                // Retorna -1 en caso de error
-                return -1;
-            }
-            finally
-            {
-                // Cierra la conexión a la base de datos
-                getConnection().Close();
-            }
-        }
-
 
         public DataSet BuscarPersonas(string valor)
         {
@@ -301,7 +273,7 @@ namespace Proyecto.Modelo.DAO
                 //Accedemos a la conexión que ya se tiene
                 command.Connection = getConnection();
                 //Instrucción que se hará hacia la base de datos
-                string query = $"SELECT * FROM Empleados WHERE Nombres LIKE '%{valor}%' OR Usuario LIKE '%{valor}%' OR [Rol de acceso] LIKE '%{valor}%'";
+                string query = $"SELECT * FROM RegsitrosDeEmpleados WHERE Nombre LIKE '%{valor}%' OR Usuario LIKE '%{valor}%'";
                 //Comando sql en el cual se pasa la instrucción y la conexión
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
@@ -312,7 +284,7 @@ namespace Proyecto.Modelo.DAO
                 //Se crea un objeto Dataset que es donde se devolverán los resultados
                 DataSet ds = new DataSet();
                 //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
-                adp.Fill(ds, "Empelado");
+                adp.Fill(ds, "RegsitrosDeEmpleados");
                 //Devolvemos el Dataset
                 return ds;
             }

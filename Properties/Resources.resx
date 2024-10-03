@@ -124,6 +124,9 @@
   <data name="icons8-tarjeta-de-empleado-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-tarjeta-de-empleado-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-zoo-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-zoo-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-agregar-propiedad-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-agregar-propiedad-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +150,9 @@
   </data>
   <data name="icons8-basura-llena-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-basura-llena-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e2e7f046-aa97-4bfd-9785-340d113360b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e2e7f046-aa97-4bfd-9785-340d113360b4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="consulta-veterinaria-1-1024x538" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consulta-veterinaria-1-1024x538.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,17 +208,14 @@
   <data name="1c42864b-ce2c-4870-ab31-c4aac24220a3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1c42864b-ce2c-4870-ab31-c4aac24220a3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-gestión-de-clientes-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-gestión-de-clientes-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-más-35" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-más-35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="eb10872f-c073-4486-ab6c-6cce834e1347" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eb10872f-c073-4486-ab6c-6cce834e1347.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-hombres-categoría-de-edad-5-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-hombres-categoría-de-edad-5-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="7a9497c5-eb7a-47a8-b745-59aa4f76131e" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7a9497c5-eb7a-47a8-b745-59aa4f76131e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-proveedor-35" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-proveedor-35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +229,8 @@
   <data name="icons8-nombre-tag-woman-25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-nombre-tag-woman-25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="e2e7f046-aa97-4bfd-9785-340d113360b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\e2e7f046-aa97-4bfd-9785-340d113360b4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-más-35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-más-35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-calendario-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-calendario-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,13 +238,13 @@
   <data name="icons8-gato-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-gato-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="7a9497c5-eb7a-47a8-b745-59aa4f76131e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7a9497c5-eb7a-47a8-b745-59aa4f76131e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-gestión-de-clientes-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-gestión-de-clientes-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-enlazar-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-enlazar-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-zoo-80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-zoo-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-grupo-de-animales-35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-grupo-de-animales-35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
