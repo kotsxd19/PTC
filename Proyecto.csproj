@@ -56,6 +56,8 @@
     <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
     <Compile Include="Controlador\Proveedor\ControllerAgregarProveedor.cs" />
     <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
+    <Compile Include="Controlador\Servidor\ControllerConexionAdmin.cs" />
+    <Compile Include="Controlador\Servidor\ControllerConfrimarContraseña.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
     <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
@@ -94,6 +96,18 @@
     </Compile>
     <Compile Include="Vista\citas\frmcitas.Designer.cs">
       <DependentUpon>frmcitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Dueño\frmAgregarDueñosMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Dueño\frmAgregarDueñosMascotas.Designer.cs">
+      <DependentUpon>frmAgregarDueñosMascotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Dueño\frmDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Dueño\frmDueño.Designer.cs">
+      <DependentUpon>frmDueño.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Inicio\frmInicio.cs">
       <SubType>Form</SubType>
@@ -215,6 +229,18 @@
     <Compile Include="Vista\Proveedor\frmProveedor.Designer.cs">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Servidor\frmAdminConexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Servidor\frmAdminConexion.Designer.cs">
+      <DependentUpon>frmAdminConexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Servidor\frmConfrimarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Servidor\frmConfrimarContraseña.Designer.cs">
+      <DependentUpon>frmConfrimarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventas\frmDetalleDeVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\citas\frmcitas.resx">
       <DependentUpon>frmcitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Dueño\frmAgregarDueñosMascotas.resx">
+      <DependentUpon>frmAgregarDueñosMascotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Dueño\frmDueño.resx">
+      <DependentUpon>frmDueño.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inicio\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
@@ -299,6 +331,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Proveedor\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Servidor\frmAdminConexion.resx">
+      <DependentUpon>frmAdminConexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Servidor\frmConfrimarContraseña.resx">
+      <DependentUpon>frmConfrimarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventas\frmDetalleDeVentas.resx">
       <DependentUpon>frmDetalleDeVentas.cs</DependentUpon>
@@ -423,6 +461,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-zoo-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mascotas-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ventas-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-out-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-servidor-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sistema-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contraseña-70.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

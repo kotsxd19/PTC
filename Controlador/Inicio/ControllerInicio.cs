@@ -2,13 +2,20 @@
 using Proyecto.Vista.AgregarUsuarios;
 using Proyecto.Vista.Inicio;
 using Proyecto.Vista.Login;
+using Proyecto.Vista.Mascota;
 using Proyecto.Vista.Proveedor;
+using Proyecto.Vista.Ventas;
+using Proyecto.Vista.Dueño;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto.Vista.citas;
+using Proyecto.Vista.Producto;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Proyecto.Vista.Servidor;
 
 namespace Proyecto.Controlador.Inicio
 {
@@ -21,14 +28,72 @@ namespace Proyecto.Controlador.Inicio
         {
             objVista = Vista;
             Vista.Load += new EventHandler(CargarDatos);
+            Vista.Load += new EventHandler(EventosIniciales);
             Vista.btnEmpleados.Click += new EventHandler(openFormEmpleados);
             Vista.btnProveedor.Click += new EventHandler(openFromProveedor);
+            Vista.btnVentas.Click += new EventHandler(openFromVentas);
+            Vista.btnClientes.Click += new EventHandler(openFromClientes);
+            Vista.btnMascotas.Click += new EventHandler(openFromMascotas);
+            Vista.btnCitas.Click += new EventHandler(openFromCitas);
+            Vista.btnProducto.Click += new EventHandler(openFromProducto);
+            Vista.gestiónDeEmpleadToolStripMenuItem.Click += new EventHandler(openFormEmpleados);
+            Vista.mascotsToolStripMenuItem.Click += new EventHandler(openFromMascotas);
+
+            Vista.cerrarFormularioToolStripMenuItem.Click += new EventHandler(CerrarForm);
+            //Vista.btnce += new EventHandler(Logout);
+        }
+
+
+        void EventosIniciales(object sender, EventArgs e)
+        {
+            AccesoRoles();
+        }
+
+        /// <summary>
+        /// El metodo acceso determina que accesos tendrá disponibles el usuario cuando inicie sesión.
+        /// </summary>
+        public void AccesoRoles()
+        {
+            //Estructura selectiva para evaluar los posibles valores de la vraible Access
+            switch (Acceso.Access)
+            {
+                case "admin":
+                    break;
+                case "Recepcionista":
+                    objVista.btnEmpleados.Visible = false;
+                    objVista.btnVentas.Visible = false;
+                    break;
+                case "Veterinario":
+                    objVista.btnEmpleados.Visible = false;
+                    objVista.btnVentas.Visible = false;
+                    break;
+                case "Conserje":
+                    objVista.btnEmpleados.Visible = false;
+                    objVista.btnVentas.Visible = false;
+                    objVista.btnCitas.Visible = false;
+                    objVista.btnClientes.Visible = false;
+                    objVista.btnProveedor.Visible = false;
+                    objVista.btnMascotas.Visible = false;
+                    break;
+                case "Enfermero":
+                    objVista.btnEmpleados.Visible = false;
+                    objVista.btnVentas.Visible = false;
+                    break ;
+                default:
+                    break;
+            }
+        }
+
+
+        public void ConfServer(object sender, EventArgs e)
+        {
+            frmConfrimarContraseña objview = new frmConfrimarContraseña();
+            objview.ShowDialog();
         }
 
         void CargarDatos(object sender, EventArgs e)
         {
             objVista.lblUserConnected.Text = Acceso.Usuario;
-            objVista.lblAccessUser.Text = Acceso.RoleId;
             objVista.lblNameEmployee.Text = Acceso.Nombre;
         }
 
@@ -40,6 +105,52 @@ namespace Proyecto.Controlador.Inicio
         void openFromProveedor(object sender, EventArgs e)
         {
             AbrirFormulario<frmProveedor>();
+        }
+
+        void openFromVentas(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmVentas>();
+        }
+
+        void openFromClientes(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmDueño>();
+        }
+
+        void openFromMascotas(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmMascota>();
+        }
+
+        void openFromCitas(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmAgregarCitas>();
+        }
+
+        void openFromProducto(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmProducto>();
+        }
+
+
+        private void Logout(Object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cerrar sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LimpiarVariablesSesion();
+                frmLogin backForm = new frmLogin();
+                backForm.Show();
+                objVista.Dispose();
+            }
+        }
+
+        void LimpiarVariablesSesion()
+        {
+            Acceso.Usuario = string.Empty;
+            Acceso.Contraseña = string.Empty;
+            Acceso.Nombre = string.Empty;
+            Acceso.Access = string.Empty;
+            Acceso.RoleId = 0;
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()

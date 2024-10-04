@@ -46,14 +46,17 @@
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnEmpleados = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnProveedor = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnMascotas = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCerrarSeccion = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -61,6 +64,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -209,16 +213,28 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
             this.flowLayoutPanel1.Controls.Add(this.btnEmpleados);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.btnCitas);
+            this.flowLayoutPanel1.Controls.Add(this.btnVentas);
+            this.flowLayoutPanel1.Controls.Add(this.btnProducto);
             this.flowLayoutPanel1.Controls.Add(this.btnProveedor);
+            this.flowLayoutPanel1.Controls.Add(this.btnClientes);
+            this.flowLayoutPanel1.Controls.Add(this.btnMascotas);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 132);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 509);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 132);
+            this.panel4.TabIndex = 1;
             // 
             // btnEmpleados
             // 
@@ -236,69 +252,53 @@
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEmpleados.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCitas
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Proyecto.Properties.Resources.icons8_gestión_de_clientes_30;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Clientes PET";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCitas.FlatAppearance.BorderSize = 0;
+            this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCitas.ForeColor = System.Drawing.Color.White;
+            this.btnCitas.Image = global::Proyecto.Properties.Resources.icons8_calendario_30;
+            this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCitas.Location = new System.Drawing.Point(3, 44);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(195, 35);
+            this.btnCitas.TabIndex = 2;
+            this.btnCitas.Text = "Citas PET";
+            this.btnCitas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCitas.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnVentas
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Proyecto.Properties.Resources.icons8_calendario_30;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(195, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Citas PET";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnVentas.FlatAppearance.BorderSize = 0;
+            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.Color.White;
+            this.btnVentas.Image = global::Proyecto.Properties.Resources.icons8_ventas_35;
+            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.Location = new System.Drawing.Point(3, 85);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(195, 35);
+            this.btnVentas.TabIndex = 3;
+            this.btnVentas.Text = "Ventas PET";
+            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVentas.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnProducto
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::Proyecto.Properties.Resources.icons8_agenda_30;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 126);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(195, 35);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Agenda PET";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::Proyecto.Properties.Resources.icons8_mover_por_carretilla_30;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 167);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(195, 35);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Inventario";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnProducto.FlatAppearance.BorderSize = 0;
+            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.ForeColor = System.Drawing.Color.White;
+            this.btnProducto.Image = global::Proyecto.Properties.Resources.icons8_mover_por_carretilla_30;
+            this.btnProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProducto.Location = new System.Drawing.Point(3, 126);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(195, 35);
+            this.btnProducto.TabIndex = 4;
+            this.btnProducto.Text = "Inventario";
+            this.btnProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProducto.UseVisualStyleBackColor = true;
             // 
             // btnProveedor
             // 
@@ -308,7 +308,7 @@
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Image = global::Proyecto.Properties.Resources.icons8_proveedor_35;
             this.btnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedor.Location = new System.Drawing.Point(3, 208);
+            this.btnProveedor.Location = new System.Drawing.Point(3, 167);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(195, 35);
             this.btnProveedor.TabIndex = 5;
@@ -316,15 +316,37 @@
             this.btnProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProveedor.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // btnClientes
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 132);
-            this.panel4.TabIndex = 1;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.White;
+            this.btnClientes.Image = global::Proyecto.Properties.Resources.icons8_gestión_de_clientes_30;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(3, 208);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(195, 35);
+            this.btnClientes.TabIndex = 1;
+            this.btnClientes.Text = "Clientes PET";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClientes.UseVisualStyleBackColor = true;
+            // 
+            // btnMascotas
+            // 
+            this.btnMascotas.FlatAppearance.BorderSize = 0;
+            this.btnMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMascotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMascotas.ForeColor = System.Drawing.Color.White;
+            this.btnMascotas.Image = global::Proyecto.Properties.Resources.icons8_mascotas_35;
+            this.btnMascotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMascotas.Location = new System.Drawing.Point(3, 249);
+            this.btnMascotas.Name = "btnMascotas";
+            this.btnMascotas.Size = new System.Drawing.Size(195, 35);
+            this.btnMascotas.TabIndex = 1;
+            this.btnMascotas.Text = "Mascotas PET";
+            this.btnMascotas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMascotas.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -335,6 +357,31 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnCerrarSeccion);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 290);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(197, 219);
+            this.flowLayoutPanel2.TabIndex = 6;
+            // 
+            // btnCerrarSeccion
+            // 
+            this.btnCerrarSeccion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSeccion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSeccion.Image = global::Proyecto.Properties.Resources.icons8_out_40;
+            this.btnCerrarSeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSeccion.Location = new System.Drawing.Point(3, 181);
+            this.btnCerrarSeccion.Name = "btnCerrarSeccion";
+            this.btnCerrarSeccion.Size = new System.Drawing.Size(195, 35);
+            this.btnCerrarSeccion.TabIndex = 1;
+            this.btnCerrarSeccion.Text = "Cerrar Seccion";
+            this.btnCerrarSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSeccion.UseVisualStyleBackColor = true;
             // 
             // frmInicio
             // 
@@ -360,6 +407,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,19 +427,21 @@
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         public System.Windows.Forms.ToolStripLabel lblNameEmployee;
-        private System.Windows.Forms.ToolStripMenuItem mascotsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestiónDeEmpleadToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel PanelContenedor;
         public System.Windows.Forms.Button btnEmpleados;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button4;
-        public System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ToolStripMenuItem cerrarFormularioToolStripMenuItem;
+        public System.Windows.Forms.Button btnClientes;
+        public System.Windows.Forms.Button btnCitas;
+        public System.Windows.Forms.Button btnVentas;
+        public System.Windows.Forms.Button btnProducto;
         public System.Windows.Forms.Button btnProveedor;
+        public System.Windows.Forms.Button btnMascotas;
+        public System.Windows.Forms.ToolStripMenuItem mascotsToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem gestiónDeEmpleadToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem cerrarFormularioToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
