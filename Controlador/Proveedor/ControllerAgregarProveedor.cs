@@ -49,17 +49,6 @@ namespace Proyecto.Controlador.Proveedor
                 ObjAgregar.btnIngresarProveedor.Enabled = false;
                 ObjAgregar.btnActualizarProveedor.Enabled = true; 
             }
-            //else if (accion == 3) // Acción de solo lectura
-            //{
-            //    ObjAgregarUsuario.btnIngresar.Enabled = false;
-            //    ObjAgregarUsuario.btnActualizar.Enabled = false;
-            //    ObjAgregarUsuario.txtNombre.Enabled = false;
-            //    ObjAgregarUsuario.txtApellido.Enabled = false;
-            //    ObjAgregarUsuario.txtCorreo.Enabled = false;
-            //    ObjAgregarUsuario.dtpNacimiento.Enabled = false;
-            //    ObjAgregarUsuario.txtUsuario.Enabled = false;
-            //    ObjAgregarUsuario.cmbRoles.Enabled = false;
-            //}
         }
 
         public void NuevoRegistro(object sender, EventArgs e)

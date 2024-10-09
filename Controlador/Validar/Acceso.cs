@@ -15,7 +15,7 @@ namespace Proyecto.Controlador.Validar
         private static string usuario = string.Empty;
         private static string contraseña = string.Empty;
         private static string nombre = string.Empty;
-        private static int roleId;
+        private static string roleId;
         private static string access = string.Empty;
 
 
@@ -23,7 +23,7 @@ namespace Proyecto.Controlador.Validar
         public static string Usuario { get => usuario; set => usuario = value; }
         public static string Contraseña { get => contraseña; set => contraseña = value; }
         public static string Nombre {get => nombre; set => nombre = value;}
-        public static int RoleId { get => roleId; set => roleId = value; }
+        public static string RoleId { get => roleId; set => roleId = value; }
         public static string Access { get => access; set => access = value; }
     }
 }

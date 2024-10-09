@@ -150,7 +150,6 @@ namespace Proyecto.Controlador.Inicio
             Acceso.Contraseña = string.Empty;
             Acceso.Nombre = string.Empty;
             Acceso.Access = string.Empty;
-            Acceso.RoleId = 0;
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()

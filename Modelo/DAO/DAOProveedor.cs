@@ -52,7 +52,7 @@ namespace Proyecto.Modelo.DAO
             // Consulta SQL para eliminar el usuario en caso de un fallo
             string query = "DELETE FROM Proveedor WHERE Proveedor = @Proveedor";
             SqlCommand cmddel = new SqlCommand(query, command.Connection);
-            cmddel.Parameters.AddWithValue("Usuario", Proveedor);
+            cmddel.Parameters.AddWithValue("Nombre", Proveedor);
 
             // Ejecuta la consulta de eliminación
             cmddel.ExecuteNonQuery();

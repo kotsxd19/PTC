@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Productos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Proyecto.Vista.Producto
         public frmProducto()
         {
             InitializeComponent();
+            ControllerRegistroProductos producto = new ControllerRegistroProductos(this);
+        }
+
+        private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmProducto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

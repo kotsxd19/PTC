@@ -98,13 +98,13 @@
             this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
             this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_más_35;
+            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_401;
             this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(1029, 10);
+            this.btnActualizarProveedor.Location = new System.Drawing.Point(1047, 10);
             this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(129, 39);
+            this.btnActualizarProveedor.Size = new System.Drawing.Size(111, 39);
             this.btnActualizarProveedor.TabIndex = 8;
-            this.btnActualizarProveedor.Text = "Mas Detalle";
+            this.btnActualizarProveedor.Text = "Agregar";
             this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizarProveedor.UseVisualStyleBackColor = true;
             // 

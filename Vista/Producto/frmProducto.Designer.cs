@@ -30,25 +30,25 @@
         {
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnActualizarProveedor = new System.Windows.Forms.Button();
-            this.btnNuevoProveedor = new System.Windows.Forms.Button();
+            this.btnNuevoProductos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarProveedor = new System.Windows.Forms.Button();
-            this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
+            this.btnBuscarProducto = new System.Windows.Forms.Button();
+            this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvProveedor = new System.Windows.Forms.DataGridView();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.panel4.Controls.Add(this.btnActualizarProveedor);
-            this.panel4.Controls.Add(this.btnNuevoProveedor);
+            this.panel4.Controls.Add(this.btnNuevoProductos);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.btnBuscarProveedor);
-            this.panel4.Controls.Add(this.txtBuscadorProveedor);
+            this.panel4.Controls.Add(this.btnBuscarProducto);
+            this.panel4.Controls.Add(this.txtBuscarProducto);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
@@ -72,22 +72,22 @@
             this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizarProveedor.UseVisualStyleBackColor = true;
             // 
-            // btnNuevoProveedor
+            // btnNuevoProductos
             // 
-            this.btnNuevoProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoProveedor.FlatAppearance.BorderSize = 0;
-            this.btnNuevoProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnNuevoProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoProveedor.Image = global::Proyecto.Properties.Resources.icons8_calendario_30__1_;
-            this.btnNuevoProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoProveedor.Location = new System.Drawing.Point(1057, 8);
-            this.btnNuevoProveedor.Name = "btnNuevoProveedor";
-            this.btnNuevoProveedor.Size = new System.Drawing.Size(108, 39);
-            this.btnNuevoProveedor.TabIndex = 8;
-            this.btnNuevoProveedor.Text = "Nuevo";
-            this.btnNuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoProveedor.UseVisualStyleBackColor = true;
+            this.btnNuevoProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevoProductos.FlatAppearance.BorderSize = 0;
+            this.btnNuevoProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnNuevoProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoProductos.Image = global::Proyecto.Properties.Resources.icons8_agregar_producto_35;
+            this.btnNuevoProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoProductos.Location = new System.Drawing.Point(1057, 8);
+            this.btnNuevoProductos.Name = "btnNuevoProductos";
+            this.btnNuevoProductos.Size = new System.Drawing.Size(108, 39);
+            this.btnNuevoProductos.TabIndex = 8;
+            this.btnNuevoProductos.Text = "Nuevo";
+            this.btnNuevoProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoProductos.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -98,28 +98,28 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar empleado:";
             // 
-            // btnBuscarProveedor
+            // btnBuscarProducto
             // 
-            this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProveedor.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(406, 15);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(35, 29);
-            this.btnBuscarProveedor.TabIndex = 1;
-            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProducto.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(406, 15);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(35, 29);
+            this.btnBuscarProducto.TabIndex = 1;
+            this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
-            // txtBuscadorProveedor
+            // txtBuscarProducto
             // 
-            this.txtBuscadorProveedor.Location = new System.Drawing.Point(108, 20);
-            this.txtBuscadorProveedor.Name = "txtBuscadorProveedor";
-            this.txtBuscadorProveedor.Size = new System.Drawing.Size(292, 20);
-            this.txtBuscadorProveedor.TabIndex = 0;
+            this.txtBuscarProducto.Location = new System.Drawing.Point(108, 20);
+            this.txtBuscarProducto.Name = "txtBuscarProducto";
+            this.txtBuscarProducto.Size = new System.Drawing.Size(292, 20);
+            this.txtBuscarProducto.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel3.Controls.Add(this.dgvProveedor);
+            this.panel3.Controls.Add(this.dgvProductos);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 56);
             this.panel3.Name = "panel3";
@@ -127,16 +127,17 @@
             this.panel3.Size = new System.Drawing.Size(1175, 499);
             this.panel3.TabIndex = 9;
             // 
-            // dgvProveedor
+            // dgvProductos
             // 
-            this.dgvProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProveedor.Location = new System.Drawing.Point(10, 10);
-            this.dgvProveedor.Name = "dgvProveedor";
-            this.dgvProveedor.RowHeadersWidth = 51;
-            this.dgvProveedor.Size = new System.Drawing.Size(1155, 479);
-            this.dgvProveedor.TabIndex = 0;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductos.Location = new System.Drawing.Point(10, 10);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.Size = new System.Drawing.Size(1155, 479);
+            this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellContentClick);
             // 
             // frmProducto
             // 
@@ -147,10 +148,11 @@
             this.Controls.Add(this.panel4);
             this.Name = "frmProducto";
             this.Text = "frmProducto";
+            this.Load += new System.EventHandler(this.frmProducto_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,11 +161,11 @@
 
         private System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Button btnActualizarProveedor;
-        public System.Windows.Forms.Button btnNuevoProveedor;
+        public System.Windows.Forms.Button btnNuevoProductos;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button btnBuscarProveedor;
-        public System.Windows.Forms.TextBox txtBuscadorProveedor;
+        public System.Windows.Forms.Button btnBuscarProducto;
+        public System.Windows.Forms.TextBox txtBuscarProducto;
         private System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.DataGridView dgvProveedor;
+        public System.Windows.Forms.DataGridView dgvProductos;
     }
 }

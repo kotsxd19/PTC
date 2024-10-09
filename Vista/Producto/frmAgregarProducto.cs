@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Proyecto.Controlador.IngresarUsuario;
+using Proyecto.Controlador.Productos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,15 @@ namespace Proyecto.Vista.Producto
 {
     public partial class frmAgregarProducto : Form
     {
-        public frmAgregarProducto()
+        public frmAgregarProducto(int accion)
         {
             InitializeComponent();
+            ControllerIngresoProductos objAgregarUser = new ControllerIngresoProductos(this, accion);
+        }
+
+        private void frmAgregarProducto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

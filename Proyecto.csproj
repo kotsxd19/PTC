@@ -54,6 +54,8 @@
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Login\ModosDeRecuperarContraseña.cs" />
     <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
+    <Compile Include="Controlador\Productos\ControllerIngresoProductos.cs" />
+    <Compile Include="Controlador\Productos\ControllerRegistroProductos.cs" />
     <Compile Include="Controlador\Proveedor\ControllerAgregarProveedor.cs" />
     <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
     <Compile Include="Controlador\Servidor\ControllerConexionAdmin.cs" />
@@ -61,15 +63,26 @@
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
     <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
+    <Compile Include="Modelo\DAO\DAODetalleVentas.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\DAO\DAOPrimerUso.cs" />
+    <Compile Include="Modelo\DAO\DAOProducto.cs" />
     <Compile Include="Modelo\DAO\DAOProveedor.cs" />
+    <Compile Include="Modelo\DAO\DAOVentas.cs" />
     <Compile Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOAgregarUsuario.cs" />
+    <Compile Include="Modelo\DTO\DTOCitas.cs" />
     <Compile Include="Modelo\DTO\DTOdbContext.cs" />
+    <Compile Include="Modelo\DTO\DTODetalleDeVentas.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
+    <Compile Include="Modelo\DTO\DTOMascota.cs" />
     <Compile Include="Modelo\DTO\DTOPrimerUso.cs" />
+    <Compile Include="Modelo\DTO\DTOProducto.cs" />
     <Compile Include="Modelo\DTO\DTOProveedor.cs" />
+    <Compile Include="Modelo\DTO\DTORaza.cs" />
+    <Compile Include="Modelo\DTO\DTORazon.cs" />
+    <Compile Include="Modelo\DTO\DTORazonCitas.cs" />
+    <Compile Include="Modelo\DTO\DTOVentas.cs" />
     <Compile Include="Modelo\DTO\RecuperacionContraPorCorreo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -241,6 +254,18 @@
     <Compile Include="Vista\Servidor\frmConfrimarContraseña.Designer.cs">
       <DependentUpon>frmConfrimarContraseña.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventas\frmAgregarDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventas\frmAgregarDetalleVenta.Designer.cs">
+      <DependentUpon>frmAgregarDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventas\frmAgregarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventas\frmAgregarVentas.Designer.cs">
+      <DependentUpon>frmAgregarVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventas\frmDetalleDeVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +362,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Servidor\frmConfrimarContraseña.resx">
       <DependentUpon>frmConfrimarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventas\frmAgregarDetalleVenta.resx">
+      <DependentUpon>frmAgregarDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventas\frmAgregarVentas.resx">
+      <DependentUpon>frmAgregarVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventas\frmDetalleDeVentas.resx">
       <DependentUpon>frmDetalleDeVentas.cs</DependentUpon>
@@ -479,6 +510,76 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-contraseña-70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contraseña-701.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sistema-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-servidor-351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-out-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ventas-351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mascotas-351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-productos-351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inventario-1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inventario-701.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e2e7f046-aa97-4bfd-9785-340d113360b41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Pet Shop Ilustrado Marrón %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eb10872f-c073-4486-ab6c-6cce834e13471.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Pet Shop Ilustrado Marrón.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-actualizar-351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-agregar-propiedad-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-citas-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-proveedor-351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buscar-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hombres-categoría-de-edad-5-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-agregar-producto-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-añadir-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-añadir-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controlador\DetalleVentas\" />
+    <Folder Include="Controlador\Ventas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

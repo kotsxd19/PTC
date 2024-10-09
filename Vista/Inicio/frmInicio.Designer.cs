@@ -56,7 +56,6 @@
             this.btnMascotas = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCerrarSeccion = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -360,7 +359,6 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.btnCerrarSeccion);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 290);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -369,19 +367,6 @@
             // 
             // btnCerrarSeccion
             // 
-            this.btnCerrarSeccion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSeccion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSeccion.Image = global::Proyecto.Properties.Resources.icons8_out_40;
-            this.btnCerrarSeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSeccion.Location = new System.Drawing.Point(3, 181);
-            this.btnCerrarSeccion.Name = "btnCerrarSeccion";
-            this.btnCerrarSeccion.Size = new System.Drawing.Size(195, 35);
-            this.btnCerrarSeccion.TabIndex = 1;
-            this.btnCerrarSeccion.Text = "Cerrar Seccion";
-            this.btnCerrarSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarSeccion.UseVisualStyleBackColor = true;
             // 
             // frmInicio
             // 
