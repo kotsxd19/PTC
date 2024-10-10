@@ -22,7 +22,7 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para insertar más detalles del empleado
-                string query = "INSERT INTO Empleado VALUES (@param1, @param2)";
+                string query = "INSERT INTO Ventas VALUES (@param1, @param2)";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("param1", IdCitas1);
                 cmd.Parameters.AddWithValue("param2", IdProductos1);

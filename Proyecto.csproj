@@ -63,11 +63,13 @@
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
     <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
+    <Compile Include="Modelo\DAO\DAOCitas.cs" />
     <Compile Include="Modelo\DAO\DAODetalleVentas.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
     <Compile Include="Modelo\DAO\DAOPrimerUso.cs" />
     <Compile Include="Modelo\DAO\DAOProducto.cs" />
     <Compile Include="Modelo\DAO\DAOProveedor.cs" />
+    <Compile Include="Modelo\DAO\DAORazon.cs" />
     <Compile Include="Modelo\DAO\DAOVentas.cs" />
     <Compile Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOAgregarUsuario.cs" />
@@ -109,6 +111,18 @@
     </Compile>
     <Compile Include="Vista\citas\frmcitas.Designer.cs">
       <DependentUpon>frmcitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\citas\frmRazon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\citas\frmRazon.Designer.cs">
+      <DependentUpon>frmRazon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\citas\frmRazonesCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\citas\frmRazonesCitas.Designer.cs">
+      <DependentUpon>frmRazonesCitas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Dueño\frmAgregarDueñosMascotas.cs">
       <SubType>Form</SubType>
@@ -299,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\citas\frmcitas.resx">
       <DependentUpon>frmcitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\citas\frmRazon.resx">
+      <DependentUpon>frmRazon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Dueño\frmAgregarDueñosMascotas.resx">
       <DependentUpon>frmAgregarDueñosMascotas.cs</DependentUpon>

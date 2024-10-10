@@ -85,39 +85,7 @@ namespace Proyecto.Modelo.DAO
         }
 
 
-        public DataSet ObtenerPersonas()
-        {
-            try
-            {
-                // Establece la conexión a la base de datos
-                command.Connection = getConnection();
-
-                // Consulta SQL para obtener los empleados activos
-                string query = "SELECT * FROM RegsitrosDeEmpleados";
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
-
-                // Ejecuta la consulta sin obtener resultados
-                cmd.ExecuteNonQuery();
-
-                // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "RegsitrosDeEmpleados");
-
-                // Retorna el DataSet con los empleados activos
-                return ds;
-            }
-            catch (Exception)
-            {
-                // Retorna null si ocurre una excepción
-                return null;
-            }
-            finally
-            {
-                // Cierra la conexión a la base de datos independientemente de si ocurre una excepción o no
-                getConnection().Close();
-            }
-        }
+       
 
         public DataSet ObtenerPersonasInactivas()
         {
