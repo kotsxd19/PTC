@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\Conexion\ControladorConexion.cs" />
+    <Compile Include="Controlador\DetalleDeVenta\ControllerDetalleVenta.cs" />
     <Compile Include="Controlador\IngresarUsuario\ControllerIngresarUsuario.cs" />
     <Compile Include="Controlador\IngresarUsuario\ControllerVistaAgregarEmpleado.cs" />
     <Compile Include="Controlador\Inicio\ControllerInicio.cs" />
@@ -595,7 +596,6 @@
     <None Include="Resources\icons8-añadir-401.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controlador\DetalleVentas\" />
     <Folder Include="Controlador\Ventas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

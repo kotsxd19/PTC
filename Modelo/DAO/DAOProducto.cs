@@ -30,7 +30,7 @@ namespace Proyecto.Modelo.DAO
                 // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "Nombre");
+                adapter.Fill(ds, "Proveedor");
 
                 // Retorna el DataSet con los roles
                 return ds;
@@ -55,7 +55,7 @@ namespace Proyecto.Modelo.DAO
             {
                 // Establece la conexión a la base de datos
                 command.Connection = getConnection();
-                string query = "INSERT INTO Empleado VALUES (@param1, @param2, @param3, @param4)";
+                string query = "INSERT INTO Producto VALUES (@param1, @param2, @param3, @param4)";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("param1", IdProveedor1);
                 cmd.Parameters.AddWithValue("param2", Nombre1);

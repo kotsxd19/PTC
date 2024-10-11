@@ -60,14 +60,13 @@ namespace Proyecto.Controlador.Productos
         {
             try
             {
-                if (!(string.IsNullOrEmpty(ObjAgregar.txtNombreProducto.Text.Trim())))
-                {
-                    DAOProveedor DAOInsert = new DAOProveedor();
-                    DAOInsert.Proveedor = ObjAgregar.txtNombreProducto.Text.Trim();
+                    DAOProducto DAOInsert = new DAOProducto();
+                    DAOInsert.Nombre1 = ObjAgregar.txtNombreProducto.Text;
+                    DAOInsert.CodigoDeBarra1 = ObjAgregar.txtCodigoDeBarra.Text;
+                    DAOInsert.Precio1 = decimal.Parse(ObjAgregar.txtPrecio.Text);
+                    DAOInsert.IdProveedor1 = (int)(ObjAgregar.cmbProveedor.SelectedValue);
 
-
-
-                    int valorRetornado = DAOInsert.RegistarProveedor(); // Registra el nuevo usuario
+                    int valorRetornado = DAOInsert.RegistarProducto(); // Registra el nuevo usuario
                     if (valorRetornado == 1)
                     {
                         MessageBox.Show("Los datos ingresados han sido registrados exitosamente",
@@ -82,14 +81,7 @@ namespace Proyecto.Controlador.Productos
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Existen campos vacíos, complete cada uno de los apartados y verifique que la fecha seleccionada corresponde a una persona mayor de edad.",
-                                        "Proceso interrumpido",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Warning);
-                }
+                
             }
             catch (Exception ex)
             {

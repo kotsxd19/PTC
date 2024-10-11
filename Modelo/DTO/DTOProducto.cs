@@ -10,14 +10,14 @@ namespace Proyecto.Modelo.DTO
     {
         int IdProducto;
         int IdProveedor;
-        int CodigoDeBarra;
+        string CodigoDeBarra;
         string Nombre;
-        int Precio;
+        decimal Precio;
 
         public int IdProducto1 { get => IdProducto; set => IdProducto = value; }
         public int IdProveedor1 { get => IdProveedor; set => IdProveedor = value; }
-        public int CodigoDeBarra1 { get => CodigoDeBarra; set => CodigoDeBarra = value; }
+        public string CodigoDeBarra1 { get => CodigoDeBarra; set => CodigoDeBarra = value; }
         public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public int Precio1 { get => Precio; set => Precio = value; }
+        public decimal Precio1 { get => Precio; set => Precio = value; }
     }
 }

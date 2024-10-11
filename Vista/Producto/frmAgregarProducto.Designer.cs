@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.nupPrecio = new System.Windows.Forms.NumericUpDown();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnActualizarProducto = new System.Windows.Forms.Button();
+            this.btnIngresarProducto = new System.Windows.Forms.Button();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.txtCodigoDeBarra = new System.Windows.Forms.TextBox();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
@@ -37,23 +40,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnActualizarProducto = new System.Windows.Forms.Button();
-            this.btnIngresarProducto = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.nupPrecio);
-            this.panel1.Controls.Add(this.cmbProveedor);
             this.panel1.Controls.Add(this.txtPrecio);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.cmbProveedor);
             this.panel1.Controls.Add(this.txtCodigoDeBarra);
             this.panel1.Controls.Add(this.txtNombreProducto);
             this.panel1.Controls.Add(this.label4);
@@ -65,12 +62,62 @@
             this.panel1.Size = new System.Drawing.Size(430, 350);
             this.panel1.TabIndex = 1;
             // 
-            // nupPrecio
+            // panel4
             // 
-            this.nupPrecio.Location = new System.Drawing.Point(16, 233);
-            this.nupPrecio.Name = "nupPrecio";
-            this.nupPrecio.Size = new System.Drawing.Size(140, 20);
-            this.nupPrecio.TabIndex = 4;
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.btnCancelar);
+            this.panel4.Controls.Add(this.btnActualizarProducto);
+            this.panel4.Controls.Add(this.btnIngresarProducto);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 282);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(430, 68);
+            this.panel4.TabIndex = 5;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(17, 8);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(109, 40);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizarProducto
+            // 
+            this.btnActualizarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
+            this.btnActualizarProducto.FlatAppearance.BorderSize = 0;
+            this.btnActualizarProducto.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnActualizarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.btnActualizarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnActualizarProducto.Location = new System.Drawing.Point(178, 10);
+            this.btnActualizarProducto.Name = "btnActualizarProducto";
+            this.btnActualizarProducto.Size = new System.Drawing.Size(114, 40);
+            this.btnActualizarProducto.TabIndex = 9;
+            this.btnActualizarProducto.Text = "Actualizar";
+            this.btnActualizarProducto.UseVisualStyleBackColor = false;
+            // 
+            // btnIngresarProducto
+            // 
+            this.btnIngresarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
+            this.btnIngresarProducto.FlatAppearance.BorderSize = 0;
+            this.btnIngresarProducto.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
+            this.btnIngresarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.btnIngresarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnIngresarProducto.Location = new System.Drawing.Point(298, 10);
+            this.btnIngresarProducto.Name = "btnIngresarProducto";
+            this.btnIngresarProducto.Size = new System.Drawing.Size(114, 38);
+            this.btnIngresarProducto.TabIndex = 8;
+            this.btnIngresarProducto.Text = "Ingresar";
+            this.btnIngresarProducto.UseVisualStyleBackColor = false;
             // 
             // cmbProveedor
             // 
@@ -134,69 +181,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.btnCancelar);
-            this.panel4.Controls.Add(this.btnActualizarProducto);
-            this.panel4.Controls.Add(this.btnIngresarProducto);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 282);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(430, 68);
-            this.panel4.TabIndex = 5;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(17, 8);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(109, 40);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btnActualizarProducto
-            // 
-            this.btnActualizarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
-            this.btnActualizarProducto.FlatAppearance.BorderSize = 0;
-            this.btnActualizarProducto.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnActualizarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.btnActualizarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizarProducto.Location = new System.Drawing.Point(178, 10);
-            this.btnActualizarProducto.Name = "btnActualizarProducto";
-            this.btnActualizarProducto.Size = new System.Drawing.Size(114, 40);
-            this.btnActualizarProducto.TabIndex = 9;
-            this.btnActualizarProducto.Text = "Actualizar";
-            this.btnActualizarProducto.UseVisualStyleBackColor = false;
-            // 
-            // btnIngresarProducto
-            // 
-            this.btnIngresarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
-            this.btnIngresarProducto.FlatAppearance.BorderSize = 0;
-            this.btnIngresarProducto.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnIngresarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.btnIngresarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIngresarProducto.Location = new System.Drawing.Point(298, 10);
-            this.btnIngresarProducto.Name = "btnIngresarProducto";
-            this.btnIngresarProducto.Size = new System.Drawing.Size(114, 38);
-            this.btnIngresarProducto.TabIndex = 8;
-            this.btnIngresarProducto.Text = "Ingresar";
-            this.btnIngresarProducto.UseVisualStyleBackColor = false;
-            // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(162, 233);
+            this.txtPrecio.Location = new System.Drawing.Point(16, 234);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(175, 20);
-            this.txtPrecio.TabIndex = 2;
+            this.txtPrecio.Size = new System.Drawing.Size(146, 20);
+            this.txtPrecio.TabIndex = 6;
             // 
             // frmAgregarProducto
             // 
@@ -211,7 +201,6 @@
             this.Load += new System.EventHandler(this.frmAgregarProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -224,7 +213,6 @@
         public System.Windows.Forms.Button btnActualizarProducto;
         public System.Windows.Forms.Button btnIngresarProducto;
         public System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.TextBox txtPrecio;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cmbProveedor;
         public System.Windows.Forms.TextBox txtCodigoDeBarra;
@@ -232,6 +220,6 @@
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.NumericUpDown nupPrecio;
+        public System.Windows.Forms.TextBox txtPrecio;
     }
 }

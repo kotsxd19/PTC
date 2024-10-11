@@ -30,7 +30,7 @@ namespace Proyecto.Modelo.DAO
                 // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "Nombre");
+                adapter.Fill(ds, "");
 
                 // Retorna el DataSet con los roles
                 return ds;
@@ -166,5 +166,5 @@ namespace Proyecto.Modelo.DAO
         }
 
     }
-    }
 }
+
