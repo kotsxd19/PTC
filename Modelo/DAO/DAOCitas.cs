@@ -15,6 +15,7 @@ namespace Proyecto.Modelo.DAO
         {
             try
             {
+
                 Conexion.Connection = getConexion();
                 string query = "SELECT * FROM Empleado";
                 SqlCommand cmdSelect = new SqlCommand(query, Conexion.Connection);
@@ -24,8 +25,9 @@ namespace Proyecto.Modelo.DAO
                 adp.Fill(ds, "Empleado");
                 return ds;
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
+                MessageBox.Show($"{ex.Message}");
                 MessageBox.Show($"Error al obtener los empleados, verifique su conexión a internet o que el acceso al servidor o base de datos esten activos", "Error de ejecución", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
@@ -67,21 +69,21 @@ namespace Proyecto.Modelo.DAO
         // Método para ingresar una nueva cita
         public int IngresarCita()
         {
-            // Establecer la conexión a la base de datos
-       
-
+            Conexion.Connection = getConexion();
+             var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
+            string query = "INSERT INTO Citas (IdEmpleados, IdMascota, Fecha, Hora, Descripcion) VALUES (@IdEmpleados, @IdMascota, @Fecha, @Hora, @Descripcion)";
             // Crear el comando SQL para insertar la nueva cita
-            SqlCommand cmd = new SqlCommand("INSERT INTO Citas (IdEmpleados, IdMascota, Fecha, Hora, Descripcion) VALUES (@IdEmpleados, @IdMascota, @Fecha, @Hora, @Descripcion)", Conexion.Connection);
+            SqlCommand cmd = new SqlCommand(query, Conexion.Connection);
             
             // Añadir los parámetros necesarios para la inserción
             cmd.Parameters.AddWithValue("@IdEmpleados", IdEmpleados);
-            cmd.Parameters.AddWithValue("@IdMascota", IdMascota);
+            cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
             cmd.Parameters.AddWithValue("@Fecha", Fecha);
             cmd.Parameters.AddWithValue("@Hora", Hora.ToString(@"hh\:mm\:ss")); // Formatear la hora correctamente
             cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
-
-             // Abrir la conexión
-            return cmd.ExecuteNonQuery(); // Ejecutar el comando y devolver el número de filas afectadas
+            int respuesta = cmd.ExecuteNonQuery();
+            // Abrir la conexión
+            return respuesta; // Ejecutar el comando y devolver el número de filas afectadas
         }
 
         // Método para editar una cita existente
@@ -91,12 +93,12 @@ namespace Proyecto.Modelo.DAO
             var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
 
             // Crear el comando SQL para actualizar la cita
-            var cmd = new SqlCommand("UPDATE Citas SET IdEmpleados = @IdEmpleados, IdMascota = @IdMascota, Fecha = @Fecha, Hora = @Hora, Descripcion = @Descripcion WHERE IdCitas = @IdCitas", Conexion.Connection);
+            var cmd = new SqlCommand("UPDATE Citas SET IdEmpleados = @IdEmpleados, IdMascota = @IdMascota, Fecha = @Fecha, Hora = @Hora, Descripcion = @Descripcion WHERE IdCitas = @IdCitas", conn);
 
             // Añadir los parámetros necesarios para la actualización
             cmd.Parameters.AddWithValue("@IdCitas", IdCitas);
             cmd.Parameters.AddWithValue("@IdEmpleados", IdEmpleados);
-            cmd.Parameters.AddWithValue("@IdMascota", IdMascota);
+            cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
             cmd.Parameters.AddWithValue("@Fecha", Fecha);
             cmd.Parameters.AddWithValue("@Hora", Hora.ToString(@"hh\:mm\:ss")); // Formatear la hora correctamente
             cmd.Parameters.AddWithValue("@Descripcion", Descripcion);

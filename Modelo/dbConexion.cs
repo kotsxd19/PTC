@@ -15,11 +15,10 @@ namespace Proyecto.Modelo
             {
                 //DESKTOP-70UOOD5
                 string server = "SQL8020.site4now.net";
-                string database = "dbVetManager";
+                string database = "db_aad183_vetmanager";
                 string user = "db_aad183_vetmanager_admin";
                 string pass = "VetManager_2";
-                SqlConnection conexion = new SqlConnection("Server =" + server +
-                                                                 "; DataBase = " + database + "; User = " + user + "; Password = " + pass);
+                SqlConnection conexion = new SqlConnection($"Server = {server}; Database = {database}; User Id = {user}; password = {pass}");
                 conexion.Open();
                 return conexion;
 

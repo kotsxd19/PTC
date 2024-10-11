@@ -12,16 +12,16 @@ namespace Proyecto.Modelo.DTO
     {
         private int idCitas;
         private int idEmpleados;
-        private int idMascota;
+        private string idMascota;
         private DateTime fecha;
-        private DateTime hora;
+        private TimeSpan hora;
         private string descripcion;
 
         public int IdCitas { get => idCitas; set => idCitas = value; }
         public int IdEmpleados { get => idEmpleados; set => idEmpleados = value; }
-        public int IdMascota { get => idMascota; set => idMascota = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
-        public DateTime Hora { get => hora; set => hora = value; }
+        public TimeSpan Hora { get => hora; set => hora = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string IdMascota1 { get => idMascota; set => idMascota = value; }
     }
 }

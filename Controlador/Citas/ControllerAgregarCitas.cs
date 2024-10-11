@@ -41,7 +41,7 @@ namespace Proyecto.Controlador.Citas
 
         public void CargarDatos(int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
         {
-            objCitas.cmbIdEmpleados.SelectedValue = IdCitas;
+            objCitas.cmbIdEmpleados.SelectedValue = IdEmpleados;
             objCitas.txtDescripcion.Text = Descripcion;
             CargarDatos(IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
         }
@@ -54,7 +54,7 @@ namespace Proyecto.Controlador.Citas
         private void iniciar(object sender, EventArgs e)
         {
             LLenarcomboEmpleados();
-            CargarDatosActualizar();
+            
         }
 
         void LLenarcomboEmpleados()
@@ -64,7 +64,7 @@ namespace Proyecto.Controlador.Citas
             DataSet ds = daoCitas.LLenarcomboEmpleados();
             objCitas.cmbIdEmpleados.DataSource = ds.Tables["Empleado"];
             objCitas.cmbIdEmpleados.DisplayMember = "Nombre";
-            objCitas.cmbIdEmpleados.ValueMember = "IdEmpleado";
+            objCitas.cmbIdEmpleados.ValueMember = "IdEmpleados";
         }
         private void AgregarCitas(object sender, EventArgs e)
         {
@@ -74,13 +74,17 @@ namespace Proyecto.Controlador.Citas
                     // Crear una nueva instancia de DAOCitas para insertar
                     DAOCitas daoInsert = new DAOCitas();
 
-                    int IdEmpleados = int.Parse(objCitas.cmbIdEmpleados.Text); // ID del empleado
-                    int IdMascota = int.Parse(objCitas.txtIdMascota.Text); // ID de la mascota
+                    int IdEmpleados = int.Parse(objCitas.cmbIdEmpleados.SelectedValue.ToString()); // ID del empleado
+                    string IdMascota = objCitas.txtIdMascota.Text.Trim(); // ID de la mascota
                     DateTime Fecha = DateTime.Parse(objCitas.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
                     TimeSpan Hora = TimeSpan.Parse(objCitas.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
                     string Descripcion = objCitas.txtDescripcion.Text; // Descripción de la cita
 
-
+                    daoInsert.IdEmpleados = IdEmpleados;
+                    daoInsert.Fecha = Fecha;
+                    daoInsert.Hora = Hora;
+                    daoInsert.Descripcion = Descripcion;
+                    daoInsert.IdMascota1 = IdMascota;
                     // Llamar al método de inserción y verificar el resultado
                     int retorno = daoInsert.IngresarCita();
                     if (retorno == 1)
