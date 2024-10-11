@@ -10,12 +10,13 @@ namespace Proyecto.Controlador.Citas
     {
         // Referencia a la vista del formulario
         frmCitas objVista;
+        frmAgregarCitas agregarCitas;
 
         // Constructor que inicializa el controlador y sus eventos
         public ControllerCitas(frmCitas Vista)
         {
             objVista = Vista;
-
+            Vista.Load += new EventHandler(iniciarCarga);
             // Asignar eventos a los botones de la vista
             Vista.btnEliminarCita.Click += new EventHandler(EliminarCita);
             Vista.btnEditarCita.Click += new EventHandler(EditarCita);
@@ -25,15 +26,13 @@ namespace Proyecto.Controlador.Citas
             LlenarDataGridInfoCitas();
         }
 
-        void LLenarcomboEmpleados()
+        private void iniciarCarga(object sender, EventArgs e)
         {
+            LlenarDataGridInfoCitas();
 
-            DAOCitas daoCitas = new DAOCitas();
-            DataSet ds = daoCitas.LLenarcomboEmpleados();
-            objVista.cmbIdEmpleados.DataSource = ds.Tables["Empleado"];
-            objVista.cmbIdEmpleados.DisplayMember = "Nombre";
-            objVista.cmbIdEmpleados.ValueMember = "IdEmpleado";
         }
+
+
 
         // Método para llenar el DataGridView con información de citas
         public void LlenarDataGridInfoCitas()
@@ -71,55 +70,30 @@ namespace Proyecto.Controlador.Citas
         // Método para ingresar una nueva cita
         private void IngresarCita(object sender, EventArgs e)
         {
-            try
-            {
-                // Crear una nueva instancia de DAOCitas para insertar
-                DAOCitas daoInsert = new DAOCitas();
-
-                int IdEmpleados = int.Parse(objVista.cmbIdEmpleados.Text); // ID del empleado
-                int IdMascota = int.Parse(objVista.txtIdMascota.Text); // ID de la mascota
-                DateTime Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
-                TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
-                string Descripcion = objVista.txtDescripcion.Text; // Descripción de la cita
-
-
-                // Llamar al método de inserción y verificar el resultado
-                int retorno = daoInsert.IngresarCita();
-                if (retorno == 1)
-                {
-                    MessageBox.Show("La cita se agregó exitosamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LlenarDataGridInfoCitas(); // Actualizar el DataGridView
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo agregar la cita", "Proceso incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Manejo de errores al agregar la cita
-                MessageBox.Show("Error al agregar la cita: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            frmAgregarCitas openForm = new frmAgregarCitas();
+            openForm.ShowDialog();
+           
         }
 
         // Método para editar una cita existente
         private void EditarCita(object sender, EventArgs e)
         {
-            // Obtener la posición de la fila seleccionada
+            //Obtener la posición de la fila seleccionada
             int pos = objVista.dgvCitas.CurrentRow.Index;
 
             // Crear instancia de DAOCitas para editar
             DAOCitas daoUpdate = new DAOCitas();
 
             int IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()); // Obtener el ID de la cita
-            int IdEmpleados = int.Parse(objVista.cmbIdEmpleados.Text); // ID del empleado
-            int IdMascota = int.Parse(objVista.txtIdMascota.Text); // ID de la mascota
-            DateTime Fecha = DateTime.Parse(objVista.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
-            TimeSpan Hora = TimeSpan.Parse(objVista.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
-            string Descripcion = objVista.txtDescripcion.Text; // Descripción de la cita
-            
+            int IdEmpleados = int.Parse(agregarCitas.cmbIdEmpleados.Text); // ID del empleado
+            int IdMascota = int.Parse(agregarCitas.txtIdMascota.Text); // ID de la mascota
+            DateTime Fecha = DateTime.Parse(agregarCitas.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
+            TimeSpan Hora = TimeSpan.Parse(agregarCitas.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
+            string Descripcion = agregarCitas.txtDescripcion.Text; // Descripción de la cita
 
-            // Llamar al método de actualización y verificar el resultado
+            frmAgregarCitas openForm = new frmAgregarCitas(IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
+            openForm.ShowDialog();
+            //Llamar al método de actualización y verificar el resultado
             int retorno = daoUpdate.EditarCita();
             if (retorno == 1)
             {

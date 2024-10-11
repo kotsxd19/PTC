@@ -75,5 +75,10 @@ namespace Proyecto.Vista.InterfazCitas
         {
 
         }
+
+        private void dgvInfoCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

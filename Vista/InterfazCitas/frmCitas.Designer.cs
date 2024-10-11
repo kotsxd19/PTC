@@ -47,18 +47,9 @@
             this.MenuCitas = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsEliminarCita = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvInfoCitas = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIdMascota = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dtpHora = new System.Windows.Forms.DateTimePicker();
-            this.cmbIdEmpleados = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -253,97 +244,25 @@
             // dgvInfoCitas
             // 
             this.dgvInfoCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfoCitas.Location = new System.Drawing.Point(250, 384);
+            this.dgvInfoCitas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInfoCitas.Location = new System.Drawing.Point(159, 141);
             this.dgvInfoCitas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInfoCitas.Name = "dgvInfoCitas";
             this.dgvInfoCitas.RowHeadersWidth = 51;
             this.dgvInfoCitas.RowTemplate.Height = 24;
-            this.dgvInfoCitas.Size = new System.Drawing.Size(713, 200);
+            this.dgvInfoCitas.Size = new System.Drawing.Size(901, 485);
             this.dgvInfoCitas.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(250, 171);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Ingresé el ID del empleado:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(250, 219);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Ingresé el ID de la mascota:";
-            // 
-            // txtIdMascota
-            // 
-            this.txtIdMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdMascota.Location = new System.Drawing.Point(435, 213);
-            this.txtIdMascota.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdMascota.Name = "txtIdMascota";
-            this.txtIdMascota.Size = new System.Drawing.Size(160, 23);
-            this.txtIdMascota.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(639, 171);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Ingresé la fecha:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(639, 219);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 17);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Ingresé la hora:";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location = new System.Drawing.Point(764, 170);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(151, 20);
-            this.dtpFecha.TabIndex = 15;
+            this.dgvInfoCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfoCitas_CellContentClick);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(250, 262);
+            this.label6.Location = new System.Drawing.Point(233, 261);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 17);
+            this.label6.Size = new System.Drawing.Size(0, 17);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Ingresé la descripción:";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(404, 259);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(493, 81);
-            this.txtDescripcion.TabIndex = 17;
             // 
             // dgvCitas
             // 
@@ -357,38 +276,12 @@
             this.dgvCitas.TabIndex = 2;
             this.dgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // dtpHora
-            // 
-            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(764, 219);
-            this.dtpHora.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpHora.Name = "dtpHora";
-            this.dtpHora.Size = new System.Drawing.Size(151, 20);
-            this.dtpHora.TabIndex = 15;
-            // 
-            // cmbIdEmpleados
-            // 
-            this.cmbIdEmpleados.FormattingEnabled = true;
-            this.cmbIdEmpleados.Location = new System.Drawing.Point(435, 167);
-            this.cmbIdEmpleados.Name = "cmbIdEmpleados";
-            this.cmbIdEmpleados.Size = new System.Drawing.Size(144, 21);
-            this.cmbIdEmpleados.TabIndex = 19;
-            // 
             // frmCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 626);
-            this.Controls.Add(this.cmbIdEmpleados);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.dtpHora);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtIdMascota);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvInfoCitas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvCitas);
@@ -427,19 +320,10 @@
         public System.Windows.Forms.Button btnIngresoNevoEmpleado;
         public System.Windows.Forms.Button btnIngresoMascota;
         public System.Windows.Forms.Button btnRegistroEmpleados;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox txtIdMascota;
-        public System.Windows.Forms.DateTimePicker dtpFecha;
-        public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.DataGridView dgvCitas;
         public System.Windows.Forms.Button btnEliminarCita;
         public System.Windows.Forms.DataGridView dgvInfoCitas;
         private System.Windows.Forms.Timer timer1;
-        public System.Windows.Forms.DateTimePicker dtpHora;
-        public System.Windows.Forms.ComboBox cmbIdEmpleados;
     }
 }

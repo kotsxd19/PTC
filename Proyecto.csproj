@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\Citas\ControllerAgregarCitas.cs" />
     <Compile Include="Controlador\Citas\ControllerCitas.cs" />
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
@@ -69,6 +70,12 @@
     </Compile>
     <Compile Include="Vista\AgregarUsuarios\frmReistoUsuario.Designer.cs">
       <DependentUpon>frmReistoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\InterfazCitas\frmAgregarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\InterfazCitas\frmAgregarCitas.Designer.cs">
+      <DependentUpon>frmAgregarCitas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\InterfazCitas\frmCitas.cs">
       <SubType>Form</SubType>
@@ -97,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmReistoUsuario.resx">
       <DependentUpon>frmReistoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\InterfazCitas\frmAgregarCitas.resx">
+      <DependentUpon>frmAgregarCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\InterfazCitas\frmCitas.resx">
       <DependentUpon>frmCitas.cs</DependentUpon>

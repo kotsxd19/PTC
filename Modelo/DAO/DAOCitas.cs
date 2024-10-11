@@ -68,11 +68,11 @@ namespace Proyecto.Modelo.DAO
         public int IngresarCita()
         {
             // Establecer la conexión a la base de datos
-            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
+       
 
             // Crear el comando SQL para insertar la nueva cita
-            var cmd = new SqlCommand("INSERT INTO Citas (IdEmpleados, IdMascota, Fecha, Hora, Descripcion) VALUES (@IdEmpleados, @IdMascota, @Fecha, @Hora, @Descripcion)", Conexion.Connection);
-
+            SqlCommand cmd = new SqlCommand("INSERT INTO Citas (IdEmpleados, IdMascota, Fecha, Hora, Descripcion) VALUES (@IdEmpleados, @IdMascota, @Fecha, @Hora, @Descripcion)", Conexion.Connection);
+            
             // Añadir los parámetros necesarios para la inserción
             cmd.Parameters.AddWithValue("@IdEmpleados", IdEmpleados);
             cmd.Parameters.AddWithValue("@IdMascota", IdMascota);
@@ -80,7 +80,7 @@ namespace Proyecto.Modelo.DAO
             cmd.Parameters.AddWithValue("@Hora", Hora.ToString(@"hh\:mm\:ss")); // Formatear la hora correctamente
             cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
 
-            conn.Open(); // Abrir la conexión
+             // Abrir la conexión
             return cmd.ExecuteNonQuery(); // Ejecutar el comando y devolver el número de filas afectadas
         }
 
