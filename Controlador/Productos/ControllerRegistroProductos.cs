@@ -35,6 +35,7 @@ namespace Proyecto.Controlador.Productos
         {
             DAOProducto objAdmin = new DAOProducto(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
+            ds = objAdmin.ObetenerProductos();
             vistaProducto.dgvProductos.DataSource = ds.Tables["VistaProductos"];
         }
 

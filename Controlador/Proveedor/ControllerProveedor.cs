@@ -36,7 +36,7 @@ namespace Proyecto.Controlador.Proveedor
         {
             DAOProveedor objProveerdor = new DAOProveedor(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
-
+            ds = objProveerdor.ObtenerProveedor();
             ObjProveedor.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             
         }
