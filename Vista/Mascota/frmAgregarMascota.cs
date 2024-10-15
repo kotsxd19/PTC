@@ -30,5 +30,10 @@ namespace Proyecto.Vista.Mascota
         {
 
         }
+
+        private void dgvDueño_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

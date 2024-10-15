@@ -57,6 +57,7 @@
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Login\ModosDeRecuperarContraseña.cs" />
     <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
+    <Compile Include="Controlador\Mascota\ControllerAgregarMascota.cs" />
     <Compile Include="Controlador\Mascota\ControllerMascota.cs" />
     <Compile Include="Controlador\Productos\ControllerIngresoProductos.cs" />
     <Compile Include="Controlador\Productos\ControllerRegistroProductos.cs" />

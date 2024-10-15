@@ -29,85 +29,75 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCancelarMascotas = new System.Windows.Forms.Button();
+            this.btnRaza = new System.Windows.Forms.Button();
+            this.nudPeso = new System.Windows.Forms.NumericUpDown();
+            this.dgvDueño = new System.Windows.Forms.DataGridView();
             this.btnActualizarMascotas = new System.Windows.Forms.Button();
             this.btnIngresarMascotas = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.cmbGenero = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscadorDueño = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDueño)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.btnCancelarMascotas);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.txtBuscadorDueño);
+            this.panel1.Controls.Add(this.btnRaza);
+            this.panel1.Controls.Add(this.nudPeso);
+            this.panel1.Controls.Add(this.dgvDueño);
             this.panel1.Controls.Add(this.btnActualizarMascotas);
             this.panel1.Controls.Add(this.btnIngresarMascotas);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpNacimiento);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.txtUsuario);
+            this.panel1.Controls.Add(this.cmbGenero);
+            this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.Nombre);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 532);
+            this.panel1.Size = new System.Drawing.Size(487, 572);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btnRaza
             // 
-            this.button1.Location = new System.Drawing.Point(255, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Razas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRaza.Location = new System.Drawing.Point(255, 180);
+            this.btnRaza.Name = "btnRaza";
+            this.btnRaza.Size = new System.Drawing.Size(142, 23);
+            this.btnRaza.TabIndex = 16;
+            this.btnRaza.Text = "Razas";
+            this.btnRaza.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // nudPeso
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(26, 180);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(173, 20);
-            this.numericUpDown1.TabIndex = 15;
+            this.nudPeso.Location = new System.Drawing.Point(26, 180);
+            this.nudPeso.Name = "nudPeso";
+            this.nudPeso.Size = new System.Drawing.Size(173, 20);
+            this.nudPeso.TabIndex = 15;
             // 
-            // dataGridView1
+            // dgvDueño
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 262);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(435, 150);
-            this.dataGridView1.TabIndex = 14;
-            // 
-            // btnCancelarMascotas
-            // 
-            this.btnCancelarMascotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(225)))), ((int)(((byte)(202)))));
-            this.btnCancelarMascotas.FlatAppearance.BorderSize = 0;
-            this.btnCancelarMascotas.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnCancelarMascotas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.btnCancelarMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarMascotas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarMascotas.Location = new System.Drawing.Point(14, 461);
-            this.btnCancelarMascotas.Name = "btnCancelarMascotas";
-            this.btnCancelarMascotas.Size = new System.Drawing.Size(109, 40);
-            this.btnCancelarMascotas.TabIndex = 13;
-            this.btnCancelarMascotas.Text = "Cancelar";
-            this.btnCancelarMascotas.UseVisualStyleBackColor = false;
+            this.dgvDueño.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDueño.Location = new System.Drawing.Point(3, 336);
+            this.dgvDueño.Name = "dgvDueño";
+            this.dgvDueño.Size = new System.Drawing.Size(481, 166);
+            this.dgvDueño.TabIndex = 14;
+            this.dgvDueño.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDueño_CellContentClick);
             // 
             // btnActualizarMascotas
             // 
@@ -117,7 +107,7 @@
             this.btnActualizarMascotas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.btnActualizarMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarMascotas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizarMascotas.Location = new System.Drawing.Point(214, 462);
+            this.btnActualizarMascotas.Location = new System.Drawing.Point(228, 518);
             this.btnActualizarMascotas.Name = "btnActualizarMascotas";
             this.btnActualizarMascotas.Size = new System.Drawing.Size(114, 40);
             this.btnActualizarMascotas.TabIndex = 12;
@@ -132,7 +122,7 @@
             this.btnIngresarMascotas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.btnIngresarMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarMascotas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIngresarMascotas.Location = new System.Drawing.Point(345, 463);
+            this.btnIngresarMascotas.Location = new System.Drawing.Point(359, 519);
             this.btnIngresarMascotas.Name = "btnIngresarMascotas";
             this.btnIngresarMascotas.Size = new System.Drawing.Size(114, 38);
             this.btnIngresarMascotas.TabIndex = 11;
@@ -149,12 +139,12 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Fecha de Nacimiento";
             // 
-            // dateTimePicker1
+            // dtpNacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(259, 110);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtpNacimiento.Location = new System.Drawing.Point(259, 110);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpNacimiento.TabIndex = 9;
             // 
             // label5
             // 
@@ -170,7 +160,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 233);
+            this.label1.Location = new System.Drawing.Point(215, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 8;
@@ -186,20 +176,20 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Genero";
             // 
-            // comboBox1
+            // cmbGenero
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbGenero.FormattingEnabled = true;
+            this.cmbGenero.Location = new System.Drawing.Point(24, 109);
+            this.cmbGenero.Name = "cmbGenero";
+            this.cmbGenero.Size = new System.Drawing.Size(175, 21);
+            this.cmbGenero.TabIndex = 4;
             // 
-            // txtUsuario
+            // txtNombre
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(27, 51);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(354, 20);
-            this.txtUsuario.TabIndex = 2;
+            this.txtNombre.Location = new System.Drawing.Point(27, 51);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(354, 20);
+            this.txtNombre.TabIndex = 2;
             // 
             // Nombre
             // 
@@ -212,20 +202,47 @@
             this.Nombre.Text = "Nombre";
             this.Nombre.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 313);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Buscar Dueño:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
+            this.btnBuscar.Location = new System.Drawing.Point(431, 305);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(35, 29);
+            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscadorDueño
+            // 
+            this.txtBuscadorDueño.Location = new System.Drawing.Point(133, 310);
+            this.txtBuscadorDueño.Name = "txtBuscadorDueño";
+            this.txtBuscadorDueño.Size = new System.Drawing.Size(292, 20);
+            this.txtBuscadorDueño.TabIndex = 17;
+            // 
             // frmAgregarMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(511, 556);
+            this.ClientSize = new System.Drawing.Size(511, 596);
             this.Controls.Add(this.panel1);
             this.Name = "frmAgregarMascota";
             this.Text = "frmAgregarMascota";
             this.Load += new System.EventHandler(this.frmAgregarMascota_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDueño)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,18 +251,20 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Nombre;
-        public System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button btnIngresarMascotas;
         public System.Windows.Forms.Button btnActualizarMascotas;
-        public System.Windows.Forms.Button btnCancelarMascotas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.TextBox txtBuscadorDueño;
+        public System.Windows.Forms.ComboBox cmbGenero;
+        public System.Windows.Forms.DateTimePicker dtpNacimiento;
+        public System.Windows.Forms.Button btnRaza;
+        public System.Windows.Forms.NumericUpDown nudPeso;
+        public System.Windows.Forms.DataGridView dgvDueño;
     }
 }
