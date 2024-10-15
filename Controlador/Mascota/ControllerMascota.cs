@@ -20,8 +20,8 @@ namespace Proyecto.Controlador.Mascota
         {
             objMascota = vista;
             objMascota.Load += new EventHandler(CargaDGV);
-            objMascota.btnNuevaMascota.Click += new EventHandler(RegistrarPropietario);
-            objMascota.btnActualizarMascota.Click += new EventHandler(ActualizarRegistro);
+            //objMascota.btnNuevaMascota.Click += new EventHandler(RegistrarPropietario);
+            //objMascota.btnActualizarMascota.Click += new EventHandler(ActualizarRegistro);
         }
         public void CargaDGV(object sender, EventArgs e)
         {
@@ -34,27 +34,27 @@ namespace Proyecto.Controlador.Mascota
             objMascota.dgvMascotas.DataSource = ds.Tables["Mascota"];
         }
 
-        private void RegistrarPropietario(object sender, EventArgs e)
-        {
-            frmAgregarMascota frm = new frmAgregarMascota(1);
-            frm.ShowDialog();
-            RefreshData(); 
-        }
+        //private void RegistrarPropietario(object sender, EventArgs e)
+        //{
+        //    frmAgregarMascota frm = new frmAgregarMascota(1);
+        //    frm.ShowDialog();
+        //    RefreshData(); 
+        //}
 
-        private void ActualizarRegistro(object sender, EventArgs e)
-        {
-            int pos = objMascota.dgvMascotas.CurrentRow.Index; // Obtiene la posición de la fila seleccionada en el DataGridView
+        //private void ActualizarRegistro(object sender, EventArgs e)
+        //{
+        //    int pos = objMascota.dgvMascotas.CurrentRow.Index; // Obtiene la posición de la fila seleccionada en el DataGridView
 
-            // Crea una nueva instancia del formulario para editar usuario con la acción de actualización
-            frmAgregarMascota openForm = new frmAgregarMascota(2);
+        //    // Crea una nueva instancia del formulario para editar usuario con la acción de actualización
+        //    frmAgregarMascota openForm = new frmAgregarMascota(2);
 
-            // Enviar los datos de la fila seleccionada al formulario de edición
-            int.Parse(objMascota.dgvMascotas[0, pos].Value.ToString());
-            objMascota.dgvMascotas[1, pos].Value.ToString();
+        //    // Enviar los datos de la fila seleccionada al formulario de edición
+        //    int.Parse(objMascota.dgvMascotas[0, pos].Value.ToString());
+        //    objMascota.dgvMascotas[1, pos].Value.ToString();
 
-            openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
-            RefreshData(); // Refresca los datos en el DataGridView después de cerrar el formulario
-        }
+        //    openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
+        //    RefreshData(); // Refresca los datos en el DataGridView después de cerrar el formulario
+        //}
         
     }
 }
