@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.cita;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Proyecto.Vista.citas
         public frmAgregarCitas()
         {
             InitializeComponent();
+            ControllerRegistroCitas controller = new ControllerRegistroCitas(this);
+        }
+
+        private void frmAgregarCitas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

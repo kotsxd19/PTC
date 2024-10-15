@@ -47,6 +47,21 @@ namespace Proyecto.Modelo
                 return null;
             }
         }
+
+        public static SqlConnection testConnection(string server, string database, string user, string password)
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {user}; Password = {password}");
+                conexion.Open();
+                return conexion;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"{ex.Message} Código de error: EC-001 \nNo fue posible conectarse a la base de datos, verifique las credenciales, consulte el manual de usuario.", "Error crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
     }
 }
 

@@ -16,7 +16,14 @@ namespace Proyecto.Vista.citas
         public frmcitas()
         {
             InitializeComponent();
+            ControllerAgregarCita control = new ControllerAgregarCita(this);
            
+        }
+
+        public frmcitas(int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
+        {
+            InitializeComponent();
+            ControllerAgregarCita control = new ControllerAgregarCita(this, IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
         }
 
         private void label3_Click(object sender, EventArgs e)

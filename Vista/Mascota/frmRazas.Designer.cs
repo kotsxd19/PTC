@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnActualizarProveedor = new System.Windows.Forms.Button();
+            this.btnPerros = new System.Windows.Forms.Button();
+            this.btnOtrasMascotas = new System.Windows.Forms.Button();
+            this.btnGatos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -39,59 +39,59 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btnPerros
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Proyecto.Properties.Resources.icons8_perro_80;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.Location = new System.Drawing.Point(12, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 102);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Perros";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPerros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPerros.FlatAppearance.BorderSize = 0;
+            this.btnPerros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnPerros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerros.Image = global::Proyecto.Properties.Resources.icons8_perro_80;
+            this.btnPerros.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPerros.Location = new System.Drawing.Point(12, 24);
+            this.btnPerros.Name = "btnPerros";
+            this.btnPerros.Size = new System.Drawing.Size(114, 102);
+            this.btnPerros.TabIndex = 9;
+            this.btnPerros.Text = "Perros";
+            this.btnPerros.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPerros.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnOtrasMascotas
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Proyecto.Properties.Resources.icons8_zoo_80;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(20, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 114);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Otros";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOtrasMascotas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOtrasMascotas.FlatAppearance.BorderSize = 0;
+            this.btnOtrasMascotas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnOtrasMascotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOtrasMascotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtrasMascotas.Image = global::Proyecto.Properties.Resources.icons8_zoo_80;
+            this.btnOtrasMascotas.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnOtrasMascotas.Location = new System.Drawing.Point(20, 22);
+            this.btnOtrasMascotas.Name = "btnOtrasMascotas";
+            this.btnOtrasMascotas.Size = new System.Drawing.Size(114, 114);
+            this.btnOtrasMascotas.TabIndex = 9;
+            this.btnOtrasMascotas.Text = "Otros";
+            this.btnOtrasMascotas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOtrasMascotas.UseVisualStyleBackColor = true;
             // 
-            // btnActualizarProveedor
+            // btnGatos
             // 
-            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_gato_80;
-            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(19, 22);
-            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(114, 104);
-            this.btnActualizarProveedor.TabIndex = 9;
-            this.btnActualizarProveedor.Text = "Gatos";
-            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
+            this.btnGatos.FlatAppearance.BorderSize = 0;
+            this.btnGatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnGatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGatos.Image = global::Proyecto.Properties.Resources.icons8_gato_80;
+            this.btnGatos.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGatos.Location = new System.Drawing.Point(16, 24);
+            this.btnGatos.Name = "btnGatos";
+            this.btnGatos.Size = new System.Drawing.Size(114, 104);
+            this.btnGatos.TabIndex = 9;
+            this.btnGatos.Text = "Gatos";
+            this.btnGatos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGatos.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnPerros);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -100,7 +100,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnOtrasMascotas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(278, 0);
             this.panel2.Name = "panel2";
@@ -109,7 +109,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnActualizarProveedor);
+            this.panel3.Controls.Add(this.btnGatos);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(142, 0);
             this.panel3.Name = "panel3";
@@ -137,9 +137,9 @@
 
         #endregion
 
-        public System.Windows.Forms.Button btnActualizarProveedor;
-        public System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button btnGatos;
+        public System.Windows.Forms.Button btnOtrasMascotas;
+        public System.Windows.Forms.Button btnPerros;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

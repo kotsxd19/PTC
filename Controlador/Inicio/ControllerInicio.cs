@@ -38,8 +38,9 @@ namespace Proyecto.Controlador.Inicio
             Vista.btnProducto.Click += new EventHandler(openFromProducto);
             Vista.gestiónDeEmpleadToolStripMenuItem.Click += new EventHandler(openFormEmpleados);
             Vista.mascotsToolStripMenuItem.Click += new EventHandler(openFromMascotas);
-
+            Vista.btnCerrarSecion.Click += new EventHandler(CerrarSeccion);
             Vista.cerrarFormularioToolStripMenuItem.Click += new EventHandler(CerrarForm);
+            Vista.btnConfiguracionServer.Click += new EventHandler(ConfServer);
             //Vista.btnce += new EventHandler(Logout);
         }
 
@@ -204,6 +205,17 @@ namespace Proyecto.Controlador.Inicio
                 currentForm.Close();
                 //Se eliminan del panel contenedor todos los controles del formulario que se cerrará
                 objVista.PanelContenedor.Controls.Remove(currentForm);
+            }
+        }
+
+        private void CerrarSeccion(Object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cerrar sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LimpiarVariablesSesion();
+                frmLogin backForm = new frmLogin();
+                backForm.Show();
+                objVista.Dispose();
             }
         }
     }

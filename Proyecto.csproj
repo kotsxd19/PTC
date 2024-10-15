@@ -57,6 +57,7 @@
     <Compile Include="Controlador\Login\controlerLogim.cs" />
     <Compile Include="Controlador\Login\ModosDeRecuperarContraseña.cs" />
     <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
+    <Compile Include="Controlador\Mascota\ControllerMascota.cs" />
     <Compile Include="Controlador\Productos\ControllerIngresoProductos.cs" />
     <Compile Include="Controlador\Productos\ControllerRegistroProductos.cs" />
     <Compile Include="Controlador\Propietario\ControllerAgregarMascota.cs" />
@@ -603,7 +604,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controlador\DetalleVentas\" />
-    <Folder Include="Controlador\Mascota\" />
     <Folder Include="Controlador\Ventas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

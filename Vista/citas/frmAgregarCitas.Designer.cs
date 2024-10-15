@@ -164,6 +164,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "frmAgregarCitas";
             this.Text = "frmAgregarCitas";
+            this.Load += new System.EventHandler(this.frmAgregarCitas_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);

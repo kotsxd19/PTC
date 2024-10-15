@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Mascota;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,17 @@ namespace Proyecto.Vista.Mascota
         public frmAgregarMascota()
         {
             InitializeComponent();
+           
         }
 
+
+
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAgregarMascota_Load(object sender, EventArgs e)
         {
 
         }

@@ -46,7 +46,6 @@
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
@@ -54,16 +53,19 @@
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnMascotas = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCerrarSecion = new System.Windows.Forms.Button();
+            this.btnConfiguracionServer = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -225,16 +227,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 509);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 132);
-            this.panel4.TabIndex = 1;
-            // 
             // btnEmpleados
             // 
             this.btnEmpleados.FlatAppearance.BorderSize = 0;
@@ -347,6 +339,27 @@
             this.btnMascotas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMascotas.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnCerrarSecion);
+            this.flowLayoutPanel2.Controls.Add(this.btnConfiguracionServer);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 290);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(197, 219);
+            this.flowLayoutPanel2.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 132);
+            this.panel4.TabIndex = 1;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Proyecto.Properties.Resources.e2e7f046_aa97_4bfd_9785_340d113360b4;
@@ -357,16 +370,37 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // flowLayoutPanel2
+            // btnCerrarSecion
             // 
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 290);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(197, 219);
-            this.flowLayoutPanel2.TabIndex = 6;
+            this.btnCerrarSecion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSecion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSecion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSecion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSecion.Image = global::Proyecto.Properties.Resources.icons8_out_401;
+            this.btnCerrarSecion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSecion.Location = new System.Drawing.Point(3, 181);
+            this.btnCerrarSecion.Name = "btnCerrarSecion";
+            this.btnCerrarSecion.Size = new System.Drawing.Size(195, 35);
+            this.btnCerrarSecion.TabIndex = 1;
+            this.btnCerrarSecion.Text = "Cerrar Sesion";
+            this.btnCerrarSecion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSecion.UseVisualStyleBackColor = true;
             // 
-            // btnCerrarSeccion
+            // btnConfiguracionServer
             // 
+            this.btnConfiguracionServer.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracionServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracionServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracionServer.ForeColor = System.Drawing.Color.White;
+            this.btnConfiguracionServer.Image = global::Proyecto.Properties.Resources.icons8_servidor_35;
+            this.btnConfiguracionServer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguracionServer.Location = new System.Drawing.Point(3, 140);
+            this.btnConfiguracionServer.Name = "btnConfiguracionServer";
+            this.btnConfiguracionServer.Size = new System.Drawing.Size(195, 35);
+            this.btnConfiguracionServer.TabIndex = 1;
+            this.btnConfiguracionServer.Text = "Configuracion del servidor";
+            this.btnConfiguracionServer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConfiguracionServer.UseVisualStyleBackColor = true;
             // 
             // frmInicio
             // 
@@ -390,9 +424,9 @@
             this.toolStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,5 +462,7 @@
         public System.Windows.Forms.ToolStripMenuItem gestiónDeEmpleadToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem cerrarFormularioToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        public System.Windows.Forms.Button btnCerrarSecion;
+        public System.Windows.Forms.Button btnConfiguracionServer;
     }
 }

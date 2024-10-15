@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Mascota;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Proyecto.Vista.Mascota
         public frmMascota()
         {
             InitializeComponent();
+            ControllerMascota Mascota = new ControllerMascota(this);
+        }
+
+        private void frmMascota_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
