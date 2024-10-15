@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\cita\ControllerAgregarCita.cs" />
+    <Compile Include="Controlador\cita\ControllerRegistroCitas.cs" />
     <Compile Include="Controlador\Conexion\ControladorConexion.cs" />
     <Compile Include="Controlador\DetalleDeVenta\ControllerDetalleVenta.cs" />
     <Compile Include="Controlador\IngresarUsuario\ControllerIngresarUsuario.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="Controlador\Login\RecuperacionContraseñaPorCorreo.cs" />
     <Compile Include="Controlador\Productos\ControllerIngresoProductos.cs" />
     <Compile Include="Controlador\Productos\ControllerRegistroProductos.cs" />
+    <Compile Include="Controlador\Propietario\ControllerAgregarMascota.cs" />
     <Compile Include="Controlador\Proveedor\ControllerAgregarProveedor.cs" />
     <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
     <Compile Include="Controlador\Servidor\ControllerConexionAdmin.cs" />
@@ -67,20 +70,23 @@
     <Compile Include="Modelo\DAO\DAOCitas.cs" />
     <Compile Include="Modelo\DAO\DAODetalleVentas.cs" />
     <Compile Include="Modelo\DAO\DAOLogin.cs" />
+    <Compile Include="Modelo\DAO\DAOMascotas.cs" />
     <Compile Include="Modelo\DAO\DAOPrimerUso.cs" />
     <Compile Include="Modelo\DAO\DAOProducto.cs" />
+    <Compile Include="Modelo\DAO\DAOPropietario.cs" />
     <Compile Include="Modelo\DAO\DAOProveedor.cs" />
     <Compile Include="Modelo\DAO\DAORazon.cs" />
     <Compile Include="Modelo\DAO\DAOVentas.cs" />
+    <Compile Include="Modelo\DTO\DTOMascotas.cs" />
     <Compile Include="Modelo\dbConexion.cs" />
     <Compile Include="Modelo\DTO\DTOAgregarUsuario.cs" />
     <Compile Include="Modelo\DTO\DTOCitas.cs" />
     <Compile Include="Modelo\DTO\DTOdbContext.cs" />
     <Compile Include="Modelo\DTO\DTODetalleDeVentas.cs" />
     <Compile Include="Modelo\DTO\DTOLogin.cs" />
-    <Compile Include="Modelo\DTO\DTOMascota.cs" />
     <Compile Include="Modelo\DTO\DTOPrimerUso.cs" />
     <Compile Include="Modelo\DTO\DTOProducto.cs" />
+    <Compile Include="Modelo\DTO\DTOPropietario.cs" />
     <Compile Include="Modelo\DTO\DTOProveedor.cs" />
     <Compile Include="Modelo\DTO\DTORaza.cs" />
     <Compile Include="Modelo\DTO\DTORazon.cs" />
@@ -596,6 +602,8 @@
     <None Include="Resources\icons8-añadir-401.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controlador\DetalleVentas\" />
+    <Folder Include="Controlador\Mascota\" />
     <Folder Include="Controlador\Ventas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

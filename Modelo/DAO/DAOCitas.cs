@@ -6,125 +6,111 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto.Modelo.DAO
 {
     internal class DAOCitas : DTOCitas
     {
-        SqlCommand command = new SqlCommand();
 
-        public DataSet LlenarComboBoxEmpleado()
+        // Propiedades que representan los campos de una cita
+        readonly SqlCommand Conexion = new SqlCommand();
+
+        public DataSet LLenarcomboEmpleados()
         {
             try
             {
-                // Establece la conexión a la base de datos
-                command.Connection = getConnection();
 
-                // Consulta SQL para obtener todos los roles
-                string query = "SELECT * FROM Empleados";
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
-
-                // Ejecuta la consulta sin obtener resultados
-                cmd.ExecuteNonQuery();
-
-                // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                Conexion.Connection = getConnection();
+                string query = "SELECT * FROM Empleado";
+                SqlCommand cmdSelect = new SqlCommand(query, Conexion.Connection);
+                cmdSelect.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdSelect);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "Empleado");
-
-                // Retorna el DataSet con los roles
+                adp.Fill(ds, "Empleado");
                 return ds;
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-                // Retorna null si ocurre una excepción
+                MessageBox.Show($"{ex.Message}");
+                MessageBox.Show($"Error al obtener los empleados, verifique su conexión a internet o que el acceso al servidor o base de datos esten activos", "Error de ejecución", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
             {
-                // Cierra la conexión a la base de datos independientemente de si ocurre una excepción o no
-                getConnection().Close();
+                Conexion.Connection.Close();
             }
         }
 
-        public DataSet ObtenerMascota()
+        // Método para obtener todas las citas desde la base de datos
+        public DataSet ObtenerCitas()
         {
-            try
-            {
-                // Establece la conexión a la base de datos
-                command.Connection = getConnection();
+            Conexion.Connection = getConnection();
 
-                // Consulta SQL para obtener los empleados activos
-                string query = "SELECT * FROM Mascota";
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
+            // // Establecer la conexión a la base de datos
+            // var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
+            //// Crear un adaptador para ejecutar la consulta y llenar el DataSet
 
-                // Ejecuta la consulta sin obtener resultados
-                cmd.ExecuteNonQuery();
-
-                // Utiliza un SqlDataAdapter para llenar el DataSet con los datos de la consulta
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "Mascota");
-
-                // Retorna el DataSet con los empleados activos
-                return ds;
-            }
-            catch (Exception)
-            {
-                // Retorna null si ocurre una excepción
-                return null;
-            }
-            finally
-            {
-                // Cierra la conexión a la base de datos independientemente de si ocurre una excepción o no
-                getConnection().Close();
-            }
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Citas", Conexion.Connection);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Citas"); // Llenar el DataSet con los resultados de la consulta
+            return ds; // Devolver el DataSet con las citas
         }
-        public int RegistarCitas()
+
+        // Método para eliminar una cita por su ID
+        public int EliminarCita()
         {
-            try
-            {
-                // Establece la conexión a la base de datos
-                command.Connection = getConnection();
+            // Establecer la conexión a la base de datos
+            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
 
-                // Consulta SQL para insertar más detalles del empleado
-                string query = "INSERT INTO Citas VALUES (@param1, @param2, @param3, @param4, @param5)";
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("param1", IdEmpleado1);
-                cmd.Parameters.AddWithValue("param2", IdMascota1);
-                cmd.Parameters.AddWithValue("param3", Fecha1);
-                cmd.Parameters.AddWithValue("param4", Hora1);
-                cmd.Parameters.AddWithValue("param5", Descripcion1);
-                int respuesta = cmd.ExecuteNonQuery();
+            // Crear el comando SQL para eliminar la cita
+            var cmd = new SqlCommand("DELETE FROM Citas WHERE IdCitas = @IdCitas", Conexion.Connection);
+            cmd.Parameters.AddWithValue("@IdCitas", IdCitas); // Añadir el parámetro del ID de la cita
 
-                return respuesta;
-                //}
-            }
-            catch (Exception ex)
-            {
-                // Realiza una reverdsión en caso de error y retorna -1
-                RollBack();
-                return -1;
-            }
-            finally
-            {
-                // Realiza una reversión y cierra la conexión a la base de datos
-
-                command.Connection.Close();
-            }
+            conn.Open(); // Abrir la conexión
+            return cmd.ExecuteNonQuery(); // Ejecutar el comando y devolver el número de filas afectadas
         }
 
-        public void RollBack()
+        // Método para ingresar una nueva cita
+        public int IngresarCita()
         {
-            // Consulta SQL para eliminar el usuario en caso de un fallo
-            string query = "DELETE FROM Citas WHERE IdCitas = @IdCitas";
-            SqlCommand cmddel = new SqlCommand(query, command.Connection);
-            cmddel.Parameters.AddWithValue("IdCitas", IdCitas1);
+            Conexion.Connection = getConnection();
+            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
+            string query = "INSERT INTO Citas (IdEmpleados, IdMascota, Fecha, Hora, Descripcion) VALUES (@IdEmpleados, @IdMascota, @Fecha, @Hora, @Descripcion)";
+            // Crear el comando SQL para insertar la nueva cita
+            SqlCommand cmd = new SqlCommand(query, Conexion.Connection);
 
-            // Ejecuta la consulta de eliminación
-            cmddel.ExecuteNonQuery();
+            // Añadir los parámetros necesarios para la inserción
+            cmd.Parameters.AddWithValue("@IdEmpleados", IdEmpleados);
+            cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
+            cmd.Parameters.AddWithValue("@Fecha", Fecha);
+            cmd.Parameters.AddWithValue("@Hora", Hora.ToString(@"hh\:mm\:ss")); // Formatear la hora correctamente
+            cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
+            int respuesta = cmd.ExecuteNonQuery();
+            // Abrir la conexión
+            return respuesta; // Ejecutar el comando y devolver el número de filas afectadas
         }
 
+        // Método para editar una cita existente
+        public int EditarCita()
+        {
+            // Establecer la conexión a la base de datos
+            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
+
+            // Crear el comando SQL para actualizar la cita
+            var cmd = new SqlCommand("UPDATE Citas SET IdEmpleados = @IdEmpleados, IdMascota = @IdMascota, Fecha = @Fecha, Hora = @Hora, Descripcion = @Descripcion WHERE IdCitas = @IdCitas", conn);
+
+            // Añadir los parámetros necesarios para la actualización
+            cmd.Parameters.AddWithValue("@IdCitas", IdCitas);
+            cmd.Parameters.AddWithValue("@IdEmpleados", IdEmpleados);
+            cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
+            cmd.Parameters.AddWithValue("@Fecha", Fecha);
+            cmd.Parameters.AddWithValue("@Hora", Hora.ToString(@"hh\:mm\:ss")); // Formatear la hora correctamente
+            cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
+
+            conn.Open(); // Abrir la conexión
+            return cmd.ExecuteNonQuery(); // Ejecutar el comando y devolver el número de filas afectadas
+        }
 
     }
 }

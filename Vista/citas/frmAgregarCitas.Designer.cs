@@ -28,24 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnActualizarProveedor = new System.Windows.Forms.Button();
-            this.btnNuevoProveedor = new System.Windows.Forms.Button();
+            this.btnActualizarCita = new System.Windows.Forms.Button();
+            this.btnNuevaCita = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvProveedor = new System.Windows.Forms.DataGridView();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel4.Controls.Add(this.btnActualizarProveedor);
-            this.panel4.Controls.Add(this.btnNuevoProveedor);
+            this.panel4.Controls.Add(this.btnActualizarCita);
+            this.panel4.Controls.Add(this.btnNuevaCita);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscarProveedor);
             this.panel4.Controls.Add(this.txtBuscadorProveedor);
@@ -55,39 +59,39 @@
             this.panel4.Size = new System.Drawing.Size(986, 56);
             this.panel4.TabIndex = 6;
             // 
-            // btnActualizarProveedor
+            // btnActualizarCita
             // 
-            this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
-            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(748, 10);
-            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(114, 39);
-            this.btnActualizarProveedor.TabIndex = 8;
-            this.btnActualizarProveedor.Text = "actualizar";
-            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
+            this.btnActualizarCita.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizarCita.FlatAppearance.BorderSize = 0;
+            this.btnActualizarCita.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnActualizarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarCita.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
+            this.btnActualizarCita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarCita.Location = new System.Drawing.Point(748, 10);
+            this.btnActualizarCita.Name = "btnActualizarCita";
+            this.btnActualizarCita.Size = new System.Drawing.Size(114, 39);
+            this.btnActualizarCita.TabIndex = 8;
+            this.btnActualizarCita.Text = "actualizar";
+            this.btnActualizarCita.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarCita.UseVisualStyleBackColor = true;
             // 
-            // btnNuevoProveedor
+            // btnNuevaCita
             // 
-            this.btnNuevoProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoProveedor.FlatAppearance.BorderSize = 0;
-            this.btnNuevoProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnNuevoProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoProveedor.Image = global::Proyecto.Properties.Resources.icons8_calendario_30__1_;
-            this.btnNuevoProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoProveedor.Location = new System.Drawing.Point(868, 8);
-            this.btnNuevoProveedor.Name = "btnNuevoProveedor";
-            this.btnNuevoProveedor.Size = new System.Drawing.Size(108, 39);
-            this.btnNuevoProveedor.TabIndex = 8;
-            this.btnNuevoProveedor.Text = "Nuevo";
-            this.btnNuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoProveedor.UseVisualStyleBackColor = true;
+            this.btnNuevaCita.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevaCita.FlatAppearance.BorderSize = 0;
+            this.btnNuevaCita.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnNuevaCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCita.Image = global::Proyecto.Properties.Resources.icons8_calendario_30__1_;
+            this.btnNuevaCita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaCita.Location = new System.Drawing.Point(868, 8);
+            this.btnNuevaCita.Name = "btnNuevaCita";
+            this.btnNuevaCita.Size = new System.Drawing.Size(108, 39);
+            this.btnNuevaCita.TabIndex = 8;
+            this.btnNuevaCita.Text = "Nuevo";
+            this.btnNuevaCita.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevaCita.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -119,7 +123,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel3.Controls.Add(this.dgvProveedor);
+            this.panel3.Controls.Add(this.dgvCitas);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 56);
             this.panel3.Name = "panel3";
@@ -127,16 +131,29 @@
             this.panel3.Size = new System.Drawing.Size(986, 474);
             this.panel3.TabIndex = 8;
             // 
-            // dgvProveedor
+            // dgvCitas
             // 
-            this.dgvProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProveedor.Location = new System.Drawing.Point(10, 10);
-            this.dgvProveedor.Name = "dgvProveedor";
-            this.dgvProveedor.RowHeadersWidth = 51;
-            this.dgvProveedor.Size = new System.Drawing.Size(966, 454);
-            this.dgvProveedor.TabIndex = 0;
+            this.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCitas.Location = new System.Drawing.Point(10, 10);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.RowHeadersWidth = 51;
+            this.dgvCitas.Size = new System.Drawing.Size(966, 454);
+            this.dgvCitas.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.eliminarToolStripMenuItem.Text = "eliminar";
             // 
             // frmAgregarCitas
             // 
@@ -150,7 +167,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -158,12 +176,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.Button btnActualizarProveedor;
-        public System.Windows.Forms.Button btnNuevoProveedor;
+        public System.Windows.Forms.Button btnActualizarCita;
+        public System.Windows.Forms.Button btnNuevaCita;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnBuscarProveedor;
         public System.Windows.Forms.TextBox txtBuscadorProveedor;
         private System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.DataGridView dgvProveedor;
+        public System.Windows.Forms.DataGridView dgvCitas;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
     }
 }

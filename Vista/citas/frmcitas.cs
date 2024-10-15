@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.cita;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Proyecto.Vista.citas
         public frmcitas()
         {
             InitializeComponent();
+           
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -23,6 +25,11 @@ namespace Proyecto.Vista.citas
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmcitas_Load(object sender, EventArgs e)
         {
 
         }

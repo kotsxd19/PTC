@@ -8,18 +8,18 @@ namespace Proyecto.Modelo.DTO
 {
     internal class DTOCitas : dbConexion
     {
-        private int IdCitas;
-        private int IdMascota;
-        private int IdEmpleado;
-        private DateTime Hora;
-        private DateTime Fecha;
-        private string Descripcion;
+        private int idCitas;
+        private int idEmpleados;
+        private string idMascota;
+        private DateTime fecha;
+        private TimeSpan hora;
+        private string descripcion;
 
-        public int IdCitas1 { get => IdCitas; set => IdCitas = value; }
-        public int IdMascota1 { get => IdMascota; set => IdMascota = value; }
-        public int IdEmpleado1 { get => IdEmpleado; set => IdEmpleado = value; }
-        public DateTime Hora1 { get => Hora; set => Hora = value; }
-        public DateTime Fecha1 { get => Fecha; set => Fecha = value; }
-        public string Descripcion1 { get => Descripcion; set => Descripcion = value; }
+        public int IdCitas { get => idCitas; set => idCitas = value; }
+        public int IdEmpleados { get => idEmpleados; set => idEmpleados = value; }
+        public DateTime Fecha { get => fecha; set => fecha = value; }
+        public TimeSpan Hora { get => hora; set => hora = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string IdMascota1 { get => idMascota; set => idMascota = value; }
     }
 }
