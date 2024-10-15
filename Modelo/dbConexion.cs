@@ -13,7 +13,7 @@ namespace Proyecto.Modelo
         {
             try
             {
-                //DESKTOP-70UOOD5
+                
                 string server = "SQL8020.site4now.net";
                 string database = "db_aad183_vetmanager";
                 string user = "db_aad183_vetmanager_admin";
