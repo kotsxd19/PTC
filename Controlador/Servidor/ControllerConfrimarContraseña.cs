@@ -29,7 +29,7 @@ namespace Proyecto.Controlador.Servidor
             string cadenaencriptada = common.ComputeSha256Hash(objVista.txtContraseña.Text);
             if (cadenaencriptada == Acceso.Contraseña)
             {
-                frmConexionAdministrador objViewConnect = new frmConexionAdministrador();
+                frmCrearPrimerUsuario objViewConnect = new frmCrearPrimerUsuario();
                 objViewConnect.ShowDialog();
                 objVista.Hide();
             }

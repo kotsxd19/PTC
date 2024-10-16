@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Proyecto.Vista.PrimerUso
 {
-    public partial class frmConexionAdministrador : Form
+    public partial class frmCrearPrimerUsuario : Form
     {
-        public frmConexionAdministrador()
+        public frmCrearPrimerUsuario()
         {
             InitializeComponent();
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

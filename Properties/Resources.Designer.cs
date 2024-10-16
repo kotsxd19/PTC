@@ -463,6 +463,16 @@ namespace Proyecto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_guardar_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-guardar-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hombres_categoría_de_edad_5_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hombres-categoría-de-edad-5-40", resourceCulture);

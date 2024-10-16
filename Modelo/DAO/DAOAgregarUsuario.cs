@@ -124,10 +124,6 @@ namespace Proyecto.Modelo.DAO
         }
 
 
-
-
-
-
         public int RegistarEmpleados()
         {
             try
