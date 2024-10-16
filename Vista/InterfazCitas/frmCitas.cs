@@ -80,5 +80,17 @@ namespace Proyecto.Vista.InterfazCitas
         {
 
         }
+
+        private void ImprimirCitas(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dgvCitas.Width, this.dgvCitas.Height);
+            dgvCitas.DrawToBitmap(bm, new Rectangle(0, 0, this.dgvCitas.Width, this.dgvCitas.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+        }
     }
 }
