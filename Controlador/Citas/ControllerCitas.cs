@@ -19,7 +19,6 @@ namespace Proyecto.Controlador.Citas
             Vista.Load += new EventHandler(iniciarCarga);
             // Asignar eventos a los botones de la vista
             Vista.btnEliminarCita.Click += new EventHandler(EliminarCita);
-            Vista.btnEditarCita.Click += new EventHandler(EditarCita);
             Vista.btnIngresarCita.Click += new EventHandler(IngresarCita);
 
             // Llenar el DataGridView al inicializar
@@ -86,7 +85,7 @@ namespace Proyecto.Controlador.Citas
 
             int IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()); // Obtener el ID de la cita
             int IdEmpleados = int.Parse(agregarCitas.cmbIdEmpleados.Text); // ID del empleado
-            int IdMascota = int.Parse(agregarCitas.txtIdMascota.Text); // ID de la mascota
+            int IdMascota = int.Parse(agregarCitas.cmbMascotas.Text); // ID de la mascota
             DateTime Fecha = DateTime.Parse(agregarCitas.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
             TimeSpan Hora = TimeSpan.Parse(agregarCitas.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
             string Descripcion = agregarCitas.txtDescripcion.Text; // Descripción de la cita

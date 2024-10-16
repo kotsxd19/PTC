@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMascotas = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label2
@@ -150,14 +150,14 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbMascotas
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 135);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(349, 24);
-            this.comboBox1.TabIndex = 20;
+            this.cmbMascotas.FormattingEnabled = true;
+            this.cmbMascotas.Location = new System.Drawing.Point(113, 135);
+            this.cmbMascotas.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMascotas.Name = "cmbMascotas";
+            this.cmbMascotas.Size = new System.Drawing.Size(349, 24);
+            this.cmbMascotas.TabIndex = 20;
             // 
             // frmAgregarCitas
             // 
@@ -172,7 +172,7 @@
             this.Controls.Add(this.dtpHora);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbMascotas);
             this.Controls.Add(this.cmbIdEmpleados);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -198,6 +198,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnAgregar;
         public System.Windows.Forms.Button btnActualizar;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cmbMascotas;
     }
 }

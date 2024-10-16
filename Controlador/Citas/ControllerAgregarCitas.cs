@@ -13,13 +13,14 @@ namespace Proyecto.Controlador.Citas
     internal class ControllerAgregarCitas
     {
         frmAgregarCitas objCitas;
-            int IdCitas;
-            int IdEmpleados;
-            int IdMascota; 
-            DateTime Fecha; 
-            TimeSpan Hora;
-            string Descripcion;
-        public ControllerAgregarCitas(frmAgregarCitas vista) 
+        int IdCitas;
+        int IdEmpleados;
+        int IdMascota;
+        DateTime Fecha;
+        TimeSpan Hora;
+        string Descripcion;
+
+        public ControllerAgregarCitas(frmAgregarCitas vista)
         {
             objCitas = vista;
             objCitas.Load += new EventHandler(iniciar);
@@ -48,7 +49,29 @@ namespace Proyecto.Controlador.Citas
 
         private void ActualizarCitas(object sender, EventArgs e)
         {
-           
+
+        }
+        void LlenarComboMascotas() 
+        {
+
+            DAOCitas daoCitas = new DAOCitas();
+            DataSet ds = daoCitas.LlenarComboMascotas();
+            objCitas.cmbIdEmpleados.DataSource = ds.Tables["mascota"];
+            objCitas.cmbIdEmpleados.DisplayMember = "Nombre";
+            objCitas.cmbIdEmpleados.ValueMember = "IdMascota";
+        }
+
+        private void Iniciar(object sender, EventArgs e)
+        {
+            LlenarComboMascotas();
+
+        }
+
+        public void Cargardatos(int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
+        {
+            objCitas.cmbIdEmpleados.SelectedValue = IdMascota;
+            objCitas.txtDescripcion.Text = Descripcion;
+            Cargardatos(IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
         }
 
         private void iniciar(object sender, EventArgs e)
@@ -75,7 +98,7 @@ namespace Proyecto.Controlador.Citas
                     DAOCitas daoInsert = new DAOCitas();
 
                     int IdEmpleados = int.Parse(objCitas.cmbIdEmpleados.SelectedValue.ToString()); // ID del empleado
-                    string IdMascota = objCitas.txtIdMascota.Text.Trim(); // ID de la mascota
+                    string IdMascota = objCitas.cmbMascotas.Text.Trim(); // ID de la mascota
                     DateTime Fecha = DateTime.Parse(objCitas.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
                     TimeSpan Hora = TimeSpan.Parse(objCitas.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
                     string Descripcion = objCitas.txtDescripcion.Text; // Descripción de la cita

@@ -11,6 +11,32 @@ namespace Proyecto.Modelo.DAO
         // Propiedades que representan los campos de una cita
         readonly SqlCommand Conexion = new SqlCommand();
 
+
+        public DataSet LlenarComboMascotas() 
+        {
+            try
+            {
+
+                Conexion.Connection = getConexion();
+                string query = "SELECT * FROM mascota";
+                SqlCommand cmdSelect = new SqlCommand(query, Conexion.Connection);
+                cmdSelect.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdSelect);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "mascota");
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+                MessageBox.Show($"Error al obtener las mascotas, verifique su conexión a internet o que el acceso al servidor o base de datos esten activos", "Error de ejecución", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                Conexion.Connection.Close();
+            }
+        }
         public DataSet LLenarcomboEmpleados()
         {
             try
