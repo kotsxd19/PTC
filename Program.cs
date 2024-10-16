@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto.Vista.AgregarUsuarios;
 using Proyecto.Vista.Dueño;
+using Proyecto.Vista.Inicio;
 using Proyecto.Vista.Login;
 using Proyecto.Vista.Mascota;
 using Proyecto.Vista.Proveedor;
@@ -21,7 +22,7 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMascota());
+            Application.Run(new frmInicio());
         }
 
         

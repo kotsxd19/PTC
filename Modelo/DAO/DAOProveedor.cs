@@ -14,6 +14,8 @@ namespace Proyecto.Modelo.DAO
 
         SqlCommand command = new SqlCommand();
 
+
+
         public int RegistarProveedor()
         {
 

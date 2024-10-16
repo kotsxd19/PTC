@@ -20,6 +20,7 @@ namespace Proyecto.Controlador.Productos
         {
             vistaProducto = ObjProducto; // Asocia el formulario actual con el controlador
             vistaProducto.Load += new EventHandler(CargarDatos); // Asocia el evento Load del formulario al método CargarDatos
+            vistaProducto.cbEstado.CheckedChanged += new EventHandler(CambiarConsulta);
             vistaProducto.btnNuevoProductos.Click += new EventHandler(nuevoProducto); // Asocia el evento Click del botón Nuevo Empleado al método nuevoUsuario
             //ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado); // Asocia el evento Click del botón Actualizar al método ActualizarEmpleado
             vistaProducto.btnActualizarProveedor.Click += new EventHandler(AcualizarProducto);
@@ -31,12 +32,28 @@ namespace Proyecto.Controlador.Productos
             RefrescarData(); // Llama al método para actualizar los datos en el DataGridView
         }
 
+        private void CambiarConsulta(object sender, EventArgs e)
+        {
+            RefrescarData();
+        }
+
+
+        // Método que refresca los datos en el DataGridView.
         public void RefrescarData()
         {
             DAOProducto objAdmin = new DAOProducto(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
-            ds = objAdmin.ObetenerProductos();
-            vistaProducto.dgvProductos.DataSource = ds.Tables["VistaProductos"];
+
+            if (vistaProducto.cbEstado.Checked != true)
+            {
+                ds = objAdmin.ObtenerProductoActivos(); // Obtiene la lista de personas desde la base de datos
+                vistaProducto.dgvProductos.DataSource = ds.Tables["Producto"];
+            }
+            else
+            {
+                ds = objAdmin.ObtenerProductoInactivos();
+                vistaProducto.dgvProductos.DataSource = ds.Tables["Producto"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+            }
         }
 
         private void nuevoProducto(object sender, EventArgs e)

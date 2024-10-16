@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbEstado = new System.Windows.Forms.CheckBox();
             this.btnActualizarProveedor = new System.Windows.Forms.Button();
             this.btnNuevoProductos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@
             this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.cbEstado = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -56,6 +56,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1175, 56);
             this.panel4.TabIndex = 7;
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEstado.AutoSize = true;
+            this.cbEstado.Location = new System.Drawing.Point(811, 23);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(120, 17);
+            this.cbEstado.TabIndex = 10;
+            this.cbEstado.Text = "Productos Inactivos";
+            this.cbEstado.UseVisualStyleBackColor = true;
             // 
             // btnActualizarProveedor
             // 
@@ -140,17 +151,6 @@
             this.dgvProductos.Size = new System.Drawing.Size(1155, 479);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellContentClick);
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbEstado.AutoSize = true;
-            this.cbEstado.Location = new System.Drawing.Point(799, 23);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(132, 17);
-            this.cbEstado.TabIndex = 10;
-            this.cbEstado.Text = "Proveedores Inactivos";
-            this.cbEstado.UseVisualStyleBackColor = true;
             // 
             // frmProducto
             // 

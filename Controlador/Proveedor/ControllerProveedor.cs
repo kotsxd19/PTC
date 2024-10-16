@@ -12,24 +12,24 @@ namespace Proyecto.Controlador.Proveedor
 {
     internal class ControllerProveedor
     {
-        frmProveedor ObjMascota;
+        frmProveedor ObjProveedor;
 
         public ControllerProveedor(frmProveedor vistaProveedor)
         {
-            ObjMascota = vistaProveedor;
+            ObjProveedor = vistaProveedor;
 
-<<<<<<< Updated upstream
+
             ObjProveedor.Load += new EventHandler(CargarDatos);
             ObjProveedor.cbEstado.CheckedChanged += new EventHandler(CambiarConsulta); 
             ObjProveedor.btnNuevoProveedor.Click += new EventHandler(nuevoProveedor);
-=======
-            ObjMascota.Load += new EventHandler(CargarDatos);
 
-            ObjMascota.btnNuevoProveedor.Click += new EventHandler(nuevoProveedor);
->>>>>>> Stashed changes
+            ObjProveedor.Load += new EventHandler(CargarDatos);
+
+            ObjProveedor.btnNuevoProveedor.Click += new EventHandler(nuevoProveedor);
+
             //ObjProveedor.cmsEliminar.Click += new EventHandler(EliminarProveedor);
-            ObjMascota.btnActualizarProveedor.Click += new EventHandler(AcualizarProveedor);
-            ObjMascota.btnBuscarProveedor.Click += new EventHandler(BuscarProveedorControllerEvent); 
+            ObjProveedor.btnActualizarProveedor.Click += new EventHandler(AcualizarProveedor);
+            ObjProveedor.btnBuscarProveedor.Click += new EventHandler(BuscarProveedorControllerEvent); 
         }
 
 
@@ -49,7 +49,7 @@ namespace Proyecto.Controlador.Proveedor
         {
             DAOProveedor objAdmin = new DAOProveedor(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
-<<<<<<< Updated upstream
+
             if (ObjProveedor.cbEstado.Checked != true)
             {
                 ds = objAdmin.ObtenerProveedorActivas(); // Obtiene la lista de personas desde la base de datos
@@ -59,12 +59,7 @@ namespace Proyecto.Controlador.Proveedor
             {
                 ds = objAdmin.ObtenerProveedorInactivos();
                 ObjProveedor.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
-            }
-=======
-            ds = objProveerdor.ObtenerProveedor();
-            ObjMascota.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
-            
->>>>>>> Stashed changes
+            } 
         }
 
 
@@ -77,14 +72,14 @@ namespace Proyecto.Controlador.Proveedor
 
         private void AcualizarProveedor(object sender, EventArgs e)
         {
-            int pos = ObjMascota.dgvProveedor.CurrentRow.Index; // Obtiene la posición de la fila seleccionada en el DataGridView
+            int pos = ObjProveedor.dgvProveedor.CurrentRow.Index; // Obtiene la posición de la fila seleccionada en el DataGridView
 
             // Crea una nueva instancia del formulario para editar usuario con la acción de actualización
             frmAgregarProveedor openForm = new frmAgregarProveedor(2);
 
             // Enviar los datos de la fila seleccionada al formulario de edición
-            int.Parse(ObjMascota.dgvProveedor[0, pos].Value.ToString());
-            ObjMascota.dgvProveedor[1, pos].Value.ToString();
+            int.Parse(ObjProveedor.dgvProveedor[0, pos].Value.ToString());
+            ObjProveedor.dgvProveedor[1, pos].Value.ToString();
 
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
@@ -99,8 +94,8 @@ namespace Proyecto.Controlador.Proveedor
         void BuscarProveedorController()
         {
             DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para realizar la búsqueda
-            DataSet ds = objAdmin.BuscarPersonas(ObjMascota.txtBuscadorProveedor.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
-            ObjMascota.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+            DataSet ds = objAdmin.BuscarPersonas(ObjProveedor.txtBuscadorProveedor.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
+            ObjProveedor.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
         }
     }
 }

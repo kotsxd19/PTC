@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnActualizarProducto = new System.Windows.Forms.Button();
@@ -40,7 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cmbEstado);
             this.panel1.Controls.Add(this.txtPrecio);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.cmbProveedor);
@@ -55,12 +58,20 @@
             this.panel1.Controls.Add(this.txtNombreProducto);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(430, 350);
             this.panel1.TabIndex = 1;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(16, 234);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(146, 20);
+            this.txtPrecio.TabIndex = 6;
             // 
             // panel4
             // 
@@ -170,6 +181,7 @@
             this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "precio";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -181,12 +193,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
-            // txtPrecio
+            // cmbEstado
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(16, 234);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(146, 20);
-            this.txtPrecio.TabIndex = 6;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(216, 233);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(213, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "estado";
+            this.label5.Click += new System.EventHandler(this.label2_Click);
             // 
             // frmAgregarProducto
             // 
@@ -221,5 +245,7 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        public System.Windows.Forms.Label label5;
     }
 }
