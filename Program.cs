@@ -8,6 +8,7 @@ using Proyecto.Vista.Dueño;
 using Proyecto.Vista.Inicio;
 using Proyecto.Vista.Login;
 using Proyecto.Vista.Mascota;
+using Proyecto.Vista.PrimerUso;
 using Proyecto.Vista.Proveedor;
 
 namespace Proyecto
@@ -22,7 +23,11 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmInicio());
+=======
+            Application.Run(new frmCrearPrimerUsuario());
+>>>>>>> 394d122982c05afa2f38df7a91e6ce338d6bb4af
         }
 
         
