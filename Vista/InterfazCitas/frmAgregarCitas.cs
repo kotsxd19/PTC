@@ -24,5 +24,10 @@ namespace Proyecto.Vista.InterfazCitas
             InitializeComponent();
             ControllerAgregarCitas control = new ControllerAgregarCitas(this, IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
         }
+
+        private void frmAgregarCitas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

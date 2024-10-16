@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEliminarCita = new System.Windows.Forms.Button();
             this.btnIngresarCita = new System.Windows.Forms.Button();
-            this.btnEditarCita = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,6 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,22 +62,24 @@
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.btnEliminarCita);
             this.panel1.Controls.Add(this.btnIngresarCita);
-            this.panel1.Controls.Add(this.btnEditarCita);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1060, 94);
+            this.panel1.Size = new System.Drawing.Size(1413, 116);
             this.panel1.TabIndex = 0;
             // 
             // btnEliminarCita
             // 
             this.btnEliminarCita.BackColor = System.Drawing.Color.White;
-            this.btnEliminarCita.Location = new System.Drawing.Point(925, 37);
+            this.btnEliminarCita.Location = new System.Drawing.Point(1233, 46);
+            this.btnEliminarCita.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarCita.Name = "btnEliminarCita";
-            this.btnEliminarCita.Size = new System.Drawing.Size(98, 34);
+            this.btnEliminarCita.Size = new System.Drawing.Size(131, 42);
             this.btnEliminarCita.TabIndex = 2;
             this.btnEliminarCita.Text = "Eliminar Cita";
             this.btnEliminarCita.UseVisualStyleBackColor = false;
@@ -85,31 +87,23 @@
             // btnIngresarCita
             // 
             this.btnIngresarCita.BackColor = System.Drawing.Color.White;
-            this.btnIngresarCita.Location = new System.Drawing.Point(808, 38);
+            this.btnIngresarCita.Location = new System.Drawing.Point(1077, 47);
+            this.btnIngresarCita.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresarCita.Name = "btnIngresarCita";
-            this.btnIngresarCita.Size = new System.Drawing.Size(98, 34);
+            this.btnIngresarCita.Size = new System.Drawing.Size(131, 42);
             this.btnIngresarCita.TabIndex = 1;
             this.btnIngresarCita.Text = "Ingresar Cita";
             this.btnIngresarCita.UseVisualStyleBackColor = false;
             this.btnIngresarCita.Click += new System.EventHandler(this.btnIngresarCita_Click);
             // 
-            // btnEditarCita
-            // 
-            this.btnEditarCita.BackColor = System.Drawing.Color.White;
-            this.btnEditarCita.Location = new System.Drawing.Point(683, 38);
-            this.btnEditarCita.Name = "btnEditarCita";
-            this.btnEditarCita.Size = new System.Drawing.Size(102, 34);
-            this.btnEditarCita.TabIndex = 1;
-            this.btnEditarCita.Text = "Editar Cita";
-            this.btnEditarCita.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 38);
+            this.label1.Location = new System.Drawing.Point(271, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 25);
+            this.label1.Size = new System.Drawing.Size(171, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "VetManager";
             // 
@@ -125,17 +119,19 @@
             this.flowLayoutPanel1.Controls.Add(this.btnIngresoMascota);
             this.flowLayoutPanel1.Controls.Add(this.btnIngresoNevoEmpleado);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 94);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 116);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(159, 532);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(212, 654);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 90);
+            this.pictureBox1.Size = new System.Drawing.Size(205, 111);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -143,10 +139,10 @@
             // btnUsuario
             // 
             this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.btnUsuario.Location = new System.Drawing.Point(3, 106);
-            this.btnUsuario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnUsuario.Location = new System.Drawing.Point(4, 131);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(154, 48);
+            this.btnUsuario.Size = new System.Drawing.Size(205, 59);
             this.btnUsuario.TabIndex = 0;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = false;
@@ -154,10 +150,10 @@
             // btnCitas
             // 
             this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.btnCitas.Location = new System.Drawing.Point(3, 167);
-            this.btnCitas.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnCitas.Location = new System.Drawing.Point(4, 206);
+            this.btnCitas.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Size = new System.Drawing.Size(154, 48);
+            this.btnCitas.Size = new System.Drawing.Size(205, 59);
             this.btnCitas.TabIndex = 0;
             this.btnCitas.Text = "Citas";
             this.btnCitas.UseVisualStyleBackColor = false;
@@ -165,10 +161,10 @@
             // btnProducto
             // 
             this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.btnProducto.Location = new System.Drawing.Point(3, 228);
-            this.btnProducto.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnProducto.Location = new System.Drawing.Point(4, 281);
+            this.btnProducto.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(154, 48);
+            this.btnProducto.Size = new System.Drawing.Size(205, 59);
             this.btnProducto.TabIndex = 0;
             this.btnProducto.Text = "Producto";
             this.btnProducto.UseVisualStyleBackColor = false;
@@ -176,10 +172,10 @@
             // btnHistorialMascota
             // 
             this.btnHistorialMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.btnHistorialMascota.Location = new System.Drawing.Point(3, 289);
-            this.btnHistorialMascota.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnHistorialMascota.Location = new System.Drawing.Point(4, 356);
+            this.btnHistorialMascota.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.btnHistorialMascota.Name = "btnHistorialMascota";
-            this.btnHistorialMascota.Size = new System.Drawing.Size(154, 48);
+            this.btnHistorialMascota.Size = new System.Drawing.Size(205, 59);
             this.btnHistorialMascota.TabIndex = 0;
             this.btnHistorialMascota.Text = "Historial de la Mascota";
             this.btnHistorialMascota.UseVisualStyleBackColor = false;
@@ -187,10 +183,10 @@
             // btnRegistroEmpleados
             // 
             this.btnRegistroEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.btnRegistroEmpleados.Location = new System.Drawing.Point(3, 350);
-            this.btnRegistroEmpleados.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnRegistroEmpleados.Location = new System.Drawing.Point(4, 431);
+            this.btnRegistroEmpleados.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.btnRegistroEmpleados.Name = "btnRegistroEmpleados";
-            this.btnRegistroEmpleados.Size = new System.Drawing.Size(154, 48);
+            this.btnRegistroEmpleados.Size = new System.Drawing.Size(205, 59);
             this.btnRegistroEmpleados.TabIndex = 0;
             this.btnRegistroEmpleados.Text = "Registro de Empleados";
             this.btnRegistroEmpleados.UseVisualStyleBackColor = false;
@@ -199,10 +195,10 @@
             // btnIngresoMascota
             // 
             this.btnIngresoMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.btnIngresoMascota.Location = new System.Drawing.Point(3, 411);
-            this.btnIngresoMascota.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnIngresoMascota.Location = new System.Drawing.Point(4, 506);
+            this.btnIngresoMascota.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.btnIngresoMascota.Name = "btnIngresoMascota";
-            this.btnIngresoMascota.Size = new System.Drawing.Size(154, 48);
+            this.btnIngresoMascota.Size = new System.Drawing.Size(205, 59);
             this.btnIngresoMascota.TabIndex = 0;
             this.btnIngresoMascota.Text = "Ingreso de Mascotas";
             this.btnIngresoMascota.UseVisualStyleBackColor = false;
@@ -210,10 +206,10 @@
             // btnIngresoNevoEmpleado
             // 
             this.btnIngresoNevoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(206)))), ((int)(((byte)(175)))));
-            this.btnIngresoNevoEmpleado.Location = new System.Drawing.Point(3, 472);
-            this.btnIngresoNevoEmpleado.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.btnIngresoNevoEmpleado.Location = new System.Drawing.Point(4, 581);
+            this.btnIngresoNevoEmpleado.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.btnIngresoNevoEmpleado.Name = "btnIngresoNevoEmpleado";
-            this.btnIngresoNevoEmpleado.Size = new System.Drawing.Size(154, 48);
+            this.btnIngresoNevoEmpleado.Size = new System.Drawing.Size(205, 59);
             this.btnIngresoNevoEmpleado.TabIndex = 0;
             this.btnIngresoNevoEmpleado.Text = "Ingreso de nuevo empleado";
             this.btnIngresoNevoEmpleado.UseVisualStyleBackColor = false;
@@ -221,9 +217,10 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(159, 94);
+            this.panel2.Location = new System.Drawing.Point(212, 116);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(901, 47);
+            this.panel2.Size = new System.Drawing.Size(1201, 58);
             this.panel2.TabIndex = 3;
             // 
             // MenuCitas
@@ -232,25 +229,26 @@
             this.MenuCitas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsEliminarCita});
             this.MenuCitas.Name = "MenuCitas";
-            this.MenuCitas.Size = new System.Drawing.Size(139, 26);
+            this.MenuCitas.Size = new System.Drawing.Size(159, 28);
             this.MenuCitas.Opening += new System.ComponentModel.CancelEventHandler(this.MenuCitas_Opening);
             // 
             // cmsEliminarCita
             // 
             this.cmsEliminarCita.Name = "cmsEliminarCita";
-            this.cmsEliminarCita.Size = new System.Drawing.Size(138, 22);
+            this.cmsEliminarCita.Size = new System.Drawing.Size(158, 24);
             this.cmsEliminarCita.Text = "EliminarCita";
             // 
             // dgvInfoCitas
             // 
             this.dgvInfoCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfoCitas.ContextMenuStrip = this.MenuCitas;
             this.dgvInfoCitas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvInfoCitas.Location = new System.Drawing.Point(159, 141);
-            this.dgvInfoCitas.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvInfoCitas.Location = new System.Drawing.Point(212, 174);
+            this.dgvInfoCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvInfoCitas.Name = "dgvInfoCitas";
             this.dgvInfoCitas.RowHeadersWidth = 51;
             this.dgvInfoCitas.RowTemplate.Height = 24;
-            this.dgvInfoCitas.Size = new System.Drawing.Size(901, 485);
+            this.dgvInfoCitas.Size = new System.Drawing.Size(1201, 596);
             this.dgvInfoCitas.TabIndex = 6;
             this.dgvInfoCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfoCitas_CellContentClick);
             // 
@@ -258,10 +256,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(233, 261);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(311, 321);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 17);
+            this.label6.Size = new System.Drawing.Size(0, 20);
             this.label6.TabIndex = 18;
             // 
             // dgvCitas
@@ -269,24 +266,36 @@
             this.dgvCitas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCitas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCitas.Location = new System.Drawing.Point(159, 94);
+            this.dgvCitas.Location = new System.Drawing.Point(212, 116);
+            this.dgvCitas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.RowHeadersWidth = 51;
-            this.dgvCitas.Size = new System.Drawing.Size(901, 532);
+            this.dgvCitas.Size = new System.Drawing.Size(1201, 654);
             this.dgvCitas.TabIndex = 2;
             this.dgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(886, 67);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(95, 20);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmCitas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 626);
+            this.ClientSize = new System.Drawing.Size(1413, 770);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvInfoCitas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCitas";
             this.Text = "frmCitas";
             this.Load += new System.EventHandler(this.frmCitas_Load);
@@ -311,7 +320,6 @@
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.ContextMenuStrip MenuCitas;
         public System.Windows.Forms.ToolStripMenuItem cmsEliminarCita;
-        public System.Windows.Forms.Button btnEditarCita;
         public System.Windows.Forms.Button btnUsuario;
         public System.Windows.Forms.Button btnIngresarCita;
         public System.Windows.Forms.Button btnHistorialMascota;
@@ -325,5 +333,6 @@
         public System.Windows.Forms.Button btnEliminarCita;
         public System.Windows.Forms.DataGridView dgvInfoCitas;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

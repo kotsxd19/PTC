@@ -17,7 +17,7 @@ namespace Proyecto.Vista.InterfazCitas
         public frmCitas()
         {
             InitializeComponent();
-            // Instancia del controlador para a la vista actual
+
             ControllerCitas controller = new ControllerCitas(this);
         }
 
