@@ -19,27 +19,42 @@ namespace Proyecto.Controlador.Proveedor
             ObjProveedor = vistaProveedor;
 
             ObjProveedor.Load += new EventHandler(CargarDatos);
-
+            ObjProveedor.cbEstado.CheckedChanged += new EventHandler(CambiarConsulta); 
             ObjProveedor.btnNuevoProveedor.Click += new EventHandler(nuevoProveedor);
             //ObjProveedor.cmsEliminar.Click += new EventHandler(EliminarProveedor);
             ObjProveedor.btnActualizarProveedor.Click += new EventHandler(AcualizarProveedor);
             ObjProveedor.btnBuscarProveedor.Click += new EventHandler(BuscarProveedorControllerEvent); 
         }
 
+
         public void CargarDatos(object sender, EventArgs e)
         {
             RefrescarData(); // Llama al método para actualizar los datos en el DataGridView
         }
 
+        private void CambiarConsulta(object sender, EventArgs e)
+        {
+            RefrescarData();
+        }
+
+
         // Método que refresca los datos en el DataGridView.
         public void RefrescarData()
         {
-            DAOProveedor objProveerdor = new DAOProveedor(); // Crea una instancia del DAO para obtener datos
+            DAOProveedor objAdmin = new DAOProveedor(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
-            ds = objProveerdor.ObtenerProveedor();
-            ObjProveedor.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
-            
+            if (ObjProveedor.cbEstado.Checked != true)
+            {
+                ds = objAdmin.ObtenerProveedorActivas(); // Obtiene la lista de personas desde la base de datos
+                ObjProveedor.dgvProveedor.DataSource = ds.Tables["Proveedor"];
+            }
+            else
+            {
+                ds = objAdmin.ObtenerProveedorInactivos();
+                ObjProveedor.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+            }
         }
+
 
         private void nuevoProveedor(object sender, EventArgs e)
         {

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnActualizarProveedor = new System.Windows.Forms.Button();
+            this.btnNuevoProveedor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
-            this.btnActualizarProveedor = new System.Windows.Forms.Button();
-            this.btnNuevoProveedor = new System.Windows.Forms.Button();
-            this.btnBuscarProveedor = new System.Windows.Forms.Button();
+            this.cbEstado = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
@@ -44,6 +45,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.panel4.Controls.Add(this.cbEstado);
             this.panel4.Controls.Add(this.btnActualizarProveedor);
             this.panel4.Controls.Add(this.btnNuevoProveedor);
             this.panel4.Controls.Add(this.label1);
@@ -55,6 +57,40 @@
             this.panel4.Size = new System.Drawing.Size(900, 56);
             this.panel4.TabIndex = 5;
             // 
+            // btnActualizarProveedor
+            // 
+            this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_actualizar_45;
+            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarProveedor.Location = new System.Drawing.Point(655, 10);
+            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
+            this.btnActualizarProveedor.Size = new System.Drawing.Size(121, 39);
+            this.btnActualizarProveedor.TabIndex = 8;
+            this.btnActualizarProveedor.Text = "actualizar";
+            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoProveedor
+            // 
+            this.btnNuevoProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevoProveedor.FlatAppearance.BorderSize = 0;
+            this.btnNuevoProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnNuevoProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
+            this.btnNuevoProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoProveedor.Location = new System.Drawing.Point(782, 8);
+            this.btnNuevoProveedor.Name = "btnNuevoProveedor";
+            this.btnNuevoProveedor.Size = new System.Drawing.Size(108, 39);
+            this.btnNuevoProveedor.TabIndex = 8;
+            this.btnNuevoProveedor.Text = "Nuevo";
+            this.btnNuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoProveedor.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -63,6 +99,17 @@
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar empleado:";
+            // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProveedor.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(406, 15);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(35, 29);
+            this.btnBuscarProveedor.TabIndex = 1;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
             // 
             // txtBuscadorProveedor
             // 
@@ -93,50 +140,16 @@
             this.dgvProveedor.Size = new System.Drawing.Size(880, 468);
             this.dgvProveedor.TabIndex = 0;
             // 
-            // btnActualizarProveedor
+            // cbEstado
             // 
-            this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
-            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(662, 10);
-            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(114, 39);
-            this.btnActualizarProveedor.TabIndex = 8;
-            this.btnActualizarProveedor.Text = "actualizar";
-            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevoProveedor
-            // 
-            this.btnNuevoProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoProveedor.FlatAppearance.BorderSize = 0;
-            this.btnNuevoProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnNuevoProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
-            this.btnNuevoProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoProveedor.Location = new System.Drawing.Point(782, 8);
-            this.btnNuevoProveedor.Name = "btnNuevoProveedor";
-            this.btnNuevoProveedor.Size = new System.Drawing.Size(108, 39);
-            this.btnNuevoProveedor.TabIndex = 8;
-            this.btnNuevoProveedor.Text = "Nuevo";
-            this.btnNuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoProveedor.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarProveedor
-            // 
-            this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProveedor.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(406, 15);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(35, 29);
-            this.btnBuscarProveedor.TabIndex = 1;
-            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
+            this.cbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEstado.AutoSize = true;
+            this.cbEstado.Location = new System.Drawing.Point(541, 21);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(115, 17);
+            this.cbEstado.TabIndex = 9;
+            this.cbEstado.Text = "Producto Inactivos";
+            this.cbEstado.UseVisualStyleBackColor = true;
             // 
             // frmProveedor
             // 
@@ -166,5 +179,6 @@
         public System.Windows.Forms.TextBox txtBuscadorProveedor;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView dgvProveedor;
+        public System.Windows.Forms.CheckBox cbEstado;
     }
 }

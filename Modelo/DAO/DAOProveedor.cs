@@ -24,9 +24,10 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para insertar más detalles del empleado
-                string query = "INSERT INTO Proveedor VALUES (@param1)";
+                string query = "INSERT INTO Proveedor VALUES (@param1, @param2)";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("param1", Proveedor);
+                cmd.Parameters.AddWithValue("param2", EstadoProveedor1);
 
                 int respuesta = cmd.ExecuteNonQuery();
 
@@ -46,6 +47,83 @@ namespace Proyecto.Modelo.DAO
                 command.Connection.Close();
             }
         }
+
+
+        public DataSet ObtenerProveedorActivas()
+        {
+            try
+            {
+                //Accedemos a la conexión que ya se tiene
+                command.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM Proveedor WHERE EstadoProveedor = @param1";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("param1", 1);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "Proveedor");
+                //Devolvemos el Dataset
+                return ds;
+            }
+            catch (Exception)
+            {
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
+            }
+        }
+
+
+
+
+        public DataSet ObtenerProveedorInactivos()
+        {
+            try
+            {
+                //Accedemos a la conexión que ya se tiene
+                command.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM Proveedor WHERE EstadoProveedor = @param1";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("param1", 0);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "Proveedor");
+                //Devolvemos el Dataset
+                return ds;
+            }
+            catch (Exception)
+            {
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
+            }
+        }
+
 
         public DataSet ObtenerProveedor()
         {

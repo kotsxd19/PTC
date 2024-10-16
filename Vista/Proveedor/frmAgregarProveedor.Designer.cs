@@ -37,6 +37,8 @@
             this.txtProveedor = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.txtIdProveedor = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -49,9 +51,9 @@
             this.panel4.Controls.Add(this.btnActualizarProveedor);
             this.panel4.Controls.Add(this.btnIngresarProveedor);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 91);
+            this.panel4.Location = new System.Drawing.Point(0, 129);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(591, 65);
+            this.panel4.Size = new System.Drawing.Size(591, 64);
             this.panel4.TabIndex = 7;
             // 
             // btnCancelar
@@ -102,13 +104,15 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.panel2.Controls.Add(this.cmbEstado);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.LblNombreProveedor);
             this.panel2.Controls.Add(this.txtProveedor);
             this.panel2.Controls.Add(this.menuStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(591, 91);
+            this.panel2.Size = new System.Drawing.Size(591, 129);
             this.panel2.TabIndex = 6;
             // 
             // LblNombreProveedor
@@ -145,11 +149,30 @@
             this.txtIdProveedor.Size = new System.Drawing.Size(22, 20);
             this.txtIdProveedor.Text = " ";
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(13, 92);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(9, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "estado";
+            // 
             // frmAgregarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 156);
+            this.ClientSize = new System.Drawing.Size(591, 193);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.MainMenuStrip = this.menuStrip1;
@@ -176,5 +199,7 @@
         public System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.ToolStripMenuItem txtIdProveedor;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cmbEstado;
     }
 }
