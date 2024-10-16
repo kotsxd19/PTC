@@ -76,7 +76,7 @@ namespace Proyecto.Controlador.cita
                 DAOCitas daoInsert = new DAOCitas();
 
                 int IdEmpleados = int.Parse(objCitas.cmbEmpleado.SelectedValue.ToString()); // ID del empleado
-                string IdMascota = objCitas.txtMascota.Text.Trim(); // ID de la mascota
+                string IdMascota = objCitas.cmbMascotas.Text.Trim(); // ID de la mascota
                 DateTime Fecha = DateTime.Parse(objCitas.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
                 TimeSpan Hora = TimeSpan.Parse(objCitas.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
                 string Descripcion = objCitas.txtDescripcion.Text; // Descripción de la cita
