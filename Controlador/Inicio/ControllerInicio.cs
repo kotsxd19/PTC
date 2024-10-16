@@ -118,10 +118,7 @@ namespace Proyecto.Controlador.Inicio
             AbrirFormulario<frmDueño>();
         }
 
-        void openFromMascotas(object sender, EventArgs e)
-        {
-            AbrirFormulario<frmMascota>();
-        }
+        void openFromMascotas(object sender, EventArgs e) => AbrirFormulario<frmMascota>();
 
         void openFromCitas(object sender, EventArgs e)
         {

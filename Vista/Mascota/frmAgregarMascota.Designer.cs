@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscadorDueño = new System.Windows.Forms.TextBox();
             this.btnRaza = new System.Windows.Forms.Button();
             this.nudPeso = new System.Windows.Forms.NumericUpDown();
             this.dgvDueño = new System.Windows.Forms.DataGridView();
@@ -42,9 +45,6 @@
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtBuscadorDueño = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDueño)).BeginInit();
@@ -73,6 +73,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(487, 572);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 313);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Buscar Dueño:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
+            this.btnBuscar.Location = new System.Drawing.Point(431, 305);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(35, 29);
+            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscadorDueño
+            // 
+            this.txtBuscadorDueño.Location = new System.Drawing.Point(133, 310);
+            this.txtBuscadorDueño.Name = "txtBuscadorDueño";
+            this.txtBuscadorDueño.Size = new System.Drawing.Size(292, 20);
+            this.txtBuscadorDueño.TabIndex = 17;
             // 
             // btnRaza
             // 
@@ -201,33 +228,6 @@
             this.Nombre.TabIndex = 0;
             this.Nombre.Text = "Nombre";
             this.Nombre.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 313);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Buscar Dueño:";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
-            this.btnBuscar.Location = new System.Drawing.Point(431, 305);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(35, 29);
-            this.btnBuscar.TabIndex = 18;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscadorDueño
-            // 
-            this.txtBuscadorDueño.Location = new System.Drawing.Point(133, 310);
-            this.txtBuscadorDueño.Name = "txtBuscadorDueño";
-            this.txtBuscadorDueño.Size = new System.Drawing.Size(292, 20);
-            this.txtBuscadorDueño.TabIndex = 17;
             // 
             // frmAgregarMascota
             // 

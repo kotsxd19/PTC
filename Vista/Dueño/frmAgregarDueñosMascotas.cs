@@ -16,5 +16,15 @@ namespace Proyecto.Vista.Dueño
         {
             InitializeComponent();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAgregarDueñosMascotas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

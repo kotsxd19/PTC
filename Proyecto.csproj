@@ -63,6 +63,7 @@
     <Compile Include="Controlador\Productos\ControllerIngresoProductos.cs" />
     <Compile Include="Controlador\Productos\ControllerRegistroProductos.cs" />
     <Compile Include="Controlador\Propietario\ControllerAgregarMascota.cs" />
+    <Compile Include="Controlador\Propietario\ControllerPropietario.cs" />
     <Compile Include="Controlador\Proveedor\ControllerAgregarProveedor.cs" />
     <Compile Include="Controlador\Proveedor\ControllerProveedor.cs" />
     <Compile Include="Controlador\Servidor\ControllerConexionAdmin.cs" />

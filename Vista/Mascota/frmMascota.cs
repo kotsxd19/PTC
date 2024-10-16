@@ -15,6 +15,10 @@ namespace Proyecto.Vista.Mascota
     {
         public frmMascota()
         {
+        }
+
+        public frmMascota(int v)
+        {
             InitializeComponent();
             ControllerMascota Mascota = new ControllerMascota(this);
         }

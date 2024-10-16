@@ -124,5 +124,10 @@ namespace Proyecto.Modelo.DAO
                 getConnection().Close();
             }
         }
+
+        internal DataSet ObtenerMascotas()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

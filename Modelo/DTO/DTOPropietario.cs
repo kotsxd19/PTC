@@ -19,5 +19,6 @@ namespace Proyecto.Modelo.DTO
         public string Apellido { get => apellido; set => apellido = value; }
         public string Dui { get => dui; set => dui = value; }
         public string Telefono { get => telefono; set => telefono = value; }
+
     }
 }

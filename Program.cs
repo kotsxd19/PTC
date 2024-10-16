@@ -4,7 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto.Vista.AgregarUsuarios;
+using Proyecto.Vista.Dueño;
 using Proyecto.Vista.Login;
+using Proyecto.Vista.Mascota;
+using Proyecto.Vista.Proveedor;
 
 namespace Proyecto
 {
@@ -18,7 +21,7 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmMascota());
         }
 
         
