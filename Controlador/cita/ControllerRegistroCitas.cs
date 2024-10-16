@@ -66,7 +66,7 @@ namespace Proyecto.Controlador.cita
 
             int IdCitas = int.Parse(objVista.dgvCitas[0, pos].Value.ToString()); // Obtener el ID de la cita
             int IdEmpleados = int.Parse(agregarCitas.cmbEmpleado.Text); // ID del empleado
-            int IdMascota = int.Parse(agregarCitas.txtMascota.Text); // ID de la mascota
+            int IdMascota = int.Parse(agregarCitas.cmbMascotas.Text); // ID de la mascota
             DateTime Fecha = DateTime.Parse(agregarCitas.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
             TimeSpan Hora = TimeSpan.Parse(agregarCitas.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
             string Descripcion = agregarCitas.txtDescripcion.Text; // Descripción de la cita
