@@ -70,6 +70,12 @@ namespace Proyecto.Controlador.Login
 
                 DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
                 DAOData.Contraseña1 = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
+                //string password = "123456";
+                string hashedPassword = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
+                MessageBox.Show("Hash de la contraseña '444': " + hashedPassword);
+
+                DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
+                DAOData.Contraseña1 = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
 
                 // Asignar valores a DAOData
                 DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
@@ -85,7 +91,7 @@ namespace Proyecto.Controlador.Login
                     if (isAuthenticated)
                     {
                         // Verificar condición adicional para recuperación de contraseña
-                        if (ObjLogin.txtContraseña.Text.Trim() == ObjLogin.txtUsuario.Text.Trim() + "PU123")
+                        if (ObjLogin.txtContraseña.Text.Trim() == ObjLogin.txtUsuario.Text.Trim() /*+ "PU123"*/)
                         {
                             frmRecuperacioneDeContra openForm = new frmRecuperacioneDeContra();
                             openForm.Show();
@@ -100,8 +106,8 @@ namespace Proyecto.Controlador.Login
                     }
                     else
                     {
-                        // Autenticación fallida
-                        MessageBox.Show("Datos incorrectos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        // Autenticación fallida Datos incorrectos + DAOData.Contraseña1 + DAOData.Contraseña1
+                        MessageBox.Show($"Datos incorrectos {DAOData.Usuario1},{DAOData.Contraseña1}", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
