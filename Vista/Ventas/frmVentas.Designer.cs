@@ -54,7 +54,6 @@
             this.panel4.Controls.Add(this.btnImprimir);
             this.panel4.Controls.Add(this.btnAgregarVenta);
 
-            this.panel4.Controls.Add(this.btnActualizarProveedor);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscarProveedor);
             this.panel4.Controls.Add(this.txtBuscadorProveedor);
@@ -95,21 +94,6 @@
             this.btnAgregarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarVenta.UseVisualStyleBackColor = true;
 
-            this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_401;
-            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(1396, 12);
-            this.btnActualizarProveedor.Margin = new System.Windows.Forms.Padding(4);
-            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(148, 48);
-            this.btnActualizarProveedor.TabIndex = 8;
-            this.btnActualizarProveedor.Text = "Agregar";
-            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
 
             // 
             // label1
@@ -181,7 +165,6 @@
             this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
             this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
