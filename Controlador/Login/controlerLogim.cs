@@ -70,9 +70,6 @@ namespace Proyecto.Controlador.Login
 
                 DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
                 DAOData.Contraseña1 = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
-                string password = "123456";
-                string hashedPassword = common.ComputeSha256Hash(password);
-                MessageBox.Show("Hash de la contraseña '123456': " + hashedPassword);
 
                 // Asignar valores a DAOData
                 DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
@@ -82,8 +79,7 @@ namespace Proyecto.Controlador.Login
                 {
                     
                     // Verificar autenticación
-                    MessageBox.Show(DAOData.Usuario1);
-                    MessageBox.Show(DAOData.Contraseña1);
+
                     bool isAuthenticated = DAOData.Login();
                    
                     if (isAuthenticated)

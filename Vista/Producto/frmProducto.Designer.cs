@@ -37,7 +37,6 @@
             this.txtBuscarProducto = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnImprimirProducto = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -46,7 +45,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel4.Controls.Add(this.btnImprimirProducto);
             this.panel4.Controls.Add(this.cbEstado);
             this.panel4.Controls.Add(this.btnActualizarProveedor);
             this.panel4.Controls.Add(this.btnNuevoProductos);
@@ -55,19 +53,17 @@
             this.panel4.Controls.Add(this.txtBuscarProducto);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1567, 69);
+            this.panel4.Size = new System.Drawing.Size(1175, 56);
             this.panel4.TabIndex = 7;
             // 
             // cbEstado
             // 
             this.cbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEstado.AutoSize = true;
-            this.cbEstado.Location = new System.Drawing.Point(1096, 28);
-            this.cbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEstado.Location = new System.Drawing.Point(812, 23);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(146, 20);
+            this.cbEstado.Size = new System.Drawing.Size(120, 17);
             this.cbEstado.TabIndex = 10;
             this.cbEstado.Text = "Productos Inactivos";
             this.cbEstado.UseVisualStyleBackColor = true;
@@ -81,10 +77,9 @@
             this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
             this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(1249, 12);
-            this.btnActualizarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizarProveedor.Location = new System.Drawing.Point(937, 10);
             this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(152, 48);
+            this.btnActualizarProveedor.Size = new System.Drawing.Size(114, 39);
             this.btnActualizarProveedor.TabIndex = 8;
             this.btnActualizarProveedor.Text = "actualizar";
             this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -99,10 +94,9 @@
             this.btnNuevoProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoProductos.Image = global::Proyecto.Properties.Resources.icons8_agregar_producto_35;
             this.btnNuevoProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoProductos.Location = new System.Drawing.Point(1409, 10);
-            this.btnNuevoProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevoProductos.Location = new System.Drawing.Point(1057, 8);
             this.btnNuevoProductos.Name = "btnNuevoProductos";
-            this.btnNuevoProductos.Size = new System.Drawing.Size(144, 48);
+            this.btnNuevoProductos.Size = new System.Drawing.Size(108, 39);
             this.btnNuevoProductos.TabIndex = 8;
             this.btnNuevoProductos.Text = "Nuevo";
             this.btnNuevoProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -111,10 +105,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(10, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar empleado:";
             // 
@@ -123,19 +116,17 @@
             this.btnBuscarProducto.FlatAppearance.BorderSize = 0;
             this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProducto.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(541, 18);
-            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(406, 15);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(47, 36);
+            this.btnBuscarProducto.Size = new System.Drawing.Size(35, 29);
             this.btnBuscarProducto.TabIndex = 1;
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // txtBuscarProducto
             // 
-            this.txtBuscarProducto.Location = new System.Drawing.Point(144, 25);
-            this.txtBuscarProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarProducto.Location = new System.Drawing.Point(108, 20);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
-            this.txtBuscarProducto.Size = new System.Drawing.Size(388, 22);
+            this.txtBuscarProducto.Size = new System.Drawing.Size(292, 20);
             this.txtBuscarProducto.TabIndex = 0;
             // 
             // panel3
@@ -143,11 +134,10 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.panel3.Controls.Add(this.dgvProductos);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 69);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 56);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel3.Size = new System.Drawing.Size(1567, 614);
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panel3.Size = new System.Drawing.Size(1175, 499);
             this.panel3.TabIndex = 9;
             // 
             // dgvProductos
@@ -155,31 +145,20 @@
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProductos.Location = new System.Drawing.Point(13, 12);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProductos.Location = new System.Drawing.Point(10, 10);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.Size = new System.Drawing.Size(1541, 590);
+            this.dgvProductos.Size = new System.Drawing.Size(1155, 479);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellContentClick);
             // 
-            // btnImprimirProducto
-            // 
-            this.btnImprimirProducto.Location = new System.Drawing.Point(909, 19);
-            this.btnImprimirProducto.Name = "btnImprimirProducto";
-            this.btnImprimirProducto.Size = new System.Drawing.Size(124, 37);
-            this.btnImprimirProducto.TabIndex = 11;
-            this.btnImprimirProducto.Text = "Imprimir Producto";
-            this.btnImprimirProducto.UseVisualStyleBackColor = true;
-            // 
             // frmProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1567, 683);
+            this.ClientSize = new System.Drawing.Size(1175, 555);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmProducto";
             this.Text = "frmProducto";
             this.Load += new System.EventHandler(this.frmProducto_Load);
@@ -202,6 +181,5 @@
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView dgvProductos;
         public System.Windows.Forms.CheckBox cbEstado;
-        private System.Windows.Forms.Button btnImprimirProducto;
     }
 }
