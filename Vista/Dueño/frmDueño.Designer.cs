@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.cbEstadoEmpelado = new System.Windows.Forms.CheckBox();
+            this.cbEstadoPropietario = new System.Windows.Forms.CheckBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnNuevoEmpleado = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel4.Controls.Add(this.cbEstadoEmpelado);
+            this.panel4.Controls.Add(this.cbEstadoPropietario);
             this.panel4.Controls.Add(this.btnActualizar);
             this.panel4.Controls.Add(this.btnNuevoEmpleado);
             this.panel4.Controls.Add(this.label1);
@@ -57,19 +57,19 @@
             this.panel4.Size = new System.Drawing.Size(996, 56);
             this.panel4.TabIndex = 5;
             // 
-            // cbEstadoEmpelado
+            // cbEstadoPropietario
             // 
-            this.cbEstadoEmpelado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbEstadoEmpelado.AutoSize = true;
-            this.cbEstadoEmpelado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbEstadoEmpelado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cbEstadoEmpelado.Location = new System.Drawing.Point(628, 22);
-            this.cbEstadoEmpelado.Name = "cbEstadoEmpelado";
-            this.cbEstadoEmpelado.Size = new System.Drawing.Size(124, 17);
-            this.cbEstadoEmpelado.TabIndex = 9;
-            this.cbEstadoEmpelado.Text = "Empleados Inactivos";
-            this.cbEstadoEmpelado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbEstadoEmpelado.UseVisualStyleBackColor = true;
+            this.cbEstadoPropietario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEstadoPropietario.AutoSize = true;
+            this.cbEstadoPropietario.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbEstadoPropietario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cbEstadoPropietario.Location = new System.Drawing.Point(644, 22);
+            this.cbEstadoPropietario.Name = "cbEstadoPropietario";
+            this.cbEstadoPropietario.Size = new System.Drawing.Size(108, 17);
+            this.cbEstadoPropietario.TabIndex = 9;
+            this.cbEstadoPropietario.Text = "Dueños inactivos";
+            this.cbEstadoPropietario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbEstadoPropietario.UseVisualStyleBackColor = true;
             // 
             // btnActualizar
             // 
@@ -163,6 +163,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "frmDueño";
             this.Text = "frmDueño";
+            this.Load += new System.EventHandler(this.frmDueño_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -174,7 +175,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.CheckBox cbEstadoEmpelado;
+        public System.Windows.Forms.CheckBox cbEstadoPropietario;
         public System.Windows.Forms.Button btnActualizar;
         public System.Windows.Forms.Button btnNuevoEmpleado;
         private System.Windows.Forms.Label label1;

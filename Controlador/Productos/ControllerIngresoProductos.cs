@@ -90,7 +90,7 @@ namespace Proyecto.Controlador.Productos
                     int estadoSeleccionado = ((KeyValuePair<string, int>)ObjAgregar.cmbEstado.SelectedItem).Value;
                     DAOInsert.EstadoProducto1 = estadoSeleccionado == 1;
 
-                int valorRetornado = DAOInsert.RegistarProducto(); // Registra el nuevo usuario
+                    int valorRetornado = DAOInsert.RegistarProducto(); // Registra el nuevo usuario
                     if (valorRetornado == 1)
                     {
                         MessageBox.Show("Los datos ingresados han sido registrados exitosamente",

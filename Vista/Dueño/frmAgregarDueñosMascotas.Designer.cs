@@ -39,6 +39,8 @@
             this.LblApellido = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,7 +66,7 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizar.Location = new System.Drawing.Point(208, 221);
+            this.btnActualizar.Location = new System.Drawing.Point(214, 262);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(114, 40);
             this.btnActualizar.TabIndex = 12;
@@ -80,7 +82,7 @@
             this.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIngresar.Location = new System.Drawing.Point(382, 221);
+            this.btnIngresar.Location = new System.Drawing.Point(382, 264);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(114, 38);
             this.btnIngresar.TabIndex = 11;
@@ -90,12 +92,14 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.cmbEstado);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txtTelefono);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 135);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(516, 80);
+            this.panel3.Size = new System.Drawing.Size(516, 121);
             this.panel3.TabIndex = 3;
             // 
             // label1
@@ -165,6 +169,25 @@
             this.txtApellido.Size = new System.Drawing.Size(483, 20);
             this.txtApellido.TabIndex = 4;
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(13, 97);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(9, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "estado";
+            // 
             // frmAgregarDueñosMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,5 +220,7 @@
         public System.Windows.Forms.TextBox txtTelefono;
         public System.Windows.Forms.Button btnActualizar;
         public System.Windows.Forms.Button btnIngresar;
+        public System.Windows.Forms.ComboBox cmbEstado;
+        public System.Windows.Forms.Label label2;
     }
 }

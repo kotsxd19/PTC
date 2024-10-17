@@ -13,12 +13,13 @@ namespace Proyecto.Modelo.DTO
         private string dui;
         private string apellido;
         private string telefono;
+        private bool EstadoPropietario;
 
         public int IdPropietario { get => idPropietario; set => idPropietario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string Dui { get => dui; set => dui = value; }
         public string Telefono { get => telefono; set => telefono = value; }
-
+        public bool EstadoPropietario1 { get => EstadoPropietario; set => EstadoPropietario = value; }
     }
 }
