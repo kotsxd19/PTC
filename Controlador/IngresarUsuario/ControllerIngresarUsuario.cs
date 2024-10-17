@@ -131,6 +131,7 @@ namespace Proyecto.Controlador.IngresarUsuario
                 string.IsNullOrEmpty(ObjAgregarUsuario.txtCorreo.Text.Trim()) ||
                 string.IsNullOrEmpty(ObjAgregarUsuario.txtUsuario.Text.Trim())))
                 {
+
                     DAOAgregarUsuario DAOInsert = new DAOAgregarUsuario();
                     Incriptar commonClasses = new Incriptar();
                     DAOInsert.Nombre1 = ObjAgregarUsuario.txtNombre.Text.Trim();

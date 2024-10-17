@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto.Controlador.Validar
 {
@@ -19,6 +20,7 @@ namespace Proyecto.Controlador.Validar
             // Crear una instancia de SHA256 para calcular el hash
             using (SHA256 sha256Hash = SHA256.Create())
             {
+
                 // Convertir la cadena de entrada en un arreglo de bytes utilizando codificación UTF-8
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
@@ -33,6 +35,7 @@ namespace Proyecto.Controlador.Validar
                 // Devolver el hash como una cadena hexadecimal
                 return builder.ToString();
             }
+            
         }
 
 

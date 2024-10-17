@@ -13,11 +13,8 @@ namespace Proyecto.Vista.Mascota
 {
     public partial class frmMascota : Form
     {
-        public frmMascota()
-        {
-        }
 
-        public frmMascota(int v)
+        public frmMascota()
         {
             InitializeComponent();
             ControllerMascota Mascota = new ControllerMascota(this);

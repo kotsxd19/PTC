@@ -8,21 +8,18 @@ namespace Proyecto.Modelo.DAO
 {
     internal class DTOMascotas : dbConexion
     {
-        private int idmascota;
         private int idcliente;
-        private int idraza;
+        private string raza;
         private string nombre;
-        private string peso;
-        private string genero;
-        private string dueño;
+        private decimal peso;
+        private int genero;
+        private bool estadoMascota;
 
-        public int Idmascota { get => idmascota; set => idmascota = value; }
-        public int Idcliente { get => idcliente; set => idcliente = value; }
-        public int Idraza { get => idraza; set => idraza = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Peso { get => peso; set => peso = value; }
-        public string Genero { get => genero; set => genero = value; }
-        public string Dueño { get => dueño; set => dueño = value; }
-
+        public decimal Peso { get => peso; set => peso = value; }
+        public int Genero { get => genero; set => genero = value; }
+        public bool EstadoMascota { get => estadoMascota; set => estadoMascota = value; }
+        public string Raza { get => raza; set => raza = value; }
+        public int Idcliente { get => idcliente; set => idcliente = value; }
     }
 }

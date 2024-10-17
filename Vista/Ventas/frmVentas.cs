@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Ventas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Proyecto.Vista.Ventas
         public frmVentas()
         {
             InitializeComponent();
+            ControllerRegistroVenta registroventa = new ControllerRegistroVenta(this);
+        }
+
+        private void frmVentas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Proyecto.Modelo.DAO;
-using Proyecto.Vista.AgregarUsuarios;
 using Proyecto.Vista.Mascota;
-using Proyecto.Vista.Proveedor;
+using Proyecto.Vista.Ventas;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,20 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto.Controlador.Mascota
+namespace Proyecto.Controlador.Ventas
 {
-    internal class ControllerMascota
+    internal class ControllerRegistroVenta
     {
-        frmMascota ObjMascota;
+        frmVentas objVentas;
 
-        public ControllerMascota(frmMascota vistaProveedor)
+
+        public ControllerRegistroVenta(frmVentas vistaProveedor)
         {
-            ObjMascota = vistaProveedor;
+            objVentas = vistaProveedor;
 
 
-            ObjMascota.Load += new EventHandler(CargarDatos);
-            ObjMascota.cbEstadoAnimal.CheckedChanged += new EventHandler(CambiarConsulta);
-            ObjMascota.btnNuevaMascota.Click += new EventHandler(nuevaMascota);
+            objVentas.Load += new EventHandler(CargarDatos);
+            objVentas.cbEstadoAnimal.CheckedChanged += new EventHandler(CambiarConsulta);
+            objVentas.btnAgregarVenta.Click += new EventHandler(nuevaMascota);
 
         }
 
@@ -44,26 +44,24 @@ namespace Proyecto.Controlador.Mascota
             DAOMascotas objAdmin = new DAOMascotas(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
 
-            if (ObjMascota.cbEstadoAnimal.Checked != true)
+            if (objVentas.cbEstadoAnimal.Checked != true)
             {
                 ds = objAdmin.ObtenerMascotasActivas(); // Obtiene la lista de personas desde la base de datos
-                ObjMascota.dgvMascotas.DataSource = ds.Tables["ViewDogs"];
+                objVentas.dgvVenta.DataSource = ds.Tables["ViewVentas"];
             }
             else
             {
                 ds = objAdmin.ObtenerMascotasInactivas();
-                ObjMascota.dgvMascotas.DataSource = ds.Tables["ViewDogs"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+                objVentas.dgvVenta.DataSource = ds.Tables["ViewVentas"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             }
         }
 
 
         private void nuevaMascota(object sender, EventArgs e)
         {
-            frmAgregarMascota openForm = new frmAgregarMascota(); // Crea una nueva instancia del formulario para agregar usuario
+            frmAgregarVentas openForm = new frmAgregarVentas(); // Crea una nueva instancia del formulario para agregar usuario
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
         }
-
     }
-
 }
