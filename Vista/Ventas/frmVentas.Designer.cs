@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnActualizarProveedor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,9 +35,6 @@
             this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
@@ -47,14 +43,13 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-            this.panel4.Controls.Add(this.btnImprimir);
             this.panel4.Controls.Add(this.btnActualizarProveedor);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscarProveedor);
             this.panel4.Controls.Add(this.txtBuscadorProveedor);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1560, 69);
             this.panel4.TabIndex = 8;
@@ -69,7 +64,7 @@
             this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_401;
             this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizarProveedor.Location = new System.Drawing.Point(1396, 12);
-            this.btnActualizarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizarProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizarProveedor.Name = "btnActualizarProveedor";
             this.btnActualizarProveedor.Size = new System.Drawing.Size(148, 48);
             this.btnActualizarProveedor.TabIndex = 8;
@@ -93,7 +88,7 @@
             this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProveedor.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
             this.btnBuscarProveedor.Location = new System.Drawing.Point(541, 18);
-            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(47, 36);
             this.btnBuscarProveedor.TabIndex = 1;
@@ -102,7 +97,7 @@
             // txtBuscadorProveedor
             // 
             this.txtBuscadorProveedor.Location = new System.Drawing.Point(144, 25);
-            this.txtBuscadorProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscadorProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscadorProveedor.Name = "txtBuscadorProveedor";
             this.txtBuscadorProveedor.Size = new System.Drawing.Size(388, 22);
             this.txtBuscadorProveedor.TabIndex = 0;
@@ -113,7 +108,7 @@
             this.panel3.Controls.Add(this.dgvProveedor);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 69);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panel3.Size = new System.Drawing.Size(1560, 810);
@@ -125,30 +120,11 @@
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProveedor.Location = new System.Drawing.Point(13, 12);
-            this.dgvProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.RowHeadersWidth = 51;
             this.dgvProveedor.Size = new System.Drawing.Size(1534, 786);
             this.dgvProveedor.TabIndex = 0;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Location = new System.Drawing.Point(1194, 20);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(135, 34);
-            this.btnImprimir.TabIndex = 9;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
             // 
             // frmVentas
             // 
@@ -157,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(1560, 879);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVentas";
             this.Text = "frmVentas";
             this.panel4.ResumeLayout(false);
@@ -177,8 +153,5 @@
         public System.Windows.Forms.TextBox txtBuscadorProveedor;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView dgvProveedor;
-        public System.Windows.Forms.Button btnImprimir;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

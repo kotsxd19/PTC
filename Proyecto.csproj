@@ -256,6 +256,11 @@
     <Compile Include="Vista\Servidor\frmConfrimarContraseña.Designer.cs">
       <DependentUpon>frmConfrimarContraseña.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Ventas\DataSet_GeneralVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_GeneralVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Ventas\frmAgregarDetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +385,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Vista\Ventas\DataSet_GeneralVentas.xsc">
+      <DependentUpon>DataSet_GeneralVentas.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Ventas\DataSet_GeneralVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_GeneralVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Ventas\DataSet_GeneralVentas.xss">
+      <DependentUpon>DataSet_GeneralVentas.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
