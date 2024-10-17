@@ -10,10 +10,10 @@ namespace Proyecto.Modelo.DTO
     {
         private int IdProveedor;
         private string proveedor;
-        private int EstadoProveedor;
+        private bool EstadoProveedor;
 
         public int IdProveedor1 { get => IdProveedor; set => IdProveedor = value; }
         public string Proveedor { get => proveedor; set => proveedor = value; }
-        public int EstadoProveedor1 { get => EstadoProveedor; set => EstadoProveedor = value; }
+        public bool EstadoProveedor1 { get => EstadoProveedor; set => EstadoProveedor = value; }
     }
 }
