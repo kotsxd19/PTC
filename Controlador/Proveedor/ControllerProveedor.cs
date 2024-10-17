@@ -25,8 +25,6 @@ namespace Proyecto.Controlador.Proveedor
 
             ObjProveedor.Load += new EventHandler(CargarDatos);
 
-            ObjProveedor.btnNuevoProveedor.Click += new EventHandler(nuevoProveedor);
-
             //ObjProveedor.cmsEliminar.Click += new EventHandler(EliminarProveedor);
             ObjProveedor.btnActualizarProveedor.Click += new EventHandler(AcualizarProveedor);
             ObjProveedor.btnBuscarProveedor.Click += new EventHandler(BuscarProveedorControllerEvent); 

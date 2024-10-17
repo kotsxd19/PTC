@@ -91,6 +91,8 @@
     <Compile Include="Controlador\Servidor\ControllerConfrimarContraseña.cs" />
     <Compile Include="Controlador\Validar\Acceso.cs" />
     <Compile Include="Controlador\Validar\Incriptar.cs" />
+    <Compile Include="Controlador\Ventas\ControllerAgregarVenta.cs" />
+    <Compile Include="Controlador\Ventas\ControllerRegistroVenta.cs" />
     <Compile Include="Modelo\DAO\DAOAgregarUsuario.cs" />
     <Compile Include="Modelo\DAO\DAOCitas.cs" />
     <Compile Include="Modelo\DAO\DAODetalleVentas.cs" />
@@ -659,10 +661,7 @@
   <ItemGroup>
     <None Include="Resources\icons8-añadir-401.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controlador\DetalleVentas\" />
-    <Folder Include="Controlador\Ventas\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-guardar-40.png" />
   </ItemGroup>

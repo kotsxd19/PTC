@@ -20,18 +20,13 @@ namespace Proyecto.Vista.citas
            
         }
 
-        public frmcitas(int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
-        {
-            InitializeComponent();
-            ControllerAgregarCita control = new ControllerAgregarCita(this, IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
-        }
+        //public frmcitas(int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
+        //{
+        //    InitializeComponent();
+        //    ControllerAgregarCita control = new ControllerAgregarCita(this, IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
+        //}
 
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

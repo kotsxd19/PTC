@@ -36,13 +36,15 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.cmbMascotas = new System.Windows.Forms.ComboBox();
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEmpleado = new System.Windows.Forms.Label();
-            this.cmbMascotas = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,10 +52,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.dtpHora);
             this.panel1.Controls.Add(this.dtpFecha);
+            this.panel1.Controls.Add(this.cmbEstado);
             this.panel1.Controls.Add(this.cmbMascotas);
             this.panel1.Controls.Add(this.cmbEmpleado);
             this.panel1.Controls.Add(this.label5);
@@ -61,12 +65,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblEmpleado);
-            this.panel1.Location = new System.Drawing.Point(16, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(725, 642);
+            this.panel1.Size = new System.Drawing.Size(544, 522);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -74,10 +76,9 @@
             this.panel2.Controls.Add(this.btnActualizar);
             this.panel2.Controls.Add(this.btnIngresar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 557);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(0, 453);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(725, 85);
+            this.panel2.Size = new System.Drawing.Size(544, 69);
             this.panel2.TabIndex = 8;
             // 
             // btnCancelar
@@ -88,10 +89,9 @@
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(55, 21);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(41, 17);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(145, 49);
+            this.btnCancelar.Size = new System.Drawing.Size(109, 40);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -104,10 +104,9 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnActualizar.Location = new System.Drawing.Point(388, 21);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(291, 17);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(152, 49);
+            this.btnActualizar.Size = new System.Drawing.Size(114, 40);
             this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -120,57 +119,59 @@
             this.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIngresar.Location = new System.Drawing.Point(548, 21);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngresar.Location = new System.Drawing.Point(411, 17);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(152, 47);
+            this.btnIngresar.Size = new System.Drawing.Size(114, 38);
             this.btnIngresar.TabIndex = 11;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(32, 331);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Location = new System.Drawing.Point(24, 269);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(667, 203);
+            this.txtDescripcion.Size = new System.Drawing.Size(501, 166);
             this.txtDescripcion.TabIndex = 7;
             // 
             // dtpHora
             // 
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHora.Location = new System.Drawing.Point(416, 250);
-            this.dtpHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpHora.Location = new System.Drawing.Point(312, 203);
             this.dtpHora.Name = "dtpHora";
-            this.dtpHora.Size = new System.Drawing.Size(265, 22);
+            this.dtpHora.Size = new System.Drawing.Size(200, 20);
             this.dtpHora.TabIndex = 6;
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(32, 251);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha.Location = new System.Drawing.Point(24, 204);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(265, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 5;
+            // 
+            // cmbMascotas
+            // 
+            this.cmbMascotas.FormattingEnabled = true;
+            this.cmbMascotas.Location = new System.Drawing.Point(24, 129);
+            this.cmbMascotas.Name = "cmbMascotas";
+            this.cmbMascotas.Size = new System.Drawing.Size(200, 21);
+            this.cmbMascotas.TabIndex = 3;
             // 
             // cmbEmpleado
             // 
             this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(32, 64);
-            this.cmbEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEmpleado.Location = new System.Drawing.Point(24, 52);
             this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(265, 24);
+            this.cmbEmpleado.Size = new System.Drawing.Size(200, 21);
             this.cmbEmpleado.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 306);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(21, 249);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.Size = new System.Drawing.Size(82, 17);
             this.label5.TabIndex = 2;
             this.label5.Text = "Descripcion";
             this.label5.Click += new System.EventHandler(this.label3_Click);
@@ -179,10 +180,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(412, 225);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(309, 183);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.Size = new System.Drawing.Size(39, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Hora";
             this.label4.Click += new System.EventHandler(this.label3_Click);
@@ -191,10 +191,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 225);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(21, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.Size = new System.Drawing.Size(47, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fecha";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -203,10 +202,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 134);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(21, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mascota";
             // 
@@ -214,30 +212,37 @@
             // 
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(28, 39);
-            this.lblEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmpleado.Location = new System.Drawing.Point(21, 32);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(83, 20);
+            this.lblEmpleado.Size = new System.Drawing.Size(71, 17);
             this.lblEmpleado.TabIndex = 0;
             this.lblEmpleado.Text = "Empleado";
             // 
-            // cmbMascotas
+            // cmbEstado
             // 
-            this.cmbMascotas.FormattingEnabled = true;
-            this.cmbMascotas.Location = new System.Drawing.Point(32, 170);
-            this.cmbMascotas.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbMascotas.Name = "cmbMascotas";
-            this.cmbMascotas.Size = new System.Drawing.Size(403, 24);
-            this.cmbMascotas.TabIndex = 3;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(312, 129);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(200, 21);
+            this.cmbEstado.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(309, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "estado";
             // 
             // frmcitas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.ClientSize = new System.Drawing.Size(757, 667);
+            this.ClientSize = new System.Drawing.Size(568, 542);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmcitas";
             this.Text = "frmcitas";
             this.Load += new System.EventHandler(this.frmcitas_Load);
@@ -265,5 +270,7 @@
         public System.Windows.Forms.DateTimePicker dtpFecha;
         public System.Windows.Forms.ComboBox cmbEmpleado;
         public System.Windows.Forms.ComboBox cmbMascotas;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox cmbEstado;
     }
 }

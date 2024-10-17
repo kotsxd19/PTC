@@ -1,4 +1,5 @@
 ﻿using Proyecto.Modelo.DAO;
+using Proyecto.Modelo.DTO;
 using Proyecto.Vista.citas;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,7 @@ namespace Proyecto.Controlador.cita
     internal class ControllerAgregarCita
     {
         frmcitas objCitas;
-        int IdCitas;
-        int IdEmpleados;
-        int IdMascota;
-        DateTime Fecha;
-        TimeSpan Hora;
-        string Descripcion;
+
 
         public ControllerAgregarCita(frmcitas vista)
         {
@@ -27,38 +23,39 @@ namespace Proyecto.Controlador.cita
             objCitas.btnIngresar.Click += new EventHandler(AgregarCitas);
         }
 
-        public ControllerAgregarCita(frmcitas vista, int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
-        {
-            objCitas = vista;
-            objCitas.Load += new EventHandler(iniciar);
-            objCitas.btnIngresar.Click += new EventHandler(AgregarCitas);
-            objCitas.btnActualizar.Click += new EventHandler(ActualizarCitas);
-        }
+        //public ControllerAgregarCita(frmcitas vista, int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
+        //{
+        //    objCitas = vista;
+        //    objCitas.Load += new EventHandler(iniciar);
+        //    objCitas.btnIngresar.Click += new EventHandler(AgregarCitas);
+        //    objCitas.btnActualizar.Click += new EventHandler(ActualizarCitas);
+        //}
 
-        void CargarDatosActualizar()
-        {
-            CargarDatos(IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
-        }
+        //void CargarDatosActualizar()
+        //{
+        //    CargarDatos(IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
+        //}
 
-        public void CargarDatos(int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
-        {
-            objCitas.cmbEmpleado.SelectedValue = IdEmpleados;
-            objCitas.txtDescripcion.Text = Descripcion;
-            CargarDatos(IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
-        }
+        //public void CargarDatos(int IdCitas, int IdEmpleados, int IdMascota, DateTime Fecha, TimeSpan Hora, string Descripcion)
+        //{
+        //    objCitas.cmbEmpleado.SelectedValue = IdEmpleados;
+        //    objCitas.txtDescripcion.Text = Descripcion;
+        //    CargarDatos(IdCitas, IdEmpleados, IdMascota, Fecha, Hora, Descripcion);
+        //}
 
-        private void ActualizarCitas(object sender, EventArgs e)
-        {
+        //private void ActualizarCitas(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void iniciar(object sender, EventArgs e)
         {
-            LLenarcomboEmpleados();
-
+            LLenarcombos();
         }
 
-        void LLenarcomboEmpleados()
+
+
+        void LLenarcombos()
         {
 
             DAOCitas daoCitas = new DAOCitas();
@@ -66,41 +63,86 @@ namespace Proyecto.Controlador.cita
             objCitas.cmbEmpleado.DataSource = ds.Tables["Empleado"];
             objCitas.cmbEmpleado.DisplayMember = "Nombre";
             objCitas.cmbEmpleado.ValueMember = "IdEmpleados";
+
+            DAOCitas DAOCITAS = new DAOCitas();
+            DataSet CB = DAOCITAS.LLenarcomboBOXmascota();
+            objCitas.cmbMascotas.DataSource = CB.Tables["Mascota"];
+            objCitas.cmbMascotas.DisplayMember = "Nombre";
+            objCitas.cmbMascotas.ValueMember = "IdMascota";
+
+            objCitas.cmbEstado.Enabled = true;
+
+            objCitas.cmbEstado.Items.Clear();
+
+            objCitas.cmbEstado.Items.Add(new KeyValuePair<string, int>("Activo", 1));
+            objCitas.cmbEstado.Items.Add(new KeyValuePair<string, int>("Inactivo", 2));
+
+            objCitas.cmbEstado.DisplayMember = "Key";
+
+            objCitas.cmbEstado.ValueMember = "Value";
+
+            objCitas.cmbEstado.SelectedIndex = 0; // Esto selecciona "Activo" por defecto
+
+            // Evita acceder al SelectedItem inmediatamente después de la carga
+            objCitas.cmbEstado.SelectedIndexChanged += (s, ev) =>
+            {
+                if (objCitas.cmbEstado.SelectedItem != null)
+                {
+                    int estadoSeleccionado = ((KeyValuePair<String, int>)objCitas.cmbEstado.SelectedItem).Value;
+                }
+            };
         }
         private void AgregarCitas(object sender, EventArgs e)
         {
 
             try
             {
-                // Crear una nueva instancia de DAOCitas para insertar
-                DAOCitas daoInsert = new DAOCitas();
-
-                int IdEmpleados = int.Parse(objCitas.cmbEmpleado.SelectedValue.ToString()); // ID del empleado
-                string IdMascota = objCitas.cmbMascotas.Text.Trim(); // ID de la mascota
-                DateTime Fecha = DateTime.Parse(objCitas.dtpFecha.Value.ToString("yyyy-MM-dd")); // Fecha de la cita
-                TimeSpan Hora = TimeSpan.Parse(objCitas.dtpHora.Value.ToString("HH:mm:ss")); // Hora de la cita
-                string Descripcion = objCitas.txtDescripcion.Text; // Descripción de la cita
-
-                daoInsert.IdEmpleados = IdEmpleados;
-                daoInsert.Fecha = Fecha;
-                daoInsert.Hora = Hora;
-                daoInsert.Descripcion = Descripcion;
-                daoInsert.IdMascota1 = IdMascota;
-                // Llamar al método de inserción y verificar el resultado
-                int retorno = daoInsert.IngresarCita();
-                if (retorno == 1)
+                if (!(string.IsNullOrEmpty(objCitas.cmbEmpleado.Text.Trim()) ||
+                string.IsNullOrEmpty(objCitas.cmbMascotas.Text.Trim()) ||
+                string.IsNullOrEmpty(objCitas.cmbEstado.Text.Trim()) ||
+                string.IsNullOrEmpty(objCitas.dtpFecha.Text.Trim()) ||
+                string.IsNullOrEmpty(objCitas.dtpHora.Text.Trim()) ||
+                string.IsNullOrEmpty(objCitas.txtDescripcion.Text.Trim())))
                 {
-                    MessageBox.Show("La cita se agregó exitosamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DAOCitas DAOInsert = new DAOCitas();
+                    DAOInsert.IdEmpleados = int.Parse(objCitas.cmbEmpleado.SelectedValue.ToString());
+                    DAOInsert.IdMascota1 = int.Parse(objCitas.cmbMascotas.SelectedValue.ToString());
+                    DAOInsert.Fecha = objCitas.dtpFecha.Value.Date;
+                    DAOInsert.Hora = objCitas.dtpHora.Value.TimeOfDay;
+                    DAOInsert.Descripcion = objCitas.txtDescripcion.Text.Trim();
+
+                    int estadoSeleccionado = ((KeyValuePair<string, int>)objCitas.cmbEstado.SelectedItem).Value;
+                    DAOInsert.ESTADOCITA1 = estadoSeleccionado == 1;
+
+
+
+                    int valorRetornado = DAOInsert.Registarcitas(); // Registra el nuevo usuario
+                    if (valorRetornado == 1)
+                    {
+                        MessageBox.Show("Los datos ingresados han sido registrados exitosamente",
+                                        "Proceso completado",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos que ingreso no pudieron ser registrados correctamente",
+                                        "Proceso interrumpido",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo agregar la cita", "Proceso incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Existen campos vacíos, complete cada uno de los apartados y verifique que la fecha seleccionada corresponde a una persona mayor de edad.",
+                                        "Proceso interrumpido",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                // Manejo de errores al agregar la cita
-                MessageBox.Show("Error al agregar la cita: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
     }
