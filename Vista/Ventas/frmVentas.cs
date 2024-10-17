@@ -23,5 +23,10 @@ namespace Proyecto.Vista.Ventas
         {
 
         }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
