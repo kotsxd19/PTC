@@ -11,9 +11,11 @@ namespace Proyecto.Modelo.DTO
         private int IdVentas;
         private int IdProductos;
         private int IdCitas;
+        private bool EstadoVenta;
 
         public int IdVentas1 { get => IdVentas; set => IdVentas = value; }
         public int IdProductos1 { get => IdProductos; set => IdProductos = value; }
         public int IdCitas1 { get => IdCitas; set => IdCitas = value; }
+        public bool EstadoVenta1 { get => EstadoVenta; set => EstadoVenta = value; }
     }
 }

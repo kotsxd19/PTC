@@ -16,7 +16,7 @@ namespace Proyecto.Vista.Mascota
         public frmAgregarMascota()
         {
             InitializeComponent();
-           
+           ControllerAgregarMascota mascota = new ControllerAgregarMascota(this);
         }
 
 

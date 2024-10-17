@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Propietario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Proyecto.Vista.Dueño
         public frmAgregarDueñosMascotas()
         {
             InitializeComponent();
+            ControllerPropietario propietario = new ControllerPropietario(this);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

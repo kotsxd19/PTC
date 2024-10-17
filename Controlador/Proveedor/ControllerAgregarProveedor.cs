@@ -4,6 +4,7 @@ using Proyecto.Vista.AgregarUsuarios;
 using Proyecto.Vista.Proveedor;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace Proyecto.Controlador.Proveedor
             this.accion = accion;
 
             verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
+            ObjAgregar.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
             ObjAgregar.btnIngresarProveedor.Click += new EventHandler(NuevoRegistro); // Asocia el evento Click del botón Ingresar al método NuevoRegistro
 
         }
@@ -51,6 +53,32 @@ namespace Proyecto.Controlador.Proveedor
             }
         }
 
+        public void CargaInicial(object sender, EventArgs e)
+        {
+
+            ObjAgregar.cmbEstado.Enabled = true;
+
+            ObjAgregar.cmbEstado.Items.Clear();
+
+            ObjAgregar.cmbEstado.Items.Add(new KeyValuePair<string, int>("Activo", 1));
+            ObjAgregar.cmbEstado.Items.Add(new KeyValuePair<string, int>("Inactivo", 2));
+
+            ObjAgregar.cmbEstado.DisplayMember = "Key";
+
+            ObjAgregar.cmbEstado.ValueMember = "Value";
+
+            ObjAgregar.cmbEstado.SelectedIndex = 0; // Esto selecciona "Activo" por defecto
+
+            // Evita acceder al SelectedItem inmediatamente después de la carga
+            ObjAgregar.cmbEstado.SelectedIndexChanged += (s, ev) =>
+            {
+                if (ObjAgregar.cmbEstado.SelectedItem != null)
+                {
+                    int estadoSeleccionado = ((KeyValuePair<String, int>)ObjAgregar.cmbEstado.SelectedItem).Value;
+                }
+            };
+        }
+
         public void NuevoRegistro(object sender, EventArgs e)
         {
             try
@@ -59,6 +87,8 @@ namespace Proyecto.Controlador.Proveedor
                 {
                     DAOProveedor DAOInsert = new DAOProveedor();
                     DAOInsert.Proveedor = ObjAgregar.txtProveedor.Text.Trim();
+                    int estadoSeleccionado = ((KeyValuePair<string, int>)ObjAgregar.cmbEstado.SelectedItem).Value;
+                    DAOInsert.EstadoProveedor1 = estadoSeleccionado == 1;
 
 
 

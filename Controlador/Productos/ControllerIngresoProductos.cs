@@ -54,6 +54,28 @@ namespace Proyecto.Controlador.Productos
             {
                 ObjAgregar.cmbProveedor.Text = Proveedor; // Establece el texto del ComboBox para la acción de edición
             }
+
+            ObjAgregar.cmbEstado.Enabled = true;
+
+            ObjAgregar.cmbEstado.Items.Clear();
+
+            ObjAgregar.cmbEstado.Items.Add(new KeyValuePair<string, int>("Activo", 1));
+            ObjAgregar.cmbEstado.Items.Add(new KeyValuePair<string, int>("Inactivo", 2));
+
+            ObjAgregar.cmbEstado.DisplayMember = "Key";
+
+            ObjAgregar.cmbEstado.ValueMember = "Value";
+
+            ObjAgregar.cmbEstado.SelectedIndex = 0; // Esto selecciona "Activo" por defecto
+
+            // Evita acceder al SelectedItem inmediatamente después de la carga
+            ObjAgregar.cmbEstado.SelectedIndexChanged += (s, ev) =>
+            {
+                if (ObjAgregar.cmbEstado.SelectedItem != null)
+                {
+                    int estadoSeleccionado = ((KeyValuePair<String, int>)ObjAgregar.cmbEstado.SelectedItem).Value;
+                }
+            };
         }
 
             public void NuevoRegistro(object sender, EventArgs e)
@@ -65,6 +87,8 @@ namespace Proyecto.Controlador.Productos
                     DAOInsert.CodigoDeBarra1 = ObjAgregar.txtCodigoDeBarra.Text;
                     DAOInsert.Precio1 = decimal.Parse(ObjAgregar.txtPrecio.Text);
                     DAOInsert.IdProveedor1 = (int)(ObjAgregar.cmbProveedor.SelectedValue);
+                    int estadoSeleccionado = ((KeyValuePair<string, int>)ObjAgregar.cmbEstado.SelectedItem).Value;
+                    DAOInsert.EstadoProducto1 = estadoSeleccionado == 1;
 
                     int valorRetornado = DAOInsert.RegistarProducto(); // Registra el nuevo usuario
                     if (valorRetornado == 1)

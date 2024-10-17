@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cbEstadoAnimal = new System.Windows.Forms.CheckBox();
             this.btnActualizarMascota = new System.Windows.Forms.Button();
             this.btnNuevaMascota = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.panel4.Controls.Add(this.cbEstadoAnimal);
             this.panel4.Controls.Add(this.btnActualizarMascota);
             this.panel4.Controls.Add(this.btnNuevaMascota);
             this.panel4.Controls.Add(this.label1);
@@ -52,8 +54,19 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(800, 56);
+            this.panel4.Size = new System.Drawing.Size(891, 56);
             this.panel4.TabIndex = 8;
+            // 
+            // cbEstadoAnimal
+            // 
+            this.cbEstadoAnimal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbEstadoAnimal.AutoSize = true;
+            this.cbEstadoAnimal.Location = new System.Drawing.Point(520, 22);
+            this.cbEstadoAnimal.Name = "cbEstadoAnimal";
+            this.cbEstadoAnimal.Size = new System.Drawing.Size(118, 17);
+            this.cbEstadoAnimal.TabIndex = 9;
+            this.cbEstadoAnimal.Text = "Mascotas Inactivas";
+            this.cbEstadoAnimal.UseVisualStyleBackColor = true;
             // 
             // btnActualizarMascota
             // 
@@ -64,7 +77,7 @@
             this.btnActualizarMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarMascota.Image = global::Proyecto.Properties.Resources.icons8_actualizar_45;
             this.btnActualizarMascota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarMascota.Location = new System.Drawing.Point(553, 10);
+            this.btnActualizarMascota.Location = new System.Drawing.Point(644, 10);
             this.btnActualizarMascota.Name = "btnActualizarMascota";
             this.btnActualizarMascota.Size = new System.Drawing.Size(123, 39);
             this.btnActualizarMascota.TabIndex = 8;
@@ -81,7 +94,7 @@
             this.btnNuevaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaMascota.Image = global::Proyecto.Properties.Resources.icons8_añadir_35;
             this.btnNuevaMascota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevaMascota.Location = new System.Drawing.Point(682, 8);
+            this.btnNuevaMascota.Location = new System.Drawing.Point(773, 8);
             this.btnNuevaMascota.Name = "btnNuevaMascota";
             this.btnNuevaMascota.Size = new System.Drawing.Size(108, 39);
             this.btnNuevaMascota.TabIndex = 8;
@@ -124,7 +137,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 56);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10);
-            this.panel3.Size = new System.Drawing.Size(800, 394);
+            this.panel3.Size = new System.Drawing.Size(891, 438);
             this.panel3.TabIndex = 10;
             // 
             // dgvMascotas
@@ -135,14 +148,14 @@
             this.dgvMascotas.Location = new System.Drawing.Point(10, 10);
             this.dgvMascotas.Name = "dgvMascotas";
             this.dgvMascotas.RowHeadersWidth = 51;
-            this.dgvMascotas.Size = new System.Drawing.Size(780, 374);
+            this.dgvMascotas.Size = new System.Drawing.Size(871, 418);
             this.dgvMascotas.TabIndex = 0;
             // 
             // frmMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(891, 494);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Name = "frmMascota";
@@ -166,5 +179,6 @@
         public System.Windows.Forms.TextBox txtBuscadorProveedor;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView dgvMascotas;
+        public System.Windows.Forms.CheckBox cbEstadoAnimal;
     }
 }

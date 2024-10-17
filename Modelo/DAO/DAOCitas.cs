@@ -42,75 +42,159 @@ namespace Proyecto.Modelo.DAO
             }
         }
 
-        // Método para obtener todas las citas desde la base de datos
-        public DataSet ObtenerCitas()
+        public DataSet LLenarcomboBOXmascota()
         {
-            Conexion.Connection = getConnection();
+            try
+            {
 
-            // // Establecer la conexión a la base de datos
-            // var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
-            //// Crear un adaptador para ejecutar la consulta y llenar el DataSet
+                Conexion.Connection = getConnection();
+                string query = "SELECT * FROM Mascota";
+                SqlCommand cmdSelect = new SqlCommand(query, Conexion.Connection);
+                cmdSelect.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdSelect);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "Mascota");
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+                MessageBox.Show($"Error al obtener los empleados, verifique su conexión a internet o que el acceso al servidor o base de datos esten activos", "Error de ejecución", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                Conexion.Connection.Close();
+            }
+        }
 
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Citas", Conexion.Connection);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "Citas"); // Llenar el DataSet con los resultados de la consulta
-            return ds; // Devolver el DataSet con las citas
+        // Método para obtener todas las citas desde la base de datos
+        public DataSet ObtenerMascotasActivas()
+        {
+            try
+            {
+                //Accedemos a la conexión que ya se tiene
+                Conexion.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM ViewCita WHERE EstadoCita = @param1";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, Conexion.Connection);
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("param1", 1);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "ViewCita");
+                //Devolvemos el Dataset
+                return ds;
+            }
+            catch (Exception)
+            {
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
+            }
+        }
+
+
+
+
+        public DataSet ObtenerMascotasInactivas()
+        {
+            try
+            {
+                //Accedemos a la conexión que ya se tiene
+                Conexion.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM ViewCita WHERE EstadoCita = @param1";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, Conexion.Connection);
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("param1", 0);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "ViewCita");
+                //Devolvemos el Dataset
+                return ds;
+            }
+            catch (Exception)
+            {
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
+            }
         }
 
         // Método para eliminar una cita por su ID
-        public int EliminarCita()
-        {
-            // Establecer la conexión a la base de datos
-            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
 
-            // Crear el comando SQL para eliminar la cita
-            var cmd = new SqlCommand("DELETE FROM Citas WHERE IdCitas = @IdCitas", Conexion.Connection);
-            cmd.Parameters.AddWithValue("@IdCitas", IdCitas); // Añadir el parámetro del ID de la cita
-
-            conn.Open(); // Abrir la conexión
-            return cmd.ExecuteNonQuery(); // Ejecutar el comando y devolver el número de filas afectadas
-        }
 
         // Método para ingresar una nueva cita
-        public int IngresarCita()
+        public int Registarcitas()
         {
-            Conexion.Connection = getConnection();
-            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
-            string query = "INSERT INTO Citas (IdEmpleados, IdMascota, Fecha, Hora, Descripcion) VALUES (@IdEmpleados, @IdMascota, @Fecha, @Hora, @Descripcion)";
-            // Crear el comando SQL para insertar la nueva cita
-            SqlCommand cmd = new SqlCommand(query, Conexion.Connection);
+            try
+            {
+                // Establece la conexión a la base de datos
+                Conexion.Connection = getConnection();
 
-            // Añadir los parámetros necesarios para la inserción
-            cmd.Parameters.AddWithValue("@IdEmpleados", IdEmpleados);
-            cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
-            cmd.Parameters.AddWithValue("@Fecha", Fecha);
-            cmd.Parameters.AddWithValue("@Hora", Hora.ToString(@"hh\:mm\:ss")); // Formatear la hora correctamente
-            cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
-            int respuesta = cmd.ExecuteNonQuery();
-            // Abrir la conexión
-            return respuesta; // Ejecutar el comando y devolver el número de filas afectadas
+                // Consulta SQL para insertar más detalles del empleado
+                string query = "INSERT INTO Citas VALUES (@param1, @param2, @param3, @param4, @param5, @param6)";
+                SqlCommand cmd = new SqlCommand(query, Conexion.Connection);
+                cmd.Parameters.AddWithValue("param1", IdEmpleados);
+                cmd.Parameters.AddWithValue("param2", IdMascota1);
+                cmd.Parameters.AddWithValue("param3", Fecha);
+                cmd.Parameters.AddWithValue("param4", Hora);
+                cmd.Parameters.AddWithValue("param5", Descripcion);
+                cmd.Parameters.AddWithValue("param6", ESTADOCITA1);
+                int respuesta = cmd.ExecuteNonQuery();
+
+                return respuesta;
+                //}
+            }
+            catch (Exception ex)
+            {
+                // Realiza una reverdsión en caso de error y retorna -1
+                RollBack();
+                return -1;
+            }
+            finally
+            {
+                // Realiza una reversión y cierra la conexión a la base de datos
+
+                Conexion.Connection.Close();
+            }
+        }
+
+        public void RollBack()
+        {
+            // Consulta SQL para eliminar el usuario en caso de un fallo
+            string query = "DELETE FROM Citas WHERE IdCita = @IdCita";
+            SqlCommand cmddel = new SqlCommand(query, Conexion.Connection);
+            cmddel.Parameters.AddWithValue("IdCita", IdCitas);
+
+            // Ejecuta la consulta de eliminación
+            cmddel.ExecuteNonQuery();
         }
 
         // Método para editar una cita existente
-        public int EditarCita()
-        {
-            // Establecer la conexión a la base de datos
-            var conn = new SqlConnection("Data Source= SQL8020.site4now.net;Initial Catalog=dbVetManager;");
-
-            // Crear el comando SQL para actualizar la cita
-            var cmd = new SqlCommand("UPDATE Citas SET IdEmpleados = @IdEmpleados, IdMascota = @IdMascota, Fecha = @Fecha, Hora = @Hora, Descripcion = @Descripcion WHERE IdCitas = @IdCitas", conn);
-
-            // Añadir los parámetros necesarios para la actualización
-            cmd.Parameters.AddWithValue("@IdCitas", IdCitas);
-            cmd.Parameters.AddWithValue("@IdEmpleados", IdEmpleados);
-            cmd.Parameters.AddWithValue("@IdMascota", IdMascota1);
-            cmd.Parameters.AddWithValue("@Fecha", Fecha);
-            cmd.Parameters.AddWithValue("@Hora", Hora.ToString(@"hh\:mm\:ss")); // Formatear la hora correctamente
-            cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
-
-            conn.Open(); // Abrir la conexión
-            return cmd.ExecuteNonQuery(); // Ejecutar el comando y devolver el número de filas afectadas
-        }
 
     }
 }

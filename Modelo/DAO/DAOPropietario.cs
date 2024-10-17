@@ -14,52 +14,122 @@ namespace Proyecto.Modelo.DAO
     {
         readonly SqlCommand command = new SqlCommand();
 
-        public DataSet LLenarDGV()
+        public int RegistarEmpleados()
         {
             try
             {
+                // Establece la conexión a la base de datos
                 command.Connection = getConnection();
-                string query = "SELECT * FROM Propietario";
+
+                // Consulta SQL para insertar más detalles del empleado
+                string query = "INSERT INTO Propietario VALUES (@param1, @param2, @param3, @param4)";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "Propietario");
-                return ds;
+                cmd.Parameters.AddWithValue("param1", Nombre);
+                cmd.Parameters.AddWithValue("param2", Apellido);
+                cmd.Parameters.AddWithValue("param3", Telefono);
+                cmd.Parameters.AddWithValue("param4", EstadoPropietario1);
+                int respuesta = cmd.ExecuteNonQuery();
+
+                return respuesta;
+                //}
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar los datos: {ex.Message}");
-                return null;
+                // Realiza una reverdsión en caso de error y retorna -1
+                RollBack();
+                return -1;
+            }
+            finally
+            {
+                // Realiza una reversión y cierra la conexión a la base de datos
+
+                command.Connection.Close();
             }
         }
 
-        public int RegistrarPropietario()
+        public void RollBack()
+        {
+            // Consulta SQL para eliminar el usuario en caso de un fallo
+            string query = "DELETE FROM Propietario WHERE Nombre = @Nombre";
+            SqlCommand cmddel = new SqlCommand(query, command.Connection);
+            cmddel.Parameters.AddWithValue("Nombre", Nombre);
+
+            // Ejecuta la consulta de eliminación
+            cmddel.ExecuteNonQuery();
+        }
+
+        public DataSet ObtenerPersonasActivas()
         {
             try
             {
-                using (SqlConnection connection = getConnection())
-                {
-                    string query = "INSERT INTO Propietario (Nombre, Apellido, Telefono) VALUES (@nombre, @apellido, @telefono)";
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@nombre", Nombre);
-                        cmd.Parameters.AddWithValue("@apellido", Apellido);
-                        cmd.Parameters.AddWithValue("@telefono", Telefono);
+                //Accedemos a la conexión que ya se tiene
+                command.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM Propietario WHERE EstadoPropietario = @param1";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("param1", 1);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "Propietario");
+                //Devolvemos el Dataset
+                return ds;
+            }
+            catch (Exception)
+            {
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
+            }
+        }
 
-                        int respuesta = cmd.ExecuteNonQuery();
-                        return respuesta > 0 ? 1 : 0;  // 1 si la operación fue exitosa, 0 si no
-                    }
-                }
-            }
-            catch (SqlException sqlex)
+
+
+
+        public DataSet ObtenerPersonasInactivas()
+        {
+            try
             {
-                MessageBox.Show(sqlex.Message);
-                return -1;
+                //Accedemos a la conexión que ya se tiene
+                command.Connection = getConnection();
+                //Instrucción que se hará hacia la base de datos
+                string query = "SELECT * FROM Propietario WHERE EstadoPropietario = @param1";
+                //Comando sql en el cual se pasa la instrucción y la conexión
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Asignando valor al parametro
+                cmd.Parameters.AddWithValue("param1", 0);
+                //Se ejecuta el comando y con ExecuteNonQuery se verifica su retorno
+                //ExecuteNonQuery devuelve un valor entero.
+                cmd.ExecuteNonQuery();
+                //Se utiliza un adaptador sql para rellenar el dataset
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //Se crea un objeto Dataset que es donde se devolverán los resultados
+                DataSet ds = new DataSet();
+                //Rellenamos con el Adaptador el DataSet diciendole de que tabla provienen los datos
+                adp.Fill(ds, "Propietario");
+                //Devolvemos el Dataset
+                return ds;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
-                return -1;
+                //Retornamos null si existiera algún error durante la ejecución
+                return null;
+            }
+            finally
+            {
+                //Independientemente se haga o no el proceso cerramos la conexión
+                getConnection().Close();
             }
         }
 
@@ -92,39 +162,6 @@ namespace Proyecto.Modelo.DAO
                 MessageBox.Show(ex.Message);
                 return -1;
             }
-        }
-
-        public int EliminarPropietario()
-        {
-            try
-            {
-                using (SqlConnection connection = getConnection())
-                {
-                    string query = "DELETE FROM Propietario WHERE idCliente = @idCliente";
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@idCliente", Dui);
-
-                        int respuesta = cmd.ExecuteNonQuery();
-                        return respuesta > 0 ? 1 : 0;  // 1 si la operación fue exitosa, 0 si no
-                    }
-                }
-            }
-            catch (SqlException sqlex)
-            {
-                MessageBox.Show(sqlex.Message);
-                return -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return -1;
-            }
-        }
-
-        internal DataSet ObtenerDueño()
-        {
-            throw new NotImplementedException();
         }
     }
 
