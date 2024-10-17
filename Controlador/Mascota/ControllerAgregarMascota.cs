@@ -28,7 +28,6 @@ namespace Proyecto.Controlador.Mascota
         public void RefreshData()
         {
             DAOPropietario dao = new DAOPropietario();
-            DataSet ds = dao.LLenarDGV();
             //objMascota.dataGridView2.DataSource = ds.Tables["Mascota"];
         }
 

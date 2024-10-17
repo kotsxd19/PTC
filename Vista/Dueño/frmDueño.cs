@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Proyecto.Controlador.Propietario;
+using Proyecto.Controlador.Proveedor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,12 @@ namespace Proyecto.Vista.Dueño
         public frmDueño()
         {
             InitializeComponent();
+            ControllerPropietarios vistaPropietario = new ControllerPropietarios(this);
+        }
+
+        private void frmDueño_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

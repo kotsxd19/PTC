@@ -130,12 +130,13 @@ namespace Proyecto.Modelo.DAO
             {
                 // Establece la conexión a la base de datos
                 command.Connection = getConnection();
-                string query = "INSERT INTO Producto VALUES (@param1, @param2, @param3, @param4)";
+                string query = "INSERT INTO Producto VALUES (@param1, @param2, @param3, @param4, @param5)";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("param1", IdProveedor1);
                 cmd.Parameters.AddWithValue("param2", Nombre1);
                 cmd.Parameters.AddWithValue("param3", Precio1);
                 cmd.Parameters.AddWithValue("param4", CodigoDeBarra1);
+                cmd.Parameters.AddWithValue("param5", EstadoProducto1);
                 int respuesta = cmd.ExecuteNonQuery();
 
                 return respuesta;
