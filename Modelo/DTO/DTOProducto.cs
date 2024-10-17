@@ -13,11 +13,13 @@ namespace Proyecto.Modelo.DTO
         string CodigoDeBarra;
         string Nombre;
         decimal Precio;
+        private bool EstadoProducto;
 
         public int IdProducto1 { get => IdProducto; set => IdProducto = value; }
         public int IdProveedor1 { get => IdProveedor; set => IdProveedor = value; }
         public string CodigoDeBarra1 { get => CodigoDeBarra; set => CodigoDeBarra = value; }
         public string Nombre1 { get => Nombre; set => Nombre = value; }
         public decimal Precio1 { get => Precio; set => Precio = value; }
+        public bool EstadoProducto1 { get => EstadoProducto; set => EstadoProducto = value; }
     }
 }
