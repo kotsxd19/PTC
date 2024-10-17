@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-=======
+
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAgregarVenta = new System.Windows.Forms.Button();
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,7 +42,6 @@
             this.cbEstadoAnimal = new System.Windows.Forms.CheckBox();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.btnImprimirVentas = new System.Windows.Forms.Button();
-            this.btnActualizarProveedor = new System.Windows.Forms.Button();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -54,16 +51,13 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-<<<<<<< HEAD
             this.panel4.Controls.Add(this.btnImprimirVentas);
-            this.panel4.Controls.Add(this.btnActualizarProveedor);
-=======
+
             this.panel4.Controls.Add(this.cbEstadoAnimal);
             this.panel4.Controls.Add(this.btnActualizarVenta);
             this.panel4.Controls.Add(this.btnImprimir);
             this.panel4.Controls.Add(this.btnAgregarVenta);
 
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscarProveedor);
             this.panel4.Controls.Add(this.txtBuscadorProveedor);
@@ -76,8 +70,7 @@
             this.panel4.Size = new System.Drawing.Size(1170, 56);
             this.panel4.TabIndex = 8;
             // 
-<<<<<<< HEAD
-=======
+
             // btnImprimir
             // 
 
@@ -108,7 +101,6 @@
 
 
             // 
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
             // label1
             // 
             this.label1.AutoSize = true;
@@ -118,8 +110,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar Venta:";
             // 
-<<<<<<< HEAD
-=======
+
             // btnBuscarProveedor
             // 
             this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
@@ -135,7 +126,6 @@
             this.btnBuscarProveedor.TabIndex = 1;
             this.btnBuscarProveedor.UseVisualStyleBackColor = true;
             // 
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
             // txtBuscadorProveedor
             // 
             this.txtBuscadorProveedor.Location = new System.Drawing.Point(108, 20);
@@ -234,21 +224,7 @@
             // 
             // btnActualizarProveedor
             // 
-            this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_401;
-            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(1396, 12);
-            this.btnActualizarProveedor.Margin = new System.Windows.Forms.Padding(4);
-            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(148, 48);
-            this.btnActualizarProveedor.TabIndex = 8;
-            this.btnActualizarProveedor.Text = "Agregar";
-            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
+            
             // 
             // btnBuscarProveedor
             // 

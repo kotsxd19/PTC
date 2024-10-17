@@ -30,26 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-=======
+
             this.cbCitasInactivas = new System.Windows.Forms.CheckBox();
             this.btnActualizarCita = new System.Windows.Forms.Button();
             this.btnNuevaCita = new System.Windows.Forms.Button();
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
+
             this.btnActualizarCita = new System.Windows.Forms.Button();
             this.btnNuevaCita = new System.Windows.Forms.Button();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.btnImprimirCitas = new System.Windows.Forms.Button();
-=======
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
+
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
@@ -59,12 +56,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-<<<<<<< HEAD
+
             this.panel4.Controls.Add(this.btnImprimirCitas);
             this.panel4.Controls.Add(this.checkBox1);
-=======
             this.panel4.Controls.Add(this.cbCitasInactivas);
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
+
             this.panel4.Controls.Add(this.btnActualizarCita);
             this.panel4.Controls.Add(this.btnNuevaCita);
             this.panel4.Controls.Add(this.label1);
@@ -72,15 +68,14 @@
             this.panel4.Controls.Add(this.txtBuscadorProveedor);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-<<<<<<< HEAD
+
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
+
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(986, 56);
             this.panel4.TabIndex = 6;
             // 
-<<<<<<< HEAD
+
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -90,7 +85,7 @@
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
-=======
+
             // cbCitasInactivas
             // 
             this.cbCitasInactivas.AutoSize = true;
@@ -135,7 +130,7 @@
             this.btnNuevaCita.Text = "Nuevo";
             this.btnNuevaCita.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevaCita.UseVisualStyleBackColor = true;
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
+
             // 
             // label1
             // 
@@ -146,12 +141,10 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar empleado:";
             // 
-<<<<<<< HEAD
             // txtBuscadorProveedor
             // 
             this.txtBuscadorProveedor.Location = new System.Drawing.Point(144, 25);
             this.txtBuscadorProveedor.Margin = new System.Windows.Forms.Padding(4);
-=======
             // btnBuscarProveedor
             // 
             this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
@@ -166,7 +159,7 @@
             // txtBuscadorProveedor
             // 
             this.txtBuscadorProveedor.Location = new System.Drawing.Point(108, 20);
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
+
             this.txtBuscadorProveedor.Name = "txtBuscadorProveedor";
             this.txtBuscadorProveedor.Size = new System.Drawing.Size(292, 20);
             this.txtBuscadorProveedor.TabIndex = 0;
@@ -176,12 +169,10 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.panel3.Controls.Add(this.dgvCitas);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-<<<<<<< HEAD
             this.panel3.Location = new System.Drawing.Point(0, 69);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
-=======
+
             this.panel3.Location = new System.Drawing.Point(0, 56);
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.panel3.Size = new System.Drawing.Size(986, 474);
@@ -192,12 +183,11 @@
             this.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCitas.Dock = System.Windows.Forms.DockStyle.Fill;
-<<<<<<< HEAD
+
             this.dgvCitas.Location = new System.Drawing.Point(13, 12);
             this.dgvCitas.Margin = new System.Windows.Forms.Padding(4);
-=======
+
             this.dgvCitas.Location = new System.Drawing.Point(10, 10);
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.RowHeadersWidth = 51;
             this.dgvCitas.Size = new System.Drawing.Size(966, 454);
@@ -217,7 +207,6 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.eliminarToolStripMenuItem.Text = "eliminar";
             // 
-<<<<<<< HEAD
             // btnActualizarCita
             // 
             this.btnActualizarCita.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -275,8 +264,7 @@
             this.btnImprimirCitas.Text = "Imprimir Citas";
             this.btnImprimirCitas.UseVisualStyleBackColor = true;
             // 
-=======
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
+        
             // frmAgregarCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,10 +272,9 @@
             this.ClientSize = new System.Drawing.Size(986, 530);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-<<<<<<< HEAD
+
             this.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
+
             this.Name = "frmAgregarCitas";
             this.Text = "frmAgregarCitas";
             this.Load += new System.EventHandler(this.frmAgregarCitas_Load);
@@ -312,11 +299,9 @@
         public System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-<<<<<<< HEAD
         public System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnImprimirCitas;
-=======
+
         public System.Windows.Forms.CheckBox cbCitasInactivas;
->>>>>>> 7636297fdb4b70fd5158715fbd1318c4503662d3
     }
 }
