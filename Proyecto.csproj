@@ -133,6 +133,11 @@
     <Compile Include="Vista\AgregarUsuarios\frmRegistroUsuario.Designer.cs">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\citas\DataSet_ReportGeneralCitas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportGeneralCitas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vista\citas\frmAgregarCitas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +161,12 @@
     </Compile>
     <Compile Include="Vista\citas\frmRazonesCitas.Designer.cs">
       <DependentUpon>frmRazonesCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\citas\Report_Citas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\citas\Report_Citas.Designer.cs">
+      <DependentUpon>Report_Citas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Dueño\frmAgregarDueñosMascotas.cs">
       <SubType>Form</SubType>
@@ -253,6 +264,12 @@
     <Compile Include="Vista\Producto\frmProducto.Designer.cs">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Producto\ReportProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Producto\ReportProductos.Designer.cs">
+      <DependentUpon>ReportProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Proveedor\frmAgregarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,10 +294,13 @@
     <Compile Include="Vista\Servidor\frmConfrimarContraseña.Designer.cs">
       <DependentUpon>frmConfrimarContraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Ventas\DataSet_GeneralVentas.Designer.cs">
+    <Compile Include="Vista\Ventas\DataSet_ReportGeneralVentas.cs">
+      <DependentUpon>DataSet_ReportGeneralVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventas\DataSet_ReportGeneralVentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_GeneralVentas.xsd</DependentUpon>
+      <DependentUpon>DataSet_ReportGeneralVentas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventas\frmAgregarDetalleVenta.cs">
       <SubType>Form</SubType>
@@ -305,6 +325,12 @@
     </Compile>
     <Compile Include="Vista\Ventas\frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventas\Report_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventas\Report_Ventas.Designer.cs">
+      <DependentUpon>Report_Ventas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -331,6 +357,10 @@
     <EmbeddedResource Include="Vista\citas\frmRazon.resx">
       <DependentUpon>frmRazon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\citas\Report_Citas.resx">
+      <DependentUpon>Report_Citas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\citas\Report_GeneralCitas.rdlc" />
     <EmbeddedResource Include="Vista\Dueño\frmAgregarDueñosMascotas.resx">
       <DependentUpon>frmAgregarDueñosMascotas.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +403,9 @@
     <EmbeddedResource Include="Vista\Producto\frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Producto\ReportProductos.resx">
+      <DependentUpon>ReportProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Proveedor\frmAgregarProveedor.resx">
       <DependentUpon>frmAgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +430,10 @@
     <EmbeddedResource Include="Vista\Ventas\frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventas\Report_GeneralVentas.rdlc" />
+    <EmbeddedResource Include="Vista\Ventas\Report_Ventas.resx">
+      <DependentUpon>Report_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -407,16 +444,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Vista\Ventas\DataSet_GeneralVentas.xsc">
-      <DependentUpon>DataSet_GeneralVentas.xsd</DependentUpon>
+    <None Include="Vista\citas\DataSet_ReportGeneralCitas.xsc">
+      <DependentUpon>DataSet_ReportGeneralCitas.xsd</DependentUpon>
     </None>
-    <None Include="Vista\Ventas\DataSet_GeneralVentas.xsd">
+    <None Include="Vista\citas\DataSet_ReportGeneralCitas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet_GeneralVentas.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet_ReportGeneralCitas.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Vista\Ventas\DataSet_GeneralVentas.xss">
-      <DependentUpon>DataSet_GeneralVentas.xsd</DependentUpon>
+    <None Include="Vista\citas\DataSet_ReportGeneralCitas.xss">
+      <DependentUpon>DataSet_ReportGeneralCitas.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Ventas\DataSet_ReportGeneralVentas.xsc">
+      <DependentUpon>DataSet_ReportGeneralVentas.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Ventas\DataSet_ReportGeneralVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportGeneralVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Ventas\DataSet_ReportGeneralVentas.xss">
+      <DependentUpon>DataSet_ReportGeneralVentas.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

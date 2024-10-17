@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnActualizarProveedor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
+            this.btnImprimirVentas = new System.Windows.Forms.Button();
+            this.btnActualizarProveedor = new System.Windows.Forms.Button();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
@@ -43,6 +44,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
+            this.panel4.Controls.Add(this.btnImprimirVentas);
             this.panel4.Controls.Add(this.btnActualizarProveedor);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscarProveedor);
@@ -54,24 +56,6 @@
             this.panel4.Size = new System.Drawing.Size(1560, 69);
             this.panel4.TabIndex = 8;
             // 
-            // btnActualizarProveedor
-            // 
-            this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_401;
-            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarProveedor.Location = new System.Drawing.Point(1396, 12);
-            this.btnActualizarProveedor.Margin = new System.Windows.Forms.Padding(4);
-            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
-            this.btnActualizarProveedor.Size = new System.Drawing.Size(148, 48);
-            this.btnActualizarProveedor.TabIndex = 8;
-            this.btnActualizarProveedor.Text = "Agregar";
-            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -81,18 +65,6 @@
             this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar empleado:";
-            // 
-            // btnBuscarProveedor
-            // 
-            this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
-            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProveedor.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(541, 18);
-            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(47, 36);
-            this.btnBuscarProveedor.TabIndex = 1;
-            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
             // 
             // txtBuscadorProveedor
             // 
@@ -126,6 +98,45 @@
             this.dgvProveedor.Size = new System.Drawing.Size(1534, 786);
             this.dgvProveedor.TabIndex = 0;
             // 
+            // btnImprimirVentas
+            // 
+            this.btnImprimirVentas.Location = new System.Drawing.Point(1114, 17);
+            this.btnImprimirVentas.Name = "btnImprimirVentas";
+            this.btnImprimirVentas.Size = new System.Drawing.Size(154, 37);
+            this.btnImprimirVentas.TabIndex = 9;
+            this.btnImprimirVentas.Text = "Imprimir Ventas";
+            this.btnImprimirVentas.UseVisualStyleBackColor = true;
+            // 
+            // btnActualizarProveedor
+            // 
+            this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarProveedor.Image = global::Proyecto.Properties.Resources.icons8_añadir_401;
+            this.btnActualizarProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarProveedor.Location = new System.Drawing.Point(1396, 12);
+            this.btnActualizarProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnActualizarProveedor.Name = "btnActualizarProveedor";
+            this.btnActualizarProveedor.Size = new System.Drawing.Size(148, 48);
+            this.btnActualizarProveedor.TabIndex = 8;
+            this.btnActualizarProveedor.Text = "Agregar";
+            this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarProveedor.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
+            this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProveedor.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(541, 18);
+            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(47, 36);
+            this.btnBuscarProveedor.TabIndex = 1;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -153,5 +164,6 @@
         public System.Windows.Forms.TextBox txtBuscadorProveedor;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView dgvProveedor;
+        public System.Windows.Forms.Button btnImprimirVentas;
     }
 }

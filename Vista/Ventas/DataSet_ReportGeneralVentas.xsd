@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSet_GeneralVentas" targetNamespace="http://tempuri.org/DataSet_GeneralVentas.xsd" xmlns:mstns="http://tempuri.org/DataSet_GeneralVentas.xsd" xmlns="http://tempuri.org/DataSet_GeneralVentas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataSet_ReportGeneralVentas" targetNamespace="http://tempuri.org/DataSet_ReportGeneralVentas.xsd" xmlns:mstns="http://tempuri.org/DataSet_ReportGeneralVentas.xsd" xmlns="http://tempuri.org/DataSet_ReportGeneralVentas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -69,7 +69,7 @@ SELECT IdVentas, IdCItas, IdProducto FROM Ventas WHERE (IdVentas = @IdVentas)</C
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSet_GeneralVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_GeneralVentas" msprop:Generator_DataSetName="DataSet_GeneralVentas">
+  <xs:element name="DataSet_ReportGeneralVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_ReportGeneralVentas" msprop:Generator_DataSetName="DataSet_ReportGeneralVentas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Ventas" msprop:Generator_RowEvHandlerName="VentasRowChangeEventHandler" msprop:Generator_RowDeletedName="VentasRowDeleted" msprop:Generator_RowDeletingName="VentasRowDeleting" msprop:Generator_RowEvArgName="VentasRowChangeEvent" msprop:Generator_TablePropName="Ventas" msprop:Generator_RowChangedName="VentasRowChanged" msprop:Generator_RowChangingName="VentasRowChanging" msprop:Generator_TableClassName="VentasDataTable" msprop:Generator_RowClassName="VentasRow" msprop:Generator_TableVarName="tableVentas" msprop:Generator_UserTableName="Ventas">
