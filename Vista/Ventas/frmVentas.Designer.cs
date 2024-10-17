@@ -35,15 +35,12 @@
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.txtBuscadorProveedor = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
             this.dgvVenta = new System.Windows.Forms.DataGridView();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.btnActualizarVenta = new System.Windows.Forms.Button();
             this.cbEstadoAnimal = new System.Windows.Forms.CheckBox();
-=======
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
@@ -52,30 +49,27 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
-<<<<<<< HEAD
             this.panel4.Controls.Add(this.cbEstadoAnimal);
             this.panel4.Controls.Add(this.btnActualizarVenta);
             this.panel4.Controls.Add(this.btnImprimir);
             this.panel4.Controls.Add(this.btnAgregarVenta);
-=======
+
             this.panel4.Controls.Add(this.btnActualizarProveedor);
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.btnBuscarProveedor);
             this.panel4.Controls.Add(this.txtBuscadorProveedor);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-<<<<<<< HEAD
-=======
+
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
+
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1170, 56);
             this.panel4.TabIndex = 8;
             // 
             // btnImprimir
             // 
-<<<<<<< HEAD
+
             this.btnImprimir.Location = new System.Drawing.Point(650, 15);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImprimir.Name = "btnImprimir";
@@ -100,7 +94,7 @@
             this.btnAgregarVenta.Text = "Agregar";
             this.btnAgregarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarVenta.UseVisualStyleBackColor = true;
-=======
+
             this.btnActualizarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizarProveedor.FlatAppearance.BorderSize = 0;
             this.btnActualizarProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
@@ -116,7 +110,7 @@
             this.btnActualizarProveedor.Text = "Agregar";
             this.btnActualizarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizarProveedor.UseVisualStyleBackColor = true;
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
+
             // 
             // label1
             // 
@@ -132,12 +126,11 @@
             this.btnBuscarProveedor.FlatAppearance.BorderSize = 0;
             this.btnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProveedor.Image = global::Proyecto.Properties.Resources.icons8_buscar_30;
-<<<<<<< HEAD
+
             this.btnBuscarProveedor.Location = new System.Drawing.Point(406, 15);
-=======
+
             this.btnBuscarProveedor.Location = new System.Drawing.Point(541, 18);
             this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(35, 29);
             this.btnBuscarProveedor.TabIndex = 1;
@@ -145,12 +138,11 @@
             // 
             // txtBuscadorProveedor
             // 
-<<<<<<< HEAD
             this.txtBuscadorProveedor.Location = new System.Drawing.Point(108, 20);
-=======
+
             this.txtBuscadorProveedor.Location = new System.Drawing.Point(144, 25);
             this.txtBuscadorProveedor.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
+
             this.txtBuscadorProveedor.Name = "txtBuscadorProveedor";
             this.txtBuscadorProveedor.Size = new System.Drawing.Size(292, 20);
             this.txtBuscadorProveedor.TabIndex = 0;
@@ -160,12 +152,12 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
             this.panel3.Controls.Add(this.dgvVenta);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-<<<<<<< HEAD
+
             this.panel3.Location = new System.Drawing.Point(0, 56);
-=======
+
             this.panel3.Location = new System.Drawing.Point(0, 69);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
+
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.panel3.Size = new System.Drawing.Size(1170, 658);
@@ -173,7 +165,7 @@
             // 
             // dgvVenta
             // 
-<<<<<<< HEAD
+
             this.dgvVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVenta.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -220,7 +212,7 @@
             this.cbEstadoAnimal.TabIndex = 11;
             this.cbEstadoAnimal.Text = "citas Inactivas";
             this.cbEstadoAnimal.UseVisualStyleBackColor = true;
-=======
+
             this.dgvProveedor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -230,7 +222,7 @@
             this.dgvProveedor.RowHeadersWidth = 51;
             this.dgvProveedor.Size = new System.Drawing.Size(1534, 786);
             this.dgvProveedor.TabIndex = 0;
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
+
             // 
             // frmVentas
             // 
@@ -239,10 +231,8 @@
             this.ClientSize = new System.Drawing.Size(1170, 714);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-<<<<<<< HEAD
-=======
+
             this.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
             this.Name = "frmVentas";
             this.Text = "frmVentas";
             this.Load += new System.EventHandler(this.frmVentas_Load);
@@ -262,15 +252,12 @@
         public System.Windows.Forms.Button btnBuscarProveedor;
         public System.Windows.Forms.TextBox txtBuscadorProveedor;
         private System.Windows.Forms.Panel panel3;
-<<<<<<< HEAD
         public System.Windows.Forms.DataGridView dgvVenta;
         public System.Windows.Forms.Button btnImprimir;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         public System.Windows.Forms.Button btnActualizarVenta;
         public System.Windows.Forms.CheckBox cbEstadoAnimal;
-=======
         public System.Windows.Forms.DataGridView dgvProveedor;
->>>>>>> 9fb2bf4a85d3e21e88741e6fcad63c0c1e75a7a6
     }
 }
