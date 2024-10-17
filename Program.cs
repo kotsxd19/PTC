@@ -23,11 +23,11 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new frmInicio());
-=======
+
+            Application.Run(new frmLogin());
+
             Application.Run(new frmCrearPrimerUsuario());
->>>>>>> 394d122982c05afa2f38df7a91e6ce338d6bb4af
+
         }
 
         
