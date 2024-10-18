@@ -14,24 +14,23 @@ namespace Proyecto.Controlador.PrimerUso
 {
     internal class PrimerUsuario
     {
-
         frmCrearPrimerUsuario ObjVista;
 
-        public PrimerUsuario(frmCrearPrimerUsuario Vista)
+        public PrimerUsuario(frmCrearPrimerUsuario vista)
         {
-            ObjVista = Vista;
-            Vista.Load += new EventHandler(CargarCombos);
-            Vista.btnGuardar.Click += new EventHandler(RegistrarPrimerUsuario);
-            Vista.cmbRol.Enabled = false;
+            ObjVista = vista;
+            vista.Load += new EventHandler(CargarCombos);
+            vista.btnGuardar.Click += new EventHandler(RegistrarPrimerUsuario);
+            vista.cmbRol.Enabled = false;
         }
 
         void CargarCombos(object sender, EventArgs e)
         {
-            //Objeto de la clase DAOAdminUsuarios
+            // Objeto de la clase DAOAgregarUsuario
             DAOAgregarUsuario objAdmin = new DAOAgregarUsuario();
-            //Declarando nuevo DataSet para que obtenga los datos del metodo LlenarCombo
+
+            // Llenar combobox de roles
             DataSet ds = objAdmin.LlenarComboBox();
-            //Llenar combobox tbRole
             ObjVista.cmbRol.DataSource = ds.Tables["Roles"];
             ObjVista.cmbRol.ValueMember = "IdRoles";
             ObjVista.cmbRol.DisplayMember = "Roles";
@@ -45,52 +44,44 @@ namespace Proyecto.Controlador.PrimerUso
                 string.IsNullOrEmpty(ObjVista.txtCorreo.Text.Trim()) ||
                 string.IsNullOrEmpty(ObjVista.txtUsuario.Text.Trim())))
             {
-                //Se crea una instancia de la clase DAOAdminUsers llamada DAOInsert
+                // Crear instancia de DAOAgregarUsuario para insertar datos
                 DAOAgregarUsuario DAOInsert = new DAOAgregarUsuario();
                 Incriptar commonClasses = new Incriptar();
-                //Datos para creación de persona
+
+                // Datos de la persona
                 DAOInsert.Nombre1 = ObjVista.txtNombre.Text.Trim();
                 DAOInsert.Apellido1 = ObjVista.txtApellido.Text.Trim();
                 DAOInsert.FechaNacimiento1 = ObjVista.dtpFecha.Value.Date;
                 DAOInsert.CorreoElectronico1 = ObjVista.txtCorreo.Text.Trim();
-                //Datos para creación de usuario
+
+                // Datos de usuario
                 DAOInsert.Usuario1 = ObjVista.txtUsuario.Text.Trim();
-                DAOInsert.Contraseña1 = commonClasses.ComputeSha256Hash(ObjVista.txtUsuario.Text.Trim() + "PU123");
+                // Cifrar contraseña
+                DAOInsert.Contraseña1 = commonClasses.ComputeSha256Hash(ObjVista.txtUsuario.Text.Trim() + ObjVista.txtContra.Text.Trim());
                 DAOInsert.Estado1 = true;
                 DAOInsert.Role1 = int.Parse(ObjVista.cmbRol.SelectedValue.ToString());
-                //Se invoca al método RegistrarUsuario mediante el objeto DAOInsert
+
+                // Registrar usuario
                 int valorRetornado = DAOInsert.RegistarEmpleados();
-                //Se verifica el valor que retornó el metodo anterior y que fue almacenado en la variable valorRetornado
+
                 if (valorRetornado == 1)
                 {
-                    MessageBox.Show("Los datos han sido registrados exitosamente",
-                                    "Proceso completado",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                    MessageBox.Show($"Usuario administrador: {ObjVista.txtUsuario.Text.Trim()}\nContraseña de usuario: {ObjVista.txtUsuario.Text.Trim()}PU123",
-                                    "Credenciales de acceso",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                    MessageBox.Show("Datos registrados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmLogin login = new frmLogin();
                     login.Show();
                     ObjVista.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no pudieron ser registrados",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    MessageBox.Show("Error al registrar los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Existen campos vacíos, complete cada uno de los apartados y verifique que la fecha seleccionada corresponde a una persona mayor de edad.",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                MessageBox.Show("Complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
     }
+
+
 }

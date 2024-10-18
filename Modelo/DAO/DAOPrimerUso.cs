@@ -21,11 +21,12 @@ namespace Proyecto.Modelo.DAO
                 command.Connection = getConnection();
 
                 // Consulta SQL para insertar un nuevo registro en la tabla Empleado
-                string query = "INSERT INTO Empleado (Nombre, CorreoEmpleado) VALUES (@Nombre, @CorreoEmpleado)";
+                string query = "INSERT INTO Empleado (Nombre, Apellido, Nacimiento, CorreoEmpleado, Usuario,Contraseña, Rol, ) VALUES (@Nombre, @Apellido, @Nacimiento, @CorreoEmpleado, @Usuario, @Contraseña, @Rol)";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
 
                 // Asignar los valores a los parámetros de la consulta
                 cmd.Parameters.AddWithValue("@Nombre", Nombre);
+                cmd.Parameters.AddWithValue("@Apellido", Apellido);
                 cmd.Parameters.AddWithValue("@CorreoEmpleado", CorreoEmpleado1);
 
                 // Ejecutar la consulta
