@@ -122,7 +122,7 @@ namespace Proyecto.Controlador.Inicio
 
         void openFromCitas(object sender, EventArgs e)
         {
-            AbrirFormulario<frmAgregarCitas>();
+            AbrirFormulario<frmRegtistrocitas>();
         }
 
         void openFromProducto(object sender, EventArgs e)

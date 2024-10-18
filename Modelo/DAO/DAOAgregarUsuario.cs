@@ -185,15 +185,18 @@ namespace Proyecto.Modelo.DAO
 
                 // Consulta SQL para actualizar los detalles del empleado
                 string query = "UPDATE Empleado SET " +
+                                "Role = @param1," +
                                 "Nombre = @param2, " +
                                 "Apellido = @param3, " +
-                                "FechaNacimient = @param4, " +
-                                "CorreoEmpleado = @param7";
+                                "FechaNacimient = @param4," +
+                                "CorreoEmpleado = @param7," +
+                                "EstadoEmpleado = @param9";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("param2", Nombre1);
                 cmd.Parameters.AddWithValue("param3", Apellido1);
                 cmd.Parameters.AddWithValue("param4", FechaNacimiento1);
                 cmd.Parameters.AddWithValue("param7", CorreoElectronico1);
+                cmd.Parameters.AddWithValue("param9", Estado1);
 
                 // Ejecuta la consulta de actualización y obtiene el número de filas afectadas
                 int respuesta = cmd.ExecuteNonQuery();

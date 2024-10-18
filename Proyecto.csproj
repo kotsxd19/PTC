@@ -140,12 +140,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_ReportGeneralCitas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Vista\citas\frmAgregarCitas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\citas\frmAgregarCitas.Designer.cs">
-      <DependentUpon>frmAgregarCitas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\citas\frmcitas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +157,12 @@
     </Compile>
     <Compile Include="Vista\citas\frmRazonesCitas.Designer.cs">
       <DependentUpon>frmRazonesCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\citas\frmRegtistrocitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\citas\frmRegtistrocitas.Designer.cs">
+      <DependentUpon>frmRegtistrocitas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\citas\Report_Citas.cs">
       <SubType>Form</SubType>
@@ -350,14 +350,14 @@
     <EmbeddedResource Include="Vista\AgregarUsuarios\frmRegistroUsuario.resx">
       <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\citas\frmAgregarCitas.resx">
-      <DependentUpon>frmAgregarCitas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\citas\frmcitas.resx">
       <DependentUpon>frmcitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\citas\frmRazon.resx">
       <DependentUpon>frmRazon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\citas\frmRegtistrocitas.resx">
+      <DependentUpon>frmRegtistrocitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\citas\Report_Citas.resx">
       <DependentUpon>Report_Citas.cs</DependentUpon>

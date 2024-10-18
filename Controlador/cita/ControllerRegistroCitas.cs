@@ -13,15 +13,15 @@ namespace Proyecto.Controlador.cita
     internal class ControllerRegistroCitas
     {
         // Referencia a la vista del formulario
-        frmAgregarCitas objVista;
+        frmRegtistrocitas objVista;
         frmcitas agregarCitas;
 
         // Constructor que inicializa el controlador y sus eventos
-        public ControllerRegistroCitas(frmAgregarCitas Vista)
+        public ControllerRegistroCitas(frmRegtistrocitas Vista)
         {
             objVista = Vista;
             objVista.Load += new EventHandler(CargarDatos);
-            objVista.cbCitasInactivas.CheckedChanged += new EventHandler(CambiarConsulta);
+            objVista.cbEstadoCitas.CheckedChanged += new EventHandler(CambiarConsulta);
             // Asignar eventos a los botones de la vista
             //Vista.btnActualizarCita.Click += new EventHandler(EditarCita);
             Vista.btnNuevaCita.Click += new EventHandler(IngresarCita);
@@ -46,15 +46,15 @@ namespace Proyecto.Controlador.cita
             DAOCitas objAdmin = new DAOCitas(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
 
-            if (objVista.cbCitasInactivas.Checked != true)
+            if (objVista.cbEstadoCitas.Checked != true)
             {
                 ds = objAdmin.ObtenerMascotasActivas(); // Obtiene la lista de personas desde la base de datos
-                objVista.dgvCitas.DataSource = ds.Tables["ViewCita"];
+                objVista.dgvEmpleados.DataSource = ds.Tables["ViewCita"];
             }
             else
             {
                 ds = objAdmin.ObtenerMascotasInactivas();
-                objVista.dgvCitas.DataSource = ds.Tables["ViewCita"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+                objVista.dgvEmpleados.DataSource = ds.Tables["ViewCita"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             }
         }
 

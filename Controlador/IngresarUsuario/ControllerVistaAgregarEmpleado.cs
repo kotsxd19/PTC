@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto.Controlador.Validar;
+using System.Net.NetworkInformation;
 
 namespace Proyecto.Controlador.IngresarUsuario
 {
@@ -50,12 +51,12 @@ namespace Proyecto.Controlador.IngresarUsuario
             if (ObjAdminUser.cbEstadoEmpelado.Checked != true)
             {
                 ds = objAdmin.ObtenerPersonasActivas(); // Obtiene la lista de personas desde la base de datos
-                ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegsitrosDeEmpleados"];
+                ObjAdminUser.dgvCitas.DataSource = ds.Tables["RegsitrosDeEmpleados"];
             }
             else
             {
                 ds = objAdmin.ObtenerPersonasInactivas();
-                ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegsitrosDeEmpleados"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+                ObjAdminUser.dgvCitas.DataSource = ds.Tables["RegsitrosDeEmpleados"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             }
         }
 
@@ -71,19 +72,28 @@ namespace Proyecto.Controlador.IngresarUsuario
         // Método que abre el formulario para actualizar los datos del usuario seleccionado.
         private void AcualizarEmpleado(object sender, EventArgs e)
         {
-            int pos = ObjAdminUser.dgvEmpleados.CurrentRow.Index; // Obtiene la posición de la fila seleccionada en el DataGridView
+            int pos = ObjAdminUser.dgvCitas.CurrentRow.Index; // Obtiene la posición de la fila seleccionada en el DataGridView
 
             // Crea una nueva instancia del formulario para editar usuario con la acción de actualización
             frmAgregarUsuario openForm = new frmAgregarUsuario(2);
 
             // Enviar los datos de la fila seleccionada al formulario de edición
-            int.Parse(ObjAdminUser.dgvEmpleados[0, pos].Value.ToString());
-            ObjAdminUser.dgvEmpleados[1, pos].Value.ToString();
-            ObjAdminUser.dgvEmpleados[2, pos].Value.ToString();
-            DateTime.Parse(ObjAdminUser.dgvEmpleados[3, pos].Value.ToString());
-            ObjAdminUser.dgvEmpleados[4, pos].Value.ToString();
-            ObjAdminUser.dgvEmpleados[5, pos].Value.ToString();
-            ObjAdminUser.dgvEmpleados[6, pos].Value.ToString();
+            string Nombre = ObjAdminUser.dgvCitas.CurrentRow.Cells["Nombre"].Value.ToString();
+            string Apellido = ObjAdminUser.dgvCitas.CurrentRow.Cells["Apellido"].Value.ToString();
+            string FechaNacimiento = ObjAdminUser.dgvCitas.CurrentRow.Cells["FechaNacimient"].Value.ToString();
+            string Usuario = ObjAdminUser.dgvCitas.CurrentRow.Cells["Usuario"].Value.ToString();
+            string CorreoEmpleado = ObjAdminUser.dgvCitas.CurrentRow.Cells["CorreoEmpleado"].Value.ToString();
+            string IdRoles = ObjAdminUser.dgvCitas.CurrentRow.Cells["Roles"].Value.ToString();
+            string EstadoEmpleado = ObjAdminUser.dgvCitas.CurrentRow.Cells["EstadoEmpleado"].Value.ToString();
+
+            openForm.txtNombre.Text = Nombre;
+            openForm.txtApellido.Text = Apellido;
+            openForm.dtpNacimiento.Text = FechaNacimiento;
+            openForm.txtUsuario.Text = Usuario;
+            openForm.txtCorreo.Text = CorreoEmpleado;
+            openForm.cmbRoles.Text = IdRoles;
+            openForm.cmbEstado.Text = EstadoEmpleado;
+
 
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
 
@@ -104,25 +114,25 @@ namespace Proyecto.Controlador.IngresarUsuario
         {
             DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para realizar la búsqueda
             DataSet ds = objAdmin.BuscarPersonas(ObjAdminUser.txtBuscador.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
-            ObjAdminUser.dgvEmpleados.DataSource = ds.Tables["RegistroEmpleado"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+            ObjAdminUser.dgvCitas.DataSource = ds.Tables["RegistroEmpleado"]; // Asocia el DataSource del DataGridView con los datos obtenidos
         }
 
         // Método que abre un formulario para ver los detalles de la ficha del empleado seleccionado.
         private void VerFicha(object sender, EventArgs e)
         {
-            int pos = ObjAdminUser.dgvEmpleados.CurrentRow.Index; // Obtiene la posición de la fila seleccionada
+            int pos = ObjAdminUser.dgvCitas.CurrentRow.Index; // Obtiene la posición de la fila seleccionada
             int id;
             string Nombre, Apellido, CorreoEmpleado, Usuario, Role;
             DateTime FechaNacimient;
 
             // Captura los datos del empleado seleccionado
-            id = int.Parse(ObjAdminUser.dgvEmpleados[0, pos].Value.ToString());
-            Nombre = ObjAdminUser.dgvEmpleados[1, pos].Value.ToString();
-            Apellido = ObjAdminUser.dgvEmpleados[2, pos].Value.ToString();
-            FechaNacimient = DateTime.Parse(ObjAdminUser.dgvEmpleados[3, pos].Value.ToString());
-            CorreoEmpleado = ObjAdminUser.dgvEmpleados[4, pos].Value.ToString();
-            Usuario = ObjAdminUser.dgvEmpleados[5, pos].Value.ToString();
-            Role = ObjAdminUser.dgvEmpleados[6, pos].Value.ToString();
+            id = int.Parse(ObjAdminUser.dgvCitas[0, pos].Value.ToString());
+            Nombre = ObjAdminUser.dgvCitas[1, pos].Value.ToString();
+            Apellido = ObjAdminUser.dgvCitas[2, pos].Value.ToString();
+            FechaNacimient = DateTime.Parse(ObjAdminUser.dgvCitas[3, pos].Value.ToString());
+            CorreoEmpleado = ObjAdminUser.dgvCitas[4, pos].Value.ToString();
+            Usuario = ObjAdminUser.dgvCitas[5, pos].Value.ToString();
+            Role = ObjAdminUser.dgvCitas[6, pos].Value.ToString();
 
             frmAgregarUsuario openForm = new frmAgregarUsuario(3); // Crea una nueva instancia del formulario para ver ficha
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
@@ -131,7 +141,7 @@ namespace Proyecto.Controlador.IngresarUsuario
 
         private void ActualizarAdmin(object sender, EventArgs e)
         {
-            int pos = ObjAdminUser.dgvEmpleados.CurrentRow.Index;
+            int pos = ObjAdminUser.dgvCitas.CurrentRow.Index;
 
             frmAgregarUsuario ActuAdmin = new frmAgregarUsuario(3);
 
