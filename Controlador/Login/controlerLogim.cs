@@ -163,6 +163,9 @@ namespace Proyecto.Controlador.Login
 
             private void IngresarContra(object sender, EventArgs e)
             {
+                ObjLogin.txtContraseña.Text = "Contraseña";
+                ObjLogin.txtContraseña.PasswordChar = '\0';
+
                 if (ObjLogin.txtContraseña.Text.Trim().Equals("Contraseña"))
                 {
                     ObjLogin.txtContraseña.Clear();

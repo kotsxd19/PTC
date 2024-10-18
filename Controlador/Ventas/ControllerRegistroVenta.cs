@@ -41,7 +41,7 @@ namespace Proyecto.Controlador.Ventas
         // Método que refresca los datos en el DataGridView.
         public void RefrescarData()
         {
-            DAOMascotas objAdmin = new DAOMascotas(); // Crea una instancia del DAO para obtener datos
+            DAOVentas objAdmin = new DAOVentas(); // Crea una instancia del DAO para obtener datos
             DataSet ds = new DataSet();
 
             if (objVentas.cbEstadoAnimal.Checked != true)

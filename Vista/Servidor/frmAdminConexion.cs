@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Controlador.Servidor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Proyecto.Vista.Servidor
         public frmAdminConexion()
         {
             InitializeComponent();
+            ControllerConexionAdmin conexion = new ControllerConexionAdmin(this);
+        }
+
+        private void frmAdminConexion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

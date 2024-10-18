@@ -15,10 +15,9 @@ namespace Proyecto.Controlador.Servidor
         frmConfrimarContraseña objVista;
         private string usuario;
 
-        public ControllerConfrimarContraseña(frmConfrimarContraseña vista, string usuario)
+        public ControllerConfrimarContraseña(frmConfrimarContraseña vista)
         {
             objVista = vista;
-            this.usuario = usuario;
             objVista.btnConfirmar.Click += new EventHandler(VerificarContraseña);
         }
 
@@ -29,7 +28,7 @@ namespace Proyecto.Controlador.Servidor
             string cadenaencriptada = common.ComputeSha256Hash(objVista.txtContraseña.Text);
             if (cadenaencriptada == Acceso.Contraseña)
             {
-                frmCrearPrimerUsuario objViewConnect = new frmCrearPrimerUsuario();
+                frmAdminConexion objViewConnect = new frmAdminConexion();
                 objViewConnect.ShowDialog();
                 objVista.Hide();
             }

@@ -73,8 +73,8 @@ namespace Proyecto.Controlador.Ventas
                 string.IsNullOrEmpty(objVentas.cmbProductos.Text.Trim())))
                 {
                     DAOVentas DAOInsert = new DAOVentas();
-                    int.Parse(objVentas.cmbCitas.SelectedValue.ToString());
-                    int.Parse(objVentas.cmbProductos.SelectedValue.ToString());
+                    DAOInsert.IdCitas1 = int.Parse(objVentas.cmbCitas.SelectedValue.ToString());
+                    DAOInsert.IdProductos1 = int.Parse(objVentas.cmbProductos.SelectedValue.ToString());
 
                     int estadoSeleccionado = ((KeyValuePair<string, int>)objVentas.cmbEstado.SelectedItem).Value;
                     DAOInsert.EstadoVenta1 = estadoSeleccionado == 1;

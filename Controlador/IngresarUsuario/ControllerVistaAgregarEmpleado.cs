@@ -81,17 +81,15 @@ namespace Proyecto.Controlador.IngresarUsuario
             string Nombre = ObjAdminUser.dgvCitas.CurrentRow.Cells["Nombre"].Value.ToString();
             string Apellido = ObjAdminUser.dgvCitas.CurrentRow.Cells["Apellido"].Value.ToString();
             string FechaNacimiento = ObjAdminUser.dgvCitas.CurrentRow.Cells["FechaNacimient"].Value.ToString();
-            string Usuario = ObjAdminUser.dgvCitas.CurrentRow.Cells["Usuario"].Value.ToString();
             string CorreoEmpleado = ObjAdminUser.dgvCitas.CurrentRow.Cells["CorreoEmpleado"].Value.ToString();
-            string IdRoles = ObjAdminUser.dgvCitas.CurrentRow.Cells["Roles"].Value.ToString();
+            string role = ObjAdminUser.dgvCitas.CurrentRow.Cells["Roles"].Value.ToString();
             string EstadoEmpleado = ObjAdminUser.dgvCitas.CurrentRow.Cells["EstadoEmpleado"].Value.ToString();
 
             openForm.txtNombre.Text = Nombre;
             openForm.txtApellido.Text = Apellido;
             openForm.dtpNacimiento.Text = FechaNacimiento;
-            openForm.txtUsuario.Text = Usuario;
             openForm.txtCorreo.Text = CorreoEmpleado;
-            openForm.cmbRoles.Text = IdRoles;
+            openForm.cmbRoles.Text = role;
             openForm.cmbEstado.Text = EstadoEmpleado;
 
 

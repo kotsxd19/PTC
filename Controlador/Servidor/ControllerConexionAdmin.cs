@@ -19,10 +19,10 @@ namespace Proyecto.Controlador.Servidor
         frmAdminConexion ObjAdmin;
         int origen;
 
-        public ControllerConexionAdmin(frmAdminConexion View, int origen)
+        public ControllerConexionAdmin(frmAdminConexion View/* int origen*/)
         {
             ObjAdmin = View;
-            verificarOrigen(origen);
+            //verificarOrigen(origen);
             ///tabcontrol 2
             View.btnConfirmar.Click += new EventHandler(GuardarRegistro);
 

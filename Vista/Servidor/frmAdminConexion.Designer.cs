@@ -31,15 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBaseDeDatos = new System.Windows.Forms.TextBox();
+            this.txtServidorURL = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtContraseñaAurhentication = new System.Windows.Forms.TextBox();
+            this.txtSQAurhentication = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txtServidorURL = new System.Windows.Forms.TextBox();
-            this.txtBaseDeDatos = new System.Windows.Forms.TextBox();
-            this.txtSQAurhentication = new System.Windows.Forms.TextBox();
-            this.txtContraseñaAurhentication = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,6 +78,20 @@
             this.panel1.Size = new System.Drawing.Size(671, 136);
             this.panel1.TabIndex = 1;
             // 
+            // txtBaseDeDatos
+            // 
+            this.txtBaseDeDatos.Location = new System.Drawing.Point(12, 91);
+            this.txtBaseDeDatos.Name = "txtBaseDeDatos";
+            this.txtBaseDeDatos.Size = new System.Drawing.Size(646, 20);
+            this.txtBaseDeDatos.TabIndex = 1;
+            // 
+            // txtServidorURL
+            // 
+            this.txtServidorURL.Location = new System.Drawing.Point(13, 30);
+            this.txtServidorURL.Name = "txtServidorURL";
+            this.txtServidorURL.Size = new System.Drawing.Size(646, 20);
+            this.txtServidorURL.TabIndex = 1;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(251)))), ((int)(((byte)(225)))));
@@ -92,25 +106,19 @@
             this.panel2.Size = new System.Drawing.Size(671, 143);
             this.panel2.TabIndex = 2;
             // 
-            // label3
+            // txtContraseñaAurhentication
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "SQL Authentication:";
+            this.txtContraseñaAurhentication.Location = new System.Drawing.Point(367, 38);
+            this.txtContraseñaAurhentication.Name = "txtContraseñaAurhentication";
+            this.txtContraseñaAurhentication.Size = new System.Drawing.Size(291, 20);
+            this.txtContraseñaAurhentication.TabIndex = 1;
             // 
-            // label4
+            // txtSQAurhentication
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(364, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Contraseña Authenticantion:";
+            this.txtSQAurhentication.Location = new System.Drawing.Point(15, 38);
+            this.txtSQAurhentication.Name = "txtSQAurhentication";
+            this.txtSQAurhentication.Size = new System.Drawing.Size(279, 20);
+            this.txtSQAurhentication.TabIndex = 1;
             // 
             // panel3
             // 
@@ -136,33 +144,25 @@
             this.btnConfirmar.Text = "Ingresar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
-            // txtServidorURL
+            // label4
             // 
-            this.txtServidorURL.Location = new System.Drawing.Point(13, 30);
-            this.txtServidorURL.Name = "txtServidorURL";
-            this.txtServidorURL.Size = new System.Drawing.Size(646, 20);
-            this.txtServidorURL.TabIndex = 1;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(364, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(187, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Contraseña Authenticantion:";
             // 
-            // txtBaseDeDatos
+            // label3
             // 
-            this.txtBaseDeDatos.Location = new System.Drawing.Point(12, 91);
-            this.txtBaseDeDatos.Name = "txtBaseDeDatos";
-            this.txtBaseDeDatos.Size = new System.Drawing.Size(646, 20);
-            this.txtBaseDeDatos.TabIndex = 1;
-            // 
-            // txtSQAurhentication
-            // 
-            this.txtSQAurhentication.Location = new System.Drawing.Point(15, 38);
-            this.txtSQAurhentication.Name = "txtSQAurhentication";
-            this.txtSQAurhentication.Size = new System.Drawing.Size(279, 20);
-            this.txtSQAurhentication.TabIndex = 1;
-            // 
-            // txtContraseñaAurhentication
-            // 
-            this.txtContraseñaAurhentication.Location = new System.Drawing.Point(367, 38);
-            this.txtContraseñaAurhentication.Name = "txtContraseñaAurhentication";
-            this.txtContraseñaAurhentication.Size = new System.Drawing.Size(291, 20);
-            this.txtContraseñaAurhentication.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "SQL Authentication:";
             // 
             // frmAdminConexion
             // 
@@ -173,6 +173,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmAdminConexion";
             this.Text = "frmAdminConexion";
+            this.Load += new System.EventHandler(this.frmAdminConexion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -30,18 +30,18 @@ namespace Proyecto.Controlador.IngresarUsuario
             ObjAgregarUsuario.btnIngresar.Click += new EventHandler(NuevoRegistro); // Asocia el evento Click del botón Ingresar al método NuevoRegistro
         }
 
-        // Constructor sobrecargado para inicializar el controlador con datos adicionales para la edición de usuario.
-        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int p_accion, int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario, string role)
+        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int accion, int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, int estado, int role)
         {
             ObjAgregarUsuario = Vista;
-            this.accion = p_accion;
-            this.role = role;
             ObjAgregarUsuario.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
             verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
-            CambiarValores(id, Nombre, Apellido, FechaNacimient, CorreoEmpleado, Usuario); // Carga los datos del usuario en el formulario
-            
+            CambiarValores(id, Nombre, Apellido, FechaNacimient, CorreoEmpleado, estado, role); // Carga los datos del usuario en el formulario
+
             ObjAgregarUsuario.btnActualizar.Click += new EventHandler(ActualizarDatos); // Asocia el evento Click del botón Actualizar al método ActualizarDatos
         }
+
+        // Constructor sobrecargado para inicializar el controlador con datos adicionales para la edición de usuario.
+
 
         // Método para cargar la información inicial en el formulario cuando se carga.
         public void CargaInicial(object sender, EventArgs e)
@@ -179,15 +179,14 @@ namespace Proyecto.Controlador.IngresarUsuario
         // Método para actualizar los datos de un usuario existente en la base de datos.
         public void ActualizarDatos(object sender, EventArgs e)
         {
-            DAOAgregarUsuario daoUpdate = new DAOAgregarUsuario();
-                daoUpdate.IdEmpleado1 = int.Parse(ObjAgregarUsuario.txtId.Text.Trim());
+                DAOAgregarUsuario daoUpdate = new DAOAgregarUsuario();
                 daoUpdate.Nombre1 = ObjAgregarUsuario.txtNombre.Text.Trim();
                 daoUpdate.Apellido1 = ObjAgregarUsuario.txtApellido.Text.Trim();
                 daoUpdate.FechaNacimiento1 = ObjAgregarUsuario.dtpNacimiento.Value;
                 daoUpdate.CorreoElectronico1 = ObjAgregarUsuario.txtCorreo.Text.Trim();
                 daoUpdate.Role1 = (int)ObjAgregarUsuario.cmbRoles.SelectedValue;
-                daoUpdate.Usuario1 = ObjAgregarUsuario.txtUsuario.Text.Trim();
-                int valorRetornado = daoUpdate.ActualizarEmpleados(); // Actualiza el usuario
+                daoUpdate.Estado1 = (bool)ObjAgregarUsuario.cmbEstado.SelectedValue;
+            int valorRetornado = daoUpdate.ActualizarEmpleados(); // Actualiza el usuario
                 if (valorRetornado == 2)
                 {
                     MessageBox.Show("Los datos han sido actualizado exitosamente",
@@ -214,7 +213,7 @@ namespace Proyecto.Controlador.IngresarUsuario
         
 
         // Método para llenar los campos del formulario con los datos del usuario que se está editando.
-        public void CambiarValores(int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, string Usuario)
+        public void CambiarValores(int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, int estado, int role)
         {
             try
             {
@@ -223,12 +222,10 @@ namespace Proyecto.Controlador.IngresarUsuario
                 ObjAgregarUsuario.txtApellido.Text = Apellido;
                 ObjAgregarUsuario.dtpNacimiento.Value = FechaNacimient;
                 ObjAgregarUsuario.txtCorreo.Text = CorreoEmpleado;
-                ObjAgregarUsuario.txtUsuario.Text = Usuario;
+                ObjAgregarUsuario.cmbRoles.SelectedIndex = role;
+                ObjAgregarUsuario.cmbEstado.SelectedIndex = estado;
 
                 // Actualiza las etiquetas con el nombre, apellido y usuario del empleado
-                ObjAgregarUsuario.LblNombre.Text = Nombre;
-                ObjAgregarUsuario.LblApellido.Text = Apellido;
-                ObjAgregarUsuario.LblUsuario.Text = Usuario;
             }
             catch (Exception ex)
             {
