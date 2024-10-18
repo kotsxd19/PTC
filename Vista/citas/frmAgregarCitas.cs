@@ -18,10 +18,5 @@ namespace Proyecto.Vista.citas
             InitializeComponent();
             ControllerRegistroCitas controller = new ControllerRegistroCitas(this);
         }
-
-        private void frmAgregarCitas_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
