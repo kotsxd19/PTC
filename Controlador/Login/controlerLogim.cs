@@ -71,8 +71,15 @@ namespace Proyecto.Controlador.Login
                 DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
                 DAOData.Contraseña1 = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
                 //string password = "123456";
-                string hashedPassword = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
-                MessageBox.Show("Hash de la contraseña '444': " + hashedPassword);
+                //string hashedPassword = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
+                string hashedPassword = common.CrearHash(ObjLogin.txtContraseña.Text);
+
+                //e613bb442bf089c035920266fa19f94a0972c896f212eda804d265c3b3f0e3f9
+                //6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b
+                //6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b
+                //6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b
+
+                MessageBox.Show("Hash de la contraseña '222': " + hashedPassword);
 
                 //DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
                 //DAOData.Contraseña1 = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
@@ -94,7 +101,7 @@ namespace Proyecto.Controlador.Login
                         //if (ObjLogin.txtContraseña.Text.Trim() == ObjLogin.txtUsuario.Text.Trim() + "PU123")
                         if (hashedPassword == Acceso.Contraseña)
                             {
-                                frmRecuperacioneDeContra openForm = new frmRecuperacioneDeContra();
+                            frmInicio openForm = new frmInicio();
                             openForm.Show();
                         }
                         else

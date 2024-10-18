@@ -35,29 +35,60 @@ namespace Proyecto.Controlador.Validar
                 // Devolver el hash como una cadena hexadecimal
                 return builder.ToString();
             }
-            
+
         }
 
-
-
-        public string desifrarCadena(string cadenaCode)
+        public string CrearHash(string password)
         {
-            try
+            using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] decodedBytes = Convert.FromBase64String(cadenaCode);
-                string decodedString = Encoding.UTF8.GetString(decodedBytes);
-                return decodedString.ToString();
-            }
-            catch (Exception ex)
-            {
-                return $"Error al descifrar: {ex.Message}";
+                // Convertir la cadena a bytes
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+
+                // Calcular el hash
+                byte[] hashBytes = sha256.ComputeHash(bytes);
+
+                // Convertir el hash a cadena hexadecimal
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in hashBytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+
+                return builder.ToString();
             }
         }
-
 
     }
+
+
+    
+
+    
+}
+
+
+
+
+
+    //public string desifrarCadena(string cadenaCode)
+    //    {
+    //        try
+    //        {
+    //            byte[] decodedBytes = Convert.FromBase64String(cadenaCode);
+    //            string decodedString = Encoding.UTF8.GetString(decodedBytes);
+    //            return decodedString.ToString();
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            return $"Error al descifrar: {ex.Message}";
+    //        }
+    //    }
+
+
+//    }
 
    
 
 
-}
+//}

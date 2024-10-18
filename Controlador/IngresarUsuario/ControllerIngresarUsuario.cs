@@ -140,7 +140,7 @@ namespace Proyecto.Controlador.IngresarUsuario
                     DAOInsert.CorreoElectronico1 = ObjAgregarUsuario.txtCorreo.Text.Trim();
 
                     DAOInsert.Usuario1 = ObjAgregarUsuario.txtUsuario.Text.Trim();
-                    DAOInsert.Contraseña1 = commonClasses.ComputeSha256Hash(ObjAgregarUsuario.txtUsuario.Text.Trim());
+                    DAOInsert.Contraseña1 = commonClasses.CrearHash(ObjAgregarUsuario.txtContra.Text.Trim());
                     DAOInsert.Role1 = int.Parse(ObjAgregarUsuario.cmbRoles.SelectedValue.ToString());
 
                     int estadoSeleccionado = ((KeyValuePair<string, int>)ObjAgregarUsuario.cmbEstado.SelectedItem).Value;
