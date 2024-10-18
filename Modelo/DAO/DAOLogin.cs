@@ -23,12 +23,12 @@ namespace Proyecto.Modelo.DAO
                 Command.Connection = getConnection();
 
                 // Define la consulta SQL para buscar un usuario con las credenciales proporcionadas
-                string query = "SELECT * FROM ViewLogin WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+                string query = $"SELECT * FROM ViewLogin WHERE Usuario = '{Usuario1}' AND Contraseña = '{Contraseña1}'";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
 
                 // Agrega los parámetros a la consulta SQL para evitar inyecciones de SQL
-                cmd.Parameters.AddWithValue("Usuario", Usuario1);
-                cmd.Parameters.AddWithValue("Contraseña", Contraseña1);
+                //cmd.Parameters.AddWithValue("Usuario", Usuario1);
+                //cmd.Parameters.AddWithValue("Contraseña", Contraseña1);
 
                 // Ejecuta la consulta y obtiene un SqlDataReader para leer los resultados
                 SqlDataReader rd = cmd.ExecuteReader();
@@ -39,7 +39,7 @@ namespace Proyecto.Modelo.DAO
                     // Asigna los valores leídos a la clase de acceso
                     Acceso.Usuario = rd.GetString(0); // Suponiendo que el primer campo es el Usuario
                     Acceso.Nombre = rd.GetString(2); // Suponiendo que el sexto campo es el Nombre
-                    //Acceso.Contraseña = rd.GetString(1); // Suponiendo que el segundo campo es la Contraseña
+                    Acceso.Contraseña = rd.GetString(1); // Suponiendo que el segundo campo es la Contraseña
                     Acceso.RoleId = rd.GetString(4); // Suponiendo que el cuarto campo es el RoleId
                     //Acceso.Access = rd.GetString(4); // Suponiendo que el quinto campo es el Access
                     
