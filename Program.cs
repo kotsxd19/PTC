@@ -24,6 +24,11 @@ namespace Proyecto
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+<<<<<<< Updated upstream
+=======
+            Application.Run(new frmInicio());
+
+>>>>>>> Stashed changes
             Application.Run(new frmLogin());
 
             Application.Run(new frmCrearPrimerUsuario());
