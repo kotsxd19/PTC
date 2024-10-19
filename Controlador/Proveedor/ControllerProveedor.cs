@@ -91,8 +91,8 @@ namespace Proyecto.Controlador.Proveedor
         // Método que realiza la búsqueda de personas y actualiza el DataGridView con los resultados.
         void BuscarProveedorController()
         {
-            DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para realizar la búsqueda
-            DataSet ds = objAdmin.BuscarPersonas(ObjProveedor.txtBuscadorProveedor.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
+            DAOProveedor objAdmin = new DAOProveedor(); // Crea una instancia del DAO para realizar la búsqueda
+            DataSet ds = objAdmin.BuscarProveedor(ObjProveedor.txtBuscadorProveedor.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
             ObjProveedor.dgvProveedor.DataSource = ds.Tables["Proveedor"]; // Asocia el DataSource del DataGridView con los datos obtenidos
         }
     }

@@ -114,7 +114,7 @@ namespace Proyecto.Controlador.IngresarUsuario
         {
             DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para realizar la búsqueda
             DataSet ds = objAdmin.BuscarPersonas(ObjAdminUser.txtBuscador.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
-            ObjAdminUser.dgvCitas.DataSource = ds.Tables["RegistroEmpleado"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+            ObjAdminUser.dgvCitas.DataSource = ds.Tables["RegsitrosDeEmpleados"]; // Asocia el DataSource del DataGridView con los datos obtenidos
         }
 
         // Método que abre un formulario para ver los detalles de la ficha del empleado seleccionado.

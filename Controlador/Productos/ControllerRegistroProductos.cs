@@ -24,6 +24,7 @@ namespace Proyecto.Controlador.Productos
             vistaProducto.btnNuevoProductos.Click += new EventHandler(nuevoProducto); // Asocia el evento Click del botón Nuevo Empleado al método nuevoUsuario
             //ObjAdminUser.btnActualizar.Click += new EventHandler(AcualizarEmpleado); // Asocia el evento Click del botón Actualizar al método ActualizarEmpleado
             vistaProducto.btnActualizarProveedor.Click += new EventHandler(AcualizarProducto);
+            vistaProducto.btnBuscarProducto.Click += new EventHandler(BuscarProducto);
             //vistaProducto.btnBuscarProducto.Click += new EventHandler(BuscarProductoController); // Asocia el evento Click del botón Buscar al método BuscarPeronasControllerEvent
         }
 
@@ -56,6 +57,19 @@ namespace Proyecto.Controlador.Productos
             }
         }
 
+        public void BuscarProducto(object sender, EventArgs e)
+        {
+            BuscarProductoController(); // Llama al método para realizar la búsqueda
+        }
+
+        // Método que realiza la búsqueda de personas y actualiza el DataGridView con los resultados.
+        void BuscarProductoController()
+        {
+            DAOProducto objAdmin = new DAOProducto(); // Crea una instancia del DAO para realizar la búsqueda
+            DataSet ds = objAdmin.BuscarProductos(vistaProducto.txtBuscarProducto.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
+            vistaProducto.dgvProductos.DataSource = ds.Tables["Producto"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+        }
+
         private void nuevoProducto(object sender, EventArgs e)
         {
             frmAgregarProducto openForm = new frmAgregarProducto(1); // Crea una nueva instancia del formulario para agregar usuario
@@ -79,11 +93,6 @@ namespace Proyecto.Controlador.Productos
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
         }
 
-        void BuscarProductoController()
-        {
-            DAOAgregarUsuario objAdmin = new DAOAgregarUsuario(); // Crea una instancia del DAO para realizar la búsqueda
-            DataSet ds = objAdmin.BuscarPersonas(vistaProducto.txtBuscarProducto.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
-            vistaProducto.dgvProductos.DataSource = ds.Tables["VistaProductos"]; // Asocia el DataSource del DataGridView con los datos obtenidos
-        }
+
     }
 }

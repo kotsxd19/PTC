@@ -21,6 +21,7 @@ namespace Proyecto.Controlador.Proveedor
             Objpropietario.Load += new EventHandler(CargarDatos);
             Objpropietario.cbEstadoPropietario.CheckedChanged += new EventHandler(CambiarConsulta);
             Objpropietario.btnNuevoEmpleado.Click += new EventHandler(nuevoDueño);
+            Objpropietario.btnBuscar.Click += new EventHandler(BuscarDueño);
         }
 
 
@@ -58,6 +59,19 @@ namespace Proyecto.Controlador.Proveedor
             frmAgregarDueñosMascotas openForm = new frmAgregarDueñosMascotas(); // Crea una nueva instancia del formulario para agregar usuario
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
+        }
+
+        public void BuscarDueño(object sender, EventArgs e)
+        {
+            BuscardueñoController(); // Llama al método para realizar la búsqueda
+        }
+
+        // Método que realiza la búsqueda de personas y actualiza el DataGridView con los resultados.
+        void BuscardueñoController()
+        {
+            DAOPropietario objAdmin = new DAOPropietario(); // Crea una instancia del DAO para realizar la búsqueda
+            DataSet ds = objAdmin.BuscarPropietario(Objpropietario.txtBuscador.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
+            Objpropietario.dgvEmpleados.DataSource = ds.Tables["Propietario"]; // Asocia el DataSource del DataGridView con los datos obtenidos
         }
 
     }

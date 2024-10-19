@@ -23,7 +23,7 @@ namespace Proyecto.Controlador.Ventas
             objVentas.Load += new EventHandler(CargarDatos);
             objVentas.cbEstadoAnimal.CheckedChanged += new EventHandler(CambiarConsulta);
             objVentas.btnAgregarVenta.Click += new EventHandler(nuevaMascota);
-
+            objVentas.btnBuscarProveedor.Click += new EventHandler(BuscarVenta);
         }
 
 
@@ -62,6 +62,19 @@ namespace Proyecto.Controlador.Ventas
             frmAgregarVentas openForm = new frmAgregarVentas(); // Crea una nueva instancia del formulario para agregar usuario
             openForm.ShowDialog(); // Muestra el formulario como un diálogo modal
             RefrescarData(); // Refresca los datos en el DataGridView después de cerrar el formulario
+        }
+
+        public void BuscarVenta(object sender, EventArgs e)
+        {
+            BuscarVentaController(); // Llama al método para realizar la búsqueda
+        }
+
+        // Método que realiza la búsqueda de personas y actualiza el DataGridView con los resultados.
+        void BuscarVentaController()
+        {
+            DAOVentas objAdmin = new DAOVentas(); // Crea una instancia del DAO para realizar la búsqueda
+            DataSet ds = objAdmin.BuscarVenta(objVentas.txtBuscadorProveedor.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
+            objVentas.dgvVenta.DataSource = ds.Tables["ViewVentas"]; // Asocia el DataSource del DataGridView con los datos obtenidos
         }
     }
 }

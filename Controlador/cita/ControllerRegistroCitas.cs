@@ -25,6 +25,7 @@ namespace Proyecto.Controlador.cita
             // Asignar eventos a los botones de la vista
             //Vista.btnActualizarCita.Click += new EventHandler(EditarCita);
             Vista.btnNuevaCita.Click += new EventHandler(IngresarCita);
+            objVista.btnBuscar.Click += new EventHandler(EventoBuscar);
 
             // Llenar el DataGridView al inicializar
         }
@@ -98,5 +99,18 @@ namespace Proyecto.Controlador.cita
         //        MessageBox.Show("La cita no pudo ser actualizada", "Proceso incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         //    }
         //}
+
+        public void EventoBuscar(object sender, EventArgs e)
+        {
+            BuscarCitaasController(); // Llama al método para realizar la búsqueda
+        }
+
+        // Método que realiza la búsqueda de personas y actualiza el DataGridView con los resultados.
+        void BuscarCitaasController()
+        {
+            DAOCitas objAdmin = new DAOCitas(); // Crea una instancia del DAO para realizar la búsqueda
+            DataSet ds = objAdmin.BuscarCitas(objVista.txtBuscador.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
+            objVista.dgvEmpleados.DataSource = ds.Tables["ViewCita"]; // Asocia el DataSource del DataGridView con los datos obtenidos
+        }
     }
 }

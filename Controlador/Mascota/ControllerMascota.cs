@@ -23,7 +23,7 @@ namespace Proyecto.Controlador.Mascota
             ObjMascota.Load += new EventHandler(CargarDatos);
             ObjMascota.cbEstadoAnimal.CheckedChanged += new EventHandler(CambiarConsulta);
             ObjMascota.btnNuevaMascota.Click += new EventHandler(nuevaMascota);
-
+            ObjMascota.btnBuscar.Click += new EventHandler(BuscarMascota);
         }
 
 
@@ -54,6 +54,19 @@ namespace Proyecto.Controlador.Mascota
                 ds = objAdmin.ObtenerMascotasInactivas();
                 ObjMascota.dgvMascotas.DataSource = ds.Tables["ViewDogs"]; // Asocia el DataSource del DataGridView con los datos obtenidos
             }
+        }
+
+        public void BuscarMascota(object sender, EventArgs e)
+        {
+            BuscarMascotaController(); // Llama al método para realizar la búsqueda
+        }
+
+        // Método que realiza la búsqueda de personas y actualiza el DataGridView con los resultados.
+        void BuscarMascotaController()
+        {
+            DAOMascotas objAdmin = new DAOMascotas(); // Crea una instancia del DAO para realizar la búsqueda
+            DataSet ds = objAdmin.BuscarMascota(ObjMascota.txtBuscadorProveedor.Text.Trim()); // Obtiene los datos de búsqueda desde la base de datos
+            ObjMascota.dgvMascotas.DataSource = ds.Tables["ViewDogs"]; // Asocia el DataSource del DataGridView con los datos obtenidos
         }
 
 
