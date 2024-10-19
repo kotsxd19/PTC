@@ -28,17 +28,19 @@ namespace Proyecto.Controlador.IngresarUsuario
             verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
             ObjAgregarUsuario.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
             ObjAgregarUsuario.btnIngresar.Click += new EventHandler(NuevoRegistro); // Asocia el evento Click del botón Ingresar al método NuevoRegistro
+            ObjAgregarUsuario.btnActualizar.Click += new EventHandler(ActualizarDatos);
+
         }
 
-        public ControllerIngresarUsuario(frmAgregarUsuario Vista, int accion, int id, string Nombre, string Apellido, DateTime FechaNacimient, string CorreoEmpleado, int estado, int role)
-        {
-            ObjAgregarUsuario = Vista;
-            ObjAgregarUsuario.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
-            verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
-            CambiarValores(id, Nombre, Apellido, FechaNacimient, CorreoEmpleado, estado, role); // Carga los datos del usuario en el formulario
+        //public ControllerIngresarUsuario(frmAgregarUsuario Vista, int accion)
+        //{
+        //    ObjAgregarUsuario = Vista;
+        //    ObjAgregarUsuario.Load += new EventHandler(CargaInicial); // Asocia el evento Load del formulario al método CargaInicial
+        //    verificarAccion(); // Verifica la acción para habilitar o deshabilitar controles según la acción
+        //    CambiarValores(id, Nombre, Apellido, FechaNacimient, CorreoEmpleado, estado, role); // Carga los datos del usuario en el formulario
 
-            ObjAgregarUsuario.btnActualizar.Click += new EventHandler(ActualizarDatos); // Asocia el evento Click del botón Actualizar al método ActualizarDatos
-        }
+        //   ; // Asocia el evento Click del botón Actualizar al método ActualizarDatos
+        //}
 
         // Constructor sobrecargado para inicializar el controlador con datos adicionales para la edición de usuario.
 
@@ -57,12 +59,13 @@ namespace Proyecto.Controlador.IngresarUsuario
                 ObjAgregarUsuario.cmbRoles.Text = role; // Establece el texto del ComboBox para la acción de edición
             }
 
+
             ObjAgregarUsuario.cmbEstado.Enabled = true;
 
             ObjAgregarUsuario.cmbEstado.Items.Clear();
 
             ObjAgregarUsuario.cmbEstado.Items.Add(new KeyValuePair<string, int>("Activo", 1));
-            ObjAgregarUsuario.cmbEstado.Items.Add(new KeyValuePair<string, int>("Inactivo", 2));
+            ObjAgregarUsuario.cmbEstado.Items.Add(new KeyValuePair<string, int>("Inactivo", 0));
 
             ObjAgregarUsuario.cmbEstado.DisplayMember = "Key";
 
@@ -185,7 +188,10 @@ namespace Proyecto.Controlador.IngresarUsuario
                 daoUpdate.FechaNacimiento1 = ObjAgregarUsuario.dtpNacimiento.Value;
                 daoUpdate.CorreoElectronico1 = ObjAgregarUsuario.txtCorreo.Text.Trim();
                 daoUpdate.Role1 = (int)ObjAgregarUsuario.cmbRoles.SelectedValue;
-                daoUpdate.Estado1 = (bool)ObjAgregarUsuario.cmbEstado.SelectedValue;
+            //int numero = (int)ObjAgregarUsuario.cmbEstado.SelectedValue;
+            //daoUpdate.Estado1 = (bool)ObjAgregarUsuario.cmbEstado.SelectedValue;
+            daoUpdate.Estado1 = true;
+            daoUpdate.IdEmpleado1 = Convert.ToInt32(ObjAgregarUsuario.txtId.Text);
             int valorRetornado = daoUpdate.ActualizarEmpleados(); // Actualiza el usuario
                 if (valorRetornado == 2)
                 {
@@ -220,6 +226,7 @@ namespace Proyecto.Controlador.IngresarUsuario
                 ObjAgregarUsuario.txtId.Text = id.ToString();
                 ObjAgregarUsuario.txtNombre.Text = Nombre;
                 ObjAgregarUsuario.txtApellido.Text = Apellido;
+
                 ObjAgregarUsuario.dtpNacimiento.Value = FechaNacimient;
                 ObjAgregarUsuario.txtCorreo.Text = CorreoEmpleado;
                 ObjAgregarUsuario.cmbRoles.SelectedIndex = role;

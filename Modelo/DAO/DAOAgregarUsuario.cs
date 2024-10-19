@@ -185,18 +185,23 @@ namespace Proyecto.Modelo.DAO
 
                 // Consulta SQL para actualizar los detalles del empleado
                 string query = "UPDATE Empleado SET " +
-                                "Role = @param1," +
+                                //"IdRoles = @param1," +
                                 "Nombre = @param2, " +
                                 "Apellido = @param3, " +
-                                "FechaNacimient = @param4," +
+                                //"FechaNacimient = @param4," +
                                 "CorreoEmpleado = @param7," +
-                                "EstadoEmpleado = @param9";
+                                "EstadoEmpleado = @param9 " +
+                                "WHERE IdEmpleados = @param10";
+                                
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
+                int id = IdEmpleado1;
+                //cmd.Parameters.AddWithValue("param1", Role1);
                 cmd.Parameters.AddWithValue("param2", Nombre1);
                 cmd.Parameters.AddWithValue("param3", Apellido1);
-                cmd.Parameters.AddWithValue("param4", FechaNacimiento1);
+                //cmd.Parameters.AddWithValue("param4", FechaNacimiento1);
                 cmd.Parameters.AddWithValue("param7", CorreoElectronico1);
                 cmd.Parameters.AddWithValue("param9", Estado1);
+                cmd.Parameters.AddWithValue("param10", IdEmpleado1);
 
                 // Ejecuta la consulta de actualización y obtiene el número de filas afectadas
                 int respuesta = cmd.ExecuteNonQuery();
@@ -206,11 +211,11 @@ namespace Proyecto.Modelo.DAO
                 {
                     // Consulta SQL para actualizar el rol del empleado
                     string query2 = "UPDATE Empleado SET " +
-                                    "IdRole = @param1 " +
-                                    "WHERE Usuario = @param5";
+                                    "IdRoles = @param1 " +
+                                    "WHERE IdEmpleados = @param10";
                     SqlCommand cmd2 = new SqlCommand(query2, getConnection());
                     cmd2.Parameters.AddWithValue("param1", Role1);
-                    cmd2.Parameters.AddWithValue("param5", Usuario1);
+                    cmd2.Parameters.AddWithValue("param10", IdEmpleado1);
 
                     // Ejecuta la consulta de actualización de rol
                     respuesta = cmd2.ExecuteNonQuery();

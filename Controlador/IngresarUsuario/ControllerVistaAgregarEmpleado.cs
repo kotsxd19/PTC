@@ -78,6 +78,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             frmAgregarUsuario openForm = new frmAgregarUsuario(2);
 
             // Enviar los datos de la fila seleccionada al formulario de edición
+            string IdEmpleado = ObjAdminUser.dgvCitas.CurrentRow.Cells["IdEmpleados"].Value.ToString();
             string Nombre = ObjAdminUser.dgvCitas.CurrentRow.Cells["Nombre"].Value.ToString();
             string Apellido = ObjAdminUser.dgvCitas.CurrentRow.Cells["Apellido"].Value.ToString();
             string FechaNacimiento = ObjAdminUser.dgvCitas.CurrentRow.Cells["FechaNacimient"].Value.ToString();
@@ -85,6 +86,7 @@ namespace Proyecto.Controlador.IngresarUsuario
             string role = ObjAdminUser.dgvCitas.CurrentRow.Cells["Roles"].Value.ToString();
             string EstadoEmpleado = ObjAdminUser.dgvCitas.CurrentRow.Cells["EstadoEmpleado"].Value.ToString();
 
+            openForm.txtId.Text = IdEmpleado;
             openForm.txtNombre.Text = Nombre;
             openForm.txtApellido.Text = Apellido;
             openForm.dtpNacimiento.Text = FechaNacimiento;
