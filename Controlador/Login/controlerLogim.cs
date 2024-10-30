@@ -79,7 +79,6 @@ namespace Proyecto.Controlador.Login
                 //6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b
                 //6557739a67283a8de383fc5c0997fbec7c5721a46f28f3235fc9607598d9016b
 
-                MessageBox.Show("Hash de la contraseña '222': " + hashedPassword);
 
                 //DAOData.Usuario1 = ObjLogin.txtUsuario.Text;
                 //DAOData.Contraseña1 = common.ComputeSha256Hash(ObjLogin.txtContraseña.Text);
